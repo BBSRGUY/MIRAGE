@@ -1,0 +1,21 @@
+{
+  "teacher": {
+    "type": "ltx25",
+    "model_id": "Lightricks/LTX-2.5",
+    "model_root": "%LOCALAPPDATA%/Comfy-Desktop/ComfyUI-Shared/models",
+    "transformer_file": "diffusion_models/ltx-2.5-22b-distilled-transformer-bf16.safetensors",
+    "dtype": "bfloat16",
+    "device": "cuda",
+    "offload_mode": "disk"
+  },
+  "data": {"prompts_file": "configs/m2_prompts.txt", "num_train_prompts": 4, "num_eval_prompts": 2, "seed": 1337},
+  "temporal": {
+    "reuse_thresholds": [0.001, 0.0025, 0.005, 0.01, 0.02, 0.05, 0.1],
+    "reuse_threshold": 0.02,
+    "predict_threshold": 0.05,
+    "predictor_steps": 200,
+    "predictor_learning_rate": 0.001
+  },
+  "scene_motion": {"pca_ranks": [1, 2, 4, 8], "lowpass_alpha": 0.8},
+  "output_dir": "artifacts/m2/ltx25_22b"
+}

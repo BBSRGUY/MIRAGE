@@ -1,0 +1,60 @@
+{
+  "teacher": {
+    "type": "ltx25",
+    "model_id": "Lightricks/LTX-2.5",
+    "model_root": "%LOCALAPPDATA%/Comfy-Desktop/ComfyUI-Shared/models",
+    "transformer_file": "diffusion_models/ltx-2.5-22b-distilled-transformer-bf16.safetensors",
+    "text_encoder_file": "text_encoders/gemma4-12b-with-proj-ltx-2.5-bf16.safetensors",
+    "video_vae_file": "vae/ltx-2.5-video-vae-bf16.safetensors",
+    "audio_vae_file": "vae/ltx-2.5-audio-vae-bf16.safetensors",
+    "spatial_upsampler_file": "latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
+    "duration_head_file": "model_patches/ltx-2.5-duration-head-bf16.safetensors",
+    "ltx_repo_path": ".vendor/LTX-2",
+    "offload_mode": "disk",
+    "dtype": "bfloat16",
+    "device": "cuda",
+    "local_files_only": true,
+    "max_capture_tokens": 32,
+    "capture_blocks": [0, 12, 24, 36, 47]
+  },
+  "data": {
+    "prompts_file": "configs/m2_prompts.txt",
+    "num_train_prompts": 4,
+    "num_eval_prompts": 2,
+    "seed": 1337
+  },
+  "generation": {
+    "frames": 9,
+    "height": 256,
+    "width": 256,
+    "steps": 8,
+    "guidance_scale": 1.0,
+    "max_sequence_length": 128
+  },
+  "compression": {
+    "basis_counts": [2, 4],
+    "ranks": [0, 4, 8, 16],
+    "initialization": "pca",
+    "fit_steps": 0,
+    "activation_fit_steps": 100,
+    "learning_rate": 0.001,
+    "lambda_weight": 0.1,
+    "lambda_activation": 1.0
+  },
+  "temporal": {
+    "reuse_thresholds": [0.001, 0.0025, 0.005, 0.01, 0.02, 0.05, 0.1],
+    "reuse_threshold": 0.02,
+    "predict_threshold": 0.05,
+    "predictor_steps": 200,
+    "predictor_learning_rate": 0.001
+  },
+  "scene_motion": {"pca_ranks": [1, 2, 4, 8], "lowpass_alpha": 0.8},
+  "acceptance": {
+    "validation_activation_cosine": 0.995,
+    "normalized_activation_error": 0.05,
+    "compression_ratio": 3.0,
+    "reuse_predict_coverage": 0.4,
+    "scene_low_rank_energy": 0.6
+  },
+  "output_dir": "artifacts/m2/ltx25_22b"
+}

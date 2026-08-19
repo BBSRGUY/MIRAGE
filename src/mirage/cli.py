@@ -33,6 +33,24 @@ def build_parser() -> argparse.ArgumentParser:
         if name == "ablate-cache":
             item.add_argument("--threshold", type=float)
     sub.add_parser("doctor")
+    for name in (
+        "teacher-extract",
+        "m2-basis-sweep",
+        "m2-temporal-probe",
+        "m2-cache-analysis",
+        "m2-predictor-fit",
+        "m2-scene-motion",
+        "m2-report",
+    ):
+        item = sub.add_parser(name)
+        item.add_argument("--config", default="configs/m2_ltx_teacher.json")
+        if name in {"m2-basis-sweep", "m2-predictor-fit"}:
+            item.add_argument("--device")
+    activation = sub.add_parser("m2-activation-fit")
+    activation.add_argument("--config", default="configs/m2_ltx_teacher.json")
+    activation.add_argument("--artifact", required=True)
+    activation.add_argument("--device")
+    activation.add_argument("--behavior-fit", action="store_true")
     return parser
 
 
@@ -117,6 +135,49 @@ def run_cache_ablation(args) -> int:
     return 0
 
 
+def run_m2(args: argparse.Namespace) -> int:
+    from .m2_config import M2Config
+
+    config = M2Config.from_json(args.config)
+    config.validate()
+    if args.command == "teacher-extract":
+        from .experiments.teacher_extract import run_teacher_extraction
+
+        result = run_teacher_extraction(config)
+    elif args.command == "m2-basis-sweep":
+        from .experiments.basis_sweep import run_basis_sweep
+
+        result = run_basis_sweep(config, args.device)
+    elif args.command == "m2-activation-fit":
+        from .experiments.activation_reconstruction import run_activation_reconstruction
+
+        result = run_activation_reconstruction(
+            config, args.artifact, behavior_fit=args.behavior_fit, device=args.device
+        )
+    elif args.command == "m2-temporal-probe":
+        from .experiments.temporal_redundancy import run_temporal_probe
+
+        result = run_temporal_probe(config)
+    elif args.command == "m2-cache-analysis":
+        from .experiments.cache_or_predict import run_cache_analysis
+
+        result = run_cache_analysis(config)
+    elif args.command == "m2-predictor-fit":
+        from .experiments.cache_or_predict import run_predictor_fit
+
+        result = run_predictor_fit(config, args.device)
+    elif args.command == "m2-scene-motion":
+        from .experiments.scene_motion_probe import run_scene_motion_probe
+
+        result = run_scene_motion_probe(config)
+    else:
+        from .experiments.report import generate_m2_report
+
+        result = generate_m2_report(config)
+    print(json.dumps(result, indent=2, default=str))
+    return 0
+
+
 def main() -> int:
     args = build_parser().parse_args()
     if args.command == "doctor":
@@ -125,7 +186,9 @@ def main() -> int:
         return run_generate(args)
     if args.command == "benchmark":
         return run_benchmark(args)
-    return run_cache_ablation(args)
+    if args.command == "ablate-cache":
+        return run_cache_ablation(args)
+    return run_m2(args)
 
 
 if __name__ == "__main__":

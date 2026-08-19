@@ -9,6 +9,12 @@ independent dense reference model. The initialized checkpoints produce noise-lik
 the milestone validates architecture, execution, measurement, and memory residency—not
 perceptual quality before training.
 
+Milestone 2 is an empirical study against the official **LTX-2.5 22B audio/video teacher**.
+It streams dense BF16 teacher blocks for activation capture, reads trained BF16 projection
+weights directly from Safetensors, and rejects older LTX checkpoints and quantized structural
+surrogates. NVFP4 may be benchmarked as a runtime baseline, but it is never used to infer
+dense-weight redundancy.
+
 ## What runs today
 
 - persistent scene state plus per-frame motion state;
@@ -80,3 +86,5 @@ configuration and checkpoint, and report median latency after warmup together wi
 FLOPs, sparsity, cache rate, and held-out perceptual/temporal metrics.
 
 The staged path is documented in [docs/ROADMAP.md](docs/ROADMAP.md).
+The LTX-2.5 study protocol and artifact schema are documented in
+[docs/M2_METHOD.md](docs/M2_METHOD.md) and [docs/M2_SCHEMA.md](docs/M2_SCHEMA.md).

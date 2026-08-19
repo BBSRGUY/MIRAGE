@@ -8,10 +8,18 @@ version = "0.1.0"
 description = "A single-GPU research harness for compressed-native video generation"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = ["torch>=2.4", "numpy>=1.26", "Pillow>=10"]
+dependencies = ["torch>=2.4", "numpy>=1.26", "Pillow>=10", "safetensors>=0.4"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "ruff>=0.6"]
+m2 = [
+    "accelerate>=1.0",
+    "av>=14",
+    "einops>=0.8",
+    "openimageio>=3",
+    "sentencepiece>=0.2",
+    "transformers>=5.8,<5.15",
+]
 
 [project.scripts]
 mirage = "mirage.cli:main"
@@ -21,9 +29,8 @@ where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-q"
+addopts = "-q --basetemp=.pytest_tmp"
 
 [tool.ruff]
 line-length = 100
 target-version = "py310"
-
