@@ -1,0 +1,23 @@
+{
+  "frames": 4,
+  "height": 32,
+  "width": 32,
+  "patch_size": 8,
+  "hidden_size": 64,
+  "depth": 2,
+  "heads": 4,
+  "basis_count": 2,
+  "residual_rank": 4,
+  "steps": 2,
+  "text_tokens": 16,
+  "vocabulary_size": 2048,
+  "scene_ratio": 0.5,
+  "attention_window": 1,
+  "attention_stride": 4,
+  "cache_threshold": 0.25,
+  "max_cache_age": 2,
+  "precision": "dynamic",
+  "seed": 0,
+  "vram_budget_gb": 24.0
+}
+
