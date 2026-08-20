@@ -1,0 +1,95 @@
+{
+  "variant": "MIRAGE-S",
+  "checkpoint": "artifacts/m3/mirage-s-smoke/last.pt",
+  "held_out_prompts": [
+    {
+      "prompt": "A glass sphere rolls across a wooden table.",
+      "seed": 101,
+      "temporal_consistency": 0.7623615264892578,
+      "quality_retention_vs_bf16_independent": {
+        "psnr_db": 41.31195545196533,
+        "ssim_proxy": 0.9991266131401062,
+        "temporal_consistency": 0.7623615264892578
+      },
+      "telemetry": {
+        "latency_s": 0.053290899988496676,
+        "peak_vram_bytes": 21760000,
+        "peak_reserved_vram_bytes": 31457280,
+        "allocated_vram_bytes": 20811776,
+        "parameter_bytes": 3548672,
+        "estimated_flops": 104988672,
+        "attention_density": 0.2578125,
+        "cache_hits": 0,
+        "cache_queries": 0,
+        "precision_counts": {
+          "float32": 2
+        },
+        "cache_hit_rate": 0.0
+      }
+    },
+    {
+      "prompt": "A ceramic robot makes tea in a warm kitchen.",
+      "seed": 202,
+      "temporal_consistency": 0.7682251930236816,
+      "quality_retention_vs_bf16_independent": {
+        "psnr_db": 40.13824462890625,
+        "ssim_proxy": 0.9987421035766602,
+        "temporal_consistency": 0.7682251930236816
+      },
+      "telemetry": {
+        "latency_s": 0.012748000008286908,
+        "peak_vram_bytes": 21760000,
+        "peak_reserved_vram_bytes": 31457280,
+        "allocated_vram_bytes": 20811776,
+        "parameter_bytes": 3548672,
+        "estimated_flops": 104988672,
+        "attention_density": 0.2578125,
+        "cache_hits": 0,
+        "cache_queries": 0,
+        "precision_counts": {
+          "float32": 2
+        },
+        "cache_hit_rate": 0.0
+      }
+    }
+  ],
+  "compression": {
+    "policy": "m2_heterogeneous_int4_int8",
+    "representation_counts": {
+      "INT4_GROUP64": 12,
+      "INT8_ROW": 12
+    },
+    "resident_state_bytes": 4093952,
+    "teacher_dependency": false,
+    "cpu_offload": false
+  },
+  "bf16_independent_state_bytes": 6712832,
+  "quantized_resident_estimate_bytes": 4290560,
+  "configured_budget_bytes": 21474836480,
+  "headroom_bytes": 21470545920,
+  "cache_predict_default": false,
+  "quality_scope": "initial trained smoke metrics; VBench/FVD require a real evaluation corpus",
+  "no_teacher_runtime": true,
+  "checkpoint_provenance": {
+    "format": "mirage_provenance_v1",
+    "config_sha256": "41d55f5386e767107c145feb7cb805c6bfcafeb194673649a486361140122126",
+    "dataset": {
+      "manifest": "synthetic://mirage-smoke",
+      "synthetic": true,
+      "sha256": "68865fbed8c887f738ef456b4d2125459ec252fafc3214d4a50624820f58fde5"
+    },
+    "teacher_features": {
+      "root": "artifacts\\m3\\teacher_features",
+      "exists": true,
+      "sha256": "e45ff8ad2018671d71705ffb58f956f0e75655506e589344f8304aea304b0364",
+      "files": 7
+    },
+    "code": {
+      "git_commit": "f2be399ae2896d06c5393abd0bc90bed41b8f7b8",
+      "git_dirty": true,
+      "code_snapshot_sha256": "03468909c094be642da366081403ef0181c4eb46e642c749107fe80665d1c39a",
+      "code_files": 65
+    },
+    "model_state_sha256": "1dabc7121d44a39d896836ac3fab50b20d54490d6914e4d50edcce96ca848a5a"
+  }
+}

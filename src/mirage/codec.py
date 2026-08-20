@@ -15,6 +15,28 @@ class CompactAVCodec(nn.Module):
             nn.LayerNorm(width), nn.Linear(width, 3 * patch_size * patch_size), nn.Tanh()
         )
         self.audio_head = nn.Sequential(nn.LayerNorm(width), nn.Linear(width, audio_hop), nn.Tanh())
+        self.video_encoder = nn.Sequential(
+            nn.Linear(3 * patch_size * patch_size, width), nn.LayerNorm(width)
+        )
+        self.audio_encoder = nn.Sequential(nn.Linear(audio_hop, width), nn.LayerNorm(width))
+
+    def encode_video(self, video: torch.Tensor) -> torch.Tensor:
+        """Patchify [B,F,3,H,W] into the model's spatiotemporal latent sequence."""
+        b, frames, channels, height, width = video.shape
+        p = self.patch_size
+        if channels != 3 or height % p or width % p:
+            raise ValueError("video must be RGB and spatial dimensions divisible by patch_size")
+        patches = video.reshape(b, frames, channels, height // p, p, width // p, p)
+        patches = patches.permute(0, 1, 3, 5, 2, 4, 6).reshape(
+            b, frames * (height // p) * (width // p), channels * p * p
+        )
+        return self.video_encoder(patches)
+
+    def encode_audio(self, audio: torch.Tensor, frames: int) -> torch.Tensor:
+        required = frames * self.audio_hop
+        if audio.shape[-1] < required:
+            audio = torch.nn.functional.pad(audio, (0, required - audio.shape[-1]))
+        return self.audio_encoder(audio[..., :required].reshape(audio.shape[0], frames, -1))
 
     def decode_video(
         self, tokens: torch.Tensor, frames: int, height: int, width: int

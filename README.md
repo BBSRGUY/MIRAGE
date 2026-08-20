@@ -4,10 +4,8 @@ MIRAGE (Motion-Invariant Residual Adaptive Generative Engine) is a research harn
 video generation designed around a hard constraint: the complete inference path must remain
 resident on one GPU with at most 24 GiB of VRAM and no CPU offload.
 
-This repository contains Milestone 1: a small, end-to-end, trainable generator and an
-independent dense reference model. The initialized checkpoints produce noise-like videos;
-the milestone validates architecture, execution, measurement, and memory residency—not
-perceptual quality before training.
+The repository now includes the active M3 trainable generator pipeline. The first checkpoint is
+a synthetic systems smoke result, not a perceptual-quality claim.
 
 Milestone 2 is an empirical study against the official **LTX-2.5 22B audio/video teacher**.
 It streams dense BF16 teacher blocks for activation capture, reads trained BF16 projection
@@ -18,7 +16,7 @@ dense-weight redundancy.
 ## What runs today
 
 - persistent scene state plus per-frame motion state;
-- transformer projections composed from one shared basis bank and layer-local low-rank deltas;
+- independent transformer projections with an M2-derived grouped-INT4/rowwise-INT8 inference policy;
 - local/anchor spatiotemporal attention with measured mask density;
 - predictive block residual reuse across generation steps;
 - an executable timestep precision schedule (FP32 at sensitive edge steps, BF16 in the middle);
@@ -61,21 +59,23 @@ the configured VRAM budget would be exceeded.
 
 ## Architectural contract
 
-For each layer-local projection, MIRAGE stores
+The default M3 runtime stores each independent layer projection using the heterogeneous policy
+selected by the held-out M2.2 block gate:
 
 ```text
-W_l = sum_i alpha[l, i] B_i + U_l V_l
+W_l = grouped-INT4       for robust projections
+W_l = rowwise-INT8       for sensitive projections
 ```
 
-where `B` is shared by all blocks and `UV` is a small layer-local correction. Dense matrices
-are composed transiently by this reference implementation and are never stored per layer.
-The next kernel milestone will fuse basis composition with GEMM so even that transient matrix
-does not exist.
+The PyTorch reference runtime dequantizes each projection transiently on the GPU. Native fused
+low-bit kernels are deferred to M4. The earlier shared-basis plus low-rank representation remains
+available only through an explicit ablation config because M2.2 selected zero basis projections.
 
 Generation maintains spatial scene tokens across the entire clip and separate spatiotemporal
 motion tokens. At each flow step, the scene changes only through the time-averaged update;
-motion receives the full update. Blocks may reuse a cached residual when normalized feature
-drift remains below the configured threshold and the cache age limit has not expired.
+motion receives the full update. Cache/predict execution is disabled in the default trained path;
+the M1 cache implementation remains available solely for controlled ablation until trained
+trajectory evidence supports it.
 
 ## Experimental discipline
 
@@ -85,6 +85,21 @@ distilled on the same data and evaluation seed set. Change one feature at a time
 configuration and checkpoint, and report median latency after warmup together with peak VRAM,
 FLOPs, sparsity, cache rate, and held-out perceptual/temporal metrics.
 
+M3 defaults to the M2-selected heterogeneous grouped-INT4/rowwise-INT8 policy with independent
+weights. Shared bases are retained only as a controlled ablation, and temporal cache/predict
+execution is disabled until a trained native trajectory supports it.
+
+```powershell
+$env:PYTHONPATH = (Resolve-Path .\src).Path
+.venv\Scripts\python.exe -m mirage.cli m3-train --config configs/m3_mirage_s.json --device cuda
+.venv\Scripts\python.exe -m mirage.cli m3-eval --config configs/m3_mirage_s.json `
+  --checkpoint artifacts/m3/mirage-s-smoke/last.pt --device cuda
+```
+
 The staged path is documented in [docs/ROADMAP.md](docs/ROADMAP.md).
 The LTX-2.5 study protocol and artifact schema are documented in
-[docs/M2_METHOD.md](docs/M2_METHOD.md) and [docs/M2_SCHEMA.md](docs/M2_SCHEMA.md).
+[docs/M2_METHOD.md](docs/M2_METHOD.md), [docs/M2_SCHEMA.md](docs/M2_SCHEMA.md), and the measured
+[M2 results](docs/M2_RESULTS.md). The active recovery method is documented in
+[docs/M21_METHOD.md](docs/M21_METHOD.md).
+[M3 method](docs/M3_METHOD.md) and [M3 status](docs/M3_STATUS.md) document the active training
+milestone and clearly separate its foundation smoke pass from the still-unpassed quality gate.

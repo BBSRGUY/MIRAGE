@@ -28,8 +28,12 @@ class FeatureStore:
 
     VERSION = 1
 
-    def __init__(self, root: str | Path):
+    def __init__(self, root: str | Path, flush_every: int = 64):
+        if flush_every < 1:
+            raise ValueError("flush_every must be positive")
         self.root = Path(root)
+        self._flush_every = flush_every
+        self._dirty_records = 0
         for name in ("weights", "activations", "temporal", "reports"):
             (self.root / name).mkdir(parents=True, exist_ok=True)
         self.manifest_path = self.root / "manifest.json"
@@ -48,6 +52,7 @@ class FeatureStore:
         for attempt in range(6):
             try:
                 os.replace(temporary, self.manifest_path)
+                self._dirty_records = 0
                 return
             except PermissionError:
                 if attempt == 5:
@@ -90,7 +95,12 @@ class FeatureStore:
             safe_id = record_id.replace("/", "__").replace("\\", "__")
             relative = Path(folder) / f"{safe_id}.safetensors"
             destination = self.root / relative
-            clean = {key: value.detach().contiguous().cpu() for key, value in tensors.items()}
+            # Own the storage: teacher tensors may originate from a memory-mapped
+            # checkpoint whose Safetensors handle closes immediately after capture.
+            clean = {
+                key: value.detach().to(device="cpu").contiguous().clone()
+                for key, value in tensors.items()
+            }
             temporary = destination.with_suffix(".tmp")
             save_file(clean, str(temporary))
             os.replace(temporary, destination)
@@ -98,7 +108,9 @@ class FeatureStore:
                 record_id, relative.as_posix(), kind, sample_id, split, metadata or {}
             )
             self._manifest["records"][record_id] = entry.__dict__
-            self._flush()
+            self._dirty_records += 1
+            if self._dirty_records >= self._flush_every:
+                self._flush()
             return True
 
     def records(

@@ -1,0 +1,265 @@
+{
+  "milestone": "M2 \u2014 Teacher Structural Compressibility & Temporal Redundancy Study",
+  "decision": "PARTIAL",
+  "criteria": {
+    "validation_activation_cosine": {
+      "value": 0.9277784874041876,
+      "threshold": 0.995,
+      "passed": false
+    },
+    "normalized_activation_error": {
+      "value": 0.32820309620971483,
+      "threshold": 0.05,
+      "passed": false
+    },
+    "compression_ratio": {
+      "value": 5.085039191684066,
+      "threshold": 3.0,
+      "passed": true
+    },
+    "reuse_predict_coverage": {
+      "value": 0.0,
+      "threshold": 0.4,
+      "passed": false
+    },
+    "scene_low_rank_energy": {
+      "value": 0.8236891955137253,
+      "threshold": 0.6,
+      "passed": true
+    }
+  },
+  "questions": {
+    "shared_basis_promising": false,
+    "best_acceptable_compression_ratio": null,
+    "best_projection_families": [
+      "ff-in",
+      "attn.k",
+      "attn.q",
+      "ff-out",
+      "attn.v",
+      "attn.out"
+    ],
+    "most_sensitive_layers": [
+      "block.45.attn.out",
+      "block.41.attn.out",
+      "block.38.ff.out",
+      "block.40.ff.out",
+      "block.43.attn.out",
+      "block.41.ff.out",
+      "block.35.ff.out",
+      "block.45.attn.v",
+      "block.34.ff.out",
+      "block.40.attn.out"
+    ],
+    "median_adjacent_residual_drift": 0.385529525578022,
+    "cache_rate_at_largest_threshold": 0.5095238095238095,
+    "reuse_predict_coverage": 0.0,
+    "scene_rank1_energy": 0.8236891955137253,
+    "proceed_to_full_distillation": false
+  },
+  "limitations": {
+    "memory_skipped_candidate_count": 16,
+    "memory_skipped_projection_families": [
+      "ff-in",
+      "ff-out"
+    ],
+    "memory_skip_reason": "The dense reference fitter exceeded the configured 18-GiB fitting budget; these families require a streamed or randomized solver before they can be judged."
+  },
+  "best_candidate": {
+    "family": "ff-in",
+    "basis_count": 3,
+    "rank": 64,
+    "compression_ratio": 5.085039191684066,
+    "validation_mean_relative_error": 0.32820309620971483,
+    "validation_mean_cosine": 0.9277784874041876,
+    "artifact": "artifacts\\m2\\ltx25_22b\\reports\\adaptive_fits\\ff-in_16384x4096_adaptive.safetensors",
+    "selection_policy": "lowest held-out activation error because no candidate met fidelity thresholds"
+  },
+  "scientific_scope": {
+    "weight_reconstruction": true,
+    "held_out_activation_reconstruction": true,
+    "local_teacher_behavior": true,
+    "full_generation_quality": false,
+    "warning": "This decision does not establish perceptual equivalence."
+  },
+  "provenance": {
+    "commit_sha": "f2be399ae2896d06c5393abd0bc90bed41b8f7b8",
+    "teacher": {
+      "adapter": "official-ltx-2.5-block-streaming",
+      "model_identifier": "Lightricks/LTX-2.5::ltx-2.5-22b-distilled-transformer-bf16.safetensors",
+      "model_version": "2.5.0",
+      "checkpoint": "C:\\Users\\rashm\\AppData\\Local\\Comfy-Desktop\\ComfyUI-Shared\\models\\diffusion_models\\ltx-2.5-22b-distilled-transformer-bf16.safetensors",
+      "checkpoint_bytes": 42018190584,
+      "checkpoint_weight_dtype": "bfloat16",
+      "device": "cuda",
+      "compute_dtype": "bfloat16",
+      "dtype": "bfloat16",
+      "offload_mode": "disk",
+      "block_count": 48,
+      "projection_count": 1344,
+      "transformer_class": "AVTransformer3DModel",
+      "scheduler_config": {
+        "_class_name": "RectifiedFlowScheduler",
+        "_diffusers_version": "0.25.1",
+        "num_train_timesteps": 1000,
+        "shifting": null,
+        "base_resolution": null,
+        "sampler": "LinearQuadratic"
+      },
+      "distilled_sigma_values": [
+        1.0,
+        0.99375,
+        0.9875,
+        0.98125,
+        0.975,
+        0.909375,
+        0.725,
+        0.421875,
+        0.0
+      ],
+      "torch_version": "2.10.0+cu130",
+      "transformers_version": "5.14.1",
+      "python_version": "3.11.14"
+    },
+    "seed": 1337,
+    "hardware": {
+      "gpu": "NVIDIA GeForce RTX 5090 Laptop GPU",
+      "vram_bytes": 25650855936,
+      "platform": "Windows-10-10.0.26200-SP0"
+    },
+    "dtype": "bfloat16",
+    "config": {
+      "teacher": {
+        "type": "ltx25",
+        "model_id": "Lightricks/LTX-2.5",
+        "revision": null,
+        "model_root": "%LOCALAPPDATA%/Comfy-Desktop/ComfyUI-Shared/models",
+        "transformer_file": "diffusion_models/ltx-2.5-22b-distilled-transformer-bf16.safetensors",
+        "text_encoder_file": "text_encoders/gemma4-12b-with-proj-ltx-2.5-bf16.safetensors",
+        "video_vae_file": "vae/ltx-2.5-video-vae-bf16.safetensors",
+        "audio_vae_file": "vae/ltx-2.5-audio-vae-bf16.safetensors",
+        "spatial_upsampler_file": "latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
+        "duration_head_file": "model_patches/ltx-2.5-duration-head-bf16.safetensors",
+        "ltx_repo_path": ".vendor/LTX-2",
+        "offload_mode": "disk",
+        "dtype": "bfloat16",
+        "device": "cuda",
+        "local_files_only": true,
+        "max_capture_tokens": 32,
+        "capture_blocks": [
+          0,
+          12,
+          24,
+          36,
+          47
+        ],
+        "projection_families": [
+          "attn.q",
+          "attn.k",
+          "attn.v",
+          "attn.out",
+          "ff.in",
+          "ff.out"
+        ]
+      },
+      "data": {
+        "prompts_file": "configs/m2_prompts.txt",
+        "num_train_prompts": 4,
+        "num_eval_prompts": 2,
+        "seed": 1337
+      },
+      "generation": {
+        "frames": 9,
+        "height": 256,
+        "width": 256,
+        "steps": 8,
+        "guidance_scale": 1.0,
+        "max_sequence_length": 128
+      },
+      "compression": {
+        "basis_counts": [
+          2,
+          4
+        ],
+        "ranks": [
+          0,
+          4,
+          8,
+          16
+        ],
+        "initialization": "pca",
+        "fit_steps": 0,
+        "activation_fit_steps": 100,
+        "learning_rate": 0.001,
+        "lambda_weight": 0.1,
+        "lambda_activation": 1.0,
+        "alpha_sparsity": 0.0,
+        "residual_magnitude": 0.0,
+        "basis_orthogonality": 0.0,
+        "max_fit_vram_gb": 18.0,
+        "streamed_row_chunk_size": 32
+      },
+      "temporal": {
+        "reuse_thresholds": [
+          0.001,
+          0.0025,
+          0.005,
+          0.01,
+          0.02,
+          0.05,
+          0.1
+        ],
+        "reuse_threshold": 0.02,
+        "predict_threshold": 0.05,
+        "predictor_steps": 200,
+        "predictor_learning_rate": 0.001,
+        "delta_ranks": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32
+        ],
+        "delta_local_error": 0.05,
+        "delta_useful_coverage": 0.4,
+        "delta_flop_reduction": 0.25,
+        "delta_min_compression_ratio": 3.0
+      },
+      "scene_motion": {
+        "pca_ranks": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "lowpass_alpha": 0.8
+      },
+      "recovery": {
+        "global_basis_count": 1,
+        "group_basis_count": 3,
+        "group_count": 4,
+        "minimum_group_size": 4,
+        "residual_rank_tiers": [
+          32,
+          64,
+          128,
+          256
+        ],
+        "target_compression_ratio": 3.0
+      },
+      "acceptance": {
+        "validation_activation_cosine": 0.995,
+        "normalized_activation_error": 0.05,
+        "compression_ratio": 3.0,
+        "reuse_predict_coverage": 0.4,
+        "scene_low_rank_energy": 0.6
+      },
+      "output_dir": "artifacts/m2/ltx25_22b"
+    },
+    "sample_counts": {
+      "train": 4,
+      "eval": 2
+    }
+  }
+}

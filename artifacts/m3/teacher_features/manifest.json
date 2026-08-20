@@ -1,0 +1,43 @@
+{
+  "format": "mirage_m3_teacher_signature_v1",
+  "source": "artifacts/m2/ltx25_22b",
+  "samples": [
+    {
+      "sample_id": "eval-00004",
+      "split": "eval",
+      "teacher_feature": "eval-00004.safetensors",
+      "records_aggregated": 200
+    },
+    {
+      "sample_id": "eval-00005",
+      "split": "eval",
+      "teacher_feature": "eval-00005.safetensors",
+      "records_aggregated": 200
+    },
+    {
+      "sample_id": "train-00000",
+      "split": "train",
+      "teacher_feature": "train-00000.safetensors",
+      "records_aggregated": 200
+    },
+    {
+      "sample_id": "train-00001",
+      "split": "train",
+      "teacher_feature": "train-00001.safetensors",
+      "records_aggregated": 200
+    },
+    {
+      "sample_id": "train-00002",
+      "split": "train",
+      "teacher_feature": "train-00002.safetensors",
+      "records_aggregated": 200
+    },
+    {
+      "sample_id": "train-00003",
+      "split": "train",
+      "teacher_feature": "train-00003.safetensors",
+      "records_aggregated": 200
+    }
+  ],
+  "teacher_required_at_training_or_runtime": false
+}

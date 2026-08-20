@@ -44,7 +44,10 @@ def run_scene_motion_probe(config: M2Config) -> dict[str, Any]:
     per_layer: dict[int, list[dict[str, Any]]] = defaultdict(list)
     scenes: dict[tuple[str, int], list[tuple[int, torch.Tensor]]] = defaultdict(list)
     for record in store.records(kind="activation"):
-        if record.metadata.get("hook") != "block_output":
+        if (
+            record.metadata.get("hook") != "block_output"
+            or record.metadata.get("modality") != "video"
+        ):
             continue
         block = int(record.metadata["block_index"])
         value = _reshape_temporal(store.load(record)["value"], record.metadata)

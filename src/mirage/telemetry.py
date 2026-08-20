@@ -62,9 +62,14 @@ def parameter_bytes(module: torch.nn.Module) -> int:
     return sum(p.numel() * p.element_size() for p in module.parameters())
 
 
+def resident_state_bytes(module: torch.nn.Module) -> int:
+    """Parameters plus persistent buffers, including packed quantized weights."""
+    return sum(value.numel() * value.element_size() for value in module.state_dict().values())
+
+
 def estimate_resident_bytes(module: torch.nn.Module, config, batch_size: int = 1) -> int:
     """Conservative parameter + live activation estimate, not allocator reservation."""
-    params = parameter_bytes(module)
+    params = resident_state_bytes(module)
     bytes_per = 4 if config.precision == "fp32" else 2
     tokens = config.video_tokens + config.text_tokens
     activations = batch_size * tokens * config.hidden_size * bytes_per

@@ -1,0 +1,62 @@
+{
+  "milestone": "M3 \u2014 MIRAGE behavior distillation and trainable generative model",
+  "status": "ACTIVE / FOUNDATION PASS",
+  "m3_gate": "NOT PASSED",
+  "foundation_criteria": {
+    "trainable_checkpoint": true,
+    "flow_training_executed": true,
+    "ema_checkpoint": true,
+    "independent_default_backend": true,
+    "heterogeneous_int4_int8_inference": true,
+    "teacher_free_inference": true,
+    "cache_predict_disabled": true,
+    "inference_under_budget": true,
+    "held_out_trained_outputs": true,
+    "offline_teacher_features": true,
+    "checkpoint_provenance": true
+  },
+  "final_acceptance": {
+    "real_video_audio_corpus_training": false,
+    "coherent_video_quality_gate": false,
+    "full_quality_suite": false,
+    "matched_budget_ablation_suite": false
+  },
+  "training_summary": {
+    "steps": 20,
+    "first_flow_loss": 2.2877211570739746,
+    "last_flow_loss": 1.20717191696167,
+    "peak_training_vram_bytes": 52386816
+  },
+  "inference_summary": {
+    "resident_estimate_bytes": 4290560,
+    "budget_bytes": 21474836480,
+    "teacher_dependency": false,
+    "cpu_offload": false,
+    "cache_predict": false
+  },
+  "provenance": {
+    "format": "mirage_provenance_v1",
+    "config_sha256": "41d55f5386e767107c145feb7cb805c6bfcafeb194673649a486361140122126",
+    "dataset": {
+      "manifest": "synthetic://mirage-smoke",
+      "synthetic": true,
+      "sha256": "68865fbed8c887f738ef456b4d2125459ec252fafc3214d4a50624820f58fde5"
+    },
+    "teacher_features": {
+      "root": "artifacts\\m3\\teacher_features",
+      "exists": true,
+      "sha256": "e45ff8ad2018671d71705ffb58f956f0e75655506e589344f8304aea304b0364",
+      "files": 7
+    },
+    "code": {
+      "git_commit": "f2be399ae2896d06c5393abd0bc90bed41b8f7b8",
+      "git_dirty": true,
+      "code_snapshot_sha256": "03468909c094be642da366081403ef0181c4eb46e642c749107fe80665d1c39a",
+      "code_files": 65
+    },
+    "model_state_sha256": "1dabc7121d44a39d896836ac3fab50b20d54490d6914e4d50edcce96ca848a5a",
+    "checkpoint_sha256": "e8093b506bacae2761bf0dd217efd3a4d3a81b1ee6a08d4da9afcbfaaed0d0bf",
+    "sidecar": "artifacts\\m3\\mirage-s-smoke\\last.pt.provenance.json"
+  },
+  "next": "Train on the fixed real AV corpus with aligned offline teacher signatures, then run the matched-budget independent/shared-basis and scene-decomposition ablations."
+}

@@ -43,3 +43,27 @@ class SparseSelfAttention(nn.Module):
         out = F.scaled_dot_product_attention(q, k, v, attn_mask=bias[None, None])
         density = allowed.float().mean().item()
         return self.out(out.transpose(1, 2).reshape(b, n, -1)), density
+
+
+class IndependentSparseSelfAttention(nn.Module):
+    """M2-selected independent-weight sparse attention baseline."""
+
+    def __init__(self, width: int, heads: int):
+        super().__init__()
+        self.heads = heads
+        self.head_dim = width // heads
+        self.q = nn.Linear(width, width)
+        self.k = nn.Linear(width, width)
+        self.v = nn.Linear(width, width)
+        self.out = nn.Linear(width, width)
+
+    def forward(self, x: torch.Tensor, allowed: torch.Tensor) -> tuple[torch.Tensor, float]:
+        b, n, _ = x.shape
+        shape = (b, n, self.heads, self.head_dim)
+        q = self.q(x).view(shape).transpose(1, 2)
+        k = self.k(x).view(shape).transpose(1, 2)
+        v = self.v(x).view(shape).transpose(1, 2)
+        bias = torch.zeros_like(allowed, dtype=q.dtype).masked_fill(~allowed, float("-inf"))
+        out = F.scaled_dot_product_attention(q, k, v, attn_mask=bias[None, None])
+        density = allowed.float().mean().item()
+        return self.out(out.transpose(1, 2).reshape(b, n, -1)), density

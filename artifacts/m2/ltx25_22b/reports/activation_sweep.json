@@ -1,0 +1,162 @@
+{
+  "completed": 31,
+  "skipped_existing": 1,
+  "seconds": 150.47289940000337,
+  "results": [
+    {
+      "artifact": "reports\\basis_fits\\attn-k_4096x4096_k2_r0.safetensors",
+      "validation_mean_relative_error": 0.9620620029357573,
+      "validation_mean_cosine": 0.06037197775731329
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-k_4096x4096_k2_r4.safetensors",
+      "validation_mean_relative_error": 0.6773340126189092,
+      "validation_mean_cosine": 0.7033502589911222
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-k_4096x4096_k2_r8.safetensors",
+      "validation_mean_relative_error": 0.6210266117316982,
+      "validation_mean_cosine": 0.7616021695236365
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-k_4096x4096_k2_r16.safetensors",
+      "validation_mean_relative_error": 0.569442028257375,
+      "validation_mean_cosine": 0.8038912303745747
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-k_4096x4096_k4_r0.safetensors",
+      "validation_mean_relative_error": 0.9301525937238088,
+      "validation_mean_cosine": 0.12630978003047252
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-k_4096x4096_k4_r4.safetensors",
+      "validation_mean_relative_error": 0.6557823728071526,
+      "validation_mean_cosine": 0.7178389883289734
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-k_4096x4096_k4_r8.safetensors",
+      "validation_mean_relative_error": 0.5998042681409667,
+      "validation_mean_cosine": 0.7735926248133183
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-k_4096x4096_k4_r16.safetensors",
+      "validation_mean_relative_error": 0.5506558134608591,
+      "validation_mean_cosine": 0.8131356313824654
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-out_4096x4096_k2_r0.safetensors",
+      "validation_mean_relative_error": 0.9590344907677112,
+      "validation_mean_cosine": 0.04583447244416069
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-out_4096x4096_k2_r4.safetensors",
+      "validation_mean_relative_error": 0.9305876437962676,
+      "validation_mean_cosine": 0.23815717656786242
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-out_4096x4096_k2_r8.safetensors",
+      "validation_mean_relative_error": 0.9146116368744212,
+      "validation_mean_cosine": 0.3013021632408102
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-out_4096x4096_k2_r16.safetensors",
+      "validation_mean_relative_error": 0.8872046161365384,
+      "validation_mean_cosine": 0.37678256692985695
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-out_4096x4096_k4_r0.safetensors",
+      "validation_mean_relative_error": 0.9197081797174178,
+      "validation_mean_cosine": 0.09056313494511414
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-out_4096x4096_k4_r4.safetensors",
+      "validation_mean_relative_error": 0.8921530521474779,
+      "validation_mean_cosine": 0.2724547893740237
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-out_4096x4096_k4_r8.safetensors",
+      "validation_mean_relative_error": 0.8767958673803756,
+      "validation_mean_cosine": 0.33255788528670865
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-out_4096x4096_k4_r16.safetensors",
+      "validation_mean_relative_error": 0.8500054236113405,
+      "validation_mean_cosine": 0.40576907278349
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-q_4096x4096_k2_r0.safetensors",
+      "validation_mean_relative_error": 0.9601942643057555,
+      "validation_mean_cosine": 0.05437677633775214
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-q_4096x4096_k2_r4.safetensors",
+      "validation_mean_relative_error": 0.7043214448106786,
+      "validation_mean_cosine": 0.6826087894539038
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-q_4096x4096_k2_r8.safetensors",
+      "validation_mean_relative_error": 0.6628417492223283,
+      "validation_mean_cosine": 0.7265414459009966
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-q_4096x4096_k2_r16.safetensors",
+      "validation_mean_relative_error": 0.6144527240733927,
+      "validation_mean_cosine": 0.7713925341765085
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-q_4096x4096_k4_r0.safetensors",
+      "validation_mean_relative_error": 0.9277658379869536,
+      "validation_mean_cosine": 0.11362813245796133
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-q_4096x4096_k4_r4.safetensors",
+      "validation_mean_relative_error": 0.6787399333940508,
+      "validation_mean_cosine": 0.6997804225732883
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-q_4096x4096_k4_r8.safetensors",
+      "validation_mean_relative_error": 0.6381744873360731,
+      "validation_mean_cosine": 0.7417386546730995
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-v_4096x4096_k2_r0.safetensors",
+      "validation_mean_relative_error": 0.9593217972821245,
+      "validation_mean_cosine": 0.04645243142203981
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-v_4096x4096_k2_r4.safetensors",
+      "validation_mean_relative_error": 0.9269669514227038,
+      "validation_mean_cosine": 0.2766419928520918
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-v_4096x4096_k2_r8.safetensors",
+      "validation_mean_relative_error": 0.9045775311145311,
+      "validation_mean_cosine": 0.34772758713612956
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-v_4096x4096_k2_r16.safetensors",
+      "validation_mean_relative_error": 0.8693552707942823,
+      "validation_mean_cosine": 0.43266821280121803
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-v_4096x4096_k4_r0.safetensors",
+      "validation_mean_relative_error": 0.9275033486774191,
+      "validation_mean_cosine": 0.09809925762298614
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-v_4096x4096_k4_r4.safetensors",
+      "validation_mean_relative_error": 0.8958265510542939,
+      "validation_mean_cosine": 0.3148135766386986
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-v_4096x4096_k4_r8.safetensors",
+      "validation_mean_relative_error": 0.8739589818093615,
+      "validation_mean_cosine": 0.382834544715782
+    },
+    {
+      "artifact": "reports\\basis_fits\\attn-v_4096x4096_k4_r16.safetensors",
+      "validation_mean_relative_error": 0.8394575963417689,
+      "validation_mean_cosine": 0.46423711876074475
+    }
+  ]
+}

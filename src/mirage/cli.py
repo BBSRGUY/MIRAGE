@@ -36,21 +36,56 @@ def build_parser() -> argparse.ArgumentParser:
     for name in (
         "teacher-extract",
         "m2-basis-sweep",
+        "m2-activation-sweep",
         "m2-temporal-probe",
         "m2-cache-analysis",
         "m2-predictor-fit",
         "m2-scene-motion",
         "m2-report",
+        "m21-adaptive-fit",
+        "m21-adaptive-activation-sweep",
+        "m21-delta-spectrum",
+        "m21-report",
+        "m22-residual-spectrum",
+        "m22-sparse-study",
+        "m22-independent-study",
+        "m22-allocate",
+        "m22-block-replay",
+        "m22-report",
     ):
         item = sub.add_parser(name)
         item.add_argument("--config", default="configs/m2_ltx_teacher.json")
-        if name in {"m2-basis-sweep", "m2-predictor-fit"}:
+        if name in {
+            "m2-basis-sweep",
+            "m2-activation-sweep",
+            "m2-predictor-fit",
+            "m21-adaptive-fit",
+            "m21-adaptive-activation-sweep",
+            "m22-residual-spectrum",
+            "m22-sparse-study",
+            "m22-independent-study",
+            "m22-block-replay",
+        }:
             item.add_argument("--device")
+        if name == "m21-adaptive-activation-sweep":
+            item.add_argument("--behavior-fit", action="store_true")
     activation = sub.add_parser("m2-activation-fit")
     activation.add_argument("--config", default="configs/m2_ltx_teacher.json")
     activation.add_argument("--artifact", required=True)
     activation.add_argument("--device")
     activation.add_argument("--behavior-fit", action="store_true")
+    m3_train = sub.add_parser("m3-train")
+    m3_train.add_argument("--config", default="configs/m3_mirage_s.json")
+    m3_train.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
+    m3_eval = sub.add_parser("m3-eval")
+    m3_eval.add_argument("--config", default="configs/m3_mirage_s.json")
+    m3_eval.add_argument("--checkpoint", required=True)
+    m3_eval.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
+    m3_features = sub.add_parser("m3-build-teacher-features")
+    m3_features.add_argument("--config", default="configs/m3_mirage_s.json")
+    m3_features.add_argument("--m2-root", default="artifacts/m2/ltx25_22b")
+    m3_report = sub.add_parser("m3-report")
+    m3_report.add_argument("--config", default="configs/m3_mirage_s.json")
     return parser
 
 
@@ -154,6 +189,10 @@ def run_m2(args: argparse.Namespace) -> int:
         result = run_activation_reconstruction(
             config, args.artifact, behavior_fit=args.behavior_fit, device=args.device
         )
+    elif args.command == "m2-activation-sweep":
+        from .experiments.activation_reconstruction import run_activation_sweep
+
+        result = run_activation_sweep(config, args.device)
     elif args.command == "m2-temporal-probe":
         from .experiments.temporal_redundancy import run_temporal_probe
 
@@ -170,6 +209,48 @@ def run_m2(args: argparse.Namespace) -> int:
         from .experiments.scene_motion_probe import run_scene_motion_probe
 
         result = run_scene_motion_probe(config)
+    elif args.command == "m21-adaptive-fit":
+        from .experiments.adaptive_compression import run_adaptive_compression
+
+        result = run_adaptive_compression(config, args.device)
+    elif args.command == "m21-adaptive-activation-sweep":
+        from .experiments.adaptive_compression import run_adaptive_activation_sweep
+
+        result = run_adaptive_activation_sweep(
+            config, args.device, behavior_fit=args.behavior_fit
+        )
+    elif args.command == "m21-delta-spectrum":
+        from .experiments.delta_spectrum import run_delta_spectrum
+
+        result = run_delta_spectrum(config)
+    elif args.command == "m21-report":
+        from .experiments.recovery_report import generate_m21_report
+
+        result = generate_m21_report(config)
+    elif args.command == "m22-residual-spectrum":
+        from .experiments.residual_spectrum import run_residual_spectrum
+
+        result = run_residual_spectrum(config, args.device)
+    elif args.command == "m22-sparse-study":
+        from .experiments.sparse_residual import run_sparse_residual_study
+
+        result = run_sparse_residual_study(config, args.device)
+    elif args.command == "m22-independent-study":
+        from .experiments.independent_precision import run_independent_precision_study
+
+        result = run_independent_precision_study(config, args.device)
+    elif args.command == "m22-allocate":
+        from .experiments.heterogeneous_allocator import run_heterogeneous_allocation
+
+        result = run_heterogeneous_allocation(config)
+    elif args.command == "m22-block-replay":
+        from .experiments.block_replay import run_block_replay
+
+        result = run_block_replay(config, args.device)
+    elif args.command == "m22-report":
+        from .experiments.m22_decision import generate_m22_decision
+
+        result = generate_m22_decision(config)
     else:
         from .experiments.report import generate_m2_report
 
@@ -180,6 +261,28 @@ def run_m2(args: argparse.Namespace) -> int:
 
 def main() -> int:
     args = build_parser().parse_args()
+    if args.command.startswith("m3-"):
+        from .m3_config import M3Config
+
+        config = M3Config.from_json(args.config)
+        if args.command == "m3-train":
+            from .training import train_m3
+
+            result = train_m3(config, args.device)
+        elif args.command == "m3-eval":
+            from .training import evaluate_m3
+
+            result = evaluate_m3(config, args.checkpoint, args.device)
+        elif args.command == "m3-build-teacher-features":
+            from .experiments.m3_teacher_features import build_m3_teacher_features
+
+            result = build_m3_teacher_features(config, args.m2_root)
+        else:
+            from .experiments.m3_status import generate_m3_status
+
+            result = generate_m3_status(config)
+        print(json.dumps(result, indent=2, default=str))
+        return 0
     if args.command == "doctor":
         return doctor()
     if args.command == "generate":

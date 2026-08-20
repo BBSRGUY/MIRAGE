@@ -1,0 +1,5371 @@
+{
+  "teacher": "Lightricks/LTX-2.5",
+  "held_out_only": true,
+  "scale_storage": "BF16 per output row for 8-bit; BF16 per 64 input values for INT4",
+  "families": {
+    "attn.k": {
+      "summary": {
+        "INT4_GROUP64": {
+          "stored_bytes": 427819008,
+          "compression_ratio": 3.764705882352941,
+          "mean_activation_error": 0.05551618260021011,
+          "mean_activation_cosine": 0.9983963010211786
+        },
+        "INT8_ROW": {
+          "stored_bytes": 805699584,
+          "compression_ratio": 1.9990239141044412,
+          "mean_activation_error": 0.005810818256577477,
+          "mean_activation_cosine": 0.9999821707606316
+        },
+        "FP8_ROW": {
+          "stored_bytes": 805699584,
+          "compression_ratio": 1.9990239141044412,
+          "mean_activation_error": 0.0139127610794579,
+          "mean_activation_cosine": 0.9999005533754826
+        }
+      },
+      "layers": {
+        "INT4_GROUP64": [
+          {
+            "layer": "block.00.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.03698168694972992,
+            "activation_cosine": 0.9993159770965576
+          },
+          {
+            "layer": "block.01.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.024693969637155533,
+            "activation_cosine": 0.9996950626373291
+          },
+          {
+            "layer": "block.02.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.03796207904815674,
+            "activation_cosine": 0.9992812871932983
+          },
+          {
+            "layer": "block.03.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.03683864325284958,
+            "activation_cosine": 0.9993237853050232
+          },
+          {
+            "layer": "block.04.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.043395403772592545,
+            "activation_cosine": 0.9990640878677368
+          },
+          {
+            "layer": "block.05.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.02952796220779419,
+            "activation_cosine": 0.9995646476745605
+          },
+          {
+            "layer": "block.06.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.040595643222332,
+            "activation_cosine": 0.9991760849952698
+          },
+          {
+            "layer": "block.07.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.04856530576944351,
+            "activation_cosine": 0.9988215565681458
+          },
+          {
+            "layer": "block.08.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.044664811342954636,
+            "activation_cosine": 0.9990040063858032
+          },
+          {
+            "layer": "block.09.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.04943513497710228,
+            "activation_cosine": 0.998779296875
+          },
+          {
+            "layer": "block.10.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.04938063770532608,
+            "activation_cosine": 0.9987837076187134
+          },
+          {
+            "layer": "block.11.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.054737068712711334,
+            "activation_cosine": 0.9985055327415466
+          },
+          {
+            "layer": "block.12.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05291790887713432,
+            "activation_cosine": 0.9986028671264648
+          },
+          {
+            "layer": "block.13.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05317729711532593,
+            "activation_cosine": 0.9985891580581665
+          },
+          {
+            "layer": "block.14.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.0519142746925354,
+            "activation_cosine": 0.9986553192138672
+          },
+          {
+            "layer": "block.15.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.04847321659326553,
+            "activation_cosine": 0.998826265335083
+          },
+          {
+            "layer": "block.16.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.04955750331282616,
+            "activation_cosine": 0.9987763166427612
+          },
+          {
+            "layer": "block.17.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.051837194710969925,
+            "activation_cosine": 0.9986593723297119
+          },
+          {
+            "layer": "block.18.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.0485718660056591,
+            "activation_cosine": 0.9988226890563965
+          },
+          {
+            "layer": "block.19.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05057747662067413,
+            "activation_cosine": 0.9987233877182007
+          },
+          {
+            "layer": "block.20.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.049456946551799774,
+            "activation_cosine": 0.9987826347351074
+          },
+          {
+            "layer": "block.21.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.0477883405983448,
+            "activation_cosine": 0.9988616704940796
+          },
+          {
+            "layer": "block.22.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05115882307291031,
+            "activation_cosine": 0.9986931085586548
+          },
+          {
+            "layer": "block.23.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05490890517830849,
+            "activation_cosine": 0.9984979629516602
+          },
+          {
+            "layer": "block.24.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05751575902104378,
+            "activation_cosine": 0.9983506202697754
+          },
+          {
+            "layer": "block.25.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.058091480284929276,
+            "activation_cosine": 0.9983197450637817
+          },
+          {
+            "layer": "block.26.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06249978765845299,
+            "activation_cosine": 0.9980546236038208
+          },
+          {
+            "layer": "block.27.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06520866602659225,
+            "activation_cosine": 0.9978839159011841
+          },
+          {
+            "layer": "block.28.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06562343239784241,
+            "activation_cosine": 0.9978553652763367
+          },
+          {
+            "layer": "block.29.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06313568353652954,
+            "activation_cosine": 0.9980137944221497
+          },
+          {
+            "layer": "block.30.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06849252432584763,
+            "activation_cosine": 0.9976639151573181
+          },
+          {
+            "layer": "block.31.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06810653209686279,
+            "activation_cosine": 0.9976905584335327
+          },
+          {
+            "layer": "block.32.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06816573441028595,
+            "activation_cosine": 0.9976872801780701
+          },
+          {
+            "layer": "block.33.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.0662580281496048,
+            "activation_cosine": 0.9978139400482178
+          },
+          {
+            "layer": "block.34.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06631987541913986,
+            "activation_cosine": 0.997808575630188
+          },
+          {
+            "layer": "block.35.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06134147197008133,
+            "activation_cosine": 0.998123288154602
+          },
+          {
+            "layer": "block.36.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06693732738494873,
+            "activation_cosine": 0.9977664351463318
+          },
+          {
+            "layer": "block.37.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05477549508213997,
+            "activation_cosine": 0.9985041618347168
+          },
+          {
+            "layer": "block.38.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06469498574733734,
+            "activation_cosine": 0.9979124069213867
+          },
+          {
+            "layer": "block.39.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06069129705429077,
+            "activation_cosine": 0.9981661438941956
+          },
+          {
+            "layer": "block.40.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06409262865781784,
+            "activation_cosine": 0.997951865196228
+          },
+          {
+            "layer": "block.41.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.0702097937464714,
+            "activation_cosine": 0.9975467920303345
+          },
+          {
+            "layer": "block.42.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.07302374392747879,
+            "activation_cosine": 0.997345507144928
+          },
+          {
+            "layer": "block.43.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.07387714833021164,
+            "activation_cosine": 0.9972831010818481
+          },
+          {
+            "layer": "block.44.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.07410366833209991,
+            "activation_cosine": 0.9972695112228394
+          },
+          {
+            "layer": "block.45.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.07487735152244568,
+            "activation_cosine": 0.9972072839736938
+          },
+          {
+            "layer": "block.46.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05249599367380142,
+            "activation_cosine": 0.9986249804496765
+          },
+          {
+            "layer": "block.47.attn.k",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05712025612592697,
+            "activation_cosine": 0.9983728528022766
+          }
+        ],
+        "INT8_ROW": [
+          {
+            "layer": "block.00.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004128637723624706,
+            "activation_cosine": 0.9999915361404419
+          },
+          {
+            "layer": "block.01.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.003028071252629161,
+            "activation_cosine": 0.9999953508377075
+          },
+          {
+            "layer": "block.02.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.003956128843128681,
+            "activation_cosine": 0.9999921321868896
+          },
+          {
+            "layer": "block.03.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0038107442669570446,
+            "activation_cosine": 0.999992847442627
+          },
+          {
+            "layer": "block.04.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004267955664545298,
+            "activation_cosine": 0.9999910593032837
+          },
+          {
+            "layer": "block.05.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.003028240753337741,
+            "activation_cosine": 0.9999953508377075
+          },
+          {
+            "layer": "block.06.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.003987329080700874,
+            "activation_cosine": 0.9999920725822449
+          },
+          {
+            "layer": "block.07.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004581072833389044,
+            "activation_cosine": 0.9999895095825195
+          },
+          {
+            "layer": "block.08.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004126949235796928,
+            "activation_cosine": 0.9999914765357971
+          },
+          {
+            "layer": "block.09.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0047267647460103035,
+            "activation_cosine": 0.9999887347221375
+          },
+          {
+            "layer": "block.10.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004622814245522022,
+            "activation_cosine": 0.9999893307685852
+          },
+          {
+            "layer": "block.11.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005015041679143906,
+            "activation_cosine": 0.9999874234199524
+          },
+          {
+            "layer": "block.12.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005049492232501507,
+            "activation_cosine": 0.9999873042106628
+          },
+          {
+            "layer": "block.13.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005101138725876808,
+            "activation_cosine": 0.999987006187439
+          },
+          {
+            "layer": "block.14.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004916436970233917,
+            "activation_cosine": 0.9999879002571106
+          },
+          {
+            "layer": "block.15.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004851228557527065,
+            "activation_cosine": 0.9999881386756897
+          },
+          {
+            "layer": "block.16.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005070100538432598,
+            "activation_cosine": 0.9999871850013733
+          },
+          {
+            "layer": "block.17.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005030267406255007,
+            "activation_cosine": 0.9999873042106628
+          },
+          {
+            "layer": "block.18.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00509188836440444,
+            "activation_cosine": 0.999987006187439
+          },
+          {
+            "layer": "block.19.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005073559936136007,
+            "activation_cosine": 0.9999871253967285
+          },
+          {
+            "layer": "block.20.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005047283135354519,
+            "activation_cosine": 0.9999873042106628
+          },
+          {
+            "layer": "block.21.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005066059064120054,
+            "activation_cosine": 0.9999872446060181
+          },
+          {
+            "layer": "block.22.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005452881567180157,
+            "activation_cosine": 0.9999852180480957
+          },
+          {
+            "layer": "block.23.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005763314198702574,
+            "activation_cosine": 0.9999833106994629
+          },
+          {
+            "layer": "block.24.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005765288136899471,
+            "activation_cosine": 0.9999833106994629
+          },
+          {
+            "layer": "block.25.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006055052857846022,
+            "activation_cosine": 0.9999816417694092
+          },
+          {
+            "layer": "block.26.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006313724908977747,
+            "activation_cosine": 0.9999801516532898
+          },
+          {
+            "layer": "block.27.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00664102379232645,
+            "activation_cosine": 0.9999779462814331
+          },
+          {
+            "layer": "block.28.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0067477039992809296,
+            "activation_cosine": 0.9999772310256958
+          },
+          {
+            "layer": "block.29.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0066460915841162205,
+            "activation_cosine": 0.9999777674674988
+          },
+          {
+            "layer": "block.30.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007087106350809336,
+            "activation_cosine": 0.9999748468399048
+          },
+          {
+            "layer": "block.31.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007107914891093969,
+            "activation_cosine": 0.9999747276306152
+          },
+          {
+            "layer": "block.32.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006988054607063532,
+            "activation_cosine": 0.9999755620956421
+          },
+          {
+            "layer": "block.33.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0068916077725589275,
+            "activation_cosine": 0.9999762773513794
+          },
+          {
+            "layer": "block.34.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006638002581894398,
+            "activation_cosine": 0.9999779462814331
+          },
+          {
+            "layer": "block.35.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006425767671316862,
+            "activation_cosine": 0.9999793171882629
+          },
+          {
+            "layer": "block.36.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006910473108291626,
+            "activation_cosine": 0.9999761581420898
+          },
+          {
+            "layer": "block.37.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006219340022653341,
+            "activation_cosine": 0.9999807476997375
+          },
+          {
+            "layer": "block.38.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00700469920411706,
+            "activation_cosine": 0.9999755024909973
+          },
+          {
+            "layer": "block.39.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0068414523266255856,
+            "activation_cosine": 0.9999765753746033
+          },
+          {
+            "layer": "block.40.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007281400728970766,
+            "activation_cosine": 0.9999734163284302
+          },
+          {
+            "layer": "block.41.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007907832972705364,
+            "activation_cosine": 0.9999686479568481
+          },
+          {
+            "layer": "block.42.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008118337951600552,
+            "activation_cosine": 0.9999671578407288
+          },
+          {
+            "layer": "block.43.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007819963619112968,
+            "activation_cosine": 0.9999695420265198
+          },
+          {
+            "layer": "block.44.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008159182034432888,
+            "activation_cosine": 0.9999668002128601
+          },
+          {
+            "layer": "block.45.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00839110929518938,
+            "activation_cosine": 0.9999648332595825
+          },
+          {
+            "layer": "block.46.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0062522608786821365,
+            "activation_cosine": 0.9999804496765137
+          },
+          {
+            "layer": "block.47.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007912483997642994,
+            "activation_cosine": 0.9999687671661377
+          }
+        ],
+        "FP8_ROW": [
+          {
+            "layer": "block.00.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007164661772549152,
+            "activation_cosine": 0.9999745488166809
+          },
+          {
+            "layer": "block.01.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008069545961916447,
+            "activation_cosine": 0.999967634677887
+          },
+          {
+            "layer": "block.02.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.010444879531860352,
+            "activation_cosine": 0.9999455809593201
+          },
+          {
+            "layer": "block.03.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.010236703790724277,
+            "activation_cosine": 0.9999476671218872
+          },
+          {
+            "layer": "block.04.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.011343365535140038,
+            "activation_cosine": 0.9999361038208008
+          },
+          {
+            "layer": "block.05.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008276456035673618,
+            "activation_cosine": 0.999966025352478
+          },
+          {
+            "layer": "block.06.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.011421623639762402,
+            "activation_cosine": 0.9999352693557739
+          },
+          {
+            "layer": "block.07.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.012389549054205418,
+            "activation_cosine": 0.9999232888221741
+          },
+          {
+            "layer": "block.08.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01200451236218214,
+            "activation_cosine": 0.9999279379844666
+          },
+          {
+            "layer": "block.09.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.012893123552203178,
+            "activation_cosine": 0.9999169111251831
+          },
+          {
+            "layer": "block.10.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.012812442146241665,
+            "activation_cosine": 0.9999178647994995
+          },
+          {
+            "layer": "block.11.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014320704154670238,
+            "activation_cosine": 0.9998974800109863
+          },
+          {
+            "layer": "block.12.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01379367895424366,
+            "activation_cosine": 0.9999052882194519
+          },
+          {
+            "layer": "block.13.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01392431277781725,
+            "activation_cosine": 0.99990314245224
+          },
+          {
+            "layer": "block.14.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.013609234243631363,
+            "activation_cosine": 0.999907374382019
+          },
+          {
+            "layer": "block.15.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.012704952619969845,
+            "activation_cosine": 0.9999195337295532
+          },
+          {
+            "layer": "block.16.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.013268590904772282,
+            "activation_cosine": 0.9999121427536011
+          },
+          {
+            "layer": "block.17.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014064767397940159,
+            "activation_cosine": 0.9999010562896729
+          },
+          {
+            "layer": "block.18.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.013117116875946522,
+            "activation_cosine": 0.9999139308929443
+          },
+          {
+            "layer": "block.19.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01379363238811493,
+            "activation_cosine": 0.9999052882194519
+          },
+          {
+            "layer": "block.20.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.013543167151510715,
+            "activation_cosine": 0.9999082684516907
+          },
+          {
+            "layer": "block.21.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.013471846468746662,
+            "activation_cosine": 0.9999094605445862
+          },
+          {
+            "layer": "block.22.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01410377025604248,
+            "activation_cosine": 0.9999005794525146
+          },
+          {
+            "layer": "block.23.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014631909318268299,
+            "activation_cosine": 0.9998928308486938
+          },
+          {
+            "layer": "block.24.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01483901496976614,
+            "activation_cosine": 0.9998900890350342
+          },
+          {
+            "layer": "block.25.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015082246623933315,
+            "activation_cosine": 0.9998862743377686
+          },
+          {
+            "layer": "block.26.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015487623400986195,
+            "activation_cosine": 0.999880313873291
+          },
+          {
+            "layer": "block.27.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015821179375052452,
+            "activation_cosine": 0.9998748302459717
+          },
+          {
+            "layer": "block.28.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01578698866069317,
+            "activation_cosine": 0.9998754858970642
+          },
+          {
+            "layer": "block.29.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015394766815006733,
+            "activation_cosine": 0.9998816251754761
+          },
+          {
+            "layer": "block.30.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.016317106783390045,
+            "activation_cosine": 0.9998668432235718
+          },
+          {
+            "layer": "block.31.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01604289561510086,
+            "activation_cosine": 0.9998714327812195
+          },
+          {
+            "layer": "block.32.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.016045328229665756,
+            "activation_cosine": 0.9998713731765747
+          },
+          {
+            "layer": "block.33.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015532859601080418,
+            "activation_cosine": 0.9998794794082642
+          },
+          {
+            "layer": "block.34.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.016111446544528008,
+            "activation_cosine": 0.9998703598976135
+          },
+          {
+            "layer": "block.35.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015534786507487297,
+            "activation_cosine": 0.9998797178268433
+          },
+          {
+            "layer": "block.36.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01628551259636879,
+            "activation_cosine": 0.9998674988746643
+          },
+          {
+            "layer": "block.37.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.012941623106598854,
+            "activation_cosine": 0.9999165534973145
+          },
+          {
+            "layer": "block.38.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015572141855955124,
+            "activation_cosine": 0.999879002571106
+          },
+          {
+            "layer": "block.39.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015114202164113522,
+            "activation_cosine": 0.9998859167098999
+          },
+          {
+            "layer": "block.40.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015243535861372948,
+            "activation_cosine": 0.999883770942688
+          },
+          {
+            "layer": "block.41.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.016700131818652153,
+            "activation_cosine": 0.9998608827590942
+          },
+          {
+            "layer": "block.42.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01729661412537098,
+            "activation_cosine": 0.9998505115509033
+          },
+          {
+            "layer": "block.43.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.017580602318048477,
+            "activation_cosine": 0.9998458623886108
+          },
+          {
+            "layer": "block.44.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.017337167635560036,
+            "activation_cosine": 0.9998499155044556
+          },
+          {
+            "layer": "block.45.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.016474686563014984,
+            "activation_cosine": 0.9998644590377808
+          },
+          {
+            "layer": "block.46.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.012192909605801105,
+            "activation_cosine": 0.9999272227287292
+          },
+          {
+            "layer": "block.47.attn.k",
+            "stored_bytes": 16785408,
+            "activation_error": 0.011672614142298698,
+            "activation_cosine": 0.9999319314956665
+          }
+        ]
+      }
+    },
+    "attn.out": {
+      "summary": {
+        "INT4_GROUP64": {
+          "stored_bytes": 427819008,
+          "compression_ratio": 3.764705882352941,
+          "mean_activation_error": 0.07850328468096752,
+          "mean_activation_cosine": 0.9966157327095667
+        },
+        "INT8_ROW": {
+          "stored_bytes": 805699584,
+          "compression_ratio": 1.9990239141044412,
+          "mean_activation_error": 0.007549895444147599,
+          "mean_activation_cosine": 0.9999685262640318
+        },
+        "FP8_ROW": {
+          "stored_bytes": 805699584,
+          "compression_ratio": 1.9990239141044412,
+          "mean_activation_error": 0.019402065974039335,
+          "mean_activation_cosine": 0.999793437620004
+        }
+      },
+      "layers": {
+        "INT4_GROUP64": [
+          {
+            "layer": "block.00.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.03171743080019951,
+            "activation_cosine": 0.9994977116584778
+          },
+          {
+            "layer": "block.01.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.0418807789683342,
+            "activation_cosine": 0.9991246461868286
+          },
+          {
+            "layer": "block.02.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.0385163389146328,
+            "activation_cosine": 0.9992595911026001
+          },
+          {
+            "layer": "block.03.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.0429709292948246,
+            "activation_cosine": 0.9990789294242859
+          },
+          {
+            "layer": "block.04.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.04739080369472504,
+            "activation_cosine": 0.9988812208175659
+          },
+          {
+            "layer": "block.05.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.04981497675180435,
+            "activation_cosine": 0.998762845993042
+          },
+          {
+            "layer": "block.06.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.039998844265937805,
+            "activation_cosine": 0.9992009401321411
+          },
+          {
+            "layer": "block.07.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.04456258937716484,
+            "activation_cosine": 0.9990098476409912
+          },
+          {
+            "layer": "block.08.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.04271756857633591,
+            "activation_cosine": 0.9990895390510559
+          },
+          {
+            "layer": "block.09.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.0428425557911396,
+            "activation_cosine": 0.9990841746330261
+          },
+          {
+            "layer": "block.10.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.046001993119716644,
+            "activation_cosine": 0.9989438056945801
+          },
+          {
+            "layer": "block.11.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.048511333763599396,
+            "activation_cosine": 0.9988266229629517
+          },
+          {
+            "layer": "block.12.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05647962540388107,
+            "activation_cosine": 0.9984090328216553
+          },
+          {
+            "layer": "block.13.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05513300746679306,
+            "activation_cosine": 0.99848473072052
+          },
+          {
+            "layer": "block.14.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05771686136722565,
+            "activation_cosine": 0.9983397126197815
+          },
+          {
+            "layer": "block.15.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.0641033798456192,
+            "activation_cosine": 0.9979501962661743
+          },
+          {
+            "layer": "block.16.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.07034427672624588,
+            "activation_cosine": 0.997535765171051
+          },
+          {
+            "layer": "block.17.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06787029653787613,
+            "activation_cosine": 0.9977060556411743
+          },
+          {
+            "layer": "block.18.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06999598443508148,
+            "activation_cosine": 0.9975597262382507
+          },
+          {
+            "layer": "block.19.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.07483726739883423,
+            "activation_cosine": 0.9972145557403564
+          },
+          {
+            "layer": "block.20.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.07552707940340042,
+            "activation_cosine": 0.9971628189086914
+          },
+          {
+            "layer": "block.21.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08069097995758057,
+            "activation_cosine": 0.9967591762542725
+          },
+          {
+            "layer": "block.22.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08377218246459961,
+            "activation_cosine": 0.996512234210968
+          },
+          {
+            "layer": "block.23.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08200374245643616,
+            "activation_cosine": 0.9966565370559692
+          },
+          {
+            "layer": "block.24.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.0882503092288971,
+            "activation_cosine": 0.9961249828338623
+          },
+          {
+            "layer": "block.25.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.0941484346985817,
+            "activation_cosine": 0.995597779750824
+          },
+          {
+            "layer": "block.26.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.10153272747993469,
+            "activation_cosine": 0.9948890209197998
+          },
+          {
+            "layer": "block.27.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.10170024633407593,
+            "activation_cosine": 0.994869589805603
+          },
+          {
+            "layer": "block.28.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.1052756980061531,
+            "activation_cosine": 0.9945060610771179
+          },
+          {
+            "layer": "block.29.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.10704972594976425,
+            "activation_cosine": 0.9943128824234009
+          },
+          {
+            "layer": "block.30.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.10526134073734283,
+            "activation_cosine": 0.9945101141929626
+          },
+          {
+            "layer": "block.31.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.11099734157323837,
+            "activation_cosine": 0.9938972592353821
+          },
+          {
+            "layer": "block.32.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.10481877624988556,
+            "activation_cosine": 0.9945536851882935
+          },
+          {
+            "layer": "block.33.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.10629192739725113,
+            "activation_cosine": 0.9943962693214417
+          },
+          {
+            "layer": "block.34.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.10534605383872986,
+            "activation_cosine": 0.9944958090782166
+          },
+          {
+            "layer": "block.35.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.09270509332418442,
+            "activation_cosine": 0.9957389831542969
+          },
+          {
+            "layer": "block.36.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.0997190922498703,
+            "activation_cosine": 0.995067298412323
+          },
+          {
+            "layer": "block.37.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.09505245834589005,
+            "activation_cosine": 0.9955177307128906
+          },
+          {
+            "layer": "block.38.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.09993577748537064,
+            "activation_cosine": 0.9950399994850159
+          },
+          {
+            "layer": "block.39.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.10352783650159836,
+            "activation_cosine": 0.9947009086608887
+          },
+          {
+            "layer": "block.40.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.106171153485775,
+            "activation_cosine": 0.9944172501564026
+          },
+          {
+            "layer": "block.41.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.1073402613401413,
+            "activation_cosine": 0.9943059682846069
+          },
+          {
+            "layer": "block.42.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.10580714046955109,
+            "activation_cosine": 0.9944510459899902
+          },
+          {
+            "layer": "block.43.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.11778992414474487,
+            "activation_cosine": 0.9931552410125732
+          },
+          {
+            "layer": "block.44.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.10608109086751938,
+            "activation_cosine": 0.9944165945053101
+          },
+          {
+            "layer": "block.45.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.09997034817934036,
+            "activation_cosine": 0.9950500726699829
+          },
+          {
+            "layer": "block.46.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08220914006233215,
+            "activation_cosine": 0.9966427683830261
+          },
+          {
+            "layer": "block.47.attn.out",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06577493995428085,
+            "activation_cosine": 0.9978474378585815
+          }
+        ],
+        "INT8_ROW": [
+          {
+            "layer": "block.00.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.003355468390509486,
+            "activation_cosine": 0.9999943971633911
+          },
+          {
+            "layer": "block.01.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.003970850259065628,
+            "activation_cosine": 0.9999920725822449
+          },
+          {
+            "layer": "block.02.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0037359348498284817,
+            "activation_cosine": 0.999993085861206
+          },
+          {
+            "layer": "block.03.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0043952749110758305,
+            "activation_cosine": 0.9999902844429016
+          },
+          {
+            "layer": "block.04.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004573445301502943,
+            "activation_cosine": 0.9999895095825195
+          },
+          {
+            "layer": "block.05.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004736425820738077,
+            "activation_cosine": 0.9999886751174927
+          },
+          {
+            "layer": "block.06.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004099423997104168,
+            "activation_cosine": 0.9999916553497314
+          },
+          {
+            "layer": "block.07.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004466989543288946,
+            "activation_cosine": 0.999989926815033
+          },
+          {
+            "layer": "block.08.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004155645612627268,
+            "activation_cosine": 0.9999914169311523
+          },
+          {
+            "layer": "block.09.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004677793942391872,
+            "activation_cosine": 0.9999891519546509
+          },
+          {
+            "layer": "block.10.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0043785530142486095,
+            "activation_cosine": 0.9999904036521912
+          },
+          {
+            "layer": "block.11.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004575557541102171,
+            "activation_cosine": 0.9999895691871643
+          },
+          {
+            "layer": "block.12.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005482515320181847,
+            "activation_cosine": 0.9999849796295166
+          },
+          {
+            "layer": "block.13.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005353085696697235,
+            "activation_cosine": 0.9999856948852539
+          },
+          {
+            "layer": "block.14.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005832608323544264,
+            "activation_cosine": 0.9999829530715942
+          },
+          {
+            "layer": "block.15.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005763918161392212,
+            "activation_cosine": 0.9999834299087524
+          },
+          {
+            "layer": "block.16.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006814311724156141,
+            "activation_cosine": 0.9999768137931824
+          },
+          {
+            "layer": "block.17.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006064755842089653,
+            "activation_cosine": 0.9999816417694092
+          },
+          {
+            "layer": "block.18.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006309305317699909,
+            "activation_cosine": 0.9999800324440002
+          },
+          {
+            "layer": "block.19.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0069557782262563705,
+            "activation_cosine": 0.9999758005142212
+          },
+          {
+            "layer": "block.20.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007069086190313101,
+            "activation_cosine": 0.9999750852584839
+          },
+          {
+            "layer": "block.21.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007949283346533775,
+            "activation_cosine": 0.999968409538269
+          },
+          {
+            "layer": "block.22.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00762824434787035,
+            "activation_cosine": 0.9999709129333496
+          },
+          {
+            "layer": "block.23.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0076859514228999615,
+            "activation_cosine": 0.9999704957008362
+          },
+          {
+            "layer": "block.24.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008224369026720524,
+            "activation_cosine": 0.9999662041664124
+          },
+          {
+            "layer": "block.25.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008897840045392513,
+            "activation_cosine": 0.9999604225158691
+          },
+          {
+            "layer": "block.26.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.009238270111382008,
+            "activation_cosine": 0.9999574422836304
+          },
+          {
+            "layer": "block.27.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008999244309961796,
+            "activation_cosine": 0.9999595284461975
+          },
+          {
+            "layer": "block.28.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.009672568179666996,
+            "activation_cosine": 0.9999532699584961
+          },
+          {
+            "layer": "block.29.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.009467781521379948,
+            "activation_cosine": 0.9999551773071289
+          },
+          {
+            "layer": "block.30.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.009704841300845146,
+            "activation_cosine": 0.9999527931213379
+          },
+          {
+            "layer": "block.31.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.009842222556471825,
+            "activation_cosine": 0.9999516010284424
+          },
+          {
+            "layer": "block.32.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.010082474909722805,
+            "activation_cosine": 0.9999490976333618
+          },
+          {
+            "layer": "block.33.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00966491550207138,
+            "activation_cosine": 0.9999532699584961
+          },
+          {
+            "layer": "block.34.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.009493282064795494,
+            "activation_cosine": 0.9999549388885498
+          },
+          {
+            "layer": "block.35.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008739854209125042,
+            "activation_cosine": 0.9999618530273438
+          },
+          {
+            "layer": "block.36.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00957757979631424,
+            "activation_cosine": 0.999954104423523
+          },
+          {
+            "layer": "block.37.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.009408777579665184,
+            "activation_cosine": 0.9999556541442871
+          },
+          {
+            "layer": "block.38.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.010748668573796749,
+            "activation_cosine": 0.9999421834945679
+          },
+          {
+            "layer": "block.39.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.010342378169298172,
+            "activation_cosine": 0.9999465346336365
+          },
+          {
+            "layer": "block.40.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.009913378395140171,
+            "activation_cosine": 0.9999508857727051
+          },
+          {
+            "layer": "block.41.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.010342452675104141,
+            "activation_cosine": 0.9999464750289917
+          },
+          {
+            "layer": "block.42.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.011132694780826569,
+            "activation_cosine": 0.9999380111694336
+          },
+          {
+            "layer": "block.43.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01112836692482233,
+            "activation_cosine": 0.9999381303787231
+          },
+          {
+            "layer": "block.44.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.011925909668207169,
+            "activation_cosine": 0.9999288320541382
+          },
+          {
+            "layer": "block.45.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01023164950311184,
+            "activation_cosine": 0.999947726726532
+          },
+          {
+            "layer": "block.46.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00850323960185051,
+            "activation_cosine": 0.9999637603759766
+          },
+          {
+            "layer": "block.47.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007082014810293913,
+            "activation_cosine": 0.9999749660491943
+          }
+        ],
+        "FP8_ROW": [
+          {
+            "layer": "block.00.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008674871176481247,
+            "activation_cosine": 0.9999626278877258
+          },
+          {
+            "layer": "block.01.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.010795763693749905,
+            "activation_cosine": 0.9999420046806335
+          },
+          {
+            "layer": "block.02.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00992528349161148,
+            "activation_cosine": 0.999951183795929
+          },
+          {
+            "layer": "block.03.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.011010879650712013,
+            "activation_cosine": 0.9999397397041321
+          },
+          {
+            "layer": "block.04.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01200732123106718,
+            "activation_cosine": 0.9999281764030457
+          },
+          {
+            "layer": "block.05.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.012778433039784431,
+            "activation_cosine": 0.9999185800552368
+          },
+          {
+            "layer": "block.06.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.010396402329206467,
+            "activation_cosine": 0.9999462962150574
+          },
+          {
+            "layer": "block.07.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.011329557746648788,
+            "activation_cosine": 0.9999361038208008
+          },
+          {
+            "layer": "block.08.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.011098581366240978,
+            "activation_cosine": 0.9999386668205261
+          },
+          {
+            "layer": "block.09.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.011001699604094028,
+            "activation_cosine": 0.9999399185180664
+          },
+          {
+            "layer": "block.10.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01141638495028019,
+            "activation_cosine": 0.9999352693557739
+          },
+          {
+            "layer": "block.11.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.012346225790679455,
+            "activation_cosine": 0.9999240636825562
+          },
+          {
+            "layer": "block.12.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014025608077645302,
+            "activation_cosine": 0.9999018907546997
+          },
+          {
+            "layer": "block.13.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014056702144443989,
+            "activation_cosine": 0.999901533126831
+          },
+          {
+            "layer": "block.14.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014515183866024017,
+            "activation_cosine": 0.999894917011261
+          },
+          {
+            "layer": "block.15.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015851588919758797,
+            "activation_cosine": 0.9998745918273926
+          },
+          {
+            "layer": "block.16.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.017481934279203415,
+            "activation_cosine": 0.9998473525047302
+          },
+          {
+            "layer": "block.17.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.016928672790527344,
+            "activation_cosine": 0.9998568296432495
+          },
+          {
+            "layer": "block.18.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.017160307615995407,
+            "activation_cosine": 0.9998528957366943
+          },
+          {
+            "layer": "block.19.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01851319521665573,
+            "activation_cosine": 0.9998288750648499
+          },
+          {
+            "layer": "block.20.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.018486283719539642,
+            "activation_cosine": 0.9998292922973633
+          },
+          {
+            "layer": "block.21.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0199222881346941,
+            "activation_cosine": 0.9998016357421875
+          },
+          {
+            "layer": "block.22.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.02067725919187069,
+            "activation_cosine": 0.9997862577438354
+          },
+          {
+            "layer": "block.23.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.02015574648976326,
+            "activation_cosine": 0.999796986579895
+          },
+          {
+            "layer": "block.24.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.021778952330350876,
+            "activation_cosine": 0.9997628927230835
+          },
+          {
+            "layer": "block.25.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.023164773359894753,
+            "activation_cosine": 0.9997318387031555
+          },
+          {
+            "layer": "block.26.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.02504185400903225,
+            "activation_cosine": 0.9996864795684814
+          },
+          {
+            "layer": "block.27.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.02507883682847023,
+            "activation_cosine": 0.9996854662895203
+          },
+          {
+            "layer": "block.28.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.02585725672543049,
+            "activation_cosine": 0.9996657371520996
+          },
+          {
+            "layer": "block.29.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0263520497828722,
+            "activation_cosine": 0.999652624130249
+          },
+          {
+            "layer": "block.30.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.025878798216581345,
+            "activation_cosine": 0.9996650218963623
+          },
+          {
+            "layer": "block.31.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.027198126539587975,
+            "activation_cosine": 0.9996300935745239
+          },
+          {
+            "layer": "block.32.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.025724027305841446,
+            "activation_cosine": 0.9996690154075623
+          },
+          {
+            "layer": "block.33.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.026048123836517334,
+            "activation_cosine": 0.9996606111526489
+          },
+          {
+            "layer": "block.34.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.02589592896401882,
+            "activation_cosine": 0.9996645450592041
+          },
+          {
+            "layer": "block.35.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0228973887860775,
+            "activation_cosine": 0.9997377991676331
+          },
+          {
+            "layer": "block.36.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.024355776607990265,
+            "activation_cosine": 0.9997034072875977
+          },
+          {
+            "layer": "block.37.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.023290466517210007,
+            "activation_cosine": 0.9997286796569824
+          },
+          {
+            "layer": "block.38.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.024486953392624855,
+            "activation_cosine": 0.9997002482414246
+          },
+          {
+            "layer": "block.39.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.02507539466023445,
+            "activation_cosine": 0.9996857047080994
+          },
+          {
+            "layer": "block.40.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.025893259793519974,
+            "activation_cosine": 0.9996647834777832
+          },
+          {
+            "layer": "block.41.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.026181325316429138,
+            "activation_cosine": 0.999657154083252
+          },
+          {
+            "layer": "block.42.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.025849875062704086,
+            "activation_cosine": 0.9996657967567444
+          },
+          {
+            "layer": "block.43.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.028767362236976624,
+            "activation_cosine": 0.9995861649513245
+          },
+          {
+            "layer": "block.44.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.026004653424024582,
+            "activation_cosine": 0.9996618032455444
+          },
+          {
+            "layer": "block.45.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.024274542927742004,
+            "activation_cosine": 0.99970543384552
+          },
+          {
+            "layer": "block.46.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01995726488530636,
+            "activation_cosine": 0.9998009204864502
+          },
+          {
+            "layer": "block.47.attn.out",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015690000727772713,
+            "activation_cosine": 0.9998770952224731
+          }
+        ]
+      }
+    },
+    "attn.q": {
+      "summary": {
+        "INT4_GROUP64": {
+          "stored_bytes": 427819008,
+          "compression_ratio": 3.764705882352941,
+          "mean_activation_error": 0.05919005651958287,
+          "mean_activation_cosine": 0.9981943480670452
+        },
+        "INT8_ROW": {
+          "stored_bytes": 805699584,
+          "compression_ratio": 1.9990239141044412,
+          "mean_activation_error": 0.005889077054841134,
+          "mean_activation_cosine": 0.9999817386269569
+        },
+        "FP8_ROW": {
+          "stored_bytes": 805699584,
+          "compression_ratio": 1.9990239141044412,
+          "mean_activation_error": 0.014307379955425858,
+          "mean_activation_cosine": 0.9998955950140953
+        }
+      },
+      "layers": {
+        "INT4_GROUP64": [
+          {
+            "layer": "block.00.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.045298852026462555,
+            "activation_cosine": 0.9989755153656006
+          },
+          {
+            "layer": "block.01.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.03763241693377495,
+            "activation_cosine": 0.9992931485176086
+          },
+          {
+            "layer": "block.02.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.03885190561413765,
+            "activation_cosine": 0.999245822429657
+          },
+          {
+            "layer": "block.03.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.03972510248422623,
+            "activation_cosine": 0.9992117881774902
+          },
+          {
+            "layer": "block.04.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.0429447665810585,
+            "activation_cosine": 0.9990783929824829
+          },
+          {
+            "layer": "block.05.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.03528264909982681,
+            "activation_cosine": 0.9993799328804016
+          },
+          {
+            "layer": "block.06.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.043612267822027206,
+            "activation_cosine": 0.9990512132644653
+          },
+          {
+            "layer": "block.07.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05068226903676987,
+            "activation_cosine": 0.99871826171875
+          },
+          {
+            "layer": "block.08.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.04860561341047287,
+            "activation_cosine": 0.9988203644752502
+          },
+          {
+            "layer": "block.09.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.048870716243982315,
+            "activation_cosine": 0.9988086223602295
+          },
+          {
+            "layer": "block.10.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05457363277673721,
+            "activation_cosine": 0.9985132217407227
+          },
+          {
+            "layer": "block.11.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.053068891167640686,
+            "activation_cosine": 0.9985957741737366
+          },
+          {
+            "layer": "block.12.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05541142076253891,
+            "activation_cosine": 0.9984707832336426
+          },
+          {
+            "layer": "block.13.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05683022737503052,
+            "activation_cosine": 0.9983879327774048
+          },
+          {
+            "layer": "block.14.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05668096989393234,
+            "activation_cosine": 0.9983975887298584
+          },
+          {
+            "layer": "block.15.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.053533561527729034,
+            "activation_cosine": 0.9985719919204712
+          },
+          {
+            "layer": "block.16.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05624200031161308,
+            "activation_cosine": 0.9984242916107178
+          },
+          {
+            "layer": "block.17.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05816048011183739,
+            "activation_cosine": 0.9983135461807251
+          },
+          {
+            "layer": "block.18.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05869755521416664,
+            "activation_cosine": 0.9982815980911255
+          },
+          {
+            "layer": "block.19.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05764210969209671,
+            "activation_cosine": 0.9983423352241516
+          },
+          {
+            "layer": "block.20.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.057218972593545914,
+            "activation_cosine": 0.9983659982681274
+          },
+          {
+            "layer": "block.21.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.054234959185123444,
+            "activation_cosine": 0.9985321760177612
+          },
+          {
+            "layer": "block.22.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05857027694582939,
+            "activation_cosine": 0.9982906579971313
+          },
+          {
+            "layer": "block.23.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05912085995078087,
+            "activation_cosine": 0.998259425163269
+          },
+          {
+            "layer": "block.24.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.056372568011283875,
+            "activation_cosine": 0.9984196424484253
+          },
+          {
+            "layer": "block.25.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05816780403256416,
+            "activation_cosine": 0.9983120560646057
+          },
+          {
+            "layer": "block.26.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05825036019086838,
+            "activation_cosine": 0.9983104467391968
+          },
+          {
+            "layer": "block.27.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05973821505904198,
+            "activation_cosine": 0.9982198476791382
+          },
+          {
+            "layer": "block.28.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06201491132378578,
+            "activation_cosine": 0.9980852007865906
+          },
+          {
+            "layer": "block.29.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06176384538412094,
+            "activation_cosine": 0.9980999231338501
+          },
+          {
+            "layer": "block.30.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06358776986598969,
+            "activation_cosine": 0.9979853630065918
+          },
+          {
+            "layer": "block.31.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06140455603599548,
+            "activation_cosine": 0.998126745223999
+          },
+          {
+            "layer": "block.32.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06507853418588638,
+            "activation_cosine": 0.9978890419006348
+          },
+          {
+            "layer": "block.33.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06416895240545273,
+            "activation_cosine": 0.997951865196228
+          },
+          {
+            "layer": "block.34.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.0650634840130806,
+            "activation_cosine": 0.9978864192962646
+          },
+          {
+            "layer": "block.35.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06522069126367569,
+            "activation_cosine": 0.9978797435760498
+          },
+          {
+            "layer": "block.36.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06555872410535812,
+            "activation_cosine": 0.9978564977645874
+          },
+          {
+            "layer": "block.37.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06973733007907867,
+            "activation_cosine": 0.9975804090499878
+          },
+          {
+            "layer": "block.38.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.07022735476493835,
+            "activation_cosine": 0.9975511431694031
+          },
+          {
+            "layer": "block.39.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06842003017663956,
+            "activation_cosine": 0.9976775646209717
+          },
+          {
+            "layer": "block.40.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.07001969963312149,
+            "activation_cosine": 0.9975525736808777
+          },
+          {
+            "layer": "block.41.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.07114516943693161,
+            "activation_cosine": 0.9974861741065979
+          },
+          {
+            "layer": "block.42.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.07111025601625443,
+            "activation_cosine": 0.9974911212921143
+          },
+          {
+            "layer": "block.43.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.07577870786190033,
+            "activation_cosine": 0.9971333742141724
+          },
+          {
+            "layer": "block.44.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.07573336362838745,
+            "activation_cosine": 0.9971428513526917
+          },
+          {
+            "layer": "block.45.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08135388046503067,
+            "activation_cosine": 0.9967080950737
+          },
+          {
+            "layer": "block.46.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.07936523854732513,
+            "activation_cosine": 0.996863603591919
+          },
+          {
+            "layer": "block.47.attn.q",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08034878969192505,
+            "activation_cosine": 0.9967886209487915
+          }
+        ],
+        "INT8_ROW": [
+          {
+            "layer": "block.00.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004600177984684706,
+            "activation_cosine": 0.99998939037323
+          },
+          {
+            "layer": "block.01.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004149695858359337,
+            "activation_cosine": 0.9999913573265076
+          },
+          {
+            "layer": "block.02.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.003920937422662973,
+            "activation_cosine": 0.999992311000824
+          },
+          {
+            "layer": "block.03.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0037381474394351244,
+            "activation_cosine": 0.9999929666519165
+          },
+          {
+            "layer": "block.04.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00413159653544426,
+            "activation_cosine": 0.9999914765357971
+          },
+          {
+            "layer": "block.05.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0036105220206081867,
+            "activation_cosine": 0.9999935030937195
+          },
+          {
+            "layer": "block.06.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00421695364639163,
+            "activation_cosine": 0.9999911189079285
+          },
+          {
+            "layer": "block.07.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0048057520762085915,
+            "activation_cosine": 0.9999885559082031
+          },
+          {
+            "layer": "block.08.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004441539756953716,
+            "activation_cosine": 0.9999901056289673
+          },
+          {
+            "layer": "block.09.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0047438424080610275,
+            "activation_cosine": 0.9999887943267822
+          },
+          {
+            "layer": "block.10.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004986622370779514,
+            "activation_cosine": 0.9999874830245972
+          },
+          {
+            "layer": "block.11.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.004994956776499748,
+            "activation_cosine": 0.9999875426292419
+          },
+          {
+            "layer": "block.12.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00518101966008544,
+            "activation_cosine": 0.9999865889549255
+          },
+          {
+            "layer": "block.13.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005276878364384174,
+            "activation_cosine": 0.9999861121177673
+          },
+          {
+            "layer": "block.14.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0051949480548501015,
+            "activation_cosine": 0.999986469745636
+          },
+          {
+            "layer": "block.15.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005147646646946669,
+            "activation_cosine": 0.9999867677688599
+          },
+          {
+            "layer": "block.16.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00567656522616744,
+            "activation_cosine": 0.9999838471412659
+          },
+          {
+            "layer": "block.17.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0053629823960363865,
+            "activation_cosine": 0.9999855756759644
+          },
+          {
+            "layer": "block.18.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005630801431834698,
+            "activation_cosine": 0.999984085559845
+          },
+          {
+            "layer": "block.19.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0054301111958920956,
+            "activation_cosine": 0.9999853372573853
+          },
+          {
+            "layer": "block.20.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005323927849531174,
+            "activation_cosine": 0.9999858140945435
+          },
+          {
+            "layer": "block.21.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00525485398247838,
+            "activation_cosine": 0.9999861121177673
+          },
+          {
+            "layer": "block.22.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005499690305441618,
+            "activation_cosine": 0.999984860420227
+          },
+          {
+            "layer": "block.23.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005759111139923334,
+            "activation_cosine": 0.9999833703041077
+          },
+          {
+            "layer": "block.24.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0053869327530264854,
+            "activation_cosine": 0.9999855756759644
+          },
+          {
+            "layer": "block.25.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005658313632011414,
+            "activation_cosine": 0.9999839067459106
+          },
+          {
+            "layer": "block.26.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005519367288798094,
+            "activation_cosine": 0.9999847412109375
+          },
+          {
+            "layer": "block.27.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005651775747537613,
+            "activation_cosine": 0.9999840259552002
+          },
+          {
+            "layer": "block.28.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005998133681714535,
+            "activation_cosine": 0.9999818801879883
+          },
+          {
+            "layer": "block.29.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006089998874813318,
+            "activation_cosine": 0.9999814629554749
+          },
+          {
+            "layer": "block.30.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006199588067829609,
+            "activation_cosine": 0.9999808073043823
+          },
+          {
+            "layer": "block.31.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006070650648325682,
+            "activation_cosine": 0.9999816417694092
+          },
+          {
+            "layer": "block.32.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006453254260122776,
+            "activation_cosine": 0.9999791979789734
+          },
+          {
+            "layer": "block.33.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00642296951264143,
+            "activation_cosine": 0.9999793767929077
+          },
+          {
+            "layer": "block.34.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006464973092079163,
+            "activation_cosine": 0.9999790787696838
+          },
+          {
+            "layer": "block.35.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006785702425986528,
+            "activation_cosine": 0.9999769330024719
+          },
+          {
+            "layer": "block.36.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006665987428277731,
+            "activation_cosine": 0.9999778270721436
+          },
+          {
+            "layer": "block.37.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007174308877438307,
+            "activation_cosine": 0.9999743103981018
+          },
+          {
+            "layer": "block.38.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006981735583394766,
+            "activation_cosine": 0.9999755620956421
+          },
+          {
+            "layer": "block.39.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007162250578403473,
+            "activation_cosine": 0.9999743700027466
+          },
+          {
+            "layer": "block.40.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007180512882769108,
+            "activation_cosine": 0.9999741911888123
+          },
+          {
+            "layer": "block.41.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007357743103057146,
+            "activation_cosine": 0.999972939491272
+          },
+          {
+            "layer": "block.42.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0074464101344347,
+            "activation_cosine": 0.9999723434448242
+          },
+          {
+            "layer": "block.43.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007549284026026726,
+            "activation_cosine": 0.9999713897705078
+          },
+          {
+            "layer": "block.44.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007891346700489521,
+            "activation_cosine": 0.999968945980072
+          },
+          {
+            "layer": "block.45.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008512661792337894,
+            "activation_cosine": 0.9999637603759766
+          },
+          {
+            "layer": "block.46.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008790467865765095,
+            "activation_cosine": 0.9999613761901855
+          },
+          {
+            "layer": "block.47.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.010182049125432968,
+            "activation_cosine": 0.999948263168335
+          }
+        ],
+        "FP8_ROW": [
+          {
+            "layer": "block.00.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0077738529071211815,
+            "activation_cosine": 0.9999698996543884
+          },
+          {
+            "layer": "block.01.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008909232914447784,
+            "activation_cosine": 0.9999611377716064
+          },
+          {
+            "layer": "block.02.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.011150076985359192,
+            "activation_cosine": 0.9999381303787231
+          },
+          {
+            "layer": "block.03.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.010541415773332119,
+            "activation_cosine": 0.9999444484710693
+          },
+          {
+            "layer": "block.04.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.010995312593877316,
+            "activation_cosine": 0.9999396800994873
+          },
+          {
+            "layer": "block.05.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.009146916680037975,
+            "activation_cosine": 0.9999586343765259
+          },
+          {
+            "layer": "block.06.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.012307251803576946,
+            "activation_cosine": 0.9999246001243591
+          },
+          {
+            "layer": "block.07.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01323054637759924,
+            "activation_cosine": 0.9999125003814697
+          },
+          {
+            "layer": "block.08.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.012651183642446995,
+            "activation_cosine": 0.999920129776001
+          },
+          {
+            "layer": "block.09.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.012767132371664047,
+            "activation_cosine": 0.9999186396598816
+          },
+          {
+            "layer": "block.10.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014049376361072063,
+            "activation_cosine": 0.9999013543128967
+          },
+          {
+            "layer": "block.11.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014043943956494331,
+            "activation_cosine": 0.999901533126831
+          },
+          {
+            "layer": "block.12.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014460652135312557,
+            "activation_cosine": 0.9998957514762878
+          },
+          {
+            "layer": "block.13.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0146998455747962,
+            "activation_cosine": 0.9998921155929565
+          },
+          {
+            "layer": "block.14.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014689650386571884,
+            "activation_cosine": 0.9998922944068909
+          },
+          {
+            "layer": "block.15.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.013508494012057781,
+            "activation_cosine": 0.9999089241027832
+          },
+          {
+            "layer": "block.16.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014334781095385551,
+            "activation_cosine": 0.9998974800109863
+          },
+          {
+            "layer": "block.17.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014966875314712524,
+            "activation_cosine": 0.999888002872467
+          },
+          {
+            "layer": "block.18.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014656385406851768,
+            "activation_cosine": 0.9998925924301147
+          },
+          {
+            "layer": "block.19.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015006017871201038,
+            "activation_cosine": 0.9998875856399536
+          },
+          {
+            "layer": "block.20.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014646703377366066,
+            "activation_cosine": 0.9998927116394043
+          },
+          {
+            "layer": "block.21.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014043023809790611,
+            "activation_cosine": 0.9999014139175415
+          },
+          {
+            "layer": "block.22.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.013899384066462517,
+            "activation_cosine": 0.9999035596847534
+          },
+          {
+            "layer": "block.23.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01461610198020935,
+            "activation_cosine": 0.999893307685852
+          },
+          {
+            "layer": "block.24.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01416129618883133,
+            "activation_cosine": 0.9998999834060669
+          },
+          {
+            "layer": "block.25.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014437423087656498,
+            "activation_cosine": 0.9998959898948669
+          },
+          {
+            "layer": "block.26.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014595132321119308,
+            "activation_cosine": 0.9998936653137207
+          },
+          {
+            "layer": "block.27.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014539294876158237,
+            "activation_cosine": 0.9998942017555237
+          },
+          {
+            "layer": "block.28.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01491599902510643,
+            "activation_cosine": 0.9998887777328491
+          },
+          {
+            "layer": "block.29.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014808492735028267,
+            "activation_cosine": 0.9998906850814819
+          },
+          {
+            "layer": "block.30.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015214290469884872,
+            "activation_cosine": 0.9998847246170044
+          },
+          {
+            "layer": "block.31.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014984036795794964,
+            "activation_cosine": 0.9998878240585327
+          },
+          {
+            "layer": "block.32.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015419990755617619,
+            "activation_cosine": 0.9998812079429626
+          },
+          {
+            "layer": "block.33.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01521985325962305,
+            "activation_cosine": 0.9998843669891357
+          },
+          {
+            "layer": "block.34.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015573142096400261,
+            "activation_cosine": 0.9998787045478821
+          },
+          {
+            "layer": "block.35.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015729058533906937,
+            "activation_cosine": 0.9998765587806702
+          },
+          {
+            "layer": "block.36.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01581510342657566,
+            "activation_cosine": 0.9998750686645508
+          },
+          {
+            "layer": "block.37.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014708206057548523,
+            "activation_cosine": 0.9998918771743774
+          },
+          {
+            "layer": "block.38.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015863385051488876,
+            "activation_cosine": 0.9998742938041687
+          },
+          {
+            "layer": "block.39.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015615173615515232,
+            "activation_cosine": 0.9998787045478821
+          },
+          {
+            "layer": "block.40.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015638425946235657,
+            "activation_cosine": 0.9998780488967896
+          },
+          {
+            "layer": "block.41.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.016486814245581627,
+            "activation_cosine": 0.9998642802238464
+          },
+          {
+            "layer": "block.42.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.016246533021330833,
+            "activation_cosine": 0.9998682737350464
+          },
+          {
+            "layer": "block.43.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.017397094517946243,
+            "activation_cosine": 0.9998487830162048
+          },
+          {
+            "layer": "block.44.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.017381008714437485,
+            "activation_cosine": 0.9998489618301392
+          },
+          {
+            "layer": "block.45.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.017787834629416466,
+            "activation_cosine": 0.9998419284820557
+          },
+          {
+            "layer": "block.46.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.017472950741648674,
+            "activation_cosine": 0.999847412109375
+          },
+          {
+            "layer": "block.47.attn.q",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015649540349841118,
+            "activation_cosine": 0.9998778104782104
+          }
+        ]
+      }
+    },
+    "attn.v": {
+      "summary": {
+        "INT4_GROUP64": {
+          "stored_bytes": 427819008,
+          "compression_ratio": 3.764705882352941,
+          "mean_activation_error": 0.08719164816041787,
+          "mean_activation_cosine": 0.9960826002061367
+        },
+        "INT8_ROW": {
+          "stored_bytes": 805699584,
+          "compression_ratio": 1.9990239141044412,
+          "mean_activation_error": 0.008336644318963712,
+          "mean_activation_cosine": 0.9999638261894385
+        },
+        "FP8_ROW": {
+          "stored_bytes": 805699584,
+          "compression_ratio": 1.9990239141044412,
+          "mean_activation_error": 0.01881569332908839,
+          "mean_activation_cosine": 0.99981922407945
+        }
+      },
+      "layers": {
+        "INT4_GROUP64": [
+          {
+            "layer": "block.00.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.05448749288916588,
+            "activation_cosine": 0.9985188245773315
+          },
+          {
+            "layer": "block.01.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.047029659152030945,
+            "activation_cosine": 0.998897135257721
+          },
+          {
+            "layer": "block.02.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.0685010477900505,
+            "activation_cosine": 0.9976649284362793
+          },
+          {
+            "layer": "block.03.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.061437759548425674,
+            "activation_cosine": 0.9981183409690857
+          },
+          {
+            "layer": "block.04.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06109755486249924,
+            "activation_cosine": 0.9981412291526794
+          },
+          {
+            "layer": "block.05.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.0637764036655426,
+            "activation_cosine": 0.9979735016822815
+          },
+          {
+            "layer": "block.06.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06231769174337387,
+            "activation_cosine": 0.9980645775794983
+          },
+          {
+            "layer": "block.07.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06279125809669495,
+            "activation_cosine": 0.9980342388153076
+          },
+          {
+            "layer": "block.08.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06409364193677902,
+            "activation_cosine": 0.9979516863822937
+          },
+          {
+            "layer": "block.09.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06869114935398102,
+            "activation_cosine": 0.9976497888565063
+          },
+          {
+            "layer": "block.10.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.06811115145683289,
+            "activation_cosine": 0.9976897239685059
+          },
+          {
+            "layer": "block.11.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.07224906980991364,
+            "activation_cosine": 0.997402548789978
+          },
+          {
+            "layer": "block.12.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08071484416723251,
+            "activation_cosine": 0.9967659115791321
+          },
+          {
+            "layer": "block.13.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08006105571985245,
+            "activation_cosine": 0.996812105178833
+          },
+          {
+            "layer": "block.14.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08294600993394852,
+            "activation_cosine": 0.9965770244598389
+          },
+          {
+            "layer": "block.15.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08349325507879257,
+            "activation_cosine": 0.9965308904647827
+          },
+          {
+            "layer": "block.16.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08701220154762268,
+            "activation_cosine": 0.9962366223335266
+          },
+          {
+            "layer": "block.17.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08934000879526138,
+            "activation_cosine": 0.9960336685180664
+          },
+          {
+            "layer": "block.18.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08573080599308014,
+            "activation_cosine": 0.9963464736938477
+          },
+          {
+            "layer": "block.19.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.09113238751888275,
+            "activation_cosine": 0.9958759546279907
+          },
+          {
+            "layer": "block.20.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08963147550821304,
+            "activation_cosine": 0.9960097670555115
+          },
+          {
+            "layer": "block.21.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.09756918251514435,
+            "activation_cosine": 0.9952698945999146
+          },
+          {
+            "layer": "block.22.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.09385949373245239,
+            "activation_cosine": 0.9956223964691162
+          },
+          {
+            "layer": "block.23.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.09277912974357605,
+            "activation_cosine": 0.9957252144813538
+          },
+          {
+            "layer": "block.24.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08535069227218628,
+            "activation_cosine": 0.9963763356208801
+          },
+          {
+            "layer": "block.25.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08879689872264862,
+            "activation_cosine": 0.996082603931427
+          },
+          {
+            "layer": "block.26.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08911746740341187,
+            "activation_cosine": 0.9960479736328125
+          },
+          {
+            "layer": "block.27.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.09077957272529602,
+            "activation_cosine": 0.9959072470664978
+          },
+          {
+            "layer": "block.28.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08949641138315201,
+            "activation_cosine": 0.9960179328918457
+          },
+          {
+            "layer": "block.29.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08924780040979385,
+            "activation_cosine": 0.9960421919822693
+          },
+          {
+            "layer": "block.30.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.09576749056577682,
+            "activation_cosine": 0.9954442977905273
+          },
+          {
+            "layer": "block.31.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.09242898225784302,
+            "activation_cosine": 0.9957569241523743
+          },
+          {
+            "layer": "block.32.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.09191149473190308,
+            "activation_cosine": 0.9958023428916931
+          },
+          {
+            "layer": "block.33.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.09302790462970734,
+            "activation_cosine": 0.9956997036933899
+          },
+          {
+            "layer": "block.34.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.09460964053869247,
+            "activation_cosine": 0.9955527186393738
+          },
+          {
+            "layer": "block.35.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.09409913420677185,
+            "activation_cosine": 0.9956018328666687
+          },
+          {
+            "layer": "block.36.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.10554894059896469,
+            "activation_cosine": 0.9944775700569153
+          },
+          {
+            "layer": "block.37.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.09763030707836151,
+            "activation_cosine": 0.995268702507019
+          },
+          {
+            "layer": "block.38.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.11591057479381561,
+            "activation_cosine": 0.9933499097824097
+          },
+          {
+            "layer": "block.39.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.11872151494026184,
+            "activation_cosine": 0.9930217862129211
+          },
+          {
+            "layer": "block.40.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.10840160399675369,
+            "activation_cosine": 0.9941748976707458
+          },
+          {
+            "layer": "block.41.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.1147749200463295,
+            "activation_cosine": 0.9934731721878052
+          },
+          {
+            "layer": "block.42.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.1117592379450798,
+            "activation_cosine": 0.9938045144081116
+          },
+          {
+            "layer": "block.43.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.11032214015722275,
+            "activation_cosine": 0.9939674139022827
+          },
+          {
+            "layer": "block.44.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.1062440350651741,
+            "activation_cosine": 0.9944002032279968
+          },
+          {
+            "layer": "block.45.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.10413902252912521,
+            "activation_cosine": 0.994621992111206
+          },
+          {
+            "layer": "block.46.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.10027659684419632,
+            "activation_cosine": 0.9950084686279297
+          },
+          {
+            "layer": "block.47.attn.v",
+            "stored_bytes": 8912896,
+            "activation_error": 0.08798299729824066,
+            "activation_cosine": 0.9961516261100769
+          }
+        ],
+        "INT8_ROW": [
+          {
+            "layer": "block.00.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0068811397068202496,
+            "activation_cosine": 0.999976396560669
+          },
+          {
+            "layer": "block.01.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005421637557446957,
+            "activation_cosine": 0.9999853372573853
+          },
+          {
+            "layer": "block.02.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0076886569149792194,
+            "activation_cosine": 0.9999704360961914
+          },
+          {
+            "layer": "block.03.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006159224081784487,
+            "activation_cosine": 0.9999811053276062
+          },
+          {
+            "layer": "block.04.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005957090761512518,
+            "activation_cosine": 0.9999822974205017
+          },
+          {
+            "layer": "block.05.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006177659612149,
+            "activation_cosine": 0.9999809861183167
+          },
+          {
+            "layer": "block.06.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005892521236091852,
+            "activation_cosine": 0.9999826550483704
+          },
+          {
+            "layer": "block.07.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.005865905899554491,
+            "activation_cosine": 0.9999828338623047
+          },
+          {
+            "layer": "block.08.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006078904494643211,
+            "activation_cosine": 0.9999815821647644
+          },
+          {
+            "layer": "block.09.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00676314253360033,
+            "activation_cosine": 0.999977171421051
+          },
+          {
+            "layer": "block.10.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0062007722444832325,
+            "activation_cosine": 0.9999807476997375
+          },
+          {
+            "layer": "block.11.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.006672622635960579,
+            "activation_cosine": 0.9999778270721436
+          },
+          {
+            "layer": "block.12.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00790979340672493,
+            "activation_cosine": 0.9999687671661377
+          },
+          {
+            "layer": "block.13.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00744678545743227,
+            "activation_cosine": 0.9999722242355347
+          },
+          {
+            "layer": "block.14.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007656628265976906,
+            "activation_cosine": 0.9999707341194153
+          },
+          {
+            "layer": "block.15.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007823692634701729,
+            "activation_cosine": 0.999969482421875
+          },
+          {
+            "layer": "block.16.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008209369145333767,
+            "activation_cosine": 0.9999663233757019
+          },
+          {
+            "layer": "block.17.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008090625517070293,
+            "activation_cosine": 0.9999673366546631
+          },
+          {
+            "layer": "block.18.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.00835617445409298,
+            "activation_cosine": 0.9999651312828064
+          },
+          {
+            "layer": "block.19.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008514709770679474,
+            "activation_cosine": 0.9999637603759766
+          },
+          {
+            "layer": "block.20.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008110509254038334,
+            "activation_cosine": 0.9999669790267944
+          },
+          {
+            "layer": "block.21.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.009086056612432003,
+            "activation_cosine": 0.9999587535858154
+          },
+          {
+            "layer": "block.22.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.009059574455022812,
+            "activation_cosine": 0.9999589920043945
+          },
+          {
+            "layer": "block.23.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0084736542776227,
+            "activation_cosine": 0.9999641180038452
+          },
+          {
+            "layer": "block.24.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007431866135448217,
+            "activation_cosine": 0.9999724626541138
+          },
+          {
+            "layer": "block.25.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008414012379944324,
+            "activation_cosine": 0.9999645948410034
+          },
+          {
+            "layer": "block.26.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.0078095439821481705,
+            "activation_cosine": 0.999969482421875
+          },
+          {
+            "layer": "block.27.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007899987511336803,
+            "activation_cosine": 0.9999687075614929
+          },
+          {
+            "layer": "block.28.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007792819291353226,
+            "activation_cosine": 0.9999696016311646
+          },
+          {
+            "layer": "block.29.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007857332937419415,
+            "activation_cosine": 0.9999691247940063
+          },
+          {
+            "layer": "block.30.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008500243537127972,
+            "activation_cosine": 0.9999638795852661
+          },
+          {
+            "layer": "block.31.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.007978332228958607,
+            "activation_cosine": 0.9999682903289795
+          },
+          {
+            "layer": "block.32.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008062392473220825,
+            "activation_cosine": 0.9999675154685974
+          },
+          {
+            "layer": "block.33.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008329506032168865,
+            "activation_cosine": 0.999965250492096
+          },
+          {
+            "layer": "block.34.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008162321522831917,
+            "activation_cosine": 0.9999666213989258
+          },
+          {
+            "layer": "block.35.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.008326494134962559,
+            "activation_cosine": 0.9999653100967407
+          },
+          {
+            "layer": "block.36.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.009698388166725636,
+            "activation_cosine": 0.9999529719352722
+          },
+          {
+            "layer": "block.37.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.009567019529640675,
+            "activation_cosine": 0.9999542236328125
+          },
+          {
+            "layer": "block.38.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.011591478250920773,
+            "activation_cosine": 0.9999328851699829
+          },
+          {
+            "layer": "block.39.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.011971562169492245,
+            "activation_cosine": 0.99992835521698
+          },
+          {
+            "layer": "block.40.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.010578070767223835,
+            "activation_cosine": 0.9999440908432007
+          },
+          {
+            "layer": "block.41.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.011264837346971035,
+            "activation_cosine": 0.9999365210533142
+          },
+          {
+            "layer": "block.42.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01126963272690773,
+            "activation_cosine": 0.999936580657959
+          },
+          {
+            "layer": "block.43.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01017654500901699,
+            "activation_cosine": 0.999948263168335
+          },
+          {
+            "layer": "block.44.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.010612674057483673,
+            "activation_cosine": 0.9999436736106873
+          },
+          {
+            "layer": "block.45.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.011027089320123196,
+            "activation_cosine": 0.9999392032623291
+          },
+          {
+            "layer": "block.46.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.012142954394221306,
+            "activation_cosine": 0.9999262690544128
+          },
+          {
+            "layer": "block.47.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.009196972474455833,
+            "activation_cosine": 0.999957799911499
+          }
+        ],
+        "FP8_ROW": [
+          {
+            "layer": "block.00.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01660694181919098,
+            "activation_cosine": 0.9998623132705688
+          },
+          {
+            "layer": "block.01.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.013378073461353779,
+            "activation_cosine": 0.9999107718467712
+          },
+          {
+            "layer": "block.02.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01317165419459343,
+            "activation_cosine": 0.9999134540557861
+          },
+          {
+            "layer": "block.03.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01372461300343275,
+            "activation_cosine": 0.9999058842658997
+          },
+          {
+            "layer": "block.04.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014003433287143707,
+            "activation_cosine": 0.9999021887779236
+          },
+          {
+            "layer": "block.05.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.014382652007043362,
+            "activation_cosine": 0.9998968243598938
+          },
+          {
+            "layer": "block.06.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01378708891570568,
+            "activation_cosine": 0.9999052286148071
+          },
+          {
+            "layer": "block.07.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01435951516032219,
+            "activation_cosine": 0.9998970627784729
+          },
+          {
+            "layer": "block.08.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015000468119978905,
+            "activation_cosine": 0.9998875856399536
+          },
+          {
+            "layer": "block.09.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.015322922728955746,
+            "activation_cosine": 0.9998829364776611
+          },
+          {
+            "layer": "block.10.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01572565734386444,
+            "activation_cosine": 0.9998764395713806
+          },
+          {
+            "layer": "block.11.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.017381541430950165,
+            "activation_cosine": 0.9998490214347839
+          },
+          {
+            "layer": "block.12.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.017875200137495995,
+            "activation_cosine": 0.9998403787612915
+          },
+          {
+            "layer": "block.13.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.018624985590577126,
+            "activation_cosine": 0.9998266100883484
+          },
+          {
+            "layer": "block.14.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01845140941441059,
+            "activation_cosine": 0.9998300671577454
+          },
+          {
+            "layer": "block.15.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.018151460215449333,
+            "activation_cosine": 0.9998353123664856
+          },
+          {
+            "layer": "block.16.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.017946606501936913,
+            "activation_cosine": 0.9998390674591064
+          },
+          {
+            "layer": "block.17.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.019046584144234657,
+            "activation_cosine": 0.9998186826705933
+          },
+          {
+            "layer": "block.18.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01848394051194191,
+            "activation_cosine": 0.9998292922973633
+          },
+          {
+            "layer": "block.19.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.018687285482883453,
+            "activation_cosine": 0.9998254179954529
+          },
+          {
+            "layer": "block.20.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01856086589396,
+            "activation_cosine": 0.9998278617858887
+          },
+          {
+            "layer": "block.21.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.018742285668849945,
+            "activation_cosine": 0.9998244047164917
+          },
+          {
+            "layer": "block.22.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01854248344898224,
+            "activation_cosine": 0.9998282194137573
+          },
+          {
+            "layer": "block.23.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.018657837063074112,
+            "activation_cosine": 0.9998260736465454
+          },
+          {
+            "layer": "block.24.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.018600204959511757,
+            "activation_cosine": 0.9998270869255066
+          },
+          {
+            "layer": "block.25.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01937750354409218,
+            "activation_cosine": 0.9998123645782471
+          },
+          {
+            "layer": "block.26.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.020184682682156563,
+            "activation_cosine": 0.9997963309288025
+          },
+          {
+            "layer": "block.27.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.020739322528243065,
+            "activation_cosine": 0.9997849464416504
+          },
+          {
+            "layer": "block.28.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.020979510620236397,
+            "activation_cosine": 0.9997800588607788
+          },
+          {
+            "layer": "block.29.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.020632440224289894,
+            "activation_cosine": 0.9997872114181519
+          },
+          {
+            "layer": "block.30.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.02150053158402443,
+            "activation_cosine": 0.999768853187561
+          },
+          {
+            "layer": "block.31.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.021493371576070786,
+            "activation_cosine": 0.9997690320014954
+          },
+          {
+            "layer": "block.32.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.02143681049346924,
+            "activation_cosine": 0.9997703433036804
+          },
+          {
+            "layer": "block.33.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.02118324115872383,
+            "activation_cosine": 0.9997755885124207
+          },
+          {
+            "layer": "block.34.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.021337606012821198,
+            "activation_cosine": 0.999772310256958
+          },
+          {
+            "layer": "block.35.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.020553594455122948,
+            "activation_cosine": 0.9997888803482056
+          },
+          {
+            "layer": "block.36.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.02157381735742092,
+            "activation_cosine": 0.9997673034667969
+          },
+          {
+            "layer": "block.37.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.020383663475513458,
+            "activation_cosine": 0.9997923374176025
+          },
+          {
+            "layer": "block.38.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.02243552729487419,
+            "activation_cosine": 0.9997484683990479
+          },
+          {
+            "layer": "block.39.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.022455034777522087,
+            "activation_cosine": 0.9997479319572449
+          },
+          {
+            "layer": "block.40.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.02138078771531582,
+            "activation_cosine": 0.9997714757919312
+          },
+          {
+            "layer": "block.41.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.022713765501976013,
+            "activation_cosine": 0.9997420310974121
+          },
+          {
+            "layer": "block.42.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.02183694578707218,
+            "activation_cosine": 0.9997615218162537
+          },
+          {
+            "layer": "block.43.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.022999899461865425,
+            "activation_cosine": 0.9997355341911316
+          },
+          {
+            "layer": "block.44.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.02180146984755993,
+            "activation_cosine": 0.9997622966766357
+          },
+          {
+            "layer": "block.45.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.02088957652449608,
+            "activation_cosine": 0.9997817277908325
+          },
+          {
+            "layer": "block.46.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01940365694463253,
+            "activation_cosine": 0.9998117685317993
+          },
+          {
+            "layer": "block.47.attn.v",
+            "stored_bytes": 16785408,
+            "activation_error": 0.01864480972290039,
+            "activation_cosine": 0.9998262524604797
+          }
+        ]
+      }
+    },
+    "ff-in": {
+      "summary": {
+        "INT4_GROUP64": {
+          "stored_bytes": 1711276032,
+          "compression_ratio": 3.764705882352941,
+          "mean_activation_error": 0.03779991832561791,
+          "mean_activation_cosine": 0.9990412990252177
+        },
+        "INT8_ROW": {
+          "stored_bytes": 3222798336,
+          "compression_ratio": 1.9990239141044412,
+          "mean_activation_error": 0.003583457289399424,
+          "mean_activation_cosine": 0.99999171992143
+        },
+        "FP8_ROW": {
+          "stored_bytes": 3222798336,
+          "compression_ratio": 1.9990239141044412,
+          "mean_activation_error": 0.009421787690371275,
+          "mean_activation_cosine": 0.9999450581769148
+        }
+      },
+      "layers": {
+        "INT4_GROUP64": [
+          {
+            "layer": "block.00.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.008279266767203808,
+            "activation_cosine": 0.9999680519104004
+          },
+          {
+            "layer": "block.01.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.013278545811772346,
+            "activation_cosine": 0.9999120235443115
+          },
+          {
+            "layer": "block.02.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.013568410649895668,
+            "activation_cosine": 0.9999086856842041
+          },
+          {
+            "layer": "block.03.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.008188040927052498,
+            "activation_cosine": 0.9999665021896362
+          },
+          {
+            "layer": "block.04.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.012122655287384987,
+            "activation_cosine": 0.9999327063560486
+          },
+          {
+            "layer": "block.05.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.010144397616386414,
+            "activation_cosine": 0.9999486207962036
+          },
+          {
+            "layer": "block.06.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.010784529149532318,
+            "activation_cosine": 0.999941885471344
+          },
+          {
+            "layer": "block.07.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.01090793777257204,
+            "activation_cosine": 0.9999406933784485
+          },
+          {
+            "layer": "block.08.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.010867704637348652,
+            "activation_cosine": 0.9999409914016724
+          },
+          {
+            "layer": "block.09.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.010734295472502708,
+            "activation_cosine": 0.9999424815177917
+          },
+          {
+            "layer": "block.10.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.011814607307314873,
+            "activation_cosine": 0.9999301433563232
+          },
+          {
+            "layer": "block.11.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.013196962885558605,
+            "activation_cosine": 0.9999128580093384
+          },
+          {
+            "layer": "block.12.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.0134172597900033,
+            "activation_cosine": 0.9999100565910339
+          },
+          {
+            "layer": "block.13.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.01375881489366293,
+            "activation_cosine": 0.9999053478240967
+          },
+          {
+            "layer": "block.14.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.016035810112953186,
+            "activation_cosine": 0.9998713731765747
+          },
+          {
+            "layer": "block.15.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.01572476699948311,
+            "activation_cosine": 0.9998763799667358
+          },
+          {
+            "layer": "block.16.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.0176464281976223,
+            "activation_cosine": 0.9998443722724915
+          },
+          {
+            "layer": "block.17.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.022293342277407646,
+            "activation_cosine": 0.9997515678405762
+          },
+          {
+            "layer": "block.18.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.022881438955664635,
+            "activation_cosine": 0.999738335609436
+          },
+          {
+            "layer": "block.19.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.026851920410990715,
+            "activation_cosine": 0.999639630317688
+          },
+          {
+            "layer": "block.20.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.0291410181671381,
+            "activation_cosine": 0.9995755553245544
+          },
+          {
+            "layer": "block.21.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.03379133343696594,
+            "activation_cosine": 0.9994295835494995
+          },
+          {
+            "layer": "block.22.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.036613672971725464,
+            "activation_cosine": 0.9993305206298828
+          },
+          {
+            "layer": "block.23.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.0388965904712677,
+            "activation_cosine": 0.9992446303367615
+          },
+          {
+            "layer": "block.24.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.04242974892258644,
+            "activation_cosine": 0.9991006255149841
+          },
+          {
+            "layer": "block.25.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.043544456362724304,
+            "activation_cosine": 0.9990531206130981
+          },
+          {
+            "layer": "block.26.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.04506445676088333,
+            "activation_cosine": 0.9989856481552124
+          },
+          {
+            "layer": "block.27.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.04603409394621849,
+            "activation_cosine": 0.9989422559738159
+          },
+          {
+            "layer": "block.28.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.04593874514102936,
+            "activation_cosine": 0.998946487903595
+          },
+          {
+            "layer": "block.29.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.04914551600813866,
+            "activation_cosine": 0.9987947940826416
+          },
+          {
+            "layer": "block.30.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.0508868508040905,
+            "activation_cosine": 0.9987075924873352
+          },
+          {
+            "layer": "block.31.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.05276040360331535,
+            "activation_cosine": 0.9986124038696289
+          },
+          {
+            "layer": "block.32.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.05637694150209427,
+            "activation_cosine": 0.9984146356582642
+          },
+          {
+            "layer": "block.33.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.05837468057870865,
+            "activation_cosine": 0.998300313949585
+          },
+          {
+            "layer": "block.34.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.06469809263944626,
+            "activation_cosine": 0.9979140758514404
+          },
+          {
+            "layer": "block.35.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.06614529341459274,
+            "activation_cosine": 0.9978201985359192
+          },
+          {
+            "layer": "block.36.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.06377142667770386,
+            "activation_cosine": 0.9979736804962158
+          },
+          {
+            "layer": "block.37.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.057286184281110764,
+            "activation_cosine": 0.9983633160591125
+          },
+          {
+            "layer": "block.38.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.0626533105969429,
+            "activation_cosine": 0.9980437159538269
+          },
+          {
+            "layer": "block.39.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.061336033046245575,
+            "activation_cosine": 0.9981228113174438
+          },
+          {
+            "layer": "block.40.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.061224836856126785,
+            "activation_cosine": 0.9981317520141602
+          },
+          {
+            "layer": "block.41.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.06068223714828491,
+            "activation_cosine": 0.9981635212898254
+          },
+          {
+            "layer": "block.42.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.05937695503234863,
+            "activation_cosine": 0.9982422590255737
+          },
+          {
+            "layer": "block.43.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.06180474907159805,
+            "activation_cosine": 0.9980946779251099
+          },
+          {
+            "layer": "block.44.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.06683596968650818,
+            "activation_cosine": 0.9977741241455078
+          },
+          {
+            "layer": "block.45.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.07223889976739883,
+            "activation_cosine": 0.9974014759063721
+          },
+          {
+            "layer": "block.46.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.08013758808374405,
+            "activation_cosine": 0.9968037605285645
+          },
+          {
+            "layer": "block.47.ff.in",
+            "stored_bytes": 35651584,
+            "activation_error": 0.06470885872840881,
+            "activation_cosine": 0.9979121088981628
+          }
+        ],
+        "INT8_ROW": [
+          {
+            "layer": "block.00.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0013776341220363975,
+            "activation_cosine": 0.9999990463256836
+          },
+          {
+            "layer": "block.01.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.002094878116622567,
+            "activation_cosine": 0.9999977350234985
+          },
+          {
+            "layer": "block.02.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.002194594359025359,
+            "activation_cosine": 0.9999975562095642
+          },
+          {
+            "layer": "block.03.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0013227181043475866,
+            "activation_cosine": 0.9999991655349731
+          },
+          {
+            "layer": "block.04.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0019241288537159562,
+            "activation_cosine": 0.9999982714653015
+          },
+          {
+            "layer": "block.05.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0012388949980959296,
+            "activation_cosine": 0.9999992847442627
+          },
+          {
+            "layer": "block.06.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0013079536147415638,
+            "activation_cosine": 0.9999991655349731
+          },
+          {
+            "layer": "block.07.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0013229965697973967,
+            "activation_cosine": 0.9999991655349731
+          },
+          {
+            "layer": "block.08.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.00113391550257802,
+            "activation_cosine": 0.9999994039535522
+          },
+          {
+            "layer": "block.09.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0011945996666327119,
+            "activation_cosine": 0.9999994039535522
+          },
+          {
+            "layer": "block.10.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0012070549419149756,
+            "activation_cosine": 0.9999991655349731
+          },
+          {
+            "layer": "block.11.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0013540568761527538,
+            "activation_cosine": 0.9999990463256836
+          },
+          {
+            "layer": "block.12.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0013962964294478297,
+            "activation_cosine": 0.9999990463256836
+          },
+          {
+            "layer": "block.13.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0013234176440164447,
+            "activation_cosine": 0.9999991655349731
+          },
+          {
+            "layer": "block.14.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.00150401727296412,
+            "activation_cosine": 0.9999988079071045
+          },
+          {
+            "layer": "block.15.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0014837931375950575,
+            "activation_cosine": 0.999998927116394
+          },
+          {
+            "layer": "block.16.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0016164341941475868,
+            "activation_cosine": 0.9999986290931702
+          },
+          {
+            "layer": "block.17.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0019993099849671125,
+            "activation_cosine": 0.9999979734420776
+          },
+          {
+            "layer": "block.18.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.002056756289675832,
+            "activation_cosine": 0.9999979138374329
+          },
+          {
+            "layer": "block.19.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0024405261501669884,
+            "activation_cosine": 0.9999970197677612
+          },
+          {
+            "layer": "block.20.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0026622514706104994,
+            "activation_cosine": 0.999996542930603
+          },
+          {
+            "layer": "block.21.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.003080220427364111,
+            "activation_cosine": 0.999995231628418
+          },
+          {
+            "layer": "block.22.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0033336991909891367,
+            "activation_cosine": 0.9999943971633911
+          },
+          {
+            "layer": "block.23.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0035401585046201944,
+            "activation_cosine": 0.9999939203262329
+          },
+          {
+            "layer": "block.24.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0038489163853228092,
+            "activation_cosine": 0.9999925494194031
+          },
+          {
+            "layer": "block.25.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.003934455569833517,
+            "activation_cosine": 0.9999922513961792
+          },
+          {
+            "layer": "block.26.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0040205735713243484,
+            "activation_cosine": 0.9999919533729553
+          },
+          {
+            "layer": "block.27.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.004090799018740654,
+            "activation_cosine": 0.9999915957450867
+          },
+          {
+            "layer": "block.28.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.004097631201148033,
+            "activation_cosine": 0.9999915957450867
+          },
+          {
+            "layer": "block.29.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.004455798305571079,
+            "activation_cosine": 0.9999900460243225
+          },
+          {
+            "layer": "block.30.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.004562683403491974,
+            "activation_cosine": 0.9999895095825195
+          },
+          {
+            "layer": "block.31.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.004689799156039953,
+            "activation_cosine": 0.9999890327453613
+          },
+          {
+            "layer": "block.32.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.005075400695204735,
+            "activation_cosine": 0.9999871253967285
+          },
+          {
+            "layer": "block.33.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.005369408056139946,
+            "activation_cosine": 0.9999855756759644
+          },
+          {
+            "layer": "block.34.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.005979054141789675,
+            "activation_cosine": 0.9999821186065674
+          },
+          {
+            "layer": "block.35.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.006215330213308334,
+            "activation_cosine": 0.9999806880950928
+          },
+          {
+            "layer": "block.36.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.006097452249377966,
+            "activation_cosine": 0.9999814033508301
+          },
+          {
+            "layer": "block.37.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.005325949285179377,
+            "activation_cosine": 0.9999858736991882
+          },
+          {
+            "layer": "block.38.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.005753322970122099,
+            "activation_cosine": 0.9999834895133972
+          },
+          {
+            "layer": "block.39.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.005630940198898315,
+            "activation_cosine": 0.9999841451644897
+          },
+          {
+            "layer": "block.40.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.005590111017227173,
+            "activation_cosine": 0.9999843835830688
+          },
+          {
+            "layer": "block.41.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.005576527211815119,
+            "activation_cosine": 0.9999845027923584
+          },
+          {
+            "layer": "block.42.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0054207793436944485,
+            "activation_cosine": 0.9999852776527405
+          },
+          {
+            "layer": "block.43.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.005690021440386772,
+            "activation_cosine": 0.9999837875366211
+          },
+          {
+            "layer": "block.44.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.006147055421024561,
+            "activation_cosine": 0.999981164932251
+          },
+          {
+            "layer": "block.45.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.006656415294855833,
+            "activation_cosine": 0.9999779462814331
+          },
+          {
+            "layer": "block.46.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.007659834809601307,
+            "activation_cosine": 0.9999706745147705
+          },
+          {
+            "layer": "block.47.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.00600738450884819,
+            "activation_cosine": 0.9999818801879883
+          }
+        ],
+        "FP8_ROW": [
+          {
+            "layer": "block.00.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.005440962500870228,
+            "activation_cosine": 0.9999852776527405
+          },
+          {
+            "layer": "block.01.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.010450588539242744,
+            "activation_cosine": 0.999945342540741
+          },
+          {
+            "layer": "block.02.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.009208502247929573,
+            "activation_cosine": 0.9999576807022095
+          },
+          {
+            "layer": "block.03.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.002900662599131465,
+            "activation_cosine": 0.9999960660934448
+          },
+          {
+            "layer": "block.04.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0038999635726213455,
+            "activation_cosine": 0.9999927282333374
+          },
+          {
+            "layer": "block.05.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0030103095341473818,
+            "activation_cosine": 0.9999958276748657
+          },
+          {
+            "layer": "block.06.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.003441831562668085,
+            "activation_cosine": 0.9999943375587463
+          },
+          {
+            "layer": "block.07.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.003437693929299712,
+            "activation_cosine": 0.9999945163726807
+          },
+          {
+            "layer": "block.08.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.003334818873554468,
+            "activation_cosine": 0.9999947547912598
+          },
+          {
+            "layer": "block.09.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.003259670455008745,
+            "activation_cosine": 0.9999951124191284
+          },
+          {
+            "layer": "block.10.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0034187722485512495,
+            "activation_cosine": 0.9999945163726807
+          },
+          {
+            "layer": "block.11.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.00365964462980628,
+            "activation_cosine": 0.999993622303009
+          },
+          {
+            "layer": "block.12.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0037232059985399246,
+            "activation_cosine": 0.9999934434890747
+          },
+          {
+            "layer": "block.13.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0038224034942686558,
+            "activation_cosine": 0.999993085861206
+          },
+          {
+            "layer": "block.14.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.004261848982423544,
+            "activation_cosine": 0.9999912977218628
+          },
+          {
+            "layer": "block.15.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.004154084250330925,
+            "activation_cosine": 0.999991774559021
+          },
+          {
+            "layer": "block.16.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.004570954944938421,
+            "activation_cosine": 0.9999898672103882
+          },
+          {
+            "layer": "block.17.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.005663824267685413,
+            "activation_cosine": 0.9999842047691345
+          },
+          {
+            "layer": "block.18.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.005714344326406717,
+            "activation_cosine": 0.999984085559845
+          },
+          {
+            "layer": "block.19.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.0065421960316598415,
+            "activation_cosine": 0.9999788999557495
+          },
+          {
+            "layer": "block.20.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.007034939713776112,
+            "activation_cosine": 0.9999756217002869
+          },
+          {
+            "layer": "block.21.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.007952782325446606,
+            "activation_cosine": 0.9999687671661377
+          },
+          {
+            "layer": "block.22.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.008646938018500805,
+            "activation_cosine": 0.9999628067016602
+          },
+          {
+            "layer": "block.23.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.009159083478152752,
+            "activation_cosine": 0.9999584555625916
+          },
+          {
+            "layer": "block.24.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.010031621903181076,
+            "activation_cosine": 0.9999499320983887
+          },
+          {
+            "layer": "block.25.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.010399249382317066,
+            "activation_cosine": 0.9999461770057678
+          },
+          {
+            "layer": "block.26.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.010864975862205029,
+            "activation_cosine": 0.9999412298202515
+          },
+          {
+            "layer": "block.27.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.011299201287329197,
+            "activation_cosine": 0.9999364018440247
+          },
+          {
+            "layer": "block.28.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.011215679347515106,
+            "activation_cosine": 0.9999373555183411
+          },
+          {
+            "layer": "block.29.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.011790469288825989,
+            "activation_cosine": 0.9999306797981262
+          },
+          {
+            "layer": "block.30.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.012263428419828415,
+            "activation_cosine": 0.9999250173568726
+          },
+          {
+            "layer": "block.31.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.012707846239209175,
+            "activation_cosine": 0.9999194741249084
+          },
+          {
+            "layer": "block.32.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.013521897606551647,
+            "activation_cosine": 0.9999086856842041
+          },
+          {
+            "layer": "block.33.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.013738648034632206,
+            "activation_cosine": 0.9999057650566101
+          },
+          {
+            "layer": "block.34.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.014972086064517498,
+            "activation_cosine": 0.9998880624771118
+          },
+          {
+            "layer": "block.35.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.015038139186799526,
+            "activation_cosine": 0.9998869895935059
+          },
+          {
+            "layer": "block.36.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.014260618947446346,
+            "activation_cosine": 0.9998985528945923
+          },
+          {
+            "layer": "block.37.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.013106602244079113,
+            "activation_cosine": 0.999914288520813
+          },
+          {
+            "layer": "block.38.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.014190462417900562,
+            "activation_cosine": 0.9998995065689087
+          },
+          {
+            "layer": "block.39.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.014022811315953732,
+            "activation_cosine": 0.9999018907546997
+          },
+          {
+            "layer": "block.40.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.014121009968221188,
+            "activation_cosine": 0.9999005198478699
+          },
+          {
+            "layer": "block.41.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.013980439864099026,
+            "activation_cosine": 0.9999025464057922
+          },
+          {
+            "layer": "block.42.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.013702102936804295,
+            "activation_cosine": 0.9999063611030579
+          },
+          {
+            "layer": "block.43.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.014317731373012066,
+            "activation_cosine": 0.9998977184295654
+          },
+          {
+            "layer": "block.44.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.015533624216914177,
+            "activation_cosine": 0.9998795986175537
+          },
+          {
+            "layer": "block.45.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.016847141087055206,
+            "activation_cosine": 0.9998583197593689
+          },
+          {
+            "layer": "block.46.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.01831468567252159,
+            "activation_cosine": 0.9998323321342468
+          },
+          {
+            "layer": "block.47.ff.in",
+            "stored_bytes": 67141632,
+            "activation_error": 0.015295309945940971,
+            "activation_cosine": 0.9998832941055298
+          }
+        ]
+      }
+    },
+    "ff-out": {
+      "summary": {
+        "INT4_GROUP64": {
+          "stored_bytes": 1711276032,
+          "compression_ratio": 3.764705882352941,
+          "mean_activation_error": 0.07865957093114655,
+          "mean_activation_cosine": 0.9965989092985789
+        },
+        "INT8_ROW": {
+          "stored_bytes": 3221618688,
+          "compression_ratio": 1.9997558891736849,
+          "mean_activation_error": 0.009766753976388523,
+          "mean_activation_cosine": 0.9999475342531999
+        },
+        "FP8_ROW": {
+          "stored_bytes": 3221618688,
+          "compression_ratio": 1.9997558891736849,
+          "mean_activation_error": 0.019083860320582364,
+          "mean_activation_cosine": 0.9998065667847792
+        }
+      },
+      "layers": {
+        "INT4_GROUP64": [
+          {
+            "layer": "block.00.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.03398921340703964,
+            "activation_cosine": 0.9994221925735474
+          },
+          {
+            "layer": "block.01.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.025472544133663177,
+            "activation_cosine": 0.999675452709198
+          },
+          {
+            "layer": "block.02.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.03081129677593708,
+            "activation_cosine": 0.999525249004364
+          },
+          {
+            "layer": "block.03.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.054667845368385315,
+            "activation_cosine": 0.9985088109970093
+          },
+          {
+            "layer": "block.04.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.05432240664958954,
+            "activation_cosine": 0.998525857925415
+          },
+          {
+            "layer": "block.05.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.05576922371983528,
+            "activation_cosine": 0.9984484910964966
+          },
+          {
+            "layer": "block.06.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.05516999587416649,
+            "activation_cosine": 0.9984821081161499
+          },
+          {
+            "layer": "block.07.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.06513671576976776,
+            "activation_cosine": 0.9978892207145691
+          },
+          {
+            "layer": "block.08.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.06304043531417847,
+            "activation_cosine": 0.9980217218399048
+          },
+          {
+            "layer": "block.09.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.06519688665866852,
+            "activation_cosine": 0.9978797435760498
+          },
+          {
+            "layer": "block.10.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.06902266293764114,
+            "activation_cosine": 0.9976270198822021
+          },
+          {
+            "layer": "block.11.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.06869612634181976,
+            "activation_cosine": 0.9976471066474915
+          },
+          {
+            "layer": "block.12.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.06483165919780731,
+            "activation_cosine": 0.9979040622711182
+          },
+          {
+            "layer": "block.13.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.07192539423704147,
+            "activation_cosine": 0.9974302053451538
+          },
+          {
+            "layer": "block.14.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.07298529893159866,
+            "activation_cosine": 0.9973449110984802
+          },
+          {
+            "layer": "block.15.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.07471434772014618,
+            "activation_cosine": 0.9972188472747803
+          },
+          {
+            "layer": "block.16.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.0753668025135994,
+            "activation_cosine": 0.9971765279769897
+          },
+          {
+            "layer": "block.17.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.06876569986343384,
+            "activation_cosine": 0.9976449608802795
+          },
+          {
+            "layer": "block.18.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.07850940525531769,
+            "activation_cosine": 0.9969351291656494
+          },
+          {
+            "layer": "block.19.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.0776502788066864,
+            "activation_cosine": 0.9969984292984009
+          },
+          {
+            "layer": "block.20.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.08084772527217865,
+            "activation_cosine": 0.9967482089996338
+          },
+          {
+            "layer": "block.21.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.08662340044975281,
+            "activation_cosine": 0.9962725043296814
+          },
+          {
+            "layer": "block.22.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.08706741780042648,
+            "activation_cosine": 0.9962262511253357
+          },
+          {
+            "layer": "block.23.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.09169238805770874,
+            "activation_cosine": 0.9958258867263794
+          },
+          {
+            "layer": "block.24.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.09243133664131165,
+            "activation_cosine": 0.9957510232925415
+          },
+          {
+            "layer": "block.25.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.08416290581226349,
+            "activation_cosine": 0.9964804649353027
+          },
+          {
+            "layer": "block.26.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.10189203172922134,
+            "activation_cosine": 0.9948559999465942
+          },
+          {
+            "layer": "block.27.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.11337592452764511,
+            "activation_cosine": 0.9936363101005554
+          },
+          {
+            "layer": "block.28.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.11249560117721558,
+            "activation_cosine": 0.9937382340431213
+          },
+          {
+            "layer": "block.29.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.11595092713832855,
+            "activation_cosine": 0.9933493733406067
+          },
+          {
+            "layer": "block.30.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.11682407557964325,
+            "activation_cosine": 0.9932489395141602
+          },
+          {
+            "layer": "block.31.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.11429779976606369,
+            "activation_cosine": 0.9935380220413208
+          },
+          {
+            "layer": "block.32.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.10747155547142029,
+            "activation_cosine": 0.9942722320556641
+          },
+          {
+            "layer": "block.33.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.10825324803590775,
+            "activation_cosine": 0.9941829442977905
+          },
+          {
+            "layer": "block.34.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.10002921521663666,
+            "activation_cosine": 0.9950299859046936
+          },
+          {
+            "layer": "block.35.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.10027401894330978,
+            "activation_cosine": 0.9949981570243835
+          },
+          {
+            "layer": "block.36.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.10299288481473923,
+            "activation_cosine": 0.9947202205657959
+          },
+          {
+            "layer": "block.37.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.06181579828262329,
+            "activation_cosine": 0.9980957508087158
+          },
+          {
+            "layer": "block.38.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.10062387585639954,
+            "activation_cosine": 0.9949691295623779
+          },
+          {
+            "layer": "block.39.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.10409872978925705,
+            "activation_cosine": 0.9946208000183105
+          },
+          {
+            "layer": "block.40.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.10419850051403046,
+            "activation_cosine": 0.9945948719978333
+          },
+          {
+            "layer": "block.41.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.10936866700649261,
+            "activation_cosine": 0.9940493702888489
+          },
+          {
+            "layer": "block.42.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.10474018007516861,
+            "activation_cosine": 0.9945378303527832
+          },
+          {
+            "layer": "block.43.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.08065599948167801,
+            "activation_cosine": 0.996757447719574
+          },
+          {
+            "layer": "block.44.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.06928186863660812,
+            "activation_cosine": 0.9976069927215576
+          },
+          {
+            "layer": "block.45.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.03859841451048851,
+            "activation_cosine": 0.9992551803588867
+          },
+          {
+            "layer": "block.46.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.03566741943359375,
+            "activation_cosine": 0.9993643760681152
+          },
+          {
+            "layer": "block.47.ff.out",
+            "stored_bytes": 35651584,
+            "activation_error": 0.023883255198597908,
+            "activation_cosine": 0.9997150897979736
+          }
+        ],
+        "INT8_ROW": [
+          {
+            "layer": "block.00.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.0053221057169139385,
+            "activation_cosine": 0.9999858736991882
+          },
+          {
+            "layer": "block.01.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.0034997202455997467,
+            "activation_cosine": 0.9999939203262329
+          },
+          {
+            "layer": "block.02.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.004119538702070713,
+            "activation_cosine": 0.9999914765357971
+          },
+          {
+            "layer": "block.03.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.007355107460170984,
+            "activation_cosine": 0.999972939491272
+          },
+          {
+            "layer": "block.04.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.007172625977545977,
+            "activation_cosine": 0.999974250793457
+          },
+          {
+            "layer": "block.05.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.007291938178241253,
+            "activation_cosine": 0.999973475933075
+          },
+          {
+            "layer": "block.06.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.007235447410494089,
+            "activation_cosine": 0.9999738335609436
+          },
+          {
+            "layer": "block.07.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.00803294125944376,
+            "activation_cosine": 0.9999676942825317
+          },
+          {
+            "layer": "block.08.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.007962352596223354,
+            "activation_cosine": 0.9999683499336243
+          },
+          {
+            "layer": "block.09.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.00785854272544384,
+            "activation_cosine": 0.9999691247940063
+          },
+          {
+            "layer": "block.10.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.008193567395210266,
+            "activation_cosine": 0.9999663829803467
+          },
+          {
+            "layer": "block.11.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.008480005897581577,
+            "activation_cosine": 0.9999639987945557
+          },
+          {
+            "layer": "block.12.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.00815801415592432,
+            "activation_cosine": 0.9999668598175049
+          },
+          {
+            "layer": "block.13.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.008864561095833778,
+            "activation_cosine": 0.999960720539093
+          },
+          {
+            "layer": "block.14.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.009077122434973717,
+            "activation_cosine": 0.9999586939811707
+          },
+          {
+            "layer": "block.15.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.009838745929300785,
+            "activation_cosine": 0.9999516010284424
+          },
+          {
+            "layer": "block.16.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.009459264576435089,
+            "activation_cosine": 0.9999552369117737
+          },
+          {
+            "layer": "block.17.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.008983002975583076,
+            "activation_cosine": 0.9999595880508423
+          },
+          {
+            "layer": "block.18.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.009766731411218643,
+            "activation_cosine": 0.9999522566795349
+          },
+          {
+            "layer": "block.19.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.009566309861838818,
+            "activation_cosine": 0.9999542236328125
+          },
+          {
+            "layer": "block.20.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.009995966218411922,
+            "activation_cosine": 0.9999499917030334
+          },
+          {
+            "layer": "block.21.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.010711564682424068,
+            "activation_cosine": 0.9999426603317261
+          },
+          {
+            "layer": "block.22.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.011092090047895908,
+            "activation_cosine": 0.9999384880065918
+          },
+          {
+            "layer": "block.23.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.011808939278125763,
+            "activation_cosine": 0.9999302625656128
+          },
+          {
+            "layer": "block.24.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.01156176719814539,
+            "activation_cosine": 0.9999332427978516
+          },
+          {
+            "layer": "block.25.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.010459382086992264,
+            "activation_cosine": 0.9999452829360962
+          },
+          {
+            "layer": "block.26.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.012511931359767914,
+            "activation_cosine": 0.9999217987060547
+          },
+          {
+            "layer": "block.27.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.013807760551571846,
+            "activation_cosine": 0.9999046921730042
+          },
+          {
+            "layer": "block.28.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.013661226257681847,
+            "activation_cosine": 0.9999066591262817
+          },
+          {
+            "layer": "block.29.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.01461517158895731,
+            "activation_cosine": 0.999893307685852
+          },
+          {
+            "layer": "block.30.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.01463375799357891,
+            "activation_cosine": 0.9998929500579834
+          },
+          {
+            "layer": "block.31.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.013941967859864235,
+            "activation_cosine": 0.9999028444290161
+          },
+          {
+            "layer": "block.32.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.012977595441043377,
+            "activation_cosine": 0.9999157786369324
+          },
+          {
+            "layer": "block.33.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.012710070237517357,
+            "activation_cosine": 0.9999191761016846
+          },
+          {
+            "layer": "block.34.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.012098056264221668,
+            "activation_cosine": 0.9999269247055054
+          },
+          {
+            "layer": "block.35.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.01216933410614729,
+            "activation_cosine": 0.999925971031189
+          },
+          {
+            "layer": "block.36.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.013009278103709221,
+            "activation_cosine": 0.9999153017997742
+          },
+          {
+            "layer": "block.37.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.0076027363538742065,
+            "activation_cosine": 0.9999711513519287
+          },
+          {
+            "layer": "block.38.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.012422516942024231,
+            "activation_cosine": 0.9999229907989502
+          },
+          {
+            "layer": "block.39.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.012620437890291214,
+            "activation_cosine": 0.9999206066131592
+          },
+          {
+            "layer": "block.40.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.012529468163847923,
+            "activation_cosine": 0.999921441078186
+          },
+          {
+            "layer": "block.41.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.0131381182000041,
+            "activation_cosine": 0.9999136924743652
+          },
+          {
+            "layer": "block.42.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.01330897118896246,
+            "activation_cosine": 0.9999114871025085
+          },
+          {
+            "layer": "block.43.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.009846491739153862,
+            "activation_cosine": 0.9999516606330872
+          },
+          {
+            "layer": "block.44.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.008423826657235622,
+            "activation_cosine": 0.999964714050293
+          },
+          {
+            "layer": "block.45.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.004561224486678839,
+            "activation_cosine": 0.9999896883964539
+          },
+          {
+            "layer": "block.46.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.004389427602291107,
+            "activation_cosine": 0.9999903440475464
+          },
+          {
+            "layer": "block.47.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.00195746636018157,
+            "activation_cosine": 0.9999980330467224
+          }
+        ],
+        "FP8_ROW": [
+          {
+            "layer": "block.00.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.014610711485147476,
+            "activation_cosine": 0.9998934864997864
+          },
+          {
+            "layer": "block.01.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.006960560102015734,
+            "activation_cosine": 0.9999760985374451
+          },
+          {
+            "layer": "block.02.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.00766863813623786,
+            "activation_cosine": 0.9999709129333496
+          },
+          {
+            "layer": "block.03.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.018163098022341728,
+            "activation_cosine": 0.9998352527618408
+          },
+          {
+            "layer": "block.04.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.01580309495329857,
+            "activation_cosine": 0.9998753070831299
+          },
+          {
+            "layer": "block.05.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.01736580766737461,
+            "activation_cosine": 0.9998492002487183
+          },
+          {
+            "layer": "block.06.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.018000096082687378,
+            "activation_cosine": 0.9998383522033691
+          },
+          {
+            "layer": "block.07.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.02060195989906788,
+            "activation_cosine": 0.9997879266738892
+          },
+          {
+            "layer": "block.08.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.020137056708335876,
+            "activation_cosine": 0.9997973442077637
+          },
+          {
+            "layer": "block.09.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.021149475127458572,
+            "activation_cosine": 0.9997763633728027
+          },
+          {
+            "layer": "block.10.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.021300846710801125,
+            "activation_cosine": 0.9997731447219849
+          },
+          {
+            "layer": "block.11.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.020803578197956085,
+            "activation_cosine": 0.9997836351394653
+          },
+          {
+            "layer": "block.12.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.019536998122930527,
+            "activation_cosine": 0.9998091459274292
+          },
+          {
+            "layer": "block.13.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.020690182223916054,
+            "activation_cosine": 0.9997860193252563
+          },
+          {
+            "layer": "block.14.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.019838856533169746,
+            "activation_cosine": 0.9998033046722412
+          },
+          {
+            "layer": "block.15.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.0204453282058239,
+            "activation_cosine": 0.999791145324707
+          },
+          {
+            "layer": "block.16.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.020216191187500954,
+            "activation_cosine": 0.99979567527771
+          },
+          {
+            "layer": "block.17.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.017192741855978966,
+            "activation_cosine": 0.9998524188995361
+          },
+          {
+            "layer": "block.18.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.019623523578047752,
+            "activation_cosine": 0.9998075366020203
+          },
+          {
+            "layer": "block.19.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.01862390525639057,
+            "activation_cosine": 0.9998267889022827
+          },
+          {
+            "layer": "block.20.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.01841442845761776,
+            "activation_cosine": 0.9998306035995483
+          },
+          {
+            "layer": "block.21.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.019479986280202866,
+            "activation_cosine": 0.9998104572296143
+          },
+          {
+            "layer": "block.22.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.019633427262306213,
+            "activation_cosine": 0.9998072385787964
+          },
+          {
+            "layer": "block.23.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.02016581781208515,
+            "activation_cosine": 0.9997967481613159
+          },
+          {
+            "layer": "block.24.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.02037888392806053,
+            "activation_cosine": 0.9997924566268921
+          },
+          {
+            "layer": "block.25.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.01817396841943264,
+            "activation_cosine": 0.9998350143432617
+          },
+          {
+            "layer": "block.26.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.0217901524156332,
+            "activation_cosine": 0.999762773513794
+          },
+          {
+            "layer": "block.27.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.023970849812030792,
+            "activation_cosine": 0.9997127056121826
+          },
+          {
+            "layer": "block.28.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.023911189287900925,
+            "activation_cosine": 0.9997141361236572
+          },
+          {
+            "layer": "block.29.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.024910811334848404,
+            "activation_cosine": 0.9996897578239441
+          },
+          {
+            "layer": "block.30.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.02520839497447014,
+            "activation_cosine": 0.9996823072433472
+          },
+          {
+            "layer": "block.31.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.02506973221898079,
+            "activation_cosine": 0.9996857047080994
+          },
+          {
+            "layer": "block.32.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.024034108966588974,
+            "activation_cosine": 0.9997111558914185
+          },
+          {
+            "layer": "block.33.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.02369900792837143,
+            "activation_cosine": 0.9997191429138184
+          },
+          {
+            "layer": "block.34.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.022367577999830246,
+            "activation_cosine": 0.9997498393058777
+          },
+          {
+            "layer": "block.35.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.022154266014695168,
+            "activation_cosine": 0.9997546672821045
+          },
+          {
+            "layer": "block.36.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.022240934893488884,
+            "activation_cosine": 0.9997527003288269
+          },
+          {
+            "layer": "block.37.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.014361072331666946,
+            "activation_cosine": 0.9999019503593445
+          },
+          {
+            "layer": "block.38.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.022170057520270348,
+            "activation_cosine": 0.9997543096542358
+          },
+          {
+            "layer": "block.39.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.022883860394358635,
+            "activation_cosine": 0.9997384548187256
+          },
+          {
+            "layer": "block.40.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.022922644391655922,
+            "activation_cosine": 0.9997372627258301
+          },
+          {
+            "layer": "block.41.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.0236186645925045,
+            "activation_cosine": 0.9997210502624512
+          },
+          {
+            "layer": "block.42.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.022057469934225082,
+            "activation_cosine": 0.9997568130493164
+          },
+          {
+            "layer": "block.43.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.01709509827196598,
+            "activation_cosine": 0.9998539686203003
+          },
+          {
+            "layer": "block.44.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.014447102323174477,
+            "activation_cosine": 0.9998959302902222
+          },
+          {
+            "layer": "block.45.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.008199887350201607,
+            "activation_cosine": 0.9999674558639526
+          },
+          {
+            "layer": "block.46.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.008077635429799557,
+            "activation_cosine": 0.9999676942825317
+          },
+          {
+            "layer": "block.47.ff.out",
+            "stored_bytes": 67117056,
+            "activation_error": 0.00585561478510499,
+            "activation_cosine": 0.9999838471412659
+          }
+        ]
+      }
+    }
+  }
+}

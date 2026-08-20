@@ -1,0 +1,666 @@
+{
+  "teacher": "Lightricks/LTX-2.5",
+  "evaluation_prompts": [
+    {
+      "sample_id": "eval-00004",
+      "text": "A glass sphere rolls across a wooden table while afternoon light moves through it.",
+      "split": "eval"
+    },
+    {
+      "sample_id": "eval-00005",
+      "text": "A ceramic robot makes tea in a small warm kitchen.",
+      "split": "eval"
+    }
+  ],
+  "train_prompts_used_for_scoring": false,
+  "compression_ratio": 3.0009005387969414,
+  "applied_projection_swaps": 480,
+  "maximum_weight_delta": 0.1259765625,
+  "mean_block_relative_error": 0.01603652104968205,
+  "mean_block_cosine": 0.9998389102518559,
+  "worst_block_relative_error": 0.039324380457401276,
+  "worst_block_cosine": 0.999433159828186,
+  "measurements": [
+    {
+      "sample_id": "eval-00004",
+      "block_index": 0,
+      "step_index": 0,
+      "relative_error": 0.01507608126848936,
+      "cosine": 0.9998862743377686,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 12,
+      "step_index": 0,
+      "relative_error": 0.006905012764036655,
+      "cosine": 0.9999774098396301,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 24,
+      "step_index": 0,
+      "relative_error": 0.01382541749626398,
+      "cosine": 0.9999064803123474,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 36,
+      "step_index": 0,
+      "relative_error": 0.029324643313884735,
+      "cosine": 0.9995766282081604,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 47,
+      "step_index": 0,
+      "relative_error": 0.007242686580866575,
+      "cosine": 0.9999769926071167,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 0,
+      "step_index": 1,
+      "relative_error": 0.031441934406757355,
+      "cosine": 0.9996164441108704,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 12,
+      "step_index": 1,
+      "relative_error": 0.007225351873785257,
+      "cosine": 0.999976396560669,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 24,
+      "step_index": 1,
+      "relative_error": 0.01271734107285738,
+      "cosine": 0.9999193549156189,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 36,
+      "step_index": 1,
+      "relative_error": 0.029422514140605927,
+      "cosine": 0.9995729327201843,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 47,
+      "step_index": 1,
+      "relative_error": 0.0073644621297717094,
+      "cosine": 0.9999737739562988,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 0,
+      "step_index": 2,
+      "relative_error": 0.03281615674495697,
+      "cosine": 0.9995926022529602,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 12,
+      "step_index": 2,
+      "relative_error": 0.008013211190700531,
+      "cosine": 0.9999730587005615,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 24,
+      "step_index": 2,
+      "relative_error": 0.012599718756973743,
+      "cosine": 0.999920666217804,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 36,
+      "step_index": 2,
+      "relative_error": 0.029333824291825294,
+      "cosine": 0.9995713829994202,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 47,
+      "step_index": 2,
+      "relative_error": 0.007104373071342707,
+      "cosine": 0.9999756813049316,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 0,
+      "step_index": 3,
+      "relative_error": 0.02684294991195202,
+      "cosine": 0.9997128248214722,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 12,
+      "step_index": 3,
+      "relative_error": 0.008071555756032467,
+      "cosine": 0.9999716281890869,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 24,
+      "step_index": 3,
+      "relative_error": 0.012941012158989906,
+      "cosine": 0.9999163150787354,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 36,
+      "step_index": 3,
+      "relative_error": 0.029766010120511055,
+      "cosine": 0.9995582699775696,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 47,
+      "step_index": 3,
+      "relative_error": 0.006942862179130316,
+      "cosine": 0.9999760389328003,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 0,
+      "step_index": 4,
+      "relative_error": 0.025689687579870224,
+      "cosine": 0.9997490644454956,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 12,
+      "step_index": 4,
+      "relative_error": 0.008050577715039253,
+      "cosine": 0.9999716281890869,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 24,
+      "step_index": 4,
+      "relative_error": 0.01284829806536436,
+      "cosine": 0.9999176263809204,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 36,
+      "step_index": 4,
+      "relative_error": 0.02973291091620922,
+      "cosine": 0.9995591640472412,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 47,
+      "step_index": 4,
+      "relative_error": 0.006177285686135292,
+      "cosine": 0.9999813437461853,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 0,
+      "step_index": 5,
+      "relative_error": 0.013266644440591335,
+      "cosine": 0.9999161958694458,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 12,
+      "step_index": 5,
+      "relative_error": 0.006160777062177658,
+      "cosine": 0.9999821186065674,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 24,
+      "step_index": 5,
+      "relative_error": 0.013390443287789822,
+      "cosine": 0.999910831451416,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 36,
+      "step_index": 5,
+      "relative_error": 0.029723426327109337,
+      "cosine": 0.9995595216751099,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 47,
+      "step_index": 5,
+      "relative_error": 0.006017952226102352,
+      "cosine": 0.9999839067459106,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 0,
+      "step_index": 6,
+      "relative_error": 0.009273515082895756,
+      "cosine": 0.9999614953994751,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 12,
+      "step_index": 6,
+      "relative_error": 0.006277980748564005,
+      "cosine": 0.9999802708625793,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 24,
+      "step_index": 6,
+      "relative_error": 0.015644846484065056,
+      "cosine": 0.9998795986175537,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 36,
+      "step_index": 6,
+      "relative_error": 0.03366899862885475,
+      "cosine": 0.999433159828186,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 47,
+      "step_index": 6,
+      "relative_error": 0.00612697983160615,
+      "cosine": 0.9999834895133972,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 0,
+      "step_index": 7,
+      "relative_error": 0.009271463379263878,
+      "cosine": 0.9999653697013855,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 12,
+      "step_index": 7,
+      "relative_error": 0.005182991269975901,
+      "cosine": 0.9999868273735046,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 24,
+      "step_index": 7,
+      "relative_error": 0.016748318448662758,
+      "cosine": 0.9998647570610046,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 36,
+      "step_index": 7,
+      "relative_error": 0.03162660449743271,
+      "cosine": 0.9994999766349792,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00004",
+      "block_index": 47,
+      "step_index": 7,
+      "relative_error": 0.00731098186224699,
+      "cosine": 0.9999761581420898,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 0,
+      "step_index": 0,
+      "relative_error": 0.016368363052606583,
+      "cosine": 0.9998975396156311,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 12,
+      "step_index": 0,
+      "relative_error": 0.007365039084106684,
+      "cosine": 0.9999755620956421,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 24,
+      "step_index": 0,
+      "relative_error": 0.015022354200482368,
+      "cosine": 0.9998947978019714,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 36,
+      "step_index": 0,
+      "relative_error": 0.028682902455329895,
+      "cosine": 0.9995934963226318,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 47,
+      "step_index": 0,
+      "relative_error": 0.007065994199365377,
+      "cosine": 0.9999768733978271,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 0,
+      "step_index": 1,
+      "relative_error": 0.03854241967201233,
+      "cosine": 0.9995477199554443,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 12,
+      "step_index": 1,
+      "relative_error": 0.008505983278155327,
+      "cosine": 0.9999719858169556,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 24,
+      "step_index": 1,
+      "relative_error": 0.014195539057254791,
+      "cosine": 0.9999046325683594,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 36,
+      "step_index": 1,
+      "relative_error": 0.029059134423732758,
+      "cosine": 0.9995818138122559,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 47,
+      "step_index": 1,
+      "relative_error": 0.006984418258070946,
+      "cosine": 0.9999772310256958,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 0,
+      "step_index": 2,
+      "relative_error": 0.039324380457401276,
+      "cosine": 0.9995391964912415,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 12,
+      "step_index": 2,
+      "relative_error": 0.009509438648819923,
+      "cosine": 0.9999666810035706,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 24,
+      "step_index": 2,
+      "relative_error": 0.014040810987353325,
+      "cosine": 0.9999030232429504,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 36,
+      "step_index": 2,
+      "relative_error": 0.029275670647621155,
+      "cosine": 0.9995724558830261,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 47,
+      "step_index": 2,
+      "relative_error": 0.006749028339982033,
+      "cosine": 0.9999784231185913,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 0,
+      "step_index": 3,
+      "relative_error": 0.0331035777926445,
+      "cosine": 0.9996670484542847,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 12,
+      "step_index": 3,
+      "relative_error": 0.009152747690677643,
+      "cosine": 0.9999674558639526,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 24,
+      "step_index": 3,
+      "relative_error": 0.013720666989684105,
+      "cosine": 0.999906063079834,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 36,
+      "step_index": 3,
+      "relative_error": 0.029391886666417122,
+      "cosine": 0.9995688199996948,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 47,
+      "step_index": 3,
+      "relative_error": 0.005945870652794838,
+      "cosine": 0.999983549118042,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 0,
+      "step_index": 4,
+      "relative_error": 0.02926601655781269,
+      "cosine": 0.9997389316558838,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 12,
+      "step_index": 4,
+      "relative_error": 0.009199961088597775,
+      "cosine": 0.9999660849571228,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 24,
+      "step_index": 4,
+      "relative_error": 0.013642171397805214,
+      "cosine": 0.9999070167541504,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 36,
+      "step_index": 4,
+      "relative_error": 0.02919565886259079,
+      "cosine": 0.9995746612548828,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 47,
+      "step_index": 4,
+      "relative_error": 0.004920041188597679,
+      "cosine": 0.9999890327453613,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 0,
+      "step_index": 5,
+      "relative_error": 0.01300108153373003,
+      "cosine": 0.999923825263977,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 12,
+      "step_index": 5,
+      "relative_error": 0.005508163943886757,
+      "cosine": 0.9999852180480957,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 24,
+      "step_index": 5,
+      "relative_error": 0.013651304878294468,
+      "cosine": 0.9999071955680847,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 36,
+      "step_index": 5,
+      "relative_error": 0.029244225472211838,
+      "cosine": 0.9995729327201843,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 47,
+      "step_index": 5,
+      "relative_error": 0.006389738526195288,
+      "cosine": 0.9999822378158569,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 0,
+      "step_index": 6,
+      "relative_error": 0.008914824575185776,
+      "cosine": 0.9999653100967407,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 12,
+      "step_index": 6,
+      "relative_error": 0.0048142834566533566,
+      "cosine": 0.9999887943267822,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 24,
+      "step_index": 6,
+      "relative_error": 0.016875285655260086,
+      "cosine": 0.9998596906661987,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 36,
+      "step_index": 6,
+      "relative_error": 0.031905557960271835,
+      "cosine": 0.9994927644729614,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 47,
+      "step_index": 6,
+      "relative_error": 0.00676700146868825,
+      "cosine": 0.9999805688858032,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 0,
+      "step_index": 7,
+      "relative_error": 0.008992471732199192,
+      "cosine": 0.999967634677887,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 12,
+      "step_index": 7,
+      "relative_error": 0.0045876167714595795,
+      "cosine": 0.9999894499778748,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 24,
+      "step_index": 7,
+      "relative_error": 0.018017249181866646,
+      "cosine": 0.9998409748077393,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 36,
+      "step_index": 7,
+      "relative_error": 0.031033508479595184,
+      "cosine": 0.9995187520980835,
+      "token_count": 128
+    },
+    {
+      "sample_id": "eval-00005",
+      "block_index": 47,
+      "step_index": 7,
+      "relative_error": 0.007821491919457912,
+      "cosine": 0.999973714351654,
+      "token_count": 128
+    }
+  ],
+  "scope": "local complete-block replay on identical teacher block inputs"
+}

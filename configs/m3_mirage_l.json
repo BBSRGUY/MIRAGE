@@ -1,0 +1,17 @@
+{
+  "variant": "MIRAGE-L",
+  "model": {
+    "frames": 16, "height": 256, "width": 256, "patch_size": 16,
+    "hidden_size": 768, "depth": 20, "heads": 12,
+    "basis_count": 8, "residual_rank": 16, "projection_backend": "independent",
+    "steps": 4, "text_tokens": 32, "vocabulary_size": 32768,
+    "scene_ratio": 0.6, "attention_window": 1, "attention_stride": 8,
+    "cache_threshold": 0.0, "max_cache_age": 1, "precision": "dynamic",
+    "seed": 3407, "vram_budget_gb": 20.0
+  },
+  "data": {"manifest": "data/m3/train.jsonl", "teacher_features": "data/m3/teacher_features", "shuffle_buffer": 256, "synthetic_samples": 64, "seed": 3407},
+  "compression": {"policy": "m2_heterogeneous_int4_int8", "allocation_report": "artifacts/m2/ltx25_22b/reports/heterogeneous_allocation.json", "int4_group_size": 64},
+  "training": {"output_dir": "artifacts/m3/mirage-l", "batch_size": 1, "epochs": 100, "max_steps": 100000, "learning_rate": 0.00005, "weight_decay": 0.01, "gradient_accumulation": 16, "gradient_checkpointing": true, "mixed_precision": "bf16", "ema_decay": 0.9999, "checkpoint_every": 1000, "log_every": 10, "max_grad_norm": 1.0, "resume": null, "strict_resume_provenance": true, "seed": 3407},
+  "losses": {"flow": 1.0, "behavior": 0.1, "temporal": 0.1, "identity": 0.05, "av_sync": 0.05},
+  "evaluation": {"prompts": ["A glass sphere rolls across a wooden table.", "A ceramic robot makes tea in a warm kitchen."], "seeds": [101, 202]}
+}

@@ -1,0 +1,2594 @@
+{
+  "block.45.attn.out": {
+    "sensitivity_score": 1.82780807929159,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8880341649055481,
+    "best_activation_cosine": 0.45977842807769775
+  },
+  "block.41.attn.out": {
+    "sensitivity_score": 1.8236169351101112,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9262705445289612,
+    "best_activation_cosine": 0.3768590986728668
+  },
+  "block.38.ff.out": {
+    "sensitivity_score": 1.8207953695009553,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9479762315750122,
+    "best_activation_cosine": 0.3183586597442627
+  },
+  "block.40.ff.out": {
+    "sensitivity_score": 1.8182782142372529,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9249032735824585,
+    "best_activation_cosine": 0.38127806782722473
+  },
+  "block.43.attn.out": {
+    "sensitivity_score": 1.8122614339450507,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9000471234321594,
+    "best_activation_cosine": 0.43579384684562683
+  },
+  "block.41.ff.out": {
+    "sensitivity_score": 1.8036649902055546,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9070441722869873,
+    "best_activation_cosine": 0.42128902673721313
+  },
+  "block.35.ff.out": {
+    "sensitivity_score": 1.8013300580319798,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9721531271934509,
+    "best_activation_cosine": 0.23451001942157745
+  },
+  "block.45.attn.v": {
+    "sensitivity_score": 1.7970407328108826,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8592369556427002,
+    "best_activation_cosine": 0.5115776658058167
+  },
+  "block.34.ff.out": {
+    "sensitivity_score": 1.7929280844803948,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9795646071434021,
+    "best_activation_cosine": 0.20131999254226685
+  },
+  "block.40.attn.out": {
+    "sensitivity_score": 1.7876868286100878,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.918457567691803,
+    "best_activation_cosine": 0.3955197036266327
+  },
+  "block.42.ff.out": {
+    "sensitivity_score": 1.7685906899793926,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8794123530387878,
+    "best_activation_cosine": 0.476557195186615
+  },
+  "block.33.ff.out": {
+    "sensitivity_score": 1.7602172430812362,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9737142324447632,
+    "best_activation_cosine": 0.2277732938528061
+  },
+  "block.36.attn.out": {
+    "sensitivity_score": 1.7396617468912696,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9368577003479004,
+    "best_activation_cosine": 0.3497108817100525
+  },
+  "block.32.ff.out": {
+    "sensitivity_score": 1.7356637396509373,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9722853302955627,
+    "best_activation_cosine": 0.23380029201507568
+  },
+  "block.31.ff.out": {
+    "sensitivity_score": 1.721931147417987,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9769591689109802,
+    "best_activation_cosine": 0.2134276181459427
+  },
+  "block.44.attn.v": {
+    "sensitivity_score": 1.717700105786659,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8303263187408447,
+    "best_activation_cosine": 0.5572774410247803
+  },
+  "block.47.attn.v": {
+    "sensitivity_score": 1.7129692837729529,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8016126751899719,
+    "best_activation_cosine": 0.5978436470031738
+  },
+  "block.34.attn.out": {
+    "sensitivity_score": 1.7066649695257912,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9417815208435059,
+    "best_activation_cosine": 0.3362255096435547
+  },
+  "block.30.attn.out": {
+    "sensitivity_score": 1.669263357184796,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9689939022064209,
+    "best_activation_cosine": 0.24708476662635803
+  },
+  "block.33.attn.out": {
+    "sensitivity_score": 1.6664639928476892,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9310925602912903,
+    "best_activation_cosine": 0.3647829294204712
+  },
+  "block.31.attn.out": {
+    "sensitivity_score": 1.6586643588753258,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9504971504211426,
+    "best_activation_cosine": 0.310733437538147
+  },
+  "block.32.attn.out": {
+    "sensitivity_score": 1.6579647431526399,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9380697011947632,
+    "best_activation_cosine": 0.34644657373428345
+  },
+  "block.28.ff.out": {
+    "sensitivity_score": 1.650083053404972,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9736430644989014,
+    "best_activation_cosine": 0.2280888855457306
+  },
+  "block.29.attn.out": {
+    "sensitivity_score": 1.6380989269050747,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9634150862693787,
+    "best_activation_cosine": 0.26801353693008423
+  },
+  "block.27.ff.out": {
+    "sensitivity_score": 1.631511129916738,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9756938219070435,
+    "best_activation_cosine": 0.21913862228393555
+  },
+  "block.30.attn.v": {
+    "sensitivity_score": 1.6286728448194463,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9304348826408386,
+    "best_activation_cosine": 0.3664572834968567
+  },
+  "block.34.attn.v": {
+    "sensitivity_score": 1.6277954105710712,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8840109705924988,
+    "best_activation_cosine": 0.4674660265445709
+  },
+  "block.28.attn.out": {
+    "sensitivity_score": 1.615756594801391,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9629452228546143,
+    "best_activation_cosine": 0.2696971893310547
+  },
+  "block.35.attn.v": {
+    "sensitivity_score": 1.5997420251026622,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8581811189651489,
+    "best_activation_cosine": 0.5133470296859741
+  },
+  "block.33.attn.v": {
+    "sensitivity_score": 1.5930935321088036,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8759799003601074,
+    "best_activation_cosine": 0.48234742879867554
+  },
+  "block.27.attn.out": {
+    "sensitivity_score": 1.5909644621913452,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9609829187393188,
+    "best_activation_cosine": 0.276607871055603
+  },
+  "block.26.ff.out": {
+    "sensitivity_score": 1.58446135539699,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9605368375778198,
+    "best_activation_cosine": 0.2782011330127716
+  },
+  "block.26.attn.out": {
+    "sensitivity_score": 1.5758557744256407,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.964896023273468,
+    "best_activation_cosine": 0.2626323699951172
+  },
+  "block.29.attn.v": {
+    "sensitivity_score": 1.5660214316647612,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9064147472381592,
+    "best_activation_cosine": 0.42238885164260864
+  },
+  "block.28.attn.v": {
+    "sensitivity_score": 1.5539889311428887,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9114429950714111,
+    "best_activation_cosine": 0.41142651438713074
+  },
+  "block.31.attn.v": {
+    "sensitivity_score": 1.5539170297614546,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8763469457626343,
+    "best_activation_cosine": 0.4816804528236389
+  },
+  "block.24.ff.out": {
+    "sensitivity_score": 1.546873263035247,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9641655683517456,
+    "best_activation_cosine": 0.26537007093429565
+  },
+  "block.32.attn.v": {
+    "sensitivity_score": 1.5432571797811039,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8593183159828186,
+    "best_activation_cosine": 0.5114412307739258
+  },
+  "block.25.attn.out": {
+    "sensitivity_score": 1.5301817848364414,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9499427676200867,
+    "best_activation_cosine": 0.31242406368255615
+  },
+  "block.27.attn.v": {
+    "sensitivity_score": 1.5222172710979327,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9048733115196228,
+    "best_activation_cosine": 0.42568081617355347
+  },
+  "block.26.attn.v": {
+    "sensitivity_score": 1.5112100224333982,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9106360077857971,
+    "best_activation_cosine": 0.41320955753326416
+  },
+  "block.25.ff.out": {
+    "sensitivity_score": 1.5020920928526846,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9232499599456787,
+    "best_activation_cosine": 0.38421404361724854
+  },
+  "block.41.attn.v": {
+    "sensitivity_score": 1.4999996811965448,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.7552522420883179,
+    "best_activation_cosine": 0.6554571390151978
+  },
+  "block.43.ff.out": {
+    "sensitivity_score": 1.494638248017218,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.7349348068237305,
+    "best_activation_cosine": 0.6791973114013672
+  },
+  "block.21.ff.out": {
+    "sensitivity_score": 1.4865610621326595,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9674512147903442,
+    "best_activation_cosine": 0.2531083822250366
+  },
+  "block.25.attn.v": {
+    "sensitivity_score": 1.4782946461489246,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9031738638877869,
+    "best_activation_cosine": 0.4292750358581543
+  },
+  "block.23.attn.v": {
+    "sensitivity_score": 1.473727022276758,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9261084794998169,
+    "best_activation_cosine": 0.37725743651390076
+  },
+  "block.24.attn.out": {
+    "sensitivity_score": 1.4686544301087088,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9245878458023071,
+    "best_activation_cosine": 0.3809688985347748
+  },
+  "block.20.ff.out": {
+    "sensitivity_score": 1.4596336993646037,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.964104950428009,
+    "best_activation_cosine": 0.2655279040336609
+  },
+  "block.22.attn.out": {
+    "sensitivity_score": 1.4456164454459348,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9364635944366455,
+    "best_activation_cosine": 0.35076475143432617
+  },
+  "block.22.attn.v": {
+    "sensitivity_score": 1.4433637778299144,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.920173168182373,
+    "best_activation_cosine": 0.3915117383003235
+  },
+  "block.24.attn.v": {
+    "sensitivity_score": 1.4430810963509928,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8940776586532593,
+    "best_activation_cosine": 0.4479120969772339
+  },
+  "block.21.attn.out": {
+    "sensitivity_score": 1.4374510856163194,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9448678493499756,
+    "best_activation_cosine": 0.32745230197906494
+  },
+  "block.23.attn.out": {
+    "sensitivity_score": 1.4297623935546246,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9129620790481567,
+    "best_activation_cosine": 0.4080445170402527
+  },
+  "block.19.ff.out": {
+    "sensitivity_score": 1.4287088285001694,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9579768776893616,
+    "best_activation_cosine": 0.28685280680656433
+  },
+  "block.21.attn.v": {
+    "sensitivity_score": 1.4117752397526815,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9132706522941589,
+    "best_activation_cosine": 0.4073532819747925
+  },
+  "block.19.attn.v": {
+    "sensitivity_score": 1.4034947654938241,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9400210380554199,
+    "best_activation_cosine": 0.34111636877059937
+  },
+  "block.20.attn.out": {
+    "sensitivity_score": 1.3998153452520574,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9338623285293579,
+    "best_activation_cosine": 0.35763269662857056
+  },
+  "block.18.ff.out": {
+    "sensitivity_score": 1.398441119874356,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9521076679229736,
+    "best_activation_cosine": 0.30576401948928833
+  },
+  "block.19.attn.out": {
+    "sensitivity_score": 1.3825226058733817,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9425288438796997,
+    "best_activation_cosine": 0.334124892950058
+  },
+  "block.20.attn.v": {
+    "sensitivity_score": 1.3729714040105359,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9014248847961426,
+    "best_activation_cosine": 0.43293556571006775
+  },
+  "block.17.ff.out": {
+    "sensitivity_score": 1.3709705129199432,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9479891657829285,
+    "best_activation_cosine": 0.318409264087677
+  },
+  "block.18.attn.out": {
+    "sensitivity_score": 1.3699864740144907,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9468140602111816,
+    "best_activation_cosine": 0.3217811584472656
+  },
+  "block.16.ff.out": {
+    "sensitivity_score": 1.3696609590473483,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9621167182922363,
+    "best_activation_cosine": 0.27278685569763184
+  },
+  "block.18.attn.v": {
+    "sensitivity_score": 1.368495213081076,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9328535199165344,
+    "best_activation_cosine": 0.3602561354637146
+  },
+  "block.17.attn.v": {
+    "sensitivity_score": 1.3544355715556682,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9355114102363586,
+    "best_activation_cosine": 0.35329675674438477
+  },
+  "block.15.ff.out": {
+    "sensitivity_score": 1.3469781131389127,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9614441990852356,
+    "best_activation_cosine": 0.2750001549720764
+  },
+  "block.17.attn.out": {
+    "sensitivity_score": 1.3424594942760137,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9422865509986877,
+    "best_activation_cosine": 0.33480754494667053
+  },
+  "block.45.attn.q": {
+    "sensitivity_score": 1.332337659514713,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.6083139181137085,
+    "best_activation_cosine": 0.7936964631080627
+  },
+  "block.16.attn.out": {
+    "sensitivity_score": 1.3311111438466927,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9491515159606934,
+    "best_activation_cosine": 0.3148198127746582
+  },
+  "block.16.attn.v": {
+    "sensitivity_score": 1.3288499007820858,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9324082136154175,
+    "best_activation_cosine": 0.3614068031311035
+  },
+  "block.15.attn.v": {
+    "sensitivity_score": 1.3135256957568393,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9387077689170837,
+    "best_activation_cosine": 0.34471386671066284
+  },
+  "block.14.ff.out": {
+    "sensitivity_score": 1.3050036908927105,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.946753978729248,
+    "best_activation_cosine": 0.3219577670097351
+  },
+  "block.13.ff.out": {
+    "sensitivity_score": 1.3036342014168318,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9615231156349182,
+    "best_activation_cosine": 0.2747318148612976
+  },
+  "block.43.attn.q": {
+    "sensitivity_score": 1.2944608619705018,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.6041540503501892,
+    "best_activation_cosine": 0.7968674898147583
+  },
+  "block.44.attn.q": {
+    "sensitivity_score": 1.2905335478035247,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5957021713256836,
+    "best_activation_cosine": 0.8032054901123047
+  },
+  "block.15.attn.out": {
+    "sensitivity_score": 1.2879647100235139,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9347137212753296,
+    "best_activation_cosine": 0.3554013967514038
+  },
+  "block.14.attn.out": {
+    "sensitivity_score": 1.2592697255575656,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9273650050163269,
+    "best_activation_cosine": 0.3741578459739685
+  },
+  "block.46.attn.q": {
+    "sensitivity_score": 1.257082240015254,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5677825212478638,
+    "best_activation_cosine": 0.8231785297393799
+  },
+  "block.10.ff.out": {
+    "sensitivity_score": 1.2507486669106398,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9710697531700134,
+    "best_activation_cosine": 0.2389920949935913
+  },
+  "block.14.attn.v": {
+    "sensitivity_score": 1.2490054873208514,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.907231330871582,
+    "best_activation_cosine": 0.42063209414482117
+  },
+  "block.44.ff.out": {
+    "sensitivity_score": 1.2452952273829048,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.6056004166603088,
+    "best_activation_cosine": 0.79646897315979
+  },
+  "block.12.ff.out": {
+    "sensitivity_score": 1.2383102998513862,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9288224577903748,
+    "best_activation_cosine": 0.37073302268981934
+  },
+  "block.13.attn.v": {
+    "sensitivity_score": 1.2373990626571105,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9137808680534363,
+    "best_activation_cosine": 0.4062075912952423
+  },
+  "block.13.attn.out": {
+    "sensitivity_score": 1.237367877072515,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9264230728149414,
+    "best_activation_cosine": 0.3764842748641968
+  },
+  "block.12.attn.out": {
+    "sensitivity_score": 1.2368714262655152,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9432762265205383,
+    "best_activation_cosine": 0.33200907707214355
+  },
+  "block.35.attn.q": {
+    "sensitivity_score": 1.2316508301330742,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.6309210658073425,
+    "best_activation_cosine": 0.7758470177650452
+  },
+  "block.41.attn.q": {
+    "sensitivity_score": 1.2258752098638785,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5851468443870544,
+    "best_activation_cosine": 0.8109272718429565
+  },
+  "block.12.attn.v": {
+    "sensitivity_score": 1.2235472144155102,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.916725754737854,
+    "best_activation_cosine": 0.39951714873313904
+  },
+  "block.42.attn.q": {
+    "sensitivity_score": 1.221790346840331,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.576644241809845,
+    "best_activation_cosine": 0.81699538230896
+  },
+  "block.09.ff.out": {
+    "sensitivity_score": 1.214623548750356,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.959862232208252,
+    "best_activation_cosine": 0.2805476188659668
+  },
+  "block.08.ff.out": {
+    "sensitivity_score": 1.209247458475677,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9729885458946228,
+    "best_activation_cosine": 0.23085330426692963
+  },
+  "block.43.attn.k": {
+    "sensitivity_score": 1.2060733803742032,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5631157755851746,
+    "best_activation_cosine": 0.8263850212097168
+  },
+  "block.38.attn.q": {
+    "sensitivity_score": 1.1832327158518843,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5847261548042297,
+    "best_activation_cosine": 0.8112307786941528
+  },
+  "block.39.attn.q": {
+    "sensitivity_score": 1.1831440787451313,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5778837203979492,
+    "best_activation_cosine": 0.8161191940307617
+  },
+  "block.11.attn.out": {
+    "sensitivity_score": 1.1830839726693796,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9163246154785156,
+    "best_activation_cosine": 0.4004363417625427
+  },
+  "block.07.ff.out": {
+    "sensitivity_score": 1.1828671070823467,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9693875312805176,
+    "best_activation_cosine": 0.24555683135986328
+  },
+  "block.47.attn.q": {
+    "sensitivity_score": 1.1745774616589144,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5248740315437317,
+    "best_activation_cosine": 0.8511799573898315
+  },
+  "block.36.attn.q": {
+    "sensitivity_score": 1.168880363947573,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5915524363517761,
+    "best_activation_cosine": 0.8062666654586792
+  },
+  "block.44.attn.k": {
+    "sensitivity_score": 1.1624241919729057,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.536771833896637,
+    "best_activation_cosine": 0.8437367081642151
+  },
+  "block.11.attn.v": {
+    "sensitivity_score": 1.16086785160555,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8868257999420166,
+    "best_activation_cosine": 0.462103933095932
+  },
+  "block.42.attn.k": {
+    "sensitivity_score": 1.1547114892428019,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5451925992965698,
+    "best_activation_cosine": 0.8383219838142395
+  },
+  "block.06.ff.out": {
+    "sensitivity_score": 1.153253119448719,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.962950587272644,
+    "best_activation_cosine": 0.2707163691520691
+  },
+  "block.46.ff.in": {
+    "sensitivity_score": 1.149029532204603,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5384225249290466,
+    "best_activation_cosine": 0.842674970626831
+  },
+  "block.45.ff.in": {
+    "sensitivity_score": 1.1473193052622521,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5434648394584656,
+    "best_activation_cosine": 0.8394321799278259
+  },
+  "block.40.attn.q": {
+    "sensitivity_score": 1.1401436534379197,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.55048006772995,
+    "best_activation_cosine": 0.8348482847213745
+  },
+  "block.33.attn.q": {
+    "sensitivity_score": 1.1361744294502758,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5965629816055298,
+    "best_activation_cosine": 0.8025662302970886
+  },
+  "block.10.attn.out": {
+    "sensitivity_score": 1.1338746341842187,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.893618106842041,
+    "best_activation_cosine": 0.4488281011581421
+  },
+  "block.34.attn.k": {
+    "sensitivity_score": 1.1335802172873928,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5767145156860352,
+    "best_activation_cosine": 0.8169457912445068
+  },
+  "block.32.attn.q": {
+    "sensitivity_score": 1.1331160058334473,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.6024882197380066,
+    "best_activation_cosine": 0.7981277704238892
+  },
+  "block.35.ff.in": {
+    "sensitivity_score": 1.1315565669651955,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.6013639569282532,
+    "best_activation_cosine": 0.7989881634712219
+  },
+  "block.05.ff.out": {
+    "sensitivity_score": 1.1314205779237703,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9628884196281433,
+    "best_activation_cosine": 0.26995599269866943
+  },
+  "block.34.attn.q": {
+    "sensitivity_score": 1.1301131455431077,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5860547423362732,
+    "best_activation_cosine": 0.8102715015411377
+  },
+  "block.08.attn.out": {
+    "sensitivity_score": 1.1254351015484565,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9146283864974976,
+    "best_activation_cosine": 0.4042956829071045
+  },
+  "block.44.ff.in": {
+    "sensitivity_score": 1.1213961640382832,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5370227098464966,
+    "best_activation_cosine": 0.8435678482055664
+  },
+  "block.34.ff.in": {
+    "sensitivity_score": 1.115349133746145,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.6000684499740601,
+    "best_activation_cosine": 0.7999492883682251
+  },
+  "block.30.attn.q": {
+    "sensitivity_score": 1.1082959826870815,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.6045974493026733,
+    "best_activation_cosine": 0.7965317368507385
+  },
+  "block.07.attn.out": {
+    "sensitivity_score": 1.100952455156013,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9158757925033569,
+    "best_activation_cosine": 0.40146178007125854
+  },
+  "block.37.attn.q": {
+    "sensitivity_score": 1.0988778477249808,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5495046973228455,
+    "best_activation_cosine": 0.8354905843734741
+  },
+  "block.10.attn.v": {
+    "sensitivity_score": 1.09675768141036,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8525490164756775,
+    "best_activation_cosine": 0.5226472616195679
+  },
+  "block.31.attn.q": {
+    "sensitivity_score": 1.0926267925739834,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5884079337120056,
+    "best_activation_cosine": 0.8085642457008362
+  },
+  "block.29.attn.q": {
+    "sensitivity_score": 1.0784926101271806,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5960804224014282,
+    "best_activation_cosine": 0.8029247522354126
+  },
+  "block.45.attn.k": {
+    "sensitivity_score": 1.076480284738413,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.4916824698448181,
+    "best_activation_cosine": 0.8707753419876099
+  },
+  "block.03.ff.out": {
+    "sensitivity_score": 1.0733059745043205,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9499675631523132,
+    "best_activation_cosine": 0.3124921917915344
+  },
+  "block.36.attn.k": {
+    "sensitivity_score": 1.0725446810985624,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5430049300193787,
+    "best_activation_cosine": 0.839729905128479
+  },
+  "block.09.attn.out": {
+    "sensitivity_score": 1.0625439600188484,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8537392020225525,
+    "best_activation_cosine": 0.5207009315490723
+  },
+  "block.41.attn.k": {
+    "sensitivity_score": 1.0535266926098963,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5030710697174072,
+    "best_activation_cosine": 0.8642467260360718
+  },
+  "block.32.attn.k": {
+    "sensitivity_score": 1.0527166264884313,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5599520802497864,
+    "best_activation_cosine": 0.8285480737686157
+  },
+  "block.02.ff.out": {
+    "sensitivity_score": 1.0524928904508677,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9505573511123657,
+    "best_activation_cosine": 0.3111635744571686
+  },
+  "block.47.ff.in": {
+    "sensitivity_score": 1.0498699887196108,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.4867238700389862,
+    "best_activation_cosine": 0.8735578060150146
+  },
+  "block.24.attn.q": {
+    "sensitivity_score": 1.0418564951064557,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.6163832545280457,
+    "best_activation_cosine": 0.7874464988708496
+  },
+  "block.43.ff.in": {
+    "sensitivity_score": 1.036940106023084,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5020952820777893,
+    "best_activation_cosine": 0.8648123145103455
+  },
+  "block.38.attn.v": {
+    "sensitivity_score": 1.0334819076711528,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5387254357337952,
+    "best_activation_cosine": 0.8427602648735046
+  },
+  "block.33.attn.k": {
+    "sensitivity_score": 1.0289504490218715,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5300271511077881,
+    "best_activation_cosine": 0.8479806184768677
+  },
+  "block.33.ff.in": {
+    "sensitivity_score": 1.026481001272242,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5591597557067871,
+    "best_activation_cosine": 0.8290680646896362
+  },
+  "block.41.ff.in": {
+    "sensitivity_score": 1.0263928090765966,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5082833766937256,
+    "best_activation_cosine": 0.8611912727355957
+  },
+  "block.16.attn.q": {
+    "sensitivity_score": 1.02173894585991,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.6915266513824463,
+    "best_activation_cosine": 0.7223510146141052
+  },
+  "block.40.ff.in": {
+    "sensitivity_score": 1.0184011654898872,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5101226568222046,
+    "best_activation_cosine": 0.8601020574569702
+  },
+  "block.18.attn.q": {
+    "sensitivity_score": 1.0170499302911316,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.6671729683876038,
+    "best_activation_cosine": 0.7449028491973877
+  },
+  "block.08.attn.v": {
+    "sensitivity_score": 1.0130997790703145,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.814254641532898,
+    "best_activation_cosine": 0.580507755279541
+  },
+  "block.01.ff.out": {
+    "sensitivity_score": 1.011287868951791,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.9323710799217224,
+    "best_activation_cosine": 0.3616194427013397
+  },
+  "block.06.attn.out": {
+    "sensitivity_score": 1.0108804376100724,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8582034707069397,
+    "best_activation_cosine": 0.5133097171783447
+  },
+  "block.14.attn.q": {
+    "sensitivity_score": 1.0072307875944857,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.6999836564064026,
+    "best_activation_cosine": 0.7141588926315308
+  },
+  "block.32.ff.in": {
+    "sensitivity_score": 1.0028266507845793,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5531892776489258,
+    "best_activation_cosine": 0.8330836296081543
+  },
+  "block.13.attn.q": {
+    "sensitivity_score": 0.9998895771260286,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.7105756402015686,
+    "best_activation_cosine": 0.7036209106445312
+  },
+  "block.06.attn.v": {
+    "sensitivity_score": 0.9984433224174302,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8327569365501404,
+    "best_activation_cosine": 0.5536389350891113
+  },
+  "block.42.ff.in": {
+    "sensitivity_score": 0.9974193490083877,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.48838549852371216,
+    "best_activation_cosine": 0.8726285696029663
+  },
+  "block.31.attn.k": {
+    "sensitivity_score": 0.9967233911422082,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5369656682014465,
+    "best_activation_cosine": 0.8438816070556641
+  },
+  "block.03.attn.out": {
+    "sensitivity_score": 0.9909464852269511,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8903114795684814,
+    "best_activation_cosine": 0.45535212755203247
+  },
+  "block.05.attn.v": {
+    "sensitivity_score": 0.9900703140847205,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8436187505722046,
+    "best_activation_cosine": 0.536942720413208
+  },
+  "block.38.ff.in": {
+    "sensitivity_score": 0.9853481092489307,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5051795244216919,
+    "best_activation_cosine": 0.8630155324935913
+  },
+  "block.35.attn.k": {
+    "sensitivity_score": 0.9847272527828833,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5046247839927673,
+    "best_activation_cosine": 0.8633387088775635
+  },
+  "block.39.ff.in": {
+    "sensitivity_score": 0.9615312296265202,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.4872366189956665,
+    "best_activation_cosine": 0.8732708692550659
+  },
+  "block.10.attn.q": {
+    "sensitivity_score": 0.960858162041028,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.7146167159080505,
+    "best_activation_cosine": 0.6995161771774292
+  },
+  "block.12.attn.q": {
+    "sensitivity_score": 0.956493679657434,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.691257119178772,
+    "best_activation_cosine": 0.7226088047027588
+  },
+  "block.46.ff.out": {
+    "sensitivity_score": 0.9515248431665508,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.4527854025363922,
+    "best_activation_cosine": 0.8916225433349609
+  },
+  "block.38.attn.k": {
+    "sensitivity_score": 0.9510610141088172,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.47017109394073486,
+    "best_activation_cosine": 0.8825770020484924
+  },
+  "block.27.attn.q": {
+    "sensitivity_score": 0.9502805315324581,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5394129753112793,
+    "best_activation_cosine": 0.8420456647872925
+  },
+  "block.11.attn.q": {
+    "sensitivity_score": 0.9466724248012242,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.6959551572799683,
+    "best_activation_cosine": 0.7180852890014648
+  },
+  "block.15.attn.q": {
+    "sensitivity_score": 0.9453188834085349,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.6501239538192749,
+    "best_activation_cosine": 0.7598281502723694
+  },
+  "block.07.attn.q": {
+    "sensitivity_score": 0.9422386275781416,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.7440063953399658,
+    "best_activation_cosine": 0.6681724786758423
+  },
+  "block.31.ff.in": {
+    "sensitivity_score": 0.9356799004844396,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5227664113044739,
+    "best_activation_cosine": 0.8525093793869019
+  },
+  "block.02.attn.v": {
+    "sensitivity_score": 0.9280861290558399,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8372649550437927,
+    "best_activation_cosine": 0.5467973947525024
+  },
+  "block.04.attn.v": {
+    "sensitivity_score": 0.9275895390476305,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8058778047561646,
+    "best_activation_cosine": 0.5920819044113159
+  },
+  "block.02.attn.out": {
+    "sensitivity_score": 0.9182935985556149,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8418743014335632,
+    "best_activation_cosine": 0.5396736860275269
+  },
+  "block.00.attn.v": {
+    "sensitivity_score": 0.9095075336346437,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.8554195165634155,
+    "best_activation_cosine": 0.5179358720779419
+  },
+  "block.08.attn.q": {
+    "sensitivity_score": 0.9049925859576344,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.6975431442260742,
+    "best_activation_cosine": 0.7165427207946777
+  },
+  "block.27.attn.k": {
+    "sensitivity_score": 0.8947311624470672,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5080744028091431,
+    "best_activation_cosine": 0.8616969585418701
+  },
+  "block.30.ff.in": {
+    "sensitivity_score": 0.8915587223222436,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5045848488807678,
+    "best_activation_cosine": 0.863379180431366
+  },
+  "block.26.attn.k": {
+    "sensitivity_score": 0.8789864500007768,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5059711933135986,
+    "best_activation_cosine": 0.8628908395767212
+  },
+  "block.40.attn.k": {
+    "sensitivity_score": 0.878456223239637,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.42429444193840027,
+    "best_activation_cosine": 0.9055244326591492
+  },
+  "block.39.attn.k": {
+    "sensitivity_score": 0.8750693244920964,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.42757320404052734,
+    "best_activation_cosine": 0.9039813876152039
+  },
+  "block.09.attn.q": {
+    "sensitivity_score": 0.8718476311269618,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.6638379693031311,
+    "best_activation_cosine": 0.7478764653205872
+  },
+  "block.03.attn.v": {
+    "sensitivity_score": 0.868287846753003,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.7694444060325623,
+    "best_activation_cosine": 0.6387138366699219
+  },
+  "block.28.attn.k": {
+    "sensitivity_score": 0.8608775176959927,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.4730137288570404,
+    "best_activation_cosine": 0.8812071681022644
+  },
+  "block.01.attn.out": {
+    "sensitivity_score": 0.8532427394967036,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.7985334992408752,
+    "best_activation_cosine": 0.6019504070281982
+  },
+  "block.01.attn.v": {
+    "sensitivity_score": 0.8387722527301548,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.7742591500282288,
+    "best_activation_cosine": 0.6328687071800232
+  },
+  "block.00.ff.out": {
+    "sensitivity_score": 0.8176542427114842,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.7698871493339539,
+    "best_activation_cosine": 0.6382379531860352
+  },
+  "block.27.ff.in": {
+    "sensitivity_score": 0.812235198428531,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.4783271849155426,
+    "best_activation_cosine": 0.8782258033752441
+  },
+  "block.06.attn.q": {
+    "sensitivity_score": 0.80990402712552,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.6515792012214661,
+    "best_activation_cosine": 0.7585806846618652
+  },
+  "block.24.attn.k": {
+    "sensitivity_score": 0.8093575893198338,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.47901439666748047,
+    "best_activation_cosine": 0.8778090476989746
+  },
+  "block.20.attn.q": {
+    "sensitivity_score": 0.7982600470873233,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5080180168151855,
+    "best_activation_cosine": 0.8614324331283569
+  },
+  "block.28.ff.in": {
+    "sensitivity_score": 0.7874785850052879,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.45756465196609497,
+    "best_activation_cosine": 0.8892032504081726
+  },
+  "block.47.ff.out": {
+    "sensitivity_score": 0.7648836593049206,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.3600997030735016,
+    "best_activation_cosine": 0.9329211711883545
+  },
+  "block.45.ff.out": {
+    "sensitivity_score": 0.75038742553023,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.3609549105167389,
+    "best_activation_cosine": 0.9325844049453735
+  },
+  "block.24.ff.in": {
+    "sensitivity_score": 0.737445874257993,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.4526335895061493,
+    "best_activation_cosine": 0.8917983770370483
+  },
+  "block.11.attn.k": {
+    "sensitivity_score": 0.7096746404930526,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5141593813896179,
+    "best_activation_cosine": 0.8577015399932861
+  },
+  "block.07.attn.k": {
+    "sensitivity_score": 0.6903114937908088,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5371775031089783,
+    "best_activation_cosine": 0.8434715867042542
+  },
+  "block.37.attn.k": {
+    "sensitivity_score": 0.6855258975355824,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.34293439984321594,
+    "best_activation_cosine": 0.9393593668937683
+  },
+  "block.13.attn.k": {
+    "sensitivity_score": 0.6799811560486486,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.4762248992919922,
+    "best_activation_cosine": 0.8793294429779053
+  },
+  "block.21.attn.q": {
+    "sensitivity_score": 0.6778914176584344,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.42507028579711914,
+    "best_activation_cosine": 0.9053717851638794
+  },
+  "block.46.attn.k": {
+    "sensitivity_score": 0.6751546595344811,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.30506107211112976,
+    "best_activation_cosine": 0.9523345232009888
+  },
+  "block.30.attn.k": {
+    "sensitivity_score": 0.6681796134018804,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.3575988709926605,
+    "best_activation_cosine": 0.9339513778686523
+  },
+  "block.10.attn.k": {
+    "sensitivity_score": 0.6649796312862292,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.49023008346557617,
+    "best_activation_cosine": 0.8715947270393372
+  },
+  "block.12.attn.k": {
+    "sensitivity_score": 0.657890485695377,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.4685630798339844,
+    "best_activation_cosine": 0.8834448456764221
+  },
+  "block.17.attn.k": {
+    "sensitivity_score": 0.6495888161159359,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.4265058934688568,
+    "best_activation_cosine": 0.9044861793518066
+  },
+  "block.14.attn.k": {
+    "sensitivity_score": 0.647090539306349,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.4457606077194214,
+    "best_activation_cosine": 0.8951528072357178
+  },
+  "block.00.attn.out": {
+    "sensitivity_score": 0.6413441446798129,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.6129923462867737,
+    "best_activation_cosine": 0.7900888323783875
+  },
+  "block.09.attn.k": {
+    "sensitivity_score": 0.6296987667870727,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.47251030802726746,
+    "best_activation_cosine": 0.8813254237174988
+  },
+  "block.19.attn.k": {
+    "sensitivity_score": 0.6288324152028794,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.40036624670028687,
+    "best_activation_cosine": 0.9163558483123779
+  },
+  "block.03.attn.q": {
+    "sensitivity_score": 0.6261632168043805,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5308921337127686,
+    "best_activation_cosine": 0.8474392890930176
+  },
+  "block.29.ff.in": {
+    "sensitivity_score": 0.6176425203187527,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.35415923595428467,
+    "best_activation_cosine": 0.9352761507034302
+  },
+  "block.08.attn.k": {
+    "sensitivity_score": 0.6048226802176722,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.46209561824798584,
+    "best_activation_cosine": 0.8868342041969299
+  },
+  "block.02.attn.q": {
+    "sensitivity_score": 0.5999042268522746,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.5190086364746094,
+    "best_activation_cosine": 0.8547689914703369
+  },
+  "block.16.attn.k": {
+    "sensitivity_score": 0.5965094020540983,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.39787185192108154,
+    "best_activation_cosine": 0.9174411296844482
+  },
+  "block.15.attn.k": {
+    "sensitivity_score": 0.5793371202861278,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.3926504850387573,
+    "best_activation_cosine": 0.919687807559967
+  },
+  "block.18.attn.k": {
+    "sensitivity_score": 0.5636243768365605,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.3643702268600464,
+    "best_activation_cosine": 0.9312541484832764
+  },
+  "block.20.ff.in": {
+    "sensitivity_score": 0.5503053265767788,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.35793477296829224,
+    "best_activation_cosine": 0.9340258836746216
+  },
+  "block.06.attn.k": {
+    "sensitivity_score": 0.5271094995602865,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.4179183542728424,
+    "best_activation_cosine": 0.9084872603416443
+  },
+  "block.47.attn.k": {
+    "sensitivity_score": 0.5225536083054299,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.23359818756580353,
+    "best_activation_cosine": 0.9723333120346069
+  },
+  "block.19.ff.in": {
+    "sensitivity_score": 0.5082241482433397,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.3355724811553955,
+    "best_activation_cosine": 0.9421321749687195
+  },
+  "block.26.ff.in": {
+    "sensitivity_score": 0.48984678968149925,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.2924235761165619,
+    "best_activation_cosine": 0.9564677476882935
+  },
+  "block.02.attn.k": {
+    "sensitivity_score": 0.4474497037419319,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.38372015953063965,
+    "best_activation_cosine": 0.9234495162963867
+  },
+  "block.23.ff.in": {
+    "sensitivity_score": 0.4469551273952454,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.2782536447048187,
+    "best_activation_cosine": 0.960669994354248
+  },
+  "block.18.ff.in": {
+    "sensitivity_score": 0.43442973270571145,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.2912602126598358,
+    "best_activation_cosine": 0.9566856622695923
+  },
+  "block.17.ff.in": {
+    "sensitivity_score": 0.4254897911830421,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.28972378373146057,
+    "best_activation_cosine": 0.9571279883384705
+  },
+  "block.03.attn.k": {
+    "sensitivity_score": 0.42504464132731107,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.35721608996391296,
+    "best_activation_cosine": 0.9340230226516724
+  },
+  "block.01.attn.q": {
+    "sensitivity_score": 0.4128276445939094,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.36459967494010925,
+    "best_activation_cosine": 0.9311643838882446
+  },
+  "block.21.ff.in": {
+    "sensitivity_score": 0.35335963746644095,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.22645556926727295,
+    "best_activation_cosine": 0.9742549657821655
+  },
+  "block.00.attn.k": {
+    "sensitivity_score": 0.33165393304614765,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.29651984572410583,
+    "best_activation_cosine": 0.9550266861915588
+  },
+  "block.28.attn.q": {
+    "sensitivity_score": 0.3279589800340243,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.1836790144443512,
+    "best_activation_cosine": 0.9830102920532227
+  },
+  "block.16.ff.in": {
+    "sensitivity_score": 0.3150720133292593,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.21794366836547852,
+    "best_activation_cosine": 0.975961446762085
+  },
+  "block.00.attn.q": {
+    "sensitivity_score": 0.30348762341598223,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 20.210477623039754,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.27373597025871277,
+    "best_activation_cosine": 0.9618048667907715
+  },
+  "block.26.attn.q": {
+    "sensitivity_score": 0.30219593803180184,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.1738869696855545,
+    "best_activation_cosine": 0.9848020076751709
+  },
+  "block.37.ff.in": {
+    "sensitivity_score": 0.3014928661988573,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.15641295909881592,
+    "best_activation_cosine": 0.9877113699913025
+  },
+  "block.22.ff.in": {
+    "sensitivity_score": 0.29770900863056243,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.18802598118782043,
+    "best_activation_cosine": 0.9822244048118591
+  },
+  "block.14.ff.in": {
+    "sensitivity_score": 0.2954568288149768,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.21107615530490875,
+    "best_activation_cosine": 0.9774715304374695
+  },
+  "block.15.ff.in": {
+    "sensitivity_score": 0.2873502710572132,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.20197373628616333,
+    "best_activation_cosine": 0.9793910980224609
+  },
+  "block.02.ff.in": {
+    "sensitivity_score": 0.2733297293734291,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.24308925867080688,
+    "best_activation_cosine": 0.970021665096283
+  },
+  "block.12.ff.in": {
+    "sensitivity_score": 0.2562857966664318,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.18929864466190338,
+    "best_activation_cosine": 0.9819470643997192
+  },
+  "block.01.ff.in": {
+    "sensitivity_score": 0.25452349727953133,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.2310796082019806,
+    "best_activation_cosine": 0.9729366898536682
+  },
+  "block.13.ff.in": {
+    "sensitivity_score": 0.24419325462100813,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.17736069858074188,
+    "best_activation_cosine": 0.9841470718383789
+  },
+  "block.40.attn.v": {
+    "sensitivity_score": 0.23620367313322424,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.1202959269285202,
+    "best_activation_cosine": 0.992743194103241
+  },
+  "block.10.ff.in": {
+    "sensitivity_score": 0.2274948242095047,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.1739288568496704,
+    "best_activation_cosine": 0.984758734703064
+  },
+  "block.29.attn.k": {
+    "sensitivity_score": 0.22002860001745464,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.11930514872074127,
+    "best_activation_cosine": 0.9928630590438843
+  },
+  "block.09.ff.in": {
+    "sensitivity_score": 0.21400457229566253,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.16653671860694885,
+    "best_activation_cosine": 0.9860411882400513
+  },
+  "block.08.ff.in": {
+    "sensitivity_score": 0.21223849895845445,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.16816532611846924,
+    "best_activation_cosine": 0.9857649803161621
+  },
+  "block.25.ff.in": {
+    "sensitivity_score": 0.2043123922397128,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.12366226315498352,
+    "best_activation_cosine": 0.992355465888977
+  },
+  "block.07.ff.in": {
+    "sensitivity_score": 0.2025488423919738,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.16345980763435364,
+    "best_activation_cosine": 0.986566424369812
+  },
+  "block.36.ff.in": {
+    "sensitivity_score": 0.1957218206533753,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.1027628481388092,
+    "best_activation_cosine": 0.9947137832641602
+  },
+  "block.06.ff.in": {
+    "sensitivity_score": 0.1917123374813272,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.1576337367296219,
+    "best_activation_cosine": 0.9875333309173584
+  },
+  "block.04.ff.in": {
+    "sensitivity_score": 0.18527684846936857,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.15831641852855682,
+    "best_activation_cosine": 0.987403154373169
+  },
+  "block.42.attn.out": {
+    "sensitivity_score": 0.18250327200941796,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.09226712584495544,
+    "best_activation_cosine": 0.9957356452941895
+  },
+  "block.05.ff.in": {
+    "sensitivity_score": 0.1815652560484833,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.1521613597869873,
+    "best_activation_cosine": 0.9883562326431274
+  },
+  "block.17.attn.q": {
+    "sensitivity_score": 0.17952769186290632,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.11782915145158768,
+    "best_activation_cosine": 0.9930421113967896
+  },
+  "block.01.attn.k": {
+    "sensitivity_score": 0.1610918113673336,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 16,
+    "recommended_compression_ratio": 10.97139987252405,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.1410258412361145,
+    "best_activation_cosine": 0.9900058507919312
+  },
+  "block.03.ff.in": {
+    "sensitivity_score": 0.15608086689461526,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.1360362470149994,
+    "best_activation_cosine": 0.9907326698303223
+  },
+  "block.00.ff.in": {
+    "sensitivity_score": 0.1447112214915736,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.13417738676071167,
+    "best_activation_cosine": 0.9909576177597046
+  },
+  "block.44.attn.out": {
+    "sensitivity_score": 0.11017066379753003,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": false,
+    "best_activation_error": 0.05411422997713089,
+    "best_activation_cosine": 0.9985347986221313
+  },
+  "block.22.attn.q": {
+    "sensitivity_score": 0.07053319671860438,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 8,
+    "recommended_compression_ratio": 11.462655240673717,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.04358670115470886,
+    "best_activation_cosine": 0.9990506172180176
+  },
+  "block.36.ff.out": {
+    "sensitivity_score": 0.06872239346048947,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.0366416834294796,
+    "best_activation_cosine": 0.9993289113044739
+  },
+  "block.25.attn.q": {
+    "sensitivity_score": 0.06126430158572988,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 4,
+    "recommended_compression_ratio": 22.925310481347434,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.035741787403821945,
+    "best_activation_cosine": 0.9993613362312317
+  },
+  "block.38.attn.out": {
+    "sensitivity_score": 0.057353787851352804,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 0,
+    "recommended_compression_ratio": 11.999965667822835,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.030360542237758636,
+    "best_activation_cosine": 0.9995390176773071
+  },
+  "block.35.attn.out": {
+    "sensitivity_score": 0.05523425023784895,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.030107973143458366,
+    "best_activation_cosine": 0.9995466470718384
+  },
+  "block.11.ff.in": {
+    "sensitivity_score": 0.050932614104928844,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.03826863318681717,
+    "best_activation_cosine": 0.999272346496582
+  },
+  "block.36.attn.v": {
+    "sensitivity_score": 0.04552992291141301,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.024130241945385933,
+    "best_activation_cosine": 0.9997088313102722
+  },
+  "block.07.attn.v": {
+    "sensitivity_score": 0.03991017363579359,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.03251117840409279,
+    "best_activation_cosine": 0.9994715452194214
+  },
+  "block.21.attn.k": {
+    "sensitivity_score": 0.039126318734164264,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.02371121011674404,
+    "best_activation_cosine": 0.9997193217277527
+  },
+  "block.37.attn.out": {
+    "sensitivity_score": 0.03842609263079384,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.020447200164198875,
+    "best_activation_cosine": 0.9997909069061279
+  },
+  "block.42.attn.v": {
+    "sensitivity_score": 0.03813842402520779,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 0,
+    "recommended_compression_ratio": 23.99993133564567,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.01898699626326561,
+    "best_activation_cosine": 0.9998196959495544
+  },
+  "block.23.attn.k": {
+    "sensitivity_score": 0.03624447271079886,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 4,
+    "recommended_compression_ratio": 22.925310481347434,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.021337198093533516,
+    "best_activation_cosine": 0.9997722506523132
+  },
+  "block.30.ff.out": {
+    "sensitivity_score": 0.03440874439352485,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.019775766879320145,
+    "best_activation_cosine": 0.9998044967651367
+  },
+  "block.47.attn.out": {
+    "sensitivity_score": 0.031498716111470926,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.014977933838963509,
+    "best_activation_cosine": 0.9998878836631775
+  },
+  "block.29.ff.out": {
+    "sensitivity_score": 0.03018795319398724,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.017578236758708954,
+    "best_activation_cosine": 0.999845564365387
+  },
+  "block.37.attn.v": {
+    "sensitivity_score": 0.02974717932149479,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.01557791605591774,
+    "best_activation_cosine": 0.9998787045478821
+  },
+  "block.39.attn.v": {
+    "sensitivity_score": 0.028080724349616927,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 0,
+    "recommended_compression_ratio": 23.99993133564567,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.014467496424913406,
+    "best_activation_cosine": 0.9998952150344849
+  },
+  "block.05.attn.out": {
+    "sensitivity_score": 0.026070704259586575,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.02240971475839615,
+    "best_activation_cosine": 0.9997517466545105
+  },
+  "block.04.ff.out": {
+    "sensitivity_score": 0.02467650147392263,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.02141256257891655,
+    "best_activation_cosine": 0.9997771382331848
+  },
+  "block.09.attn.v": {
+    "sensitivity_score": 0.024137259804745667,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.018960194662213326,
+    "best_activation_cosine": 0.9998202323913574
+  },
+  "block.05.attn.q": {
+    "sensitivity_score": 0.022893537349350828,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.01849314756691456,
+    "best_activation_cosine": 0.9998289942741394
+  },
+  "block.23.attn.q": {
+    "sensitivity_score": 0.022311744399945845,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 0,
+    "recommended_compression_ratio": 23.99993133564567,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.013590799644589424,
+    "best_activation_cosine": 0.9999076128005981
+  },
+  "block.39.attn.out": {
+    "sensitivity_score": 0.022288711088641146,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 0,
+    "recommended_compression_ratio": 23.99993133564567,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.011584396474063396,
+    "best_activation_cosine": 0.9999330043792725
+  },
+  "block.19.attn.q": {
+    "sensitivity_score": 0.02208257571228615,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.01405423041433096,
+    "best_activation_cosine": 0.999901294708252
+  },
+  "block.46.attn.v": {
+    "sensitivity_score": 0.01954298166254068,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.009243804030120373,
+    "best_activation_cosine": 0.9999573230743408
+  },
+  "block.43.attn.v": {
+    "sensitivity_score": 0.01895853021090899,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.009266271255910397,
+    "best_activation_cosine": 0.9999570846557617
+  },
+  "block.46.attn.out": {
+    "sensitivity_score": 0.018073492656099338,
+    "recommended_min_basis": 2,
+    "recommended_min_rank": 0,
+    "recommended_compression_ratio": 23.99993133564567,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.008744308724999428,
+    "best_activation_cosine": 0.999961793422699
+  },
+  "block.39.ff.out": {
+    "sensitivity_score": 0.017136730659495704,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.008818297646939754,
+    "best_activation_cosine": 0.9999611377716064
+  },
+  "block.11.ff.out": {
+    "sensitivity_score": 0.013321195135891627,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.01016413513571024,
+    "best_activation_cosine": 0.9999486207962036
+  },
+  "block.22.ff.out": {
+    "sensitivity_score": 0.012346845161546386,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.007918850518763065,
+    "best_activation_cosine": 0.9999686479568481
+  },
+  "block.04.attn.out": {
+    "sensitivity_score": 0.010760409089943312,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.009430734440684319,
+    "best_activation_cosine": 0.9999555945396423
+  },
+  "block.20.attn.k": {
+    "sensitivity_score": 0.010088274294227819,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.00620491337031126,
+    "best_activation_cosine": 0.9999806880950928
+  },
+  "block.05.attn.k": {
+    "sensitivity_score": 0.00989493855914821,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.00784157682210207,
+    "best_activation_cosine": 0.9999692440032959
+  },
+  "block.04.attn.k": {
+    "sensitivity_score": 0.009424917669277503,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.007615545764565468,
+    "best_activation_cosine": 0.9999710321426392
+  },
+  "block.04.attn.q": {
+    "sensitivity_score": 0.00596480864139212,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.004912783391773701,
+    "best_activation_cosine": 0.9999879598617554
+  },
+  "block.37.ff.out": {
+    "sensitivity_score": 0.004308221040229249,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.0022697285749018192,
+    "best_activation_cosine": 0.9999973773956299
+  },
+  "block.25.attn.k": {
+    "sensitivity_score": 0.0036287320310182,
+    "recommended_min_basis": 4,
+    "recommended_min_rank": 4,
+    "recommended_compression_ratio": 11.725158061976137,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.0020769021939486265,
+    "best_activation_cosine": 0.9999977350234985
+  },
+  "block.22.attn.k": {
+    "sensitivity_score": 0.002803122540133516,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 4.9468555275541055,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.0016741201980039477,
+    "best_activation_cosine": 0.9999986886978149
+  },
+  "block.23.ff.out": {
+    "sensitivity_score": 0.002503378619137786,
+    "recommended_min_basis": 3,
+    "recommended_min_rank": 64,
+    "recommended_compression_ratio": 5.085039191684066,
+    "safe_for_aggressive_compression": true,
+    "best_activation_error": 0.0015826458111405373,
+    "best_activation_cosine": 0.9999987483024597
+  }
+}

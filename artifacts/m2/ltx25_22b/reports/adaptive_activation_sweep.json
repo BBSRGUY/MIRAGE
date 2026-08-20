@@ -1,0 +1,59 @@
+{
+  "teacher": "Lightricks/LTX-2.5",
+  "rows": [
+    {
+      "family": "attn.k",
+      "artifact": "reports\\adaptive_fits\\attn-k_4096x4096_adaptive_g1_c3_r32-64-128-256.safetensors",
+      "compression_ratio": 3.0355709255745564,
+      "validation_mean_relative_error": 0.2621443463831383,
+      "validation_mean_cosine": 0.9537970498204231,
+      "behavior_fit": true,
+      "evaluated_artifact": "artifacts\\m2\\ltx25_22b\\reports\\adaptive_fits\\attn-k_4096x4096_adaptive_g1_c3_r32-64-128-256_activation_fit.safetensors"
+    },
+    {
+      "family": "attn.out",
+      "artifact": "reports\\adaptive_fits\\attn-out_4096x4096_adaptive_g1_c3_r32-64-128-256.safetensors",
+      "compression_ratio": 3.0355709255745564,
+      "validation_mean_relative_error": 0.4340577925540856,
+      "validation_mean_cosine": 0.8509175702929497,
+      "behavior_fit": true,
+      "evaluated_artifact": "artifacts\\m2\\ltx25_22b\\reports\\adaptive_fits\\attn-out_4096x4096_adaptive_g1_c3_r32-64-128-256_activation_fit.safetensors"
+    },
+    {
+      "family": "attn.q",
+      "artifact": "reports\\adaptive_fits\\attn-q_4096x4096_adaptive_g1_c3_r32-64-128-256.safetensors",
+      "compression_ratio": 3.0355709255745564,
+      "validation_mean_relative_error": 0.28877808809193084,
+      "validation_mean_cosine": 0.9421272091567516,
+      "behavior_fit": true,
+      "evaluated_artifact": "artifacts\\m2\\ltx25_22b\\reports\\adaptive_fits\\attn-q_4096x4096_adaptive_g1_c3_r32-64-128-256_activation_fit.safetensors"
+    },
+    {
+      "family": "attn.v",
+      "artifact": "reports\\adaptive_fits\\attn-v_4096x4096_adaptive_g1_c3_r32-64-128-256.safetensors",
+      "compression_ratio": 3.0355709255745564,
+      "validation_mean_relative_error": 0.4861076972701994,
+      "validation_mean_cosine": 0.824927344918251,
+      "behavior_fit": true,
+      "evaluated_artifact": "artifacts\\m2\\ltx25_22b\\reports\\adaptive_fits\\attn-v_4096x4096_adaptive_g1_c3_r32-64-128-256_activation_fit.safetensors"
+    },
+    {
+      "family": "ff-in",
+      "artifact": "reports\\adaptive_fits\\ff-in_16384x4096_adaptive_g1_c3_r32-64-128-256.safetensors",
+      "compression_ratio": 3.2525139274186476,
+      "validation_mean_relative_error": 0.1982145180615286,
+      "validation_mean_cosine": 0.9713250274459521,
+      "behavior_fit": true,
+      "evaluated_artifact": "artifacts\\m2\\ltx25_22b\\reports\\adaptive_fits\\ff-in_16384x4096_adaptive_g1_c3_r32-64-128-256_activation_fit.safetensors"
+    },
+    {
+      "family": "ff-out",
+      "artifact": "reports\\adaptive_fits\\ff-out_4096x16384_adaptive_g1_c3_r32-64-128-256.safetensors",
+      "compression_ratio": 3.2525139274186476,
+      "validation_mean_relative_error": 0.3954916295175887,
+      "validation_mean_cosine": 0.8756527118384838,
+      "behavior_fit": true,
+      "evaluated_artifact": "artifacts\\m2\\ltx25_22b\\reports\\adaptive_fits\\ff-out_4096x16384_adaptive_g1_c3_r32-64-128-256_activation_fit.safetensors"
+    }
+  ]
+}

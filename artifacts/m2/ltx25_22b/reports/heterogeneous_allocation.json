@@ -1,0 +1,2623 @@
+{
+  "teacher": "Lightricks/LTX-2.5",
+  "objective": "minimum held-out projection RMS error under whole-model byte budget",
+  "solver": "family-scheme enumeration plus sensitivity-greedy layer upgrades",
+  "original_bytes": 19327352832,
+  "budget_bytes": 6442450944,
+  "target_compression_ratio": 3.0,
+  "portfolio": {
+    "stored_bytes": 6440517632,
+    "compression_ratio": 3.0009005387969414,
+    "rms_projection_error": 0.03986672375078272,
+    "worst_projection_error": 0.10825324803590775,
+    "worst_projection_cosine": 0.9941829442977905,
+    "decisions": [
+      {
+        "family": "attn.k",
+        "layer": "block.00.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.03698168694972992,
+        "activation_cosine": 0.9993159770965576
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.01.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.024693969637155533,
+        "activation_cosine": 0.9996950626373291
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.02.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.03796207904815674,
+        "activation_cosine": 0.9992812871932983
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.03.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.03683864325284958,
+        "activation_cosine": 0.9993237853050232
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.04.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.043395403772592545,
+        "activation_cosine": 0.9990640878677368
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.05.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.02952796220779419,
+        "activation_cosine": 0.9995646476745605
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.06.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.040595643222332,
+        "activation_cosine": 0.9991760849952698
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.07.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.04856530576944351,
+        "activation_cosine": 0.9988215565681458
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.08.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.044664811342954636,
+        "activation_cosine": 0.9990040063858032
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.09.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.04943513497710228,
+        "activation_cosine": 0.998779296875
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.10.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.04938063770532608,
+        "activation_cosine": 0.9987837076187134
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.11.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005015041679143906,
+        "activation_cosine": 0.9999874234199524
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.12.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.05291790887713432,
+        "activation_cosine": 0.9986028671264648
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.13.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.05317729711532593,
+        "activation_cosine": 0.9985891580581665
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.14.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.0519142746925354,
+        "activation_cosine": 0.9986553192138672
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.15.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.04847321659326553,
+        "activation_cosine": 0.998826265335083
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.16.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.04955750331282616,
+        "activation_cosine": 0.9987763166427612
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.17.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.051837194710969925,
+        "activation_cosine": 0.9986593723297119
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.18.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.0485718660056591,
+        "activation_cosine": 0.9988226890563965
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.19.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.05057747662067413,
+        "activation_cosine": 0.9987233877182007
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.20.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.049456946551799774,
+        "activation_cosine": 0.9987826347351074
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.21.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.0477883405983448,
+        "activation_cosine": 0.9988616704940796
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.22.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.05115882307291031,
+        "activation_cosine": 0.9986931085586548
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.23.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005763314198702574,
+        "activation_cosine": 0.9999833106994629
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.24.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005765288136899471,
+        "activation_cosine": 0.9999833106994629
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.25.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006055052857846022,
+        "activation_cosine": 0.9999816417694092
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.26.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006313724908977747,
+        "activation_cosine": 0.9999801516532898
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.27.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.00664102379232645,
+        "activation_cosine": 0.9999779462814331
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.28.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.0067477039992809296,
+        "activation_cosine": 0.9999772310256958
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.29.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.0066460915841162205,
+        "activation_cosine": 0.9999777674674988
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.30.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007087106350809336,
+        "activation_cosine": 0.9999748468399048
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.31.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007107914891093969,
+        "activation_cosine": 0.9999747276306152
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.32.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006988054607063532,
+        "activation_cosine": 0.9999755620956421
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.33.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.0068916077725589275,
+        "activation_cosine": 0.9999762773513794
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.34.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006638002581894398,
+        "activation_cosine": 0.9999779462814331
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.35.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006425767671316862,
+        "activation_cosine": 0.9999793171882629
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.36.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006910473108291626,
+        "activation_cosine": 0.9999761581420898
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.37.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006219340022653341,
+        "activation_cosine": 0.9999807476997375
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.38.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.00700469920411706,
+        "activation_cosine": 0.9999755024909973
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.39.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.0068414523266255856,
+        "activation_cosine": 0.9999765753746033
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.40.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007281400728970766,
+        "activation_cosine": 0.9999734163284302
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.41.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007907832972705364,
+        "activation_cosine": 0.9999686479568481
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.42.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.008118337951600552,
+        "activation_cosine": 0.9999671578407288
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.43.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007819963619112968,
+        "activation_cosine": 0.9999695420265198
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.44.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.008159182034432888,
+        "activation_cosine": 0.9999668002128601
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.45.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.00839110929518938,
+        "activation_cosine": 0.9999648332595825
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.46.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.05249599367380142,
+        "activation_cosine": 0.9986249804496765
+      },
+      {
+        "family": "attn.k",
+        "layer": "block.47.attn.k",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007912483997642994,
+        "activation_cosine": 0.9999687671661377
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.00.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.03171743080019951,
+        "activation_cosine": 0.9994977116584778
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.01.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.0418807789683342,
+        "activation_cosine": 0.9991246461868286
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.02.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.0385163389146328,
+        "activation_cosine": 0.9992595911026001
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.03.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.0429709292948246,
+        "activation_cosine": 0.9990789294242859
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.04.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.04739080369472504,
+        "activation_cosine": 0.9988812208175659
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.05.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.04981497675180435,
+        "activation_cosine": 0.998762845993042
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.06.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.039998844265937805,
+        "activation_cosine": 0.9992009401321411
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.07.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.04456258937716484,
+        "activation_cosine": 0.9990098476409912
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.08.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.04271756857633591,
+        "activation_cosine": 0.9990895390510559
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.09.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.0428425557911396,
+        "activation_cosine": 0.9990841746330261
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.10.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.046001993119716644,
+        "activation_cosine": 0.9989438056945801
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.11.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.048511333763599396,
+        "activation_cosine": 0.9988266229629517
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.12.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005482515320181847,
+        "activation_cosine": 0.9999849796295166
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.13.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005353085696697235,
+        "activation_cosine": 0.9999856948852539
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.14.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005832608323544264,
+        "activation_cosine": 0.9999829530715942
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.15.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005763918161392212,
+        "activation_cosine": 0.9999834299087524
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.16.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006814311724156141,
+        "activation_cosine": 0.9999768137931824
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.17.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006064755842089653,
+        "activation_cosine": 0.9999816417694092
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.18.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006309305317699909,
+        "activation_cosine": 0.9999800324440002
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.19.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.0069557782262563705,
+        "activation_cosine": 0.9999758005142212
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.20.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007069086190313101,
+        "activation_cosine": 0.9999750852584839
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.21.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007949283346533775,
+        "activation_cosine": 0.999968409538269
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.22.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.00762824434787035,
+        "activation_cosine": 0.9999709129333496
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.23.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.0076859514228999615,
+        "activation_cosine": 0.9999704957008362
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.24.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.008224369026720524,
+        "activation_cosine": 0.9999662041664124
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.25.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.008897840045392513,
+        "activation_cosine": 0.9999604225158691
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.26.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.009238270111382008,
+        "activation_cosine": 0.9999574422836304
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.27.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.008999244309961796,
+        "activation_cosine": 0.9999595284461975
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.28.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.009672568179666996,
+        "activation_cosine": 0.9999532699584961
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.29.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.009467781521379948,
+        "activation_cosine": 0.9999551773071289
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.30.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.009704841300845146,
+        "activation_cosine": 0.9999527931213379
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.31.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.009842222556471825,
+        "activation_cosine": 0.9999516010284424
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.32.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.010082474909722805,
+        "activation_cosine": 0.9999490976333618
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.33.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.00966491550207138,
+        "activation_cosine": 0.9999532699584961
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.34.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.009493282064795494,
+        "activation_cosine": 0.9999549388885498
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.35.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.008739854209125042,
+        "activation_cosine": 0.9999618530273438
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.36.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.00957757979631424,
+        "activation_cosine": 0.999954104423523
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.37.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.009408777579665184,
+        "activation_cosine": 0.9999556541442871
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.38.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.010748668573796749,
+        "activation_cosine": 0.9999421834945679
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.39.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.010342378169298172,
+        "activation_cosine": 0.9999465346336365
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.40.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.009913378395140171,
+        "activation_cosine": 0.9999508857727051
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.41.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.010342452675104141,
+        "activation_cosine": 0.9999464750289917
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.42.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.011132694780826569,
+        "activation_cosine": 0.9999380111694336
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.43.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.01112836692482233,
+        "activation_cosine": 0.9999381303787231
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.44.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.011925909668207169,
+        "activation_cosine": 0.9999288320541382
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.45.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.01023164950311184,
+        "activation_cosine": 0.999947726726532
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.46.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.00850323960185051,
+        "activation_cosine": 0.9999637603759766
+      },
+      {
+        "family": "attn.out",
+        "layer": "block.47.attn.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007082014810293913,
+        "activation_cosine": 0.9999749660491943
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.00.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.045298852026462555,
+        "activation_cosine": 0.9989755153656006
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.01.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.03763241693377495,
+        "activation_cosine": 0.9992931485176086
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.02.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.03885190561413765,
+        "activation_cosine": 0.999245822429657
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.03.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.03972510248422623,
+        "activation_cosine": 0.9992117881774902
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.04.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.0429447665810585,
+        "activation_cosine": 0.9990783929824829
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.05.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.03528264909982681,
+        "activation_cosine": 0.9993799328804016
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.06.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.043612267822027206,
+        "activation_cosine": 0.9990512132644653
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.07.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.05068226903676987,
+        "activation_cosine": 0.99871826171875
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.08.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.04860561341047287,
+        "activation_cosine": 0.9988203644752502
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.09.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.048870716243982315,
+        "activation_cosine": 0.9988086223602295
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.10.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.004986622370779514,
+        "activation_cosine": 0.9999874830245972
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.11.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.053068891167640686,
+        "activation_cosine": 0.9985957741737366
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.12.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.00518101966008544,
+        "activation_cosine": 0.9999865889549255
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.13.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005276878364384174,
+        "activation_cosine": 0.9999861121177673
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.14.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.0051949480548501015,
+        "activation_cosine": 0.999986469745636
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.15.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.053533561527729034,
+        "activation_cosine": 0.9985719919204712
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.16.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.00567656522616744,
+        "activation_cosine": 0.9999838471412659
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.17.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.0053629823960363865,
+        "activation_cosine": 0.9999855756759644
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.18.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005630801431834698,
+        "activation_cosine": 0.999984085559845
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.19.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.0054301111958920956,
+        "activation_cosine": 0.9999853372573853
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.20.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005323927849531174,
+        "activation_cosine": 0.9999858140945435
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.21.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.054234959185123444,
+        "activation_cosine": 0.9985321760177612
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.22.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005499690305441618,
+        "activation_cosine": 0.999984860420227
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.23.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005759111139923334,
+        "activation_cosine": 0.9999833703041077
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.24.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.0053869327530264854,
+        "activation_cosine": 0.9999855756759644
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.25.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005658313632011414,
+        "activation_cosine": 0.9999839067459106
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.26.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005519367288798094,
+        "activation_cosine": 0.9999847412109375
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.27.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005651775747537613,
+        "activation_cosine": 0.9999840259552002
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.28.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005998133681714535,
+        "activation_cosine": 0.9999818801879883
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.29.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006089998874813318,
+        "activation_cosine": 0.9999814629554749
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.30.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006199588067829609,
+        "activation_cosine": 0.9999808073043823
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.31.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006070650648325682,
+        "activation_cosine": 0.9999816417694092
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.32.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006453254260122776,
+        "activation_cosine": 0.9999791979789734
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.33.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.00642296951264143,
+        "activation_cosine": 0.9999793767929077
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.34.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006464973092079163,
+        "activation_cosine": 0.9999790787696838
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.35.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006785702425986528,
+        "activation_cosine": 0.9999769330024719
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.36.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006665987428277731,
+        "activation_cosine": 0.9999778270721436
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.37.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007174308877438307,
+        "activation_cosine": 0.9999743103981018
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.38.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006981735583394766,
+        "activation_cosine": 0.9999755620956421
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.39.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007162250578403473,
+        "activation_cosine": 0.9999743700027466
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.40.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007180512882769108,
+        "activation_cosine": 0.9999741911888123
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.41.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007357743103057146,
+        "activation_cosine": 0.999972939491272
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.42.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.0074464101344347,
+        "activation_cosine": 0.9999723434448242
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.43.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007549284026026726,
+        "activation_cosine": 0.9999713897705078
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.44.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007891346700489521,
+        "activation_cosine": 0.999968945980072
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.45.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.008512661792337894,
+        "activation_cosine": 0.9999637603759766
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.46.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.008790467865765095,
+        "activation_cosine": 0.9999613761901855
+      },
+      {
+        "family": "attn.q",
+        "layer": "block.47.attn.q",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.010182049125432968,
+        "activation_cosine": 0.999948263168335
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.00.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.05448749288916588,
+        "activation_cosine": 0.9985188245773315
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.01.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 8912896,
+        "activation_error": 0.047029659152030945,
+        "activation_cosine": 0.998897135257721
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.02.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.0076886569149792194,
+        "activation_cosine": 0.9999704360961914
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.03.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006159224081784487,
+        "activation_cosine": 0.9999811053276062
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.04.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005957090761512518,
+        "activation_cosine": 0.9999822974205017
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.05.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006177659612149,
+        "activation_cosine": 0.9999809861183167
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.06.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005892521236091852,
+        "activation_cosine": 0.9999826550483704
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.07.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.005865905899554491,
+        "activation_cosine": 0.9999828338623047
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.08.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006078904494643211,
+        "activation_cosine": 0.9999815821647644
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.09.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.00676314253360033,
+        "activation_cosine": 0.999977171421051
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.10.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.0062007722444832325,
+        "activation_cosine": 0.9999807476997375
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.11.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.006672622635960579,
+        "activation_cosine": 0.9999778270721436
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.12.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.00790979340672493,
+        "activation_cosine": 0.9999687671661377
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.13.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.00744678545743227,
+        "activation_cosine": 0.9999722242355347
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.14.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007656628265976906,
+        "activation_cosine": 0.9999707341194153
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.15.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007823692634701729,
+        "activation_cosine": 0.999969482421875
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.16.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.008209369145333767,
+        "activation_cosine": 0.9999663233757019
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.17.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.008090625517070293,
+        "activation_cosine": 0.9999673366546631
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.18.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.00835617445409298,
+        "activation_cosine": 0.9999651312828064
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.19.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.008514709770679474,
+        "activation_cosine": 0.9999637603759766
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.20.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.008110509254038334,
+        "activation_cosine": 0.9999669790267944
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.21.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.009086056612432003,
+        "activation_cosine": 0.9999587535858154
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.22.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.009059574455022812,
+        "activation_cosine": 0.9999589920043945
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.23.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.0084736542776227,
+        "activation_cosine": 0.9999641180038452
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.24.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007431866135448217,
+        "activation_cosine": 0.9999724626541138
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.25.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.008414012379944324,
+        "activation_cosine": 0.9999645948410034
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.26.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.0078095439821481705,
+        "activation_cosine": 0.999969482421875
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.27.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007899987511336803,
+        "activation_cosine": 0.9999687075614929
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.28.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007792819291353226,
+        "activation_cosine": 0.9999696016311646
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.29.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007857332937419415,
+        "activation_cosine": 0.9999691247940063
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.30.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.008500243537127972,
+        "activation_cosine": 0.9999638795852661
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.31.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.007978332228958607,
+        "activation_cosine": 0.9999682903289795
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.32.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.008062392473220825,
+        "activation_cosine": 0.9999675154685974
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.33.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.008329506032168865,
+        "activation_cosine": 0.999965250492096
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.34.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.008162321522831917,
+        "activation_cosine": 0.9999666213989258
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.35.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.008326494134962559,
+        "activation_cosine": 0.9999653100967407
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.36.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.009698388166725636,
+        "activation_cosine": 0.9999529719352722
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.37.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.009567019529640675,
+        "activation_cosine": 0.9999542236328125
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.38.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.011591478250920773,
+        "activation_cosine": 0.9999328851699829
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.39.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.011971562169492245,
+        "activation_cosine": 0.99992835521698
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.40.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.010578070767223835,
+        "activation_cosine": 0.9999440908432007
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.41.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.011264837346971035,
+        "activation_cosine": 0.9999365210533142
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.42.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.01126963272690773,
+        "activation_cosine": 0.999936580657959
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.43.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.01017654500901699,
+        "activation_cosine": 0.999948263168335
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.44.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.010612674057483673,
+        "activation_cosine": 0.9999436736106873
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.45.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.011027089320123196,
+        "activation_cosine": 0.9999392032623291
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.46.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.012142954394221306,
+        "activation_cosine": 0.9999262690544128
+      },
+      {
+        "family": "attn.v",
+        "layer": "block.47.attn.v",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 16785408,
+        "activation_error": 0.009196972474455833,
+        "activation_cosine": 0.999957799911499
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.00.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.008279266767203808,
+        "activation_cosine": 0.9999680519104004
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.01.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.013278545811772346,
+        "activation_cosine": 0.9999120235443115
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.02.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.013568410649895668,
+        "activation_cosine": 0.9999086856842041
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.03.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.008188040927052498,
+        "activation_cosine": 0.9999665021896362
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.04.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.012122655287384987,
+        "activation_cosine": 0.9999327063560486
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.05.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.010144397616386414,
+        "activation_cosine": 0.9999486207962036
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.06.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.010784529149532318,
+        "activation_cosine": 0.999941885471344
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.07.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.01090793777257204,
+        "activation_cosine": 0.9999406933784485
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.08.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.010867704637348652,
+        "activation_cosine": 0.9999409914016724
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.09.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.010734295472502708,
+        "activation_cosine": 0.9999424815177917
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.10.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.011814607307314873,
+        "activation_cosine": 0.9999301433563232
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.11.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.013196962885558605,
+        "activation_cosine": 0.9999128580093384
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.12.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.0134172597900033,
+        "activation_cosine": 0.9999100565910339
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.13.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.01375881489366293,
+        "activation_cosine": 0.9999053478240967
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.14.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.016035810112953186,
+        "activation_cosine": 0.9998713731765747
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.15.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.01572476699948311,
+        "activation_cosine": 0.9998763799667358
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.16.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.0176464281976223,
+        "activation_cosine": 0.9998443722724915
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.17.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.022293342277407646,
+        "activation_cosine": 0.9997515678405762
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.18.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.022881438955664635,
+        "activation_cosine": 0.999738335609436
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.19.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.026851920410990715,
+        "activation_cosine": 0.999639630317688
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.20.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.0291410181671381,
+        "activation_cosine": 0.9995755553245544
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.21.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.03379133343696594,
+        "activation_cosine": 0.9994295835494995
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.22.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.036613672971725464,
+        "activation_cosine": 0.9993305206298828
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.23.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.0388965904712677,
+        "activation_cosine": 0.9992446303367615
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.24.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.04242974892258644,
+        "activation_cosine": 0.9991006255149841
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.25.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.043544456362724304,
+        "activation_cosine": 0.9990531206130981
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.26.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.04506445676088333,
+        "activation_cosine": 0.9989856481552124
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.27.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.04603409394621849,
+        "activation_cosine": 0.9989422559738159
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.28.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.04593874514102936,
+        "activation_cosine": 0.998946487903595
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.29.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.04914551600813866,
+        "activation_cosine": 0.9987947940826416
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.30.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.0508868508040905,
+        "activation_cosine": 0.9987075924873352
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.31.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.05276040360331535,
+        "activation_cosine": 0.9986124038696289
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.32.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.05637694150209427,
+        "activation_cosine": 0.9984146356582642
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.33.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.05837468057870865,
+        "activation_cosine": 0.998300313949585
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.34.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.06469809263944626,
+        "activation_cosine": 0.9979140758514404
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.35.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.06614529341459274,
+        "activation_cosine": 0.9978201985359192
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.36.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.06377142667770386,
+        "activation_cosine": 0.9979736804962158
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.37.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.057286184281110764,
+        "activation_cosine": 0.9983633160591125
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.38.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.0626533105969429,
+        "activation_cosine": 0.9980437159538269
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.39.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.061336033046245575,
+        "activation_cosine": 0.9981228113174438
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.40.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.061224836856126785,
+        "activation_cosine": 0.9981317520141602
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.41.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.06068223714828491,
+        "activation_cosine": 0.9981635212898254
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.42.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.05937695503234863,
+        "activation_cosine": 0.9982422590255737
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.43.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.06180474907159805,
+        "activation_cosine": 0.9980946779251099
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.44.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.06683596968650818,
+        "activation_cosine": 0.9977741241455078
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.45.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.07223889976739883,
+        "activation_cosine": 0.9974014759063721
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.46.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.08013758808374405,
+        "activation_cosine": 0.9968037605285645
+      },
+      {
+        "family": "ff-in",
+        "layer": "block.47.ff.in",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.06470885872840881,
+        "activation_cosine": 0.9979121088981628
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.00.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.03398921340703964,
+        "activation_cosine": 0.9994221925735474
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.01.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.025472544133663177,
+        "activation_cosine": 0.999675452709198
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.02.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.03081129677593708,
+        "activation_cosine": 0.999525249004364
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.03.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.054667845368385315,
+        "activation_cosine": 0.9985088109970093
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.04.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.05432240664958954,
+        "activation_cosine": 0.998525857925415
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.05.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.05576922371983528,
+        "activation_cosine": 0.9984484910964966
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.06.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.05516999587416649,
+        "activation_cosine": 0.9984821081161499
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.07.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.06513671576976776,
+        "activation_cosine": 0.9978892207145691
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.08.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.06304043531417847,
+        "activation_cosine": 0.9980217218399048
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.09.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.06519688665866852,
+        "activation_cosine": 0.9978797435760498
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.10.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.06902266293764114,
+        "activation_cosine": 0.9976270198822021
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.11.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.06869612634181976,
+        "activation_cosine": 0.9976471066474915
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.12.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.06483165919780731,
+        "activation_cosine": 0.9979040622711182
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.13.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.07192539423704147,
+        "activation_cosine": 0.9974302053451538
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.14.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.07298529893159866,
+        "activation_cosine": 0.9973449110984802
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.15.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.07471434772014618,
+        "activation_cosine": 0.9972188472747803
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.16.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.0753668025135994,
+        "activation_cosine": 0.9971765279769897
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.17.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.06876569986343384,
+        "activation_cosine": 0.9976449608802795
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.18.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.07850940525531769,
+        "activation_cosine": 0.9969351291656494
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.19.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.0776502788066864,
+        "activation_cosine": 0.9969984292984009
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.20.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.08084772527217865,
+        "activation_cosine": 0.9967482089996338
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.21.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.08662340044975281,
+        "activation_cosine": 0.9962725043296814
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.22.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.08706741780042648,
+        "activation_cosine": 0.9962262511253357
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.23.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.09169238805770874,
+        "activation_cosine": 0.9958258867263794
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.24.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.09243133664131165,
+        "activation_cosine": 0.9957510232925415
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.25.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.08416290581226349,
+        "activation_cosine": 0.9964804649353027
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.26.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.10189203172922134,
+        "activation_cosine": 0.9948559999465942
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.27.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 67117056,
+        "activation_error": 0.013807760551571846,
+        "activation_cosine": 0.9999046921730042
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.28.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 67117056,
+        "activation_error": 0.013661226257681847,
+        "activation_cosine": 0.9999066591262817
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.29.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 67117056,
+        "activation_error": 0.01461517158895731,
+        "activation_cosine": 0.999893307685852
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.30.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 67117056,
+        "activation_error": 0.01463375799357891,
+        "activation_cosine": 0.9998929500579834
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.31.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 67117056,
+        "activation_error": 0.013941967859864235,
+        "activation_cosine": 0.9999028444290161
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.32.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.10747155547142029,
+        "activation_cosine": 0.9942722320556641
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.33.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.10825324803590775,
+        "activation_cosine": 0.9941829442977905
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.34.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.10002921521663666,
+        "activation_cosine": 0.9950299859046936
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.35.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.10027401894330978,
+        "activation_cosine": 0.9949981570243835
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.36.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.10299288481473923,
+        "activation_cosine": 0.9947202205657959
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.37.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.06181579828262329,
+        "activation_cosine": 0.9980957508087158
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.38.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.10062387585639954,
+        "activation_cosine": 0.9949691295623779
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.39.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.10409872978925705,
+        "activation_cosine": 0.9946208000183105
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.40.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.10419850051403046,
+        "activation_cosine": 0.9945948719978333
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.41.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT8_ROW",
+        "bytes": 67117056,
+        "activation_error": 0.0131381182000041,
+        "activation_cosine": 0.9999136924743652
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.42.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.10474018007516861,
+        "activation_cosine": 0.9945378303527832
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.43.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.08065599948167801,
+        "activation_cosine": 0.996757447719574
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.44.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.06928186863660812,
+        "activation_cosine": 0.9976069927215576
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.45.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.03859841451048851,
+        "activation_cosine": 0.9992551803588867
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.46.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.03566741943359375,
+        "activation_cosine": 0.9993643760681152
+      },
+      {
+        "family": "ff-out",
+        "layer": "block.47.ff.out",
+        "scheme": "independent_int4_group64",
+        "choice": "INT4_GROUP64",
+        "bytes": 35651584,
+        "activation_error": 0.023883255198597908,
+        "activation_cosine": 0.9997150897979736
+      }
+    ]
+  },
+  "representation_counts": {
+    "attn.k:INT4_GROUP64": 23,
+    "attn.k:INT8_ROW": 25,
+    "attn.out:INT4_GROUP64": 12,
+    "attn.out:INT8_ROW": 36,
+    "attn.q:INT4_GROUP64": 13,
+    "attn.q:INT8_ROW": 35,
+    "attn.v:INT4_GROUP64": 2,
+    "attn.v:INT8_ROW": 46,
+    "ff-in:INT4_GROUP64": 48,
+    "ff-out:INT4_GROUP64": 42,
+    "ff-out:INT8_ROW": 6
+  },
+  "scope_warning": "Projection error is an allocation proxy. M2.2 acceptance uses held-out complete-block fidelity."
+}

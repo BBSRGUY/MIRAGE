@@ -49,7 +49,11 @@ class TeacherExtractor:
 
     def _extract_weights(self) -> int:
         count = 0
-        for name, tensor in self.adapter.iter_projection_tensors():
+        known = {
+            str(record.metadata["name"]) for record in self.store.records(kind="weight")
+        }
+        missing = set(self.adapter.named_projection_names()) - known
+        for name, tensor in self.adapter.iter_projection_tensors(missing):
             if self.store.append(
                 f"weight/{name}",
                 {"weight": tensor},

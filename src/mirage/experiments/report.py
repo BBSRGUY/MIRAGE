@@ -30,17 +30,25 @@ def _activation_candidates(root: Path) -> list[dict[str, Any]]:
     candidates = []
     for path in sorted((root / "reports").glob("activation_*.json")):
         report = _read(path)
+        if "artifact" not in report or "validation" not in report:
+            continue
         artifact = Path(report["artifact"])
         factor_metadata = _read(artifact.with_suffix(".json"))
-        options = factor_metadata["options"]
+        options = factor_metadata.get("options", {})
+        hierarchical = factor_metadata.get("format") == "hierarchical_shared_basis_v1"
         candidates.append(
             {
                 **report,
-                "basis_count": options["basis_count"],
-                "rank": options["rank"],
+                "basis_count": options.get(
+                    "basis_count",
+                    factor_metadata.get("global_basis_count", 0)
+                    + factor_metadata.get("group_basis_count", 0),
+                ),
+                "rank": options.get("rank", max(factor_metadata.get("rank_per_layer", [0]))),
                 "compression_ratio": factor_metadata["compression_ratio"],
                 "residual_energy_ratio": factor_metadata["residual_energy_ratio"],
                 "family": factor_metadata["family"],
+                "hierarchical": hierarchical,
             }
         )
     if not candidates:
@@ -55,15 +63,25 @@ def generate_m2_report(config: M2Config) -> dict[str, Any]:
     cache = _read(root / "temporal" / "cache_analysis.json")
     predictor = _read(root / "temporal" / "predictor_fit.json")
     scene = _read(root / "temporal" / "scene_motion.json")
+    basis_sweep = _read(root / "reports" / "basis_sweep.json")
     candidates = _activation_candidates(root)
     acceptance = config.acceptance
-    best = max(
-        candidates,
-        key=lambda item: (
-            item["validation_mean_cosine"] >= acceptance.validation_activation_cosine
-            and item["validation_mean_relative_error"] <= acceptance.normalized_activation_error,
-            item["compression_ratio"],
-        ),
+    acceptable = [
+        item
+        for item in candidates
+        if item["validation_mean_cosine"] >= acceptance.validation_activation_cosine
+        and item["validation_mean_relative_error"] <= acceptance.normalized_activation_error
+    ]
+    best = (
+        max(acceptable, key=lambda item: item["compression_ratio"])
+        if acceptable
+        else min(
+            candidates,
+            key=lambda item: (
+                item["validation_mean_relative_error"],
+                -item["validation_mean_cosine"],
+            ),
+        )
     )
     sensitivity = build_sensitivity_map(
         candidates,
@@ -82,6 +100,8 @@ def generate_m2_report(config: M2Config) -> dict[str, Any]:
     max_cache = max(cache["threshold_sweep"], key=lambda row: row["threshold"])
     coverage = predictor["summary"]["reuse_percentage"] + predictor["summary"]["predict_percentage"]
     scene_energy = scene["summary"]["mean_rank1_explained_energy"]
+    skipped_memory = [row for row in basis_sweep["rows"] if row["status"] == "skipped_memory"]
+    skipped_families = sorted({row["projection_family"] for row in skipped_memory})
     criteria = {
         "validation_activation_cosine": {
             "value": best["validation_mean_cosine"],
@@ -129,7 +149,9 @@ def generate_m2_report(config: M2Config) -> dict[str, Any]:
                     "compression_ratio",
                 )
             ),
-            "best_acceptable_compression_ratio": best["compression_ratio"],
+            "best_acceptable_compression_ratio": (
+                max(item["compression_ratio"] for item in acceptable) if acceptable else None
+            ),
             "best_projection_families": sorted(
                 family_summary, key=lambda family: statistics.mean(family_summary[family])
             ),
@@ -140,6 +162,16 @@ def generate_m2_report(config: M2Config) -> dict[str, Any]:
             "scene_rank1_energy": scene_energy,
             "proceed_to_full_distillation": decision == "PASS",
         },
+        "limitations": {
+            "memory_skipped_candidate_count": len(skipped_memory),
+            "memory_skipped_projection_families": skipped_families,
+            "memory_skip_reason": (
+                "The dense reference fitter exceeded the configured 18-GiB fitting budget; "
+                "these families require a streamed or randomized solver before they can be judged."
+                if skipped_memory
+                else None
+            ),
+        },
         "best_candidate": {
             key: best[key]
             for key in (
@@ -149,8 +181,20 @@ def generate_m2_report(config: M2Config) -> dict[str, Any]:
                 "compression_ratio",
                 "validation_mean_relative_error",
                 "validation_mean_cosine",
-                "artifact",
             )
+        }
+        | {
+            "artifact": best.get("evaluated_artifact")
+            or (
+                str(Path(best["artifact"]).with_name(f"{Path(best['artifact']).stem}_activation_fit.safetensors"))
+                if best.get("behavior_fit")
+                else best["artifact"]
+            ),
+            "selection_policy": (
+                "highest compression among fidelity-acceptable candidates"
+                if acceptable
+                else "lowest held-out activation error because no candidate met fidelity thresholds"
+            ),
         },
         "scientific_scope": {
             "weight_reconstruction": True,
@@ -184,6 +228,19 @@ def generate_m2_report(config: M2Config) -> dict[str, Any]:
         lines.append(f"- {mark} — `{name}`: {item['value']:.6g} (threshold {item['threshold']})")
     lines.extend(
         [
+            "",
+            "## Decision",
+            "",
+            f"Proceed to full distillation: **{'YES' if decision == 'PASS' else 'NO'}**.",
+            "",
+            "## Limitations",
+            "",
+            (
+                f"- {len(skipped_memory)} feed-forward candidates across {', '.join(skipped_families)} "
+                "were not evaluated because the dense reference fitter exceeded the 18-GiB fitting budget."
+                if skipped_memory
+                else "- No basis candidates were skipped for fitting memory."
+            ),
             "",
             "## Scope",
             "",

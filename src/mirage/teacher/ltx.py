@@ -46,6 +46,7 @@ class LTXTeacherAdapter(TeacherAdapter):
         self._step_index = -1
         self._timestep = float("nan")
         self._block_inputs: dict[tuple[int, str], torch.Tensor] = {}
+        self._block_replay_callback: Any | None = None
 
     @property
     def model_identifier(self) -> str:
@@ -141,11 +142,24 @@ class LTXTeacherAdapter(TeacherAdapter):
             return {}
         return map_ltx25_projections(self._live_transformer.transformer_blocks)
 
-    def iter_projection_tensors(self) -> Iterator[tuple[str, torch.Tensor]]:
+    def named_projection_names(self) -> tuple[str, ...]:
+        return tuple(
+            spec.name
+            for spec in self._specs
+            if spec.family in self.config.projection_families
+        )
+
+    def iter_projection_tensors(
+        self, names: set[str] | None = None
+    ) -> Iterator[tuple[str, torch.Tensor]]:
         if self._checkpoint is None:
             raise RuntimeError("LTX-2.5 teacher is not loaded")
         with safe_open(str(self._checkpoint), framework="pt", device="cpu") as handle:
             for spec in self._specs:
+                if spec.family not in self.config.projection_families:
+                    continue
+                if names is not None and spec.name not in names:
+                    continue
                 tensor = handle.get_tensor(spec.checkpoint_key)
                 if tensor.dtype != torch.bfloat16:
                     raise ValueError(f"non-BF16 structural tensor at {spec.checkpoint_key}")
@@ -180,6 +194,9 @@ class LTXTeacherAdapter(TeacherAdapter):
         if self._checkpoint is None:
             raise RuntimeError("LTX-2.5 teacher is not loaded")
         self._callback = callback
+
+    def install_block_replay(self, callback: Any | None) -> None:
+        self._block_replay_callback = callback
 
     @staticmethod
     def _modality_tensor(value: Any) -> torch.Tensor | None:
@@ -236,7 +253,11 @@ class LTXTeacherAdapter(TeacherAdapter):
                         self._block_inputs[(idx, modality)] = sampled
 
             def block_post(
-                _module: nn.Module, _args: tuple[Any, ...], output: Any, idx: int = index
+                module: nn.Module,
+                args: tuple[Any, ...],
+                kwargs: dict[str, Any],
+                output: Any,
+                idx: int = index,
             ) -> None:
                 for modality, position in (("video", 0), ("audio", 1)):
                     item = output[position] if isinstance(output, tuple) and len(output) > position else None
@@ -259,11 +280,21 @@ class LTXTeacherAdapter(TeacherAdapter):
                             block_index=idx,
                             modality=modality,
                         )
+                if self._block_replay_callback is not None:
+                    self._block_replay_callback(
+                        idx,
+                        module,
+                        args,
+                        kwargs,
+                        output,
+                        self._step_index,
+                        dict(self._context),
+                    )
 
             self._hooks.extend(
                 [
                     block.register_forward_pre_hook(block_pre, with_kwargs=True),
-                    block.register_forward_hook(block_post),
+                    block.register_forward_hook(block_post, with_kwargs=True),
                 ]
             )
 
@@ -284,7 +315,8 @@ class LTXTeacherAdapter(TeacherAdapter):
 
         for normalized_name, projection in self.named_projections().items():
             block_index = int(normalized_name.split(".")[1])
-            if block_index not in selected:
+            family = ".".join(normalized_name.split(".")[2:])
+            if family not in self.config.projection_families:
                 continue
 
             def projection_pre(
@@ -420,6 +452,7 @@ class LTXTeacherAdapter(TeacherAdapter):
     def unload(self) -> None:
         self._hooks.clear()
         self._callback = None
+        self._block_replay_callback = None
         self._block_inputs.clear()
         self._live_transformer = None
         self._pipeline_objects.clear()

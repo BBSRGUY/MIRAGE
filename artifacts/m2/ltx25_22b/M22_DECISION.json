@@ -1,0 +1,88 @@
+{
+  "milestone": "M2.2 \u2014 Heterogeneous Structural Compression and Functional Reconstruction",
+  "decision": "PASS",
+  "m2_gate": "PASSED",
+  "criteria": {
+    "compression_ratio": {
+      "value": 3.0009005387969414,
+      "threshold": 3.0,
+      "passed": true
+    },
+    "worst_block_relative_error": {
+      "value": 0.039324380457401276,
+      "threshold": 0.05,
+      "passed": true
+    },
+    "worst_block_cosine": {
+      "value": 0.999433159828186,
+      "threshold": 0.995,
+      "passed": true
+    },
+    "all_projection_families": {
+      "value": [
+        "attn.k",
+        "attn.out",
+        "attn.q",
+        "attn.v",
+        "ff-in",
+        "ff-out"
+      ],
+      "threshold": [
+        "attn.k",
+        "attn.out",
+        "attn.q",
+        "attn.v",
+        "ff-in",
+        "ff-out"
+      ],
+      "passed": true
+    },
+    "evaluation_isolation": {
+      "value": true,
+      "threshold": true,
+      "passed": true
+    },
+    "live_weight_swap_verified": {
+      "value": 480,
+      "threshold": 1,
+      "passed": true
+    }
+  },
+  "block_summary": {
+    "mean_block_relative_error": 0.01603652104968205,
+    "worst_block_relative_error": 0.039324380457401276,
+    "mean_block_cosine": 0.9998389102518559,
+    "worst_block_cosine": 0.999433159828186,
+    "applied_projection_swaps": 480,
+    "maximum_weight_delta": 0.1259765625
+  },
+  "representation_counts": {
+    "attn.k:INT4_GROUP64": 23,
+    "attn.k:INT8_ROW": 25,
+    "attn.out:INT4_GROUP64": 12,
+    "attn.out:INT8_ROW": 36,
+    "attn.q:INT4_GROUP64": 13,
+    "attn.q:INT8_ROW": 35,
+    "attn.v:INT4_GROUP64": 2,
+    "attn.v:INT8_ROW": 46,
+    "ff-in:INT4_GROUP64": 48,
+    "ff-out:INT4_GROUP64": 42,
+    "ff-out:INT8_ROW": 6
+  },
+  "shared_basis_outcome": {
+    "passed": false,
+    "selected_projection_count": 0,
+    "conclusion": "Shared-basis compression is falsified as the default LTX-2.5 representation; the passing portfolio uses independent grouped INT4 and rowwise INT8."
+  },
+  "residual_spectrum_classification": "broad",
+  "structured_sparse_outcome": "rejected at the 3x fidelity frontier",
+  "temporal_predictive_execution": "frozen until a trained MIRAGE-native trajectory",
+  "proceed_to_m3": true,
+  "evidence": {
+    "allocation": "reports/heterogeneous_allocation.json",
+    "block_replay": "reports/block_replay.json",
+    "independent_precision": "reports/independent_precision.json",
+    "residual_spectrum": "reports/residual_spectrum.json",
+    "sparse_residual": "reports/sparse_residual.json"
+  }
+}

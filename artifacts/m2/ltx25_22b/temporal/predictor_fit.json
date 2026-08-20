@@ -1,0 +1,80 @@
+{
+  "teacher": "Lightricks/LTX-2.5",
+  "layers": {
+    "0": {
+      "status": "ok",
+      "train_relative_error": 0.38284236192703247,
+      "validation_relative_error": 0.4121224582195282,
+      "validation_cosine": 0.920261800289154,
+      "predictor_parameter_count": 798976,
+      "mean_policy_prediction_error": 0.4745022654533386,
+      "reuse_percentage": 0.0,
+      "predict_percentage": 0.0,
+      "execute_percentage": 1.0,
+      "theoretical_flop_reduction": 0.0,
+      "decision_count": 14
+    },
+    "12": {
+      "status": "ok",
+      "train_relative_error": 0.4687254726886749,
+      "validation_relative_error": 0.41997289657592773,
+      "validation_cosine": 0.912715494632721,
+      "predictor_parameter_count": 798976,
+      "mean_policy_prediction_error": 0.42926363540547235,
+      "reuse_percentage": 0.0,
+      "predict_percentage": 0.0,
+      "execute_percentage": 1.0,
+      "theoretical_flop_reduction": 0.0,
+      "decision_count": 14
+    },
+    "24": {
+      "status": "ok",
+      "train_relative_error": 0.6495662927627563,
+      "validation_relative_error": 0.5673173069953918,
+      "validation_cosine": 0.8496612906455994,
+      "predictor_parameter_count": 798976,
+      "mean_policy_prediction_error": 0.5636098970259938,
+      "reuse_percentage": 0.0,
+      "predict_percentage": 0.0,
+      "execute_percentage": 1.0,
+      "theoretical_flop_reduction": 0.0,
+      "decision_count": 14
+    },
+    "36": {
+      "status": "ok",
+      "train_relative_error": 0.6524393558502197,
+      "validation_relative_error": 0.5919473767280579,
+      "validation_cosine": 0.8320250511169434,
+      "predictor_parameter_count": 798976,
+      "mean_policy_prediction_error": 0.7052808861647334,
+      "reuse_percentage": 0.0,
+      "predict_percentage": 0.0,
+      "execute_percentage": 1.0,
+      "theoretical_flop_reduction": 0.0,
+      "decision_count": 14
+    },
+    "47": {
+      "status": "ok",
+      "train_relative_error": 0.12062709033489227,
+      "validation_relative_error": 0.1348026990890503,
+      "validation_cosine": 0.9909586906433105,
+      "predictor_parameter_count": 798976,
+      "mean_policy_prediction_error": 0.12925799936056137,
+      "reuse_percentage": 0.0,
+      "predict_percentage": 0.0,
+      "execute_percentage": 1.0,
+      "theoretical_flop_reduction": 0.0,
+      "decision_count": 14
+    }
+  },
+  "summary": {
+    "reuse_percentage": 0.0,
+    "predict_percentage": 0.0,
+    "execute_percentage": 1.0,
+    "predictor_parameter_count": 3994880,
+    "theoretical_flop_reduction": 0.0,
+    "decision_count": 70,
+    "mean_prediction_error": 0.4603829366820199
+  },
+  "scope_warning": "Predictor coverage measures held-out local residual behavior only."
+}

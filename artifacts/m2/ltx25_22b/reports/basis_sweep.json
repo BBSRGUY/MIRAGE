@@ -1,0 +1,826 @@
+{
+  "config": {
+    "basis_counts": [
+      2,
+      4
+    ],
+    "ranks": [
+      0,
+      4,
+      8,
+      16
+    ],
+    "initialization": "pca",
+    "fit_steps": 0,
+    "activation_fit_steps": 100,
+    "learning_rate": 0.001,
+    "lambda_weight": 0.1,
+    "lambda_activation": 1.0,
+    "alpha_sparsity": 0.0,
+    "residual_magnitude": 0.0,
+    "basis_orthogonality": 0.0,
+    "max_fit_vram_gb": 18.0
+  },
+  "rows": [
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.k",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 2,
+      "rank": 0,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 33554528,
+      "compression_ratio": 23.99993133564567,
+      "weight_relative_error": 0.970850944519043,
+      "median_layer_error": 0.9999890327453613,
+      "p95_layer_error": 0.9999998807907104,
+      "max_layer_error": 1.0,
+      "fit_seconds": 0.489436800009571,
+      "artifact": "reports\\basis_fits\\attn-k_4096x4096_k2_r0.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.k",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 2,
+      "rank": 4,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 35127392,
+      "compression_ratio": 22.925310481347434,
+      "weight_relative_error": 0.9441348314285278,
+      "median_layer_error": 0.9742381572723389,
+      "p95_layer_error": 0.9831184148788452,
+      "max_layer_error": 0.9852891564369202,
+      "fit_seconds": 0.4184417000069516,
+      "artifact": "reports\\basis_fits\\attn-k_4096x4096_k2_r4.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.k",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 2,
+      "rank": 8,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 36700256,
+      "compression_ratio": 21.9427997450481,
+      "weight_relative_error": 0.9281443953514099,
+      "median_layer_error": 0.9573244452476501,
+      "p95_layer_error": 0.9720803499221802,
+      "max_layer_error": 0.9762879610061646,
+      "fit_seconds": 0.3627437999966787,
+      "artifact": "reports\\basis_fits\\attn-k_4096x4096_k2_r8.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.k",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 2,
+      "rank": 16,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 39845984,
+      "compression_ratio": 20.210477623039754,
+      "weight_relative_error": 0.90376877784729,
+      "median_layer_error": 0.9311472773551941,
+      "p95_layer_error": 0.9536967277526855,
+      "max_layer_error": 0.9597459435462952,
+      "fit_seconds": 0.40637450000212993,
+      "artifact": "reports\\basis_fits\\attn-k_4096x4096_k2_r16.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.k",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 4,
+      "rank": 0,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 67109056,
+      "compression_ratio": 11.999965667822835,
+      "weight_relative_error": 0.941861093044281,
+      "median_layer_error": 0.9999582171440125,
+      "p95_layer_error": 0.9999993443489075,
+      "max_layer_error": 0.9999994039535522,
+      "fit_seconds": 0.11558870000590105,
+      "artifact": "reports\\basis_fits\\attn-k_4096x4096_k4_r0.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.k",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 4,
+      "rank": 4,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 68681920,
+      "compression_ratio": 11.725158061976137,
+      "weight_relative_error": 0.9158907532691956,
+      "median_layer_error": 0.9723213315010071,
+      "p95_layer_error": 0.9830836653709412,
+      "max_layer_error": 0.9852046966552734,
+      "fit_seconds": 0.4222872000100324,
+      "artifact": "reports\\basis_fits\\attn-k_4096x4096_k4_r4.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.k",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 4,
+      "rank": 8,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 70254784,
+      "compression_ratio": 11.462655240673717,
+      "weight_relative_error": 0.90035080909729,
+      "median_layer_error": 0.9560225009918213,
+      "p95_layer_error": 0.9720379114151001,
+      "max_layer_error": 0.9762002825737,
+      "fit_seconds": 0.4185340999974869,
+      "artifact": "reports\\basis_fits\\attn-k_4096x4096_k4_r8.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.k",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 4,
+      "rank": 16,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 73400512,
+      "compression_ratio": 10.97139987252405,
+      "weight_relative_error": 0.8767064809799194,
+      "median_layer_error": 0.9291977882385254,
+      "p95_layer_error": 0.9536556601524353,
+      "max_layer_error": 0.9596670866012573,
+      "fit_seconds": 0.43500610000046436,
+      "artifact": "reports\\basis_fits\\attn-k_4096x4096_k4_r16.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.out",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 2,
+      "rank": 0,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 33554528,
+      "compression_ratio": 23.99993133564567,
+      "weight_relative_error": 0.9738761186599731,
+      "median_layer_error": 0.9999983310699463,
+      "p95_layer_error": 0.9999998807907104,
+      "max_layer_error": 1.0,
+      "fit_seconds": 0.1103339999972377,
+      "artifact": "reports\\basis_fits\\attn-out_4096x4096_k2_r0.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.out",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 2,
+      "rank": 4,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 35127392,
+      "compression_ratio": 22.925310481347434,
+      "weight_relative_error": 0.9668318033218384,
+      "median_layer_error": 0.9924061298370361,
+      "p95_layer_error": 0.9957931041717529,
+      "max_layer_error": 0.9960408806800842,
+      "fit_seconds": 0.3823897999973269,
+      "artifact": "reports\\basis_fits\\attn-out_4096x4096_k2_r4.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.out",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 2,
+      "rank": 8,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 36700256,
+      "compression_ratio": 21.9427997450481,
+      "weight_relative_error": 0.9606512784957886,
+      "median_layer_error": 0.9866509437561035,
+      "p95_layer_error": 0.9920918941497803,
+      "max_layer_error": 0.9922753572463989,
+      "fit_seconds": 0.3959519999916665,
+      "artifact": "reports\\basis_fits\\attn-out_4096x4096_k2_r8.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.out",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 2,
+      "rank": 16,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 39845984,
+      "compression_ratio": 20.210477623039754,
+      "weight_relative_error": 0.949833333492279,
+      "median_layer_error": 0.9762919545173645,
+      "p95_layer_error": 0.9850385785102844,
+      "max_layer_error": 0.9860766530036926,
+      "fit_seconds": 0.4349495000060415,
+      "artifact": "reports\\basis_fits\\attn-out_4096x4096_k2_r16.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.out",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 4,
+      "rank": 0,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 67109056,
+      "compression_ratio": 11.999965667822835,
+      "weight_relative_error": 0.9484094977378845,
+      "median_layer_error": 0.9999878406524658,
+      "p95_layer_error": 0.9999996423721313,
+      "max_layer_error": 0.9999998807907104,
+      "fit_seconds": 0.12322280000080355,
+      "artifact": "reports\\basis_fits\\attn-out_4096x4096_k4_r0.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.out",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 4,
+      "rank": 4,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 68681920,
+      "compression_ratio": 11.725158061976137,
+      "weight_relative_error": 0.9414374828338623,
+      "median_layer_error": 0.9918397665023804,
+      "p95_layer_error": 0.9957858324050903,
+      "max_layer_error": 0.9960237145423889,
+      "fit_seconds": 0.38500730000669137,
+      "artifact": "reports\\basis_fits\\attn-out_4096x4096_k4_r4.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.out",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 4,
+      "rank": 8,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 70254784,
+      "compression_ratio": 11.462655240673717,
+      "weight_relative_error": 0.9353301525115967,
+      "median_layer_error": 0.9850388765335083,
+      "p95_layer_error": 0.9920746684074402,
+      "max_layer_error": 0.9922645688056946,
+      "fit_seconds": 0.41386610000336077,
+      "artifact": "reports\\basis_fits\\attn-out_4096x4096_k4_r8.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.out",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 4,
+      "rank": 16,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 73400512,
+      "compression_ratio": 10.97139987252405,
+      "weight_relative_error": 0.9246217012405396,
+      "median_layer_error": 0.9729337692260742,
+      "p95_layer_error": 0.9850209951400757,
+      "max_layer_error": 0.9860683679580688,
+      "fit_seconds": 0.4580999000027077,
+      "artifact": "reports\\basis_fits\\attn-out_4096x4096_k4_r16.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.q",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 2,
+      "rank": 0,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 33554528,
+      "compression_ratio": 23.99993133564567,
+      "weight_relative_error": 0.9706742167472839,
+      "median_layer_error": 0.9999923706054688,
+      "p95_layer_error": 0.9999998211860657,
+      "max_layer_error": 1.0,
+      "fit_seconds": 0.10549360000004526,
+      "artifact": "reports\\basis_fits\\attn-q_4096x4096_k2_r0.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.q",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 2,
+      "rank": 4,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 35127392,
+      "compression_ratio": 22.925310481347434,
+      "weight_relative_error": 0.9475086331367493,
+      "median_layer_error": 0.9783172011375427,
+      "p95_layer_error": 0.982260525226593,
+      "max_layer_error": 0.9838793277740479,
+      "fit_seconds": 0.40183310001157224,
+      "artifact": "reports\\basis_fits\\attn-q_4096x4096_k2_r4.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.q",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 2,
+      "rank": 8,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 36700256,
+      "compression_ratio": 21.9427997450481,
+      "weight_relative_error": 0.934072732925415,
+      "median_layer_error": 0.9643915295600891,
+      "p95_layer_error": 0.9723795056343079,
+      "max_layer_error": 0.9761080741882324,
+      "fit_seconds": 0.40184900000167545,
+      "artifact": "reports\\basis_fits\\attn-q_4096x4096_k2_r8.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.q",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 2,
+      "rank": 16,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 39845984,
+      "compression_ratio": 20.210477623039754,
+      "weight_relative_error": 0.9129738211631775,
+      "median_layer_error": 0.9420492053031921,
+      "p95_layer_error": 0.9580295085906982,
+      "max_layer_error": 0.9628637433052063,
+      "fit_seconds": 0.42545750000863336,
+      "artifact": "reports\\basis_fits\\attn-q_4096x4096_k2_r16.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.q",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 4,
+      "rank": 0,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 67109056,
+      "compression_ratio": 11.999965667822835,
+      "weight_relative_error": 0.9419611096382141,
+      "median_layer_error": 0.9999704957008362,
+      "p95_layer_error": 0.9999991655349731,
+      "max_layer_error": 0.9999996423721313,
+      "fit_seconds": 0.11852959998941515,
+      "artifact": "reports\\basis_fits\\attn-q_4096x4096_k4_r0.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.q",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 4,
+      "rank": 4,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 68681920,
+      "compression_ratio": 11.725158061976137,
+      "weight_relative_error": 0.9193471074104309,
+      "median_layer_error": 0.9773344397544861,
+      "p95_layer_error": 0.982244610786438,
+      "max_layer_error": 0.9838701486587524,
+      "fit_seconds": 0.39778039998782333,
+      "artifact": "reports\\basis_fits\\attn-q_4096x4096_k4_r4.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.q",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 4,
+      "rank": 8,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 70254784,
+      "compression_ratio": 11.462655240673717,
+      "weight_relative_error": 0.906387209892273,
+      "median_layer_error": 0.9635041952133179,
+      "p95_layer_error": 0.9723766446113586,
+      "max_layer_error": 0.976099967956543,
+      "fit_seconds": 0.4170167999982368,
+      "artifact": "reports\\basis_fits\\attn-q_4096x4096_k4_r8.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.q",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 4,
+      "rank": 16,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 73400512,
+      "compression_ratio": 10.97139987252405,
+      "weight_relative_error": 0.8860135078430176,
+      "median_layer_error": 0.9386327862739563,
+      "p95_layer_error": 0.9580156803131104,
+      "max_layer_error": 0.962856650352478,
+      "fit_seconds": 0.4625489000027301,
+      "artifact": "reports\\basis_fits\\attn-q_4096x4096_k4_r16.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.v",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 2,
+      "rank": 0,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 33554528,
+      "compression_ratio": 23.99993133564567,
+      "weight_relative_error": 0.9727750420570374,
+      "median_layer_error": 0.9999969005584717,
+      "p95_layer_error": 0.9999998807907104,
+      "max_layer_error": 1.0,
+      "fit_seconds": 0.10628829999768641,
+      "artifact": "reports\\basis_fits\\attn-v_4096x4096_k2_r0.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.v",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 2,
+      "rank": 4,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 35127392,
+      "compression_ratio": 22.925310481347434,
+      "weight_relative_error": 0.9620569348335266,
+      "median_layer_error": 0.9902282357215881,
+      "p95_layer_error": 0.994084894657135,
+      "max_layer_error": 0.9945554733276367,
+      "fit_seconds": 0.4222074999997858,
+      "artifact": "reports\\basis_fits\\attn-v_4096x4096_k2_r4.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.v",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 2,
+      "rank": 8,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 36700256,
+      "compression_ratio": 21.9427997450481,
+      "weight_relative_error": 0.953637421131134,
+      "median_layer_error": 0.9832741022109985,
+      "p95_layer_error": 0.9887872934341431,
+      "max_layer_error": 0.9903530478477478,
+      "fit_seconds": 0.3962762000010116,
+      "artifact": "reports\\basis_fits\\attn-v_4096x4096_k2_r8.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.v",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 2,
+      "rank": 16,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 39845984,
+      "compression_ratio": 20.210477623039754,
+      "weight_relative_error": 0.9397135972976685,
+      "median_layer_error": 0.9710399508476257,
+      "p95_layer_error": 0.9788580536842346,
+      "max_layer_error": 0.9833416938781738,
+      "fit_seconds": 0.40588459999707993,
+      "artifact": "reports\\basis_fits\\attn-v_4096x4096_k2_r16.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.v",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 4,
+      "rank": 0,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 67109056,
+      "compression_ratio": 11.999965667822835,
+      "weight_relative_error": 0.9456866979598999,
+      "median_layer_error": 0.9999931454658508,
+      "p95_layer_error": 0.9999996423721313,
+      "max_layer_error": 0.9999998211860657,
+      "fit_seconds": 0.11892899998929352,
+      "artifact": "reports\\basis_fits\\attn-v_4096x4096_k4_r0.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.v",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 4,
+      "rank": 4,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 68681920,
+      "compression_ratio": 11.725158061976137,
+      "weight_relative_error": 0.9351250529289246,
+      "median_layer_error": 0.9897668361663818,
+      "p95_layer_error": 0.994082510471344,
+      "max_layer_error": 0.9945520758628845,
+      "fit_seconds": 0.405484200004139,
+      "artifact": "reports\\basis_fits\\attn-v_4096x4096_k4_r4.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.v",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 4,
+      "rank": 8,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 70254784,
+      "compression_ratio": 11.462655240673717,
+      "weight_relative_error": 0.926791787147522,
+      "median_layer_error": 0.9818016290664673,
+      "p95_layer_error": 0.9887863993644714,
+      "max_layer_error": 0.9903455972671509,
+      "fit_seconds": 0.4305762000003597,
+      "artifact": "reports\\basis_fits\\attn-v_4096x4096_k4_r8.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "attn.v",
+      "shape": [
+        4096,
+        4096
+      ],
+      "basis_count": 4,
+      "rank": 16,
+      "status": "ok",
+      "original_params": 805306368,
+      "compressed_params": 73400512,
+      "compression_ratio": 10.97139987252405,
+      "weight_relative_error": 0.9130007028579712,
+      "median_layer_error": 0.9693909287452698,
+      "p95_layer_error": 0.9787652492523193,
+      "max_layer_error": 0.9833354949951172,
+      "fit_seconds": 0.4603164000000106,
+      "artifact": "reports\\basis_fits\\attn-v_4096x4096_k4_r16.safetensors"
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "ff-in",
+      "shape": "16384x4096",
+      "basis_count": 2,
+      "rank": 0,
+      "status": "skipped_memory",
+      "estimated_peak_bytes": 39191576576,
+      "max_fit_vram_bytes": 19327352832
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "ff-in",
+      "shape": "16384x4096",
+      "basis_count": 2,
+      "rank": 4,
+      "status": "skipped_memory",
+      "estimated_peak_bytes": 39223033856,
+      "max_fit_vram_bytes": 19327352832
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "ff-in",
+      "shape": "16384x4096",
+      "basis_count": 2,
+      "rank": 8,
+      "status": "skipped_memory",
+      "estimated_peak_bytes": 39254491136,
+      "max_fit_vram_bytes": 19327352832
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "ff-in",
+      "shape": "16384x4096",
+      "basis_count": 2,
+      "rank": 16,
+      "status": "skipped_memory",
+      "estimated_peak_bytes": 39317405696,
+      "max_fit_vram_bytes": 19327352832
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "ff-in",
+      "shape": "16384x4096",
+      "basis_count": 4,
+      "rank": 0,
+      "status": "skipped_memory",
+      "estimated_peak_bytes": 39728447488,
+      "max_fit_vram_bytes": 19327352832
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "ff-in",
+      "shape": "16384x4096",
+      "basis_count": 4,
+      "rank": 4,
+      "status": "skipped_memory",
+      "estimated_peak_bytes": 39759904768,
+      "max_fit_vram_bytes": 19327352832
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "ff-in",
+      "shape": "16384x4096",
+      "basis_count": 4,
+      "rank": 8,
+      "status": "skipped_memory",
+      "estimated_peak_bytes": 39791362048,
+      "max_fit_vram_bytes": 19327352832
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "ff-in",
+      "shape": "16384x4096",
+      "basis_count": 4,
+      "rank": 16,
+      "status": "skipped_memory",
+      "estimated_peak_bytes": 39854276608,
+      "max_fit_vram_bytes": 19327352832
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "ff-out",
+      "shape": "4096x16384",
+      "basis_count": 2,
+      "rank": 0,
+      "status": "skipped_memory",
+      "estimated_peak_bytes": 39191576576,
+      "max_fit_vram_bytes": 19327352832
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "ff-out",
+      "shape": "4096x16384",
+      "basis_count": 2,
+      "rank": 4,
+      "status": "skipped_memory",
+      "estimated_peak_bytes": 39223033856,
+      "max_fit_vram_bytes": 19327352832
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "ff-out",
+      "shape": "4096x16384",
+      "basis_count": 2,
+      "rank": 8,
+      "status": "skipped_memory",
+      "estimated_peak_bytes": 39254491136,
+      "max_fit_vram_bytes": 19327352832
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "ff-out",
+      "shape": "4096x16384",
+      "basis_count": 2,
+      "rank": 16,
+      "status": "skipped_memory",
+      "estimated_peak_bytes": 39317405696,
+      "max_fit_vram_bytes": 19327352832
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "ff-out",
+      "shape": "4096x16384",
+      "basis_count": 4,
+      "rank": 0,
+      "status": "skipped_memory",
+      "estimated_peak_bytes": 39728447488,
+      "max_fit_vram_bytes": 19327352832
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "ff-out",
+      "shape": "4096x16384",
+      "basis_count": 4,
+      "rank": 4,
+      "status": "skipped_memory",
+      "estimated_peak_bytes": 39759904768,
+      "max_fit_vram_bytes": 19327352832
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "ff-out",
+      "shape": "4096x16384",
+      "basis_count": 4,
+      "rank": 8,
+      "status": "skipped_memory",
+      "estimated_peak_bytes": 39791362048,
+      "max_fit_vram_bytes": 19327352832
+    },
+    {
+      "teacher": "Lightricks/LTX-2.5",
+      "projection_family": "ff-out",
+      "shape": "4096x16384",
+      "basis_count": 4,
+      "rank": 16,
+      "status": "skipped_memory",
+      "estimated_peak_bytes": 39854276608,
+      "max_fit_vram_bytes": 19327352832
+    }
+  ]
+}

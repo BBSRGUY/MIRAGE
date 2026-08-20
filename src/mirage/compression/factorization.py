@@ -32,11 +32,21 @@ class FactorizationResult:
     v: torch.Tensor
     metrics: dict[str, Any]
 
+    @property
+    def layer_count(self) -> int:
+        return self.alpha.shape[0]
+
     def reconstruct(self) -> torch.Tensor:
         base = torch.einsum("lk,koi->loi", self.alpha, self.basis)
         if self.u.shape[-1] == 0:
             return base
         return base + torch.einsum("lor,lri->loi", self.u, self.v)
+
+    def reconstruct_layer(self, index: int) -> torch.Tensor:
+        base = torch.einsum("k,koi->oi", self.alpha[index], self.basis)
+        if self.u.shape[-1] == 0:
+            return base
+        return base + self.u[index] @ self.v[index]
 
     def save(self, path: str | Path) -> None:
         path = Path(path)
@@ -58,6 +68,17 @@ class FactorizationResult:
         tensors = load_file(str(path), device=str(device))
         metrics = json.loads(path.with_suffix(".json").read_text(encoding="utf-8"))
         return cls(tensors["basis"], tensors["alpha"], tensors["u"], tensors["v"], metrics)
+
+
+def load_factorization(
+    path: str | Path, device: str | torch.device = "cpu"
+) -> FactorizationResult:
+    metrics = json.loads(Path(path).with_suffix(".json").read_text(encoding="utf-8"))
+    if metrics.get("format") == "hierarchical_shared_basis_v1":
+        from .hierarchical_fit import HierarchicalFactorizationResult
+
+        return HierarchicalFactorizationResult.load(path, device=device)  # type: ignore[return-value]
+    return FactorizationResult.load(path, device=device)
 
 
 def compressed_parameter_count(

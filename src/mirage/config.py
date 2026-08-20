@@ -18,6 +18,7 @@ class MirageConfig:
     heads: int = 6
     basis_count: int = 4
     residual_rank: int = 8
+    projection_backend: str = "shared_basis"
     steps: int = 4
     text_tokens: int = 32
     vocabulary_size: int = 8192
@@ -53,6 +54,8 @@ class MirageConfig:
             raise ValueError("steps, depth, and frames must be positive")
         if self.precision not in {"dynamic", "fp32", "bf16"}:
             raise ValueError("precision must be dynamic, fp32, or bf16")
+        if self.projection_backend not in {"independent", "shared_basis"}:
+            raise ValueError("projection_backend must be independent or shared_basis")
 
     @classmethod
     def from_json(cls, path: str | Path) -> MirageConfig:

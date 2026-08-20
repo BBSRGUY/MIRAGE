@@ -3,7 +3,7 @@ from __future__ import annotations
 import torch
 from torch import nn
 
-from .attention import SparseSelfAttention
+from .attention import IndependentSparseSelfAttention, SparseSelfAttention
 from .basis import BasisLinear, SharedBasisBank
 from .telemetry import RunTelemetry
 
@@ -87,3 +87,24 @@ class DenseBlock(nn.Module):
         h = self.norm1(x) * (1 + scale[:, None]) + shift[:, None]
         x = x + self.attn(h, h, h, need_weights=False)[0]
         return x + self.ff(self.norm2(x))
+
+
+class IndependentMirageBlock(MirageBlock):
+    """MIRAGE block with independent projections and the same sparse/cache behavior."""
+
+    def __init__(
+        self, width: int, heads: int, cache_threshold: float, max_cache_age: int
+    ) -> None:
+        nn.Module.__init__(self)
+        self.norm1 = nn.LayerNorm(width)
+        self.norm2 = nn.LayerNorm(width)
+        self.attn = IndependentSparseSelfAttention(width, heads)
+        self.ff1 = nn.Linear(width, width * 4)
+        self.ff2 = nn.Linear(width * 4, width)
+        self.activation = nn.SiLU()
+        self.modulation = nn.Linear(width, width * 2)
+        self.cache_threshold = cache_threshold
+        self.max_cache_age = max_cache_age
+        self._cached_signature = None
+        self._cached_residual = None
+        self._cache_age = 0

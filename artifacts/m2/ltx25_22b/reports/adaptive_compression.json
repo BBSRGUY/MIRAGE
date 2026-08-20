@@ -1,0 +1,504 @@
+{
+  "teacher": "Lightricks/LTX-2.5",
+  "recovery": {
+    "global_basis_count": 1,
+    "group_basis_count": 3,
+    "group_count": 4,
+    "minimum_group_size": 4,
+    "residual_rank_tiers": [
+      32,
+      64,
+      128,
+      256
+    ],
+    "target_compression_ratio": 3.0
+  },
+  "rows": [
+    {
+      "family": "attn.k",
+      "shape": [
+        4096,
+        4096
+      ],
+      "status": "ok",
+      "compression_ratio": 3.0355709255745564,
+      "weight_relative_error": 0.6437412681519529,
+      "artifact": "reports\\adaptive_fits\\attn-k_4096x4096_adaptive_g1_c3_r32-64-128-256.safetensors",
+      "allocation": {
+        "target_compression_ratio": 3.0,
+        "allocated_compression_ratio": 3.0355709255745564,
+        "allocated_params": 265289920,
+        "rank_histogram": {
+          "32": 12,
+          "64": 12,
+          "128": 12,
+          "256": 12
+        },
+        "sensitivity_fallback_count": 0
+      },
+      "groups": [
+        [
+          "block.00.attn.k",
+          "block.01.attn.k",
+          "block.02.attn.k",
+          "block.03.attn.k",
+          "block.04.attn.k",
+          "block.05.attn.k"
+        ],
+        [
+          "block.06.attn.k",
+          "block.07.attn.k",
+          "block.08.attn.k",
+          "block.09.attn.k",
+          "block.10.attn.k",
+          "block.11.attn.k",
+          "block.12.attn.k",
+          "block.13.attn.k",
+          "block.14.attn.k",
+          "block.15.attn.k",
+          "block.16.attn.k",
+          "block.17.attn.k",
+          "block.18.attn.k",
+          "block.19.attn.k"
+        ],
+        [
+          "block.20.attn.k",
+          "block.21.attn.k",
+          "block.22.attn.k",
+          "block.23.attn.k",
+          "block.24.attn.k",
+          "block.25.attn.k"
+        ],
+        [
+          "block.26.attn.k",
+          "block.27.attn.k",
+          "block.28.attn.k",
+          "block.29.attn.k",
+          "block.30.attn.k",
+          "block.31.attn.k",
+          "block.32.attn.k",
+          "block.33.attn.k",
+          "block.34.attn.k",
+          "block.35.attn.k",
+          "block.36.attn.k",
+          "block.37.attn.k",
+          "block.38.attn.k",
+          "block.39.attn.k",
+          "block.40.attn.k",
+          "block.41.attn.k",
+          "block.42.attn.k",
+          "block.43.attn.k",
+          "block.44.attn.k",
+          "block.45.attn.k",
+          "block.46.attn.k",
+          "block.47.attn.k"
+        ]
+      ]
+    },
+    {
+      "family": "attn.out",
+      "shape": [
+        4096,
+        4096
+      ],
+      "status": "ok",
+      "compression_ratio": 3.0355709255745564,
+      "weight_relative_error": 0.7438467296534521,
+      "artifact": "reports\\adaptive_fits\\attn-out_4096x4096_adaptive_g1_c3_r32-64-128-256.safetensors",
+      "allocation": {
+        "target_compression_ratio": 3.0,
+        "allocated_compression_ratio": 3.0355709255745564,
+        "allocated_params": 265289920,
+        "rank_histogram": {
+          "32": 12,
+          "64": 12,
+          "128": 12,
+          "256": 12
+        },
+        "sensitivity_fallback_count": 0
+      },
+      "groups": [
+        [
+          "block.00.attn.out",
+          "block.01.attn.out",
+          "block.02.attn.out",
+          "block.03.attn.out",
+          "block.04.attn.out",
+          "block.05.attn.out"
+        ],
+        [
+          "block.06.attn.out",
+          "block.07.attn.out",
+          "block.08.attn.out",
+          "block.09.attn.out",
+          "block.10.attn.out",
+          "block.11.attn.out",
+          "block.12.attn.out",
+          "block.13.attn.out",
+          "block.14.attn.out",
+          "block.15.attn.out",
+          "block.16.attn.out",
+          "block.17.attn.out",
+          "block.18.attn.out",
+          "block.19.attn.out",
+          "block.20.attn.out",
+          "block.21.attn.out",
+          "block.22.attn.out",
+          "block.23.attn.out",
+          "block.24.attn.out",
+          "block.25.attn.out",
+          "block.26.attn.out",
+          "block.27.attn.out",
+          "block.28.attn.out",
+          "block.29.attn.out",
+          "block.30.attn.out",
+          "block.31.attn.out",
+          "block.32.attn.out",
+          "block.33.attn.out",
+          "block.34.attn.out"
+        ],
+        [
+          "block.35.attn.out",
+          "block.36.attn.out",
+          "block.37.attn.out",
+          "block.38.attn.out",
+          "block.39.attn.out"
+        ],
+        [
+          "block.40.attn.out",
+          "block.41.attn.out",
+          "block.42.attn.out",
+          "block.43.attn.out",
+          "block.44.attn.out",
+          "block.45.attn.out",
+          "block.46.attn.out",
+          "block.47.attn.out"
+        ]
+      ]
+    },
+    {
+      "family": "attn.q",
+      "shape": [
+        4096,
+        4096
+      ],
+      "status": "ok",
+      "compression_ratio": 3.0355709255745564,
+      "weight_relative_error": 0.6798833912881146,
+      "artifact": "reports\\adaptive_fits\\attn-q_4096x4096_adaptive_g1_c3_r32-64-128-256.safetensors",
+      "allocation": {
+        "target_compression_ratio": 3.0,
+        "allocated_compression_ratio": 3.0355709255745564,
+        "allocated_params": 265289920,
+        "rank_histogram": {
+          "32": 12,
+          "64": 12,
+          "128": 12,
+          "256": 12
+        },
+        "sensitivity_fallback_count": 0
+      },
+      "groups": [
+        [
+          "block.00.attn.q",
+          "block.01.attn.q",
+          "block.02.attn.q",
+          "block.03.attn.q",
+          "block.04.attn.q",
+          "block.05.attn.q"
+        ],
+        [
+          "block.06.attn.q",
+          "block.07.attn.q",
+          "block.08.attn.q",
+          "block.09.attn.q",
+          "block.10.attn.q",
+          "block.11.attn.q",
+          "block.12.attn.q",
+          "block.13.attn.q",
+          "block.14.attn.q",
+          "block.15.attn.q",
+          "block.16.attn.q"
+        ],
+        [
+          "block.17.attn.q",
+          "block.18.attn.q",
+          "block.19.attn.q",
+          "block.20.attn.q",
+          "block.21.attn.q",
+          "block.22.attn.q",
+          "block.23.attn.q",
+          "block.24.attn.q",
+          "block.25.attn.q",
+          "block.26.attn.q",
+          "block.27.attn.q",
+          "block.28.attn.q"
+        ],
+        [
+          "block.29.attn.q",
+          "block.30.attn.q",
+          "block.31.attn.q",
+          "block.32.attn.q",
+          "block.33.attn.q",
+          "block.34.attn.q",
+          "block.35.attn.q",
+          "block.36.attn.q",
+          "block.37.attn.q",
+          "block.38.attn.q",
+          "block.39.attn.q",
+          "block.40.attn.q",
+          "block.41.attn.q",
+          "block.42.attn.q",
+          "block.43.attn.q",
+          "block.44.attn.q",
+          "block.45.attn.q",
+          "block.46.attn.q",
+          "block.47.attn.q"
+        ]
+      ]
+    },
+    {
+      "family": "attn.v",
+      "shape": [
+        4096,
+        4096
+      ],
+      "status": "ok",
+      "compression_ratio": 3.0355709255745564,
+      "weight_relative_error": 0.7183719959608879,
+      "artifact": "reports\\adaptive_fits\\attn-v_4096x4096_adaptive_g1_c3_r32-64-128-256.safetensors",
+      "allocation": {
+        "target_compression_ratio": 3.0,
+        "allocated_compression_ratio": 3.0355709255745564,
+        "allocated_params": 265289920,
+        "rank_histogram": {
+          "32": 12,
+          "64": 12,
+          "128": 12,
+          "256": 12
+        },
+        "sensitivity_fallback_count": 0
+      },
+      "groups": [
+        [
+          "block.00.attn.v",
+          "block.01.attn.v",
+          "block.02.attn.v",
+          "block.03.attn.v",
+          "block.04.attn.v",
+          "block.05.attn.v",
+          "block.06.attn.v",
+          "block.07.attn.v",
+          "block.08.attn.v",
+          "block.09.attn.v"
+        ],
+        [
+          "block.10.attn.v",
+          "block.11.attn.v",
+          "block.12.attn.v",
+          "block.13.attn.v",
+          "block.14.attn.v",
+          "block.15.attn.v",
+          "block.16.attn.v",
+          "block.17.attn.v",
+          "block.18.attn.v",
+          "block.19.attn.v",
+          "block.20.attn.v",
+          "block.21.attn.v",
+          "block.22.attn.v",
+          "block.23.attn.v",
+          "block.24.attn.v",
+          "block.25.attn.v",
+          "block.26.attn.v",
+          "block.27.attn.v",
+          "block.28.attn.v",
+          "block.29.attn.v",
+          "block.30.attn.v",
+          "block.31.attn.v",
+          "block.32.attn.v",
+          "block.33.attn.v",
+          "block.34.attn.v",
+          "block.35.attn.v"
+        ],
+        [
+          "block.36.attn.v",
+          "block.37.attn.v",
+          "block.38.attn.v",
+          "block.39.attn.v",
+          "block.40.attn.v",
+          "block.41.attn.v",
+          "block.42.attn.v",
+          "block.43.attn.v"
+        ],
+        [
+          "block.44.attn.v",
+          "block.45.attn.v",
+          "block.46.attn.v",
+          "block.47.attn.v"
+        ]
+      ]
+    },
+    {
+      "family": "ff-in",
+      "shape": [
+        16384,
+        4096
+      ],
+      "status": "ok",
+      "compression_ratio": 3.2525139274186476,
+      "weight_relative_error": 0.688568518515894,
+      "artifact": "reports\\adaptive_fits\\ff-in_16384x4096_adaptive_g1_c3_r32-64-128-256.safetensors",
+      "allocation": {
+        "target_compression_ratio": 3.0,
+        "allocated_compression_ratio": 3.2525139274186476,
+        "allocated_params": 990380224,
+        "rank_histogram": {
+          "32": 12,
+          "64": 12,
+          "128": 12,
+          "256": 12
+        },
+        "sensitivity_fallback_count": 0
+      },
+      "groups": [
+        [
+          "block.00.ff.in",
+          "block.01.ff.in",
+          "block.02.ff.in",
+          "block.03.ff.in",
+          "block.04.ff.in",
+          "block.05.ff.in",
+          "block.06.ff.in",
+          "block.07.ff.in",
+          "block.08.ff.in",
+          "block.09.ff.in",
+          "block.10.ff.in",
+          "block.11.ff.in",
+          "block.12.ff.in",
+          "block.13.ff.in",
+          "block.14.ff.in",
+          "block.15.ff.in",
+          "block.16.ff.in",
+          "block.17.ff.in",
+          "block.18.ff.in",
+          "block.19.ff.in",
+          "block.20.ff.in",
+          "block.21.ff.in",
+          "block.22.ff.in",
+          "block.23.ff.in",
+          "block.24.ff.in",
+          "block.25.ff.in",
+          "block.26.ff.in"
+        ],
+        [
+          "block.27.ff.in",
+          "block.28.ff.in",
+          "block.29.ff.in",
+          "block.30.ff.in",
+          "block.31.ff.in",
+          "block.32.ff.in",
+          "block.33.ff.in",
+          "block.34.ff.in",
+          "block.35.ff.in"
+        ],
+        [
+          "block.36.ff.in",
+          "block.37.ff.in",
+          "block.38.ff.in",
+          "block.39.ff.in"
+        ],
+        [
+          "block.40.ff.in",
+          "block.41.ff.in",
+          "block.42.ff.in",
+          "block.43.ff.in",
+          "block.44.ff.in",
+          "block.45.ff.in",
+          "block.46.ff.in",
+          "block.47.ff.in"
+        ]
+      ]
+    },
+    {
+      "family": "ff-out",
+      "shape": [
+        4096,
+        16384
+      ],
+      "status": "ok",
+      "compression_ratio": 3.2525139274186476,
+      "weight_relative_error": 0.7037252757161346,
+      "artifact": "reports\\adaptive_fits\\ff-out_4096x16384_adaptive_g1_c3_r32-64-128-256.safetensors",
+      "allocation": {
+        "target_compression_ratio": 3.0,
+        "allocated_compression_ratio": 3.2525139274186476,
+        "allocated_params": 990380224,
+        "rank_histogram": {
+          "32": 12,
+          "64": 12,
+          "128": 12,
+          "256": 12
+        },
+        "sensitivity_fallback_count": 0
+      },
+      "groups": [
+        [
+          "block.00.ff.out",
+          "block.01.ff.out",
+          "block.02.ff.out",
+          "block.03.ff.out",
+          "block.04.ff.out",
+          "block.05.ff.out",
+          "block.06.ff.out",
+          "block.07.ff.out",
+          "block.08.ff.out",
+          "block.09.ff.out",
+          "block.10.ff.out",
+          "block.11.ff.out",
+          "block.12.ff.out",
+          "block.13.ff.out",
+          "block.14.ff.out",
+          "block.15.ff.out",
+          "block.16.ff.out",
+          "block.17.ff.out",
+          "block.18.ff.out",
+          "block.19.ff.out",
+          "block.20.ff.out",
+          "block.21.ff.out"
+        ],
+        [
+          "block.22.ff.out",
+          "block.23.ff.out",
+          "block.24.ff.out",
+          "block.25.ff.out",
+          "block.26.ff.out",
+          "block.27.ff.out",
+          "block.28.ff.out",
+          "block.29.ff.out",
+          "block.30.ff.out"
+        ],
+        [
+          "block.31.ff.out",
+          "block.32.ff.out",
+          "block.33.ff.out",
+          "block.34.ff.out",
+          "block.35.ff.out"
+        ],
+        [
+          "block.36.ff.out",
+          "block.37.ff.out",
+          "block.38.ff.out",
+          "block.39.ff.out",
+          "block.40.ff.out",
+          "block.41.ff.out",
+          "block.42.ff.out",
+          "block.43.ff.out",
+          "block.44.ff.out",
+          "block.45.ff.out",
+          "block.46.ff.out",
+          "block.47.ff.out"
+        ]
+      ]
+    }
+  ]
+}

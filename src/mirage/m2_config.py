@@ -25,6 +25,9 @@ class TeacherConfig:
     local_files_only: bool = False
     max_capture_tokens: int = 256
     capture_blocks: list[int] | None = None
+    projection_families: list[str] = field(
+        default_factory=lambda: ["attn.q", "attn.k", "attn.v", "attn.out", "ff.in", "ff.out"]
+    )
 
 
 @dataclass(frozen=True)
@@ -58,6 +61,8 @@ class CompressionConfig:
     alpha_sparsity: float = 0.0
     residual_magnitude: float = 0.0
     basis_orthogonality: float = 0.0
+    max_fit_vram_gb: float = 18.0
+    streamed_row_chunk_size: int = 32
 
 
 @dataclass(frozen=True)
@@ -69,12 +74,36 @@ class TemporalConfig:
     predict_threshold: float = 0.05
     predictor_steps: int = 200
     predictor_learning_rate: float = 1e-3
+    delta_ranks: list[int] = field(default_factory=lambda: [1, 2, 4, 8, 16, 32])
+    delta_local_error: float = 0.05
+    delta_useful_coverage: float = 0.4
+    delta_flop_reduction: float = 0.25
+    delta_min_compression_ratio: float = 3.0
 
 
 @dataclass(frozen=True)
 class SceneMotionConfig:
     pca_ranks: list[int] = field(default_factory=lambda: [1, 2, 4, 8])
     lowpass_alpha: float = 0.8
+
+
+@dataclass(frozen=True)
+class RecoveryConfig:
+    global_basis_count: int = 1
+    group_basis_count: int = 2
+    group_count: int = 4
+    minimum_group_size: int = 4
+    residual_rank_tiers: list[int] = field(default_factory=lambda: [8, 16, 32, 64])
+    target_compression_ratio: float = 3.0
+    activation_residual_ridge: float = 1e-3
+    residual_spectrum_ranks: list[int] = field(
+        default_factory=lambda: [8, 16, 32, 64, 128, 256, 512]
+    )
+    residual_spectrum_power_iterations: int = 1
+    sparse_tile_size: int = 64
+    sparse_tile_densities: list[float] = field(
+        default_factory=lambda: [0.01, 0.025, 0.05, 0.1, 0.2, 0.4]
+    )
 
 
 @dataclass(frozen=True)
@@ -94,6 +123,7 @@ class M2Config:
     compression: CompressionConfig = field(default_factory=CompressionConfig)
     temporal: TemporalConfig = field(default_factory=TemporalConfig)
     scene_motion: SceneMotionConfig = field(default_factory=SceneMotionConfig)
+    recovery: RecoveryConfig = field(default_factory=RecoveryConfig)
     acceptance: AcceptanceConfig = field(default_factory=AcceptanceConfig)
     output_dir: str = "artifacts/m2/ltx_study"
 
@@ -107,6 +137,7 @@ class M2Config:
             compression=CompressionConfig(**raw.get("compression", {})),
             temporal=TemporalConfig(**raw.get("temporal", {})),
             scene_motion=SceneMotionConfig(**raw.get("scene_motion", {})),
+            recovery=RecoveryConfig(**raw.get("recovery", {})),
             acceptance=AcceptanceConfig(**raw.get("acceptance", {})),
             output_dir=raw.get("output_dir", "artifacts/m2/ltx_study"),
         )

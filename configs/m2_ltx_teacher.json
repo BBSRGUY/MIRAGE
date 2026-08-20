@@ -15,7 +15,8 @@
     "device": "cuda",
     "local_files_only": true,
     "max_capture_tokens": 32,
-    "capture_blocks": [0, 12, 24, 36, 47]
+    "capture_blocks": [0, 12, 24, 36, 47],
+    "projection_families": ["attn.q", "attn.k", "attn.v", "attn.out", "ff.in", "ff.out"]
   },
   "data": {
     "prompts_file": "configs/m2_prompts.txt",
@@ -39,16 +40,36 @@
     "activation_fit_steps": 100,
     "learning_rate": 0.001,
     "lambda_weight": 0.1,
-    "lambda_activation": 1.0
+    "lambda_activation": 1.0,
+    "max_fit_vram_gb": 18.0,
+    "streamed_row_chunk_size": 32
   },
   "temporal": {
     "reuse_thresholds": [0.001, 0.0025, 0.005, 0.01, 0.02, 0.05, 0.1],
     "reuse_threshold": 0.02,
     "predict_threshold": 0.05,
     "predictor_steps": 200,
-    "predictor_learning_rate": 0.001
+    "predictor_learning_rate": 0.001,
+    "delta_ranks": [1, 2, 4, 8, 16, 32],
+    "delta_local_error": 0.05,
+    "delta_useful_coverage": 0.4,
+    "delta_flop_reduction": 0.25,
+    "delta_min_compression_ratio": 3.0
   },
   "scene_motion": {"pca_ranks": [1, 2, 4, 8], "lowpass_alpha": 0.8},
+  "recovery": {
+    "global_basis_count": 1,
+    "group_basis_count": 3,
+    "group_count": 4,
+    "minimum_group_size": 4,
+    "residual_rank_tiers": [32, 64, 128, 256],
+    "target_compression_ratio": 3.0,
+    "activation_residual_ridge": 0.00001,
+    "residual_spectrum_ranks": [8, 16, 32, 64, 128, 256, 512],
+    "residual_spectrum_power_iterations": 1,
+    "sparse_tile_size": 64,
+    "sparse_tile_densities": [0.01, 0.025, 0.05, 0.1, 0.2, 0.4]
+  },
   "acceptance": {
     "validation_activation_cosine": 0.995,
     "normalized_activation_error": 0.05,

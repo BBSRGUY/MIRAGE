@@ -1,0 +1,190 @@
+{
+  "teacher": "Lightricks/LTX-2.5",
+  "layers": {
+    "0": {
+      "temporal_mean": {
+        "scene_energy_ratio": 0.8792112519343694,
+        "motion_energy_ratio": 0.12078873444503795,
+        "reconstruction_error": 0.0,
+        "temporal_smoothness": 1.1836720320085685,
+        "motion_sparsity": 0.12417856852213542
+      },
+      "temporal_pca": {
+        "1": {
+          "status": "ok",
+          "explained_energy": 0.8796550358335177,
+          "scene_energy_ratio": 0.8796551302075386,
+          "motion_energy_ratio": 0.12034497776767239,
+          "reconstruction_error": 4.122732578937249e-09,
+          "temporal_smoothness": 1.1810826944808166,
+          "motion_sparsity": 0.12424198786417644
+        },
+        "2": {
+          "status": "ok",
+          "explained_energy": 1.0,
+          "scene_energy_ratio": 1.0000000956157844,
+          "motion_energy_ratio": 6.318951139203733e-14,
+          "reconstruction_error": 0.0,
+          "temporal_smoothness": 6.415798612380286e-07,
+          "motion_sparsity": 1.0
+        },
+        "4": {
+          "status": "skipped_invalid"
+        },
+        "8": {
+          "status": "skipped_invalid"
+        }
+      },
+      "samples": 48
+    },
+    "12": {
+      "temporal_mean": {
+        "scene_energy_ratio": 0.7519253181914488,
+        "motion_energy_ratio": 0.24807469050089517,
+        "reconstruction_error": 0.0,
+        "temporal_smoothness": 7.425451308488846,
+        "motion_sparsity": 0.13318570454915366
+      },
+      "temporal_pca": {
+        "1": {
+          "status": "ok",
+          "explained_energy": 0.754272598773241,
+          "scene_energy_ratio": 0.7542726745208105,
+          "motion_energy_ratio": 0.24572741830100617,
+          "reconstruction_error": 6.552763507731522e-09,
+          "temporal_smoothness": 7.372280855973561,
+          "motion_sparsity": 0.12841208775838217
+        },
+        "2": {
+          "status": "ok",
+          "explained_energy": 1.0,
+          "scene_energy_ratio": 1.0000001018246014,
+          "motion_energy_ratio": 3.880811802686856e-14,
+          "reconstruction_error": 0.0,
+          "temporal_smoothness": 1.8289240912849891e-06,
+          "motion_sparsity": 1.0
+        },
+        "4": {
+          "status": "skipped_invalid"
+        },
+        "8": {
+          "status": "skipped_invalid"
+        }
+      },
+      "samples": 48
+    },
+    "24": {
+      "temporal_mean": {
+        "scene_energy_ratio": 0.7452583238482475,
+        "motion_energy_ratio": 0.25474168205012876,
+        "reconstruction_error": 0.0,
+        "temporal_smoothness": 8.158682654301325,
+        "motion_sparsity": 0.07288010915120442
+      },
+      "temporal_pca": {
+        "1": {
+          "status": "ok",
+          "explained_energy": 0.7557819622258345,
+          "scene_energy_ratio": 0.7557819796105226,
+          "motion_energy_ratio": 0.24421808030456305,
+          "reconstruction_error": 6.041025670440921e-09,
+          "temporal_smoothness": 7.889312992493312,
+          "motion_sparsity": 0.0740663210550944
+        },
+        "2": {
+          "status": "ok",
+          "explained_energy": 1.0,
+          "scene_energy_ratio": 1.0000000298023224,
+          "motion_energy_ratio": 5.6136222176945975e-14,
+          "reconstruction_error": 0.0,
+          "temporal_smoothness": 2.309989241666699e-06,
+          "motion_sparsity": 1.0
+        },
+        "4": {
+          "status": "skipped_invalid"
+        },
+        "8": {
+          "status": "skipped_invalid"
+        }
+      },
+      "samples": 48
+    },
+    "36": {
+      "temporal_mean": {
+        "scene_energy_ratio": 0.7452557422220707,
+        "motion_energy_ratio": 0.2547442444289724,
+        "reconstruction_error": 0.0,
+        "temporal_smoothness": 7.87299167116483,
+        "motion_sparsity": 0.04870923360188802
+      },
+      "temporal_pca": {
+        "1": {
+          "status": "ok",
+          "explained_energy": 0.7465083487331867,
+          "scene_energy_ratio": 0.74650838971138,
+          "motion_energy_ratio": 0.25349167610208195,
+          "reconstruction_error": 6.496159110636057e-09,
+          "temporal_smoothness": 7.842688669761022,
+          "motion_sparsity": 0.04866298039754232
+        },
+        "2": {
+          "status": "ok",
+          "explained_energy": 1.0,
+          "scene_energy_ratio": 1.0000000273187954,
+          "motion_energy_ratio": 5.754814662009401e-14,
+          "reconstruction_error": 0.0,
+          "temporal_smoothness": 2.3083652500588414e-06,
+          "motion_sparsity": 1.0
+        },
+        "4": {
+          "status": "skipped_invalid"
+        },
+        "8": {
+          "status": "skipped_invalid"
+        }
+      },
+      "samples": 48
+    },
+    "47": {
+      "temporal_mean": {
+        "scene_energy_ratio": 0.9821490993102392,
+        "motion_energy_ratio": 0.017850898671895266,
+        "reconstruction_error": 0.0,
+        "temporal_smoothness": 14.399755299091339,
+        "motion_sparsity": 0.07737255096435547
+      },
+      "temporal_pca": {
+        "1": {
+          "status": "ok",
+          "explained_energy": 0.9822280320028464,
+          "scene_energy_ratio": 0.982227964947621,
+          "motion_energy_ratio": 0.017771968540425103,
+          "reconstruction_error": 1.6379567887211028e-09,
+          "temporal_smoothness": 14.374120950698853,
+          "motion_sparsity": 0.07720025380452473
+        },
+        "2": {
+          "status": "ok",
+          "explained_energy": 1.0,
+          "scene_energy_ratio": 0.9999999379118284,
+          "motion_energy_ratio": 6.004985105356434e-14,
+          "reconstruction_error": 0.0,
+          "temporal_smoothness": 1.43147350684103e-05,
+          "motion_sparsity": 1.0
+        },
+        "4": {
+          "status": "skipped_invalid"
+        },
+        "8": {
+          "status": "skipped_invalid"
+        }
+      },
+      "samples": 48
+    }
+  },
+  "summary": {
+    "mean_rank1_explained_energy": 0.8236891955137253,
+    "mean_scene_stability_drift": 0.18874767470572676
+  },
+  "scope_warning": "Low-rank feature structure does not establish an optimal generative representation."
+}
