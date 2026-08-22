@@ -31,6 +31,9 @@ Download the official Panda-70M 2M metadata archive into `data/panda70m/train_2m
 Panda-70M repository's fork of `video2dataset`; its README states that the upstream package is
 not compatible with the Panda CSV schema. The selector emits a bounded request CSV accepted by
 that fork and records the exact argument vector in `selection_report.json`.
+The repository's `panda70m_10k_download.yaml` retains 360 px video and audio while limiting the
+official fork to 4 processes × 4 threads. Output is incremental in 100-clip shards, so an
+interrupted proof download resumes without requesting the 1.6 TB source corpus.
 
 ```powershell
 $env:PYTHONPATH = (Resolve-Path .\src).Path

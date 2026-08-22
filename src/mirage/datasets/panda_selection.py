@@ -266,7 +266,7 @@ def select_panda_metadata(config: M3CorpusConfig) -> dict[str, Any]:
             "--clip_col=timestamp",
             f"--output_folder={config.downloaded_dir}",
             "--save_additional_columns=[matching_score,desirable_filtering,shot_boundary_detection,mirage_id,motion_bucket,split]",
-            "--config=video2dataset/video2dataset/configs/panda70m.yaml",
+            "--config=configs/panda70m_10k_download.yaml",
         ],
         "license": "Panda-70M research use; source-video licenses remain individually binding",
     }
