@@ -97,6 +97,9 @@ def test_m3_corpus_build_audit_load_and_provenance(tmp_path):
     )
     normalized = normalize_downloaded_corpus(config)
     assert normalized["accepted"] == 1
+    resumed = normalize_downloaded_corpus(config)
+    assert resumed["resumed_samples"] == 1
+    assert resumed["accepted"] == 1
     sharded = shard_normalized_corpus(config)
     assert sharded["samples"] == 1
     audit = audit_sharded_corpus(config)

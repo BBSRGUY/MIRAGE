@@ -98,15 +98,37 @@ def normalize_downloaded_corpus(config: M3CorpusConfig) -> dict[str, Any]:
     destination_root = Path(config.normalized_dir)
     destination_root.mkdir(parents=True, exist_ok=True)
     rejects: Counter[str] = Counter()
-    accepted = []
-    exact_hashes = set()
-    visual_hashes = set()
+    accepted: list[dict[str, Any]] = []
+    exact_hashes: set[str] = set()
+    visual_hashes: set[str] = set()
+    accepted_ids: set[str] = set()
+    for metadata_path in sorted(destination_root.glob("*.json")):
+        try:
+            metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        sample_id = metadata.get("sample_id")
+        content_hash = metadata.get("content_sha256")
+        visual_hash = metadata.get("visual_sha256")
+        video_path = destination_root / f"{sample_id}.mp4"
+        text_path = destination_root / f"{sample_id}.txt"
+        if not sample_id or not content_hash or not visual_hash:
+            continue
+        if not video_path.is_file() or not text_path.is_file():
+            continue
+        accepted.append(metadata)
+        accepted_ids.add(sample_id)
+        exact_hashes.add(content_hash)
+        visual_hashes.add(visual_hash)
+    resumed_samples = len(accepted)
     for video_path in sorted(source_root.rglob("*.mp4")):
         metadata_path = video_path.with_suffix(".json")
         text_path = video_path.with_suffix(".txt")
         sample_id = _metadata_id(metadata_path) if metadata_path.exists() else None
         if sample_id not in selected:
             rejects["selection_mismatch"] += 1
+            continue
+        if sample_id in accepted_ids:
             continue
         row = selected[sample_id]
         try:
@@ -199,6 +221,8 @@ def normalize_downloaded_corpus(config: M3CorpusConfig) -> dict[str, Any]:
             json.dumps(metadata, indent=2), encoding="utf-8"
         )
         accepted.append(metadata)
+        accepted_ids.add(sample_id)
+    accepted.sort(key=lambda row: row["sample_id"])
     manifest = destination_root / "manifest.jsonl"
     manifest.write_text(
         "".join(json.dumps(row, sort_keys=True) + "\n" for row in accepted), encoding="utf-8"
@@ -207,6 +231,7 @@ def normalize_downloaded_corpus(config: M3CorpusConfig) -> dict[str, Any]:
         "format": "mirage_m3_normalization_v1",
         "config_sha256": canonical_json_sha256(config.to_dict()),
         "selection_sha256": sha256_file(Path(config.work_dir) / "selection" / "selected.jsonl"),
+        "resumed_samples": resumed_samples,
         "accepted": len(accepted),
         "reject_counts": dict(rejects),
         "split_counts": dict(Counter(row["split"] for row in accepted)),
