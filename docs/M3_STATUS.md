@@ -22,3 +22,9 @@ and the external sidecar hash were both verified.
 This is not a quality milestone pass. The current checkpoint learned only from the deterministic
 synthetic systems fixture. Real AV training, behavior-transfer measurement, CLIP/LPIPS/VBench/
 FVD evaluation, identity and AV-sync evaluation, and matched-budget ablations remain required.
+
+The frozen M3-v0 real-data foundation is now implemented: deterministic Panda-70M selection,
+source-isolated splits, AV normalization, exact/perceptual deduplication, WebDataset sharding,
+shard auditing, direct tar-stream loading, and WebDataset checkpoint provenance. A generated
+two-second AV fixture passes the complete path. This validates the machinery only; no Panda media
+has been downloaded and no real-data training or quality claim has been made.

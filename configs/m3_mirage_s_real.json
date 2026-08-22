@@ -1,0 +1,72 @@
+{
+  "variant": "MIRAGE-S",
+  "model": {
+    "frames": 4,
+    "height": 32,
+    "width": 32,
+    "patch_size": 8,
+    "hidden_size": 128,
+    "depth": 4,
+    "heads": 4,
+    "basis_count": 2,
+    "residual_rank": 4,
+    "projection_backend": "independent",
+    "steps": 2,
+    "text_tokens": 16,
+    "vocabulary_size": 4096,
+    "scene_ratio": 0.6,
+    "attention_window": 1,
+    "attention_stride": 4,
+    "cache_threshold": 0.0,
+    "max_cache_age": 1,
+    "precision": "dynamic",
+    "seed": 3407,
+    "vram_budget_gb": 20.0
+  },
+  "data": {
+    "manifest": "webdataset://data/mirage-m3-v0/shards/{split}-*.tar",
+    "teacher_features": null,
+    "shuffle_buffer": 32,
+    "synthetic_samples": 0,
+    "seed": 3407
+  },
+  "compression": {
+    "policy": "m2_heterogeneous_int4_int8",
+    "allocation_report": "artifacts/m2/ltx25_22b/reports/heterogeneous_allocation.json",
+    "int4_group_size": 64
+  },
+  "training": {
+    "output_dir": "artifacts/m3/mirage-s-real-baseline",
+    "batch_size": 2,
+    "epochs": 20,
+    "max_steps": 10000,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "gradient_accumulation": 4,
+    "gradient_checkpointing": true,
+    "mixed_precision": "bf16",
+    "ema_decay": 0.999,
+    "checkpoint_every": 500,
+    "log_every": 10,
+    "max_grad_norm": 1.0,
+    "resume": null,
+    "strict_resume_provenance": true,
+    "seed": 3407
+  },
+  "losses": {
+    "flow": 1.0,
+    "behavior": 0.0,
+    "temporal": 0.1,
+    "identity": 0.05,
+    "av_sync": 0.05
+  },
+  "evaluation": {
+    "prompts": [
+      "A person carefully pours tea into a ceramic cup.",
+      "A dog runs across grass while the camera follows.",
+      "Ocean waves break against dark rocks at sunset.",
+      "A red car turns through a rain-soaked city street."
+    ],
+    "seeds": [101, 202, 303, 404]
+  }
+}

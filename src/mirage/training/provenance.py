@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import subprocess
+from glob import glob
 from pathlib import Path
 from typing import Any
 
@@ -91,15 +92,24 @@ def code_provenance(root: str | Path = ".") -> dict[str, Any]:
 
 def build_run_provenance(config: M3Config, root: str | Path = ".") -> dict[str, Any]:
     manifest = config.data.manifest
-    dataset = (
-        {"manifest": manifest, "synthetic": True, "sha256": canonical_json_sha256(manifest)}
-        if manifest.startswith("synthetic://")
-        else {
+    if manifest.startswith("synthetic://"):
+        dataset = {"manifest": manifest, "synthetic": True, "sha256": canonical_json_sha256(manifest)}
+    elif manifest.startswith("webdataset://"):
+        pattern = manifest.removeprefix("webdataset://")
+        files = sorted({path for split in ("train", "val", "test") for path in glob(pattern.replace("{split}", split))})
+        digest = hashlib.sha256()
+        for file in files:
+            digest.update(Path(file).name.encode("utf-8"))
+            digest.update(bytes.fromhex(sha256_file(file)))
+        dataset = {
             "manifest": manifest,
             "synthetic": False,
-            "sha256": sha256_file(manifest),
+            "webdataset": True,
+            "sha256": digest.hexdigest(),
+            "files": len(files),
         }
-    )
+    else:
+        dataset = {"manifest": manifest, "synthetic": False, "sha256": sha256_file(manifest)}
     teacher = (
         hash_file_set(config.data.teacher_features)
         if config.data.teacher_features

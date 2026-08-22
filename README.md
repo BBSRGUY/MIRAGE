@@ -103,3 +103,5 @@ The LTX-2.5 study protocol and artifact schema are documented in
 [docs/M21_METHOD.md](docs/M21_METHOD.md).
 [M3 method](docs/M3_METHOD.md) and [M3 status](docs/M3_STATUS.md) document the active training
 milestone and clearly separate its foundation smoke pass from the still-unpassed quality gate.
+The bounded [M3 real AV data protocol](docs/M3_DATA.md) defines the frozen Panda-70M subset,
+source-isolated splits, deterministic shards, and audit required before the first real run.

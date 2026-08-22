@@ -1,14 +1,19 @@
 from __future__ import annotations
 
+import io
 import json
 import math
 import random
+import tarfile
+from glob import glob
 from collections.abc import Iterator
 from pathlib import Path
 from typing import Any
 
+import av
 import torch
 from safetensors.torch import load_file
+from torch.nn import functional as F
 from torch.utils.data import IterableDataset, get_worker_info
 
 from ..m3_config import M3Config
@@ -123,9 +128,97 @@ class StreamingAVDataset(IterableDataset):
         while buffer:
             yield materialize(buffer.pop(rng.randrange(len(buffer))))
 
+    def _decode_video(self, payload: bytes) -> torch.Tensor:
+        frames = []
+        with av.open(io.BytesIO(payload)) as container:
+            for frame in container.decode(video=0):
+                frames.append(torch.from_numpy(frame.to_ndarray(format="rgb24")).permute(2, 0, 1))
+        if not frames:
+            raise ValueError("WebDataset sample contains no decodable video frames")
+        indices = torch.linspace(0, len(frames) - 1, self.config.model.frames).round().long()
+        selected = torch.stack([frames[index].float() / 127.5 - 1 for index in indices])
+        return F.interpolate(
+            selected,
+            size=(self.config.model.height, self.config.model.width),
+            mode="bilinear",
+            align_corners=False,
+        )
+
+    def _decode_audio(self, payload: bytes) -> torch.Tensor | None:
+        chunks = []
+        try:
+            with av.open(io.BytesIO(payload)) as container:
+                if not container.streams.audio:
+                    return None
+                resampler = av.AudioResampler(format="fltp", layout="mono", rate=16_000)
+                for frame in container.decode(audio=0):
+                    converted = resampler.resample(frame)
+                    converted = converted if isinstance(converted, list) else [converted]
+                    for item in converted:
+                        if item is not None:
+                            chunks.append(torch.from_numpy(item.to_ndarray()).float().flatten())
+        except (av.error.FFmpegError, EOFError):
+            return None
+        if not chunks:
+            return None
+        audio = torch.cat(chunks)
+        required = self.config.model.frames * 320
+        return F.interpolate(audio[None, None], size=required, mode="linear", align_corners=False)[
+            0, 0
+        ]
+
+    def _webdataset_rows(self) -> Iterator[dict[str, Any]]:
+        pattern = self.config.data.manifest.removeprefix("webdataset://")
+        split = "val" if self.split == "eval" else self.split
+        pattern = pattern.replace("{split}", split)
+        paths = [Path(path) for path in sorted(glob(pattern))]
+        if not paths:
+            raise FileNotFoundError(f"no WebDataset shards match {pattern}")
+        rng = random.Random(self.config.data.seed)
+        if self.split == "train":
+            rng.shuffle(paths)
+        shard, shards = self._shard()
+        for path_index, path in enumerate(paths):
+            if path_index % shards != shard:
+                continue
+            with tarfile.open(path, "r|*") as archive:
+                current_id = None
+                parts: dict[str, bytes] = {}
+                for member in archive:
+                    if not member.isfile():
+                        continue
+                    sample_id = Path(member.name).stem
+                    if current_id is not None and sample_id != current_id:
+                        yield self._materialize_webdataset(current_id, parts, split)
+                        parts = {}
+                    current_id = sample_id
+                    handle = archive.extractfile(member)
+                    if handle is not None:
+                        parts[Path(member.name).suffix] = handle.read()
+                if current_id is not None:
+                    yield self._materialize_webdataset(current_id, parts, split)
+
+    def _materialize_webdataset(
+        self, sample_id: str, parts: dict[str, bytes], split: str
+    ) -> dict[str, Any]:
+        if ".mp4" not in parts or ".txt" not in parts or ".json" not in parts:
+            raise ValueError(f"incomplete WebDataset sample: {sample_id}")
+        metadata = json.loads(parts[".json"])
+        return {
+            "sample_id": sample_id,
+            "split": split,
+            "prompt": parts[".txt"].decode("utf-8").strip(),
+            "video": self._decode_video(parts[".mp4"]),
+            "audio": self._decode_audio(parts[".mp4"]),
+            "teacher_feature": None,
+            "metadata": metadata,
+        }
+
     def __iter__(self) -> Iterator[dict[str, Any]]:
         if self.config.data.manifest.startswith("synthetic://"):
             yield from self._synthetic()
+        elif self.config.data.manifest.startswith("webdataset://"):
+            yield from self._webdataset_rows()
         else:
             yield from self._manifest_rows()
 

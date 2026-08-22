@@ -51,3 +51,4 @@ artifacts/m3/teacher_features/*
 .venv/
 dist/
 build/
+data/

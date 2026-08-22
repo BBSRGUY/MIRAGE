@@ -21,7 +21,13 @@ training data stream or inference runtime.
 
 ## Data format
 
-Production data uses a JSONL manifest. Each row contains:
+The first real-data baseline uses the bounded and audited Panda-70M WebDataset pipeline described
+in [M3_DATA.md](M3_DATA.md). Each tar sample contains MP4 AV bytes, caption text, and provenance
+metadata. The iterable loader decodes directly from each tar stream and shards files across DDP
+ranks and data-loader workers without extracting the corpus during training.
+
+The earlier tensor JSONL form remains supported for offline features and compact fixtures. Each
+row contains:
 
 ```json
 {"sample_id":"clip-0001","split":"train","prompt":"...","video":"clip-0001.safetensors","audio":"clip-0001-audio.safetensors","teacher_feature":"teacher/clip-0001.safetensors"}

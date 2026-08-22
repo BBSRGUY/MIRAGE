@@ -86,6 +86,9 @@ def build_parser() -> argparse.ArgumentParser:
     m3_features.add_argument("--m2-root", default="artifacts/m2/ltx25_22b")
     m3_report = sub.add_parser("m3-report")
     m3_report.add_argument("--config", default="configs/m3_mirage_s.json")
+    for name in ("m3-data-select", "m3-data-normalize", "m3-data-shard", "m3-data-audit"):
+        item = sub.add_parser(name)
+        item.add_argument("--config", default="configs/m3_corpus_v0.json")
     return parser
 
 
@@ -261,6 +264,29 @@ def run_m2(args: argparse.Namespace) -> int:
 
 def main() -> int:
     args = build_parser().parse_args()
+    if args.command.startswith("m3-data-"):
+        from .m3_data_config import M3CorpusConfig
+
+        config = M3CorpusConfig.from_json(args.config)
+        if args.command == "m3-data-select":
+            from .datasets.panda_selection import select_panda_metadata
+
+            result = select_panda_metadata(config)
+        else:
+            from .datasets.corpus_builder import (
+                audit_sharded_corpus,
+                normalize_downloaded_corpus,
+                shard_normalized_corpus,
+            )
+
+            operations = {
+                "m3-data-normalize": normalize_downloaded_corpus,
+                "m3-data-shard": shard_normalized_corpus,
+                "m3-data-audit": audit_sharded_corpus,
+            }
+            result = operations[args.command](config)
+        print(json.dumps(result, indent=2, default=str))
+        return 0
     if args.command.startswith("m3-"):
         from .m3_config import M3Config
 

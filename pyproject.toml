@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "A single-GPU research harness for compressed-native video generation"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = ["torch>=2.4", "numpy>=1.26", "Pillow>=10", "safetensors>=0.4"]
+dependencies = ["torch>=2.4", "numpy>=1.26", "Pillow>=10", "safetensors>=0.4", "av>=14"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "ruff>=0.6"]
