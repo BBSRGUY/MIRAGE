@@ -129,6 +129,31 @@ class _ReferenceAdaLN(nn.Module):
         self.register_buffer("value", value, persistent=False)
 
 
+def _add_reference_adaln(timestep, value: torch.Tensor):
+    """Add reference modulation without expanding LTX's compressed timestep."""
+    if isinstance(timestep, torch.Tensor):
+        timestep_data = timestep
+    else:
+        timestep_data = getattr(timestep, "data", None)
+        if not isinstance(timestep_data, torch.Tensor):
+            raise TypeError(f"unsupported LTX timestep type: {type(timestep).__name__}")
+
+    value = value.to(device=timestep_data.device, dtype=timestep_data.dtype)
+    if value.ndim == 2:
+        value = value.unsqueeze(1)
+    updated_data = timestep_data + value
+
+    if isinstance(timestep, torch.Tensor):
+        return updated_data
+
+    # Comfy's LTX-2.5 AV path stores one timestep vector per frame in a
+    # CompressedTimestep.  Preserve its compression metadata and replace only
+    # the underlying tensor; expanding it here would waste substantial VRAM.
+    updated = copy.copy(timestep)
+    updated.data = updated_data
+    return updated
+
+
 def _patch_model(
     model,
     state: dict[str, torch.Tensor],
@@ -154,10 +179,7 @@ def _patch_model(
         def block_forward(this, *args, _original=original_forward, **kwargs):
             key = "v_timestep" if "v_timestep" in kwargs else "timestep"
             if key in kwargs and kwargs[key] is not None:
-                value = this.mirage_ref_adaln.value.to(device=kwargs[key].device, dtype=kwargs[key].dtype)
-                if value.ndim == 2:
-                    value = value.unsqueeze(1)
-                kwargs[key] = kwargs[key] + value
+                kwargs[key] = _add_reference_adaln(kwargs[key], this.mirage_ref_adaln.value)
             return _original(*args, **kwargs)
 
         patched.add_object_patch(
