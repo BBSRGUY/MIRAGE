@@ -7,8 +7,9 @@ and existing local weights; it performs no downloads.
 
 from __future__ import annotations
 
-import logging
+import copy
 import importlib
+import logging
 import types
 from pathlib import Path
 
@@ -29,6 +30,7 @@ DEFAULT_MODULE_PATH = (
 )
 WAN2GP_LORA_ROOT = "C:/Users/rashm/OneDrive/Desktop/videogen/Wan2GP/loras/ltx2"
 DEFAULT_LORA_HINT = "edit_anything_reference_v0.1_r128"
+_FRAME_SELECTOR_PHASE: dict[str, int] = {}
 
 # Reuse the user's existing Wan2GP LoRA directory in ComfyUI.  This only adds a
 # search path; it neither copies nor downloads model files.
@@ -203,7 +205,10 @@ class MIRAGELTXEditAnythingReference:
                 "start_block": ("INT", {"default": 12, "min": 0, "max": 47}),
                 "end_block": ("INT", {"default": 35, "min": 0, "max": 47}),
             },
-            "optional": {"reference_sheet": ("IMAGE",)},
+            "optional": {
+                "reference_sheet": ("IMAGE",),
+                "has_reference": ("BOOLEAN", {"default": True}),
+            },
         }
 
     RETURN_TYPES = ("MODEL", "LATENT")
@@ -224,8 +229,9 @@ class MIRAGELTXEditAnythingReference:
         start_block,
         end_block,
         reference_sheet=None,
+        has_reference=True,
     ):
-        if reference_sheet is None:
+        if reference_sheet is None or not bool(has_reference):
             logging.info("MIRAGE EditAnything bypassed: no reference image connected")
             empty = torch.zeros((1, 128, 1, 1, 1), dtype=torch.float32)
             return (model, {"samples": empty})
@@ -280,7 +286,10 @@ class MIRAGELTXOptionalReferenceGuide:
                 "tile_size": ("INT", {"default": 256, "min": 64, "max": 512, "step": 32}),
                 "tile_overlap": ("INT", {"default": 64, "min": 16, "max": 256, "step": 16}),
             },
-            "optional": {"image": ("IMAGE",)},
+            "optional": {
+                "image": ("IMAGE",),
+                "has_reference": ("BOOLEAN", {"default": True}),
+            },
         }
 
     RETURN_TYPES = ("CONDITIONING", "CONDITIONING", "LATENT")
@@ -302,8 +311,9 @@ class MIRAGELTXOptionalReferenceGuide:
         tile_size,
         tile_overlap,
         image=None,
+        has_reference=True,
     ):
-        if image is None:
+        if image is None or not bool(has_reference):
             logging.info("MIRAGE IC-LoRA guide bypassed: no reference image connected")
             return (positive, negative, latent)
         implementation = importlib.import_module("ComfyUI-LTXVideo.iclora")
@@ -352,13 +362,198 @@ class MIRAGEPromptOrSurprise:
         )
 
 
+class MIRAGEOptionalImageInput:
+    """Provide a harmless blank tensor when no external Load Image node is connected."""
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {"required": {}, "optional": {"image": ("IMAGE",)}}
+
+    RETURN_TYPES = ("IMAGE", "BOOLEAN")
+    RETURN_NAMES = ("image", "has_image")
+    FUNCTION = "resolve"
+    CATEGORY = "MIRAGE/LTX Reference"
+
+    def resolve(self, image=None):
+        if image is None:
+            return (torch.zeros((1, 64, 64, 3), dtype=torch.float32), False)
+        return (image, True)
+
+
+class MIRAGEGemmaDirector:
+    """Call the installed ComfyBrain Gemma node without treating a blank image as real."""
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        brain = importlib.import_module("comfybrain_gemma.nodes").ComfyBrainGemma
+        base = copy.deepcopy(brain.INPUT_TYPES())
+        required = base["required"]
+        prompt = required.pop("prompt")
+        base["required"] = {
+            "prompt": prompt,
+            "input_image": ("IMAGE",),
+            "has_input_image": ("BOOLEAN", {"default": False, "forceInput": True}),
+            **required,
+        }
+        # The main input image is explicit above. Keep only the separate style input.
+        base["optional"] = {
+            "style_reference": base.get("optional", {}).get("style_reference", ("IMAGE",))
+        }
+        return base
+
+    RETURN_TYPES = ("STRING", "STRING", "STRING", "STRING", "BOOLEAN", "STRING", "INT", "STRING")
+    RETURN_NAMES = (
+        "DIRECTOR_MANIFEST_JSON",
+        "FIRST_FRAME_PROMPT",
+        "VIDEO_PROMPT",
+        "NEGATIVE_PROMPT",
+        "NEEDS_START_FRAME",
+        "MODE",
+        "DURATION_SECONDS",
+        "SUMMARY",
+    )
+    FUNCTION = "direct"
+    CATEGORY = "MIRAGE/LTX Reference"
+
+    def direct(self, prompt, input_image, has_input_image, style_reference=None, **kwargs):
+        brief = (prompt or "").strip()
+        if not brief:
+            brief = (
+                "Surprise me with an original, coherent cinematic short video. Invent the subject, "
+                "setting, action, camera language, lighting, visual style, and synchronized sound. "
+                "Avoid cliches and on-screen text."
+            )
+        brain = importlib.import_module("comfybrain_gemma.nodes").ComfyBrainGemma()
+        return brain.direct(
+            prompt=brief,
+            image=input_image if bool(has_input_image) else None,
+            style_reference=style_reference,
+            **kwargs,
+        )
+
+
+class MIRAGEClearStartFrame:
+    """Lazily create candidates and preserve the original unless an edit is faithful and clearer."""
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "original_image": ("IMAGE",),
+                "has_input_image": ("BOOLEAN", {"default": False, "forceInput": True}),
+                "needs_start_frame": ("BOOLEAN", {"default": False, "forceInput": True}),
+                "minimum_fidelity": ("FLOAT", {"default": 0.84, "min": 0.0, "max": 1.0, "step": 0.01}),
+                "minimum_clarity_gain": ("FLOAT", {"default": 0.05, "min": 0.0, "max": 1.0, "step": 0.01}),
+            },
+            "optional": {
+                "edited_image": ("IMAGE", {"lazy": True}),
+                "generated_image": ("IMAGE", {"lazy": True}),
+            },
+            "hidden": {"unique_id": "UNIQUE_ID"},
+        }
+
+    RETURN_TYPES = ("IMAGE", "BOOLEAN", "STRING", "STRING")
+    RETURN_NAMES = ("start_frame", "has_frame", "selected_source", "comparison")
+    FUNCTION = "select"
+    CATEGORY = "MIRAGE/LTX Reference"
+
+    def check_lazy_status(
+        self,
+        original_image,
+        has_input_image,
+        needs_start_frame,
+        minimum_fidelity,
+        minimum_clarity_gain,
+        edited_image=None,
+        generated_image=None,
+        unique_id=None,
+    ):
+        key = str(unique_id)
+        if _FRAME_SELECTOR_PHASE.get(key, 0) >= 1:
+            _FRAME_SELECTOR_PHASE.pop(key, None)
+            return []
+        _FRAME_SELECTOR_PHASE[key] = 1
+        if bool(has_input_image) and edited_image is None:
+            return ["edited_image"]
+        if not bool(has_input_image) and bool(needs_start_frame) and generated_image is None:
+            return ["generated_image"]
+        _FRAME_SELECTOR_PHASE.pop(key, None)
+        return []
+
+    @staticmethod
+    def _clarity(image: torch.Tensor) -> tuple[float, float]:
+        tensor = image[:1, :, :, :3].float().permute(0, 3, 1, 2)
+        gray = tensor.mean(dim=1, keepdim=True)
+        kernel = torch.tensor(
+            [[0.0, 1.0, 0.0], [1.0, -4.0, 1.0], [0.0, 1.0, 0.0]],
+            device=gray.device,
+            dtype=gray.dtype,
+        ).view(1, 1, 3, 3)
+        laplacian = F.conv2d(gray, kernel, padding=1)
+        return float(laplacian.var().item()), float(gray.std().item())
+
+    def select(
+        self,
+        original_image,
+        has_input_image,
+        needs_start_frame,
+        minimum_fidelity,
+        minimum_clarity_gain,
+        edited_image=None,
+        generated_image=None,
+        unique_id=None,
+    ):
+        _FRAME_SELECTOR_PHASE.pop(str(unique_id), None)
+        if not bool(has_input_image):
+            if bool(needs_start_frame) and generated_image is not None:
+                return (generated_image, True, "zit_generated", "Gemma requested a generated first frame")
+            return (original_image, False, "text_only", "No input image and Gemma did not request a first frame")
+
+        if edited_image is None:
+            return (original_image, True, "original", "ZiT edit unavailable; preserved original")
+
+        original = original_image[:1, :, :, :3].float()
+        edited = edited_image[:1, :, :, :3].float()
+        if edited.shape[1:3] != original.shape[1:3]:
+            edited = F.interpolate(
+                edited.permute(0, 3, 1, 2),
+                size=original.shape[1:3],
+                mode="bilinear",
+                align_corners=False,
+            ).permute(0, 2, 3, 1)
+        original_clarity, original_contrast = self._clarity(original)
+        edited_clarity, edited_contrast = self._clarity(edited)
+        fidelity = max(0.0, 1.0 - float((original - edited).abs().mean().item()) * 2.0)
+        clarity_ratio = edited_clarity / max(original_clarity, 1e-8)
+        contrast_ratio = edited_contrast / max(original_contrast, 1e-8)
+        use_edit = (
+            fidelity >= float(minimum_fidelity)
+            and clarity_ratio >= 1.0 + float(minimum_clarity_gain)
+            and contrast_ratio >= 0.90
+        )
+        source = "zit_edited" if use_edit else "original"
+        report = (
+            f"selected={source}; fidelity={fidelity:.4f}; clarity_ratio={clarity_ratio:.4f}; "
+            f"contrast_ratio={contrast_ratio:.4f}; minimum_fidelity={float(minimum_fidelity):.4f}; "
+            f"minimum_clarity_gain={float(minimum_clarity_gain):.4f}"
+        )
+        logging.info("MIRAGE start-frame comparison: %s", report)
+        return (edited if use_edit else original_image, True, source, report)
+
+
 NODE_CLASS_MAPPINGS = {
     "MIRAGELTXEditAnythingReference": MIRAGELTXEditAnythingReference,
     "MIRAGELTXOptionalReferenceGuide": MIRAGELTXOptionalReferenceGuide,
     "MIRAGEPromptOrSurprise": MIRAGEPromptOrSurprise,
+    "MIRAGEOptionalImageInput": MIRAGEOptionalImageInput,
+    "MIRAGEGemmaDirector": MIRAGEGemmaDirector,
+    "MIRAGEClearStartFrame": MIRAGEClearStartFrame,
 }
 NODE_DISPLAY_NAME_MAPPINGS = {
     "MIRAGELTXEditAnythingReference": "MIRAGE LTX EditAnything Reference (Optional)",
     "MIRAGELTXOptionalReferenceGuide": "MIRAGE LTX Reference Guide (Optional)",
     "MIRAGEPromptOrSurprise": "MIRAGE Prompt (Blank = Gemma4 Surprise)",
+    "MIRAGEOptionalImageInput": "MIRAGE Optional Input Image",
+    "MIRAGEGemmaDirector": "MIRAGE Gemma4 Director",
+    "MIRAGEClearStartFrame": "MIRAGE Keep Clearest Faithful Start Frame",
 }

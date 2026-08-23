@@ -14,6 +14,7 @@ _INGREDIENTS_TEMPLATE = (
     "LTX-2.3_ICLoRA_Ingredients_Single_Stage_Distilled.json"
 )
 _LTX25_LOADER_TEMPLATE = "user/default/workflows/LTX 2.5 T 2 V.json"
+_ZIT_IMAGE_TEMPLATE = "user/default/workflows/ZiT_img2img_Updated_photorealism.json"
 
 
 def build_comfy_workflow(
@@ -26,10 +27,13 @@ def build_comfy_workflow(
     models_root = Path(config.runtime.models_root).expanduser().resolve()
     ingredient_path = comfy_root / _INGREDIENTS_TEMPLATE
     ltx25_path = comfy_root / _LTX25_LOADER_TEMPLATE
+    zit_path = comfy_root / _ZIT_IMAGE_TEMPLATE
     if not ingredient_path.is_file():
         raise FileNotFoundError(f"ComfyUI-LTXVideo Ingredients workflow not found: {ingredient_path}")
     if not ltx25_path.is_file():
         raise FileNotFoundError(f"local LTX-2.5 workflow not found: {ltx25_path}")
+    if not zit_path.is_file():
+        raise FileNotFoundError(f"local ZiT img2img workflow not found: {zit_path}")
 
     workflow = json.loads(ingredient_path.read_text(encoding="utf-8"))
     ltx25 = json.loads(ltx25_path.read_text(encoding="utf-8"))
@@ -171,16 +175,35 @@ def build_comfy_workflow(
         "widgets_values": ["", config.seed],
         "title": "Your prompt (leave blank for a Gemma4 surprise)",
     }
+    input_image_node = {
+        "id": 6100,
+        "type": "MIRAGEOptionalImageInput",
+        "pos": [-4200, 2630],
+        "size": [560, 100],
+        "flags": {},
+        "order": 0,
+        "mode": 0,
+        "inputs": [],
+        "outputs": [
+            {"name": "image", "type": "IMAGE", "links": []},
+            {"name": "has_image", "type": "BOOLEAN", "links": []},
+        ],
+        "properties": {"Node name for S&R": "MIRAGEOptionalImageInput"},
+        "widgets_values": [],
+        "title": "Connect Load Image here (optional)",
+    }
     gemma_node = {
         "id": 6102,
-        "type": "ComfyBrainGemma",
+        "type": "MIRAGEGemmaDirector",
         "pos": [-3500, 2820],
         "size": [620, 850],
         "flags": {},
         "order": 1,
         "mode": 0,
         "inputs": [
-            {"name": "prompt", "type": "STRING", "widget": {"name": "prompt"}, "link": 16001}
+            {"name": "prompt", "type": "STRING", "widget": {"name": "prompt"}, "link": 16001},
+            {"name": "input_image", "type": "IMAGE", "link": 16004},
+            {"name": "has_input_image", "type": "BOOLEAN", "link": 16005},
         ],
         "outputs": [
             {"name": "DIRECTOR_MANIFEST_JSON", "type": "STRING", "links": []},
@@ -192,7 +215,7 @@ def build_comfy_workflow(
             {"name": "DURATION_SECONDS", "type": "INT", "links": []},
             {"name": "SUMMARY", "type": "STRING", "links": []},
         ],
-        "properties": {"Node name for S&R": "ComfyBrainGemma"},
+        "properties": {"Node name for S&R": "MIRAGEGemmaDirector"},
         "widgets_values": [
             "",
             "http://192.168.1.107:7788/v1/chat/completions",
@@ -206,7 +229,7 @@ def build_comfy_workflow(
             "auto (let Gemma decide)",
             "none - no dialogue",
             "single continuous shot",
-            "never - pure text to video",
+            "auto (Gemma decides)",
             "16:9",
             max(1, round(config.num_frames / config.frame_rate)),
             config.frame_rate,
@@ -220,9 +243,72 @@ def build_comfy_workflow(
             "raise the error",
             config.seed,
         ],
-        "title": "Gemma4 director (optional image input)",
+        "title": "Gemma4 director (sees the real input image)",
     }
-    workflow["nodes"].extend([prompt_node, gemma_node])
+    selector_node = {
+        "id": 6103,
+        "type": "MIRAGEClearStartFrame",
+        "pos": [-1400, 2600],
+        "size": [520, 260],
+        "flags": {},
+        "order": 30,
+        "mode": 0,
+        "inputs": [
+            {"name": "original_image", "type": "IMAGE", "link": 16007},
+            {"name": "has_input_image", "type": "BOOLEAN", "link": 16008},
+            {"name": "needs_start_frame", "type": "BOOLEAN", "link": 16006},
+            {"name": "edited_image", "type": "IMAGE", "link": 16117},
+            {"name": "generated_image", "type": "IMAGE", "link": 16121},
+        ],
+        "outputs": [
+            {"name": "start_frame", "type": "IMAGE", "links": []},
+            {"name": "has_frame", "type": "BOOLEAN", "links": []},
+            {"name": "selected_source", "type": "STRING", "links": []},
+            {"name": "comparison", "type": "STRING", "links": []},
+        ],
+        "properties": {"Node name for S&R": "MIRAGEClearStartFrame"},
+        "widgets_values": [0.84, 0.05],
+        "title": "Compare original vs ZiT edit; preserve the clearest faithful frame",
+    }
+    selected_preview_node = {
+        "id": 6104,
+        "type": "PreviewImage",
+        "pos": [-820, 2490],
+        "size": [360, 420],
+        "flags": {},
+        "order": 31,
+        "mode": 0,
+        "inputs": [{"name": "images", "type": "IMAGE", "link": 16013}],
+        "outputs": [],
+        "properties": {"Node name for S&R": "PreviewImage"},
+        "widgets_values": [],
+        "title": "Selected start frame sent to LTX",
+    }
+    comparison_preview_node = {
+        "id": 6105,
+        "type": "PreviewAny",
+        "pos": [-1400, 2910],
+        "size": [520, 140],
+        "flags": {},
+        "order": 32,
+        "mode": 0,
+        "inputs": [{"name": "source", "type": "*", "link": 16014}],
+        "outputs": [{"name": "STRING", "type": "STRING", "links": []}],
+        "properties": {"Node name for S&R": "PreviewAny"},
+        "widgets_values": [None, None, None],
+        "title": "Start-frame fidelity / clarity decision",
+    }
+    workflow["nodes"].extend(
+        [
+            input_image_node,
+            prompt_node,
+            gemma_node,
+            selector_node,
+            selected_preview_node,
+            comparison_preview_node,
+        ]
+    )
+    _add_zit_frame_candidates(workflow, zit_path, config)
     nodes = {node["id"]: node for node in workflow["nodes"]}
     nodes[2483]["inputs"].append(
         {"name": "text", "type": "STRING", "widget": {"name": "text"}, "link": 16002}
@@ -247,6 +333,30 @@ def build_comfy_workflow(
             [16001, 6101, 0, 6102, 0, "STRING"],
             [16002, 6102, 2, 2483, 1, "STRING"],
             [16003, 6102, 3, 2612, 1, "STRING"],
+            [16004, 6100, 0, 6102, 1, "IMAGE"],
+            [16005, 6100, 1, 6102, 2, "BOOLEAN"],
+            [16006, 6102, 4, 6103, 2, "BOOLEAN"],
+            [16007, 6100, 0, 6103, 0, "IMAGE"],
+            [16008, 6100, 1, 6103, 1, "BOOLEAN"],
+            [16009, 6103, 0, 5011, 2, "IMAGE"],
+            [16010, 6103, 1, 5011, 3, "BOOLEAN"],
+            [16011, 6103, 0, 5012, 4, "IMAGE"],
+            [16012, 6103, 1, 5012, 5, "BOOLEAN"],
+            [16013, 6103, 0, 6104, 0, "IMAGE"],
+            [16014, 6103, 3, 6105, 0, "*"],
+        ]
+    )
+    nodes = {node["id"]: node for node in workflow["nodes"]}
+    nodes[5011]["inputs"].extend(
+        [
+            {"name": "reference_sheet", "type": "IMAGE", "link": 16009},
+            {"name": "has_reference", "type": "BOOLEAN", "link": 16010},
+        ]
+    )
+    nodes[5012]["inputs"].extend(
+        [
+            {"name": "image", "type": "IMAGE", "link": 16011},
+            {"name": "has_reference", "type": "BOOLEAN", "link": 16012},
         ]
     )
     nodes[6001]["outputs"][0]["links"].append(16000)
@@ -259,17 +369,13 @@ def build_comfy_workflow(
     workflow["links"] = [
         link for link in workflow["links"] if link[1] in node_ids and link[3] in node_ids
     ]
-    link_ids = {link[0] for link in workflow["links"]}
-    for node in workflow["nodes"]:
-        for output in node.get("outputs", []):
-            if output.get("links") is not None:
-                output["links"] = [link for link in output["links"] if link in link_ids]
+    _rebuild_serialized_links(workflow)
     # Reroutes are optional canvas decoration. The upstream template contains
     # reroutes for links replaced above; stale reroute parents can make the
     # frontend abort canvas restoration and display an empty graph.
     workflow.setdefault("extra", {}).pop("reroutes", None)
     workflow["extra"].pop("linkExtensions", None)
-    workflow["last_node_id"] = max(workflow.get("last_node_id", 0), 6102)
+    workflow["last_node_id"] = max(node["id"] for node in workflow["nodes"])
     workflow["last_link_id"] = max(link[0] for link in workflow["links"])
     workflow.setdefault("extra", {})["mirage_reference_manifest"] = str(
         composed.manifest_path.resolve()
@@ -305,6 +411,135 @@ def deploy_comfy_assets(
         "workflow": str(workflow_target),
         "custom_node": str(node_target),
     }
+
+
+def _add_zit_frame_candidates(
+    workflow: dict[str, Any],
+    template_path: Path,
+    config: ReferencePipelineConfig,
+) -> None:
+    """Add lazy ZiT img2img and text-to-image candidates using the user's local graph."""
+    template = json.loads(template_path.read_text(encoding="utf-8"))
+    source = {node["id"]: node for node in template["nodes"]}
+    expected = {
+        39: "CLIPLoader",
+        40: "VAELoader",
+        41: "EmptySD3LatentImage",
+        42: "ConditioningZeroOut",
+        43: "VAEDecode",
+        44: "KSampler",
+        45: "CLIPTextEncode",
+        46: "UNETLoader",
+        47: "ModelSamplingAuraFlow",
+        57: "VAEEncode",
+        65: "ImageScaleToMaxDimension",
+        66: "RepeatLatentBatch",
+    }
+    for node_id, node_type in expected.items():
+        _expect(source, node_id, node_type)
+
+    id_map = {node_id: 7000 + node_id for node_id in expected}
+    cloned: dict[int, dict[str, Any]] = {}
+    for old_id, new_id in id_map.items():
+        node = copy.deepcopy(source[old_id])
+        node["id"] = new_id
+        node["mode"] = 0
+        node["order"] = node.get("order", 0) + 40
+        node["pos"] = [node["pos"][0] - 2900, node["pos"][1] + 1800]
+        for item in node.get("inputs", []):
+            item["link"] = None
+        for item in node.get("outputs", []):
+            item["links"] = []
+        cloned[new_id] = node
+
+    cloned[7039]["widgets_values"] = ["qwen_3_4b_fp8_mixed.safetensors", "lumina2", "default"]
+    cloned[7040]["widgets_values"] = ["ae.safetensors"]
+    cloned[7041]["widgets_values"] = [config.width, config.height, 1]
+    cloned[7045]["widgets_values"] = [""]
+    cloned[7046]["widgets_values"] = ["z_image_turbo_int8_convrot.safetensors", "default"]
+    cloned[7047]["widgets_values"] = [3]
+    cloned[7065]["widgets_values"] = ["area", max(config.width, config.height)]
+    cloned[7066]["widgets_values"] = [1]
+    # Preservation edit: denoise=0.30. The source workflow used 1.0, which
+    # regenerated the picture and discarded the supplied reference structure.
+    cloned[7044]["widgets_values"] = [config.seed, "fixed", 9, 1.0, "euler", "simple", 0.30]
+    cloned[7044]["title"] = "ZiT img2img preservation edit (denoise 0.30)"
+
+    generated_sampler = copy.deepcopy(cloned[7044])
+    generated_sampler.update(
+        {
+            "id": 7048,
+            "pos": [cloned[7044]["pos"][0], cloned[7044]["pos"][1] + 540],
+            "title": "ZiT generated first frame (only when Gemma requests it)",
+            "widgets_values": [config.seed + 1, "fixed", 9, 1.0, "euler", "simple", 1.0],
+        }
+    )
+    generated_decode = copy.deepcopy(cloned[7043])
+    generated_decode.update(
+        {
+            "id": 7049,
+            "pos": [cloned[7043]["pos"][0], cloned[7043]["pos"][1] + 540],
+            "title": "Decode Gemma-requested ZiT first frame",
+        }
+    )
+    cloned[7048] = generated_sampler
+    cloned[7049] = generated_decode
+    workflow["nodes"].extend(cloned.values())
+
+    workflow["links"].extend(
+        [
+            [16100, 7046, 0, 7047, 0, "MODEL"],
+            [16101, 7047, 0, 7044, 0, "MODEL"],
+            [16102, 7047, 0, 7048, 0, "MODEL"],
+            [16103, 7039, 0, 7045, 0, "CLIP"],
+            [16104, 6102, 1, 7045, 1, "STRING"],
+            [16105, 7045, 0, 7042, 0, "CONDITIONING"],
+            [16106, 7045, 0, 7044, 1, "CONDITIONING"],
+            [16107, 7045, 0, 7048, 1, "CONDITIONING"],
+            [16108, 7042, 0, 7044, 2, "CONDITIONING"],
+            [16109, 7042, 0, 7048, 2, "CONDITIONING"],
+            [16110, 7040, 0, 7057, 1, "VAE"],
+            [16111, 6100, 0, 7065, 0, "IMAGE"],
+            [16112, 7065, 0, 7057, 0, "IMAGE"],
+            [16113, 7057, 0, 7066, 0, "LATENT"],
+            [16114, 7066, 0, 7044, 3, "LATENT"],
+            [16115, 7044, 0, 7043, 0, "LATENT"],
+            [16116, 7040, 0, 7043, 1, "VAE"],
+            [16117, 7043, 0, 6103, 3, "IMAGE"],
+            [16118, 7041, 0, 7048, 3, "LATENT"],
+            [16119, 7048, 0, 7049, 0, "LATENT"],
+            [16120, 7040, 0, 7049, 1, "VAE"],
+            [16121, 7049, 0, 6103, 4, "IMAGE"],
+        ]
+    )
+    workflow.setdefault("groups", []).append(
+        {
+            "id": 6100,
+            "title": "MIRAGE | Gemma-directed ZiT start-frame candidates (lazy)",
+            "bounding": [-2810, 1980, 1660, 1720],
+            "color": "#6b4f82",
+            "flags": {},
+        }
+    )
+
+
+def _rebuild_serialized_links(workflow: dict[str, Any]) -> None:
+    """Make node socket metadata agree exactly with the canonical links array."""
+    nodes = {node["id"]: node for node in workflow["nodes"]}
+    for node in workflow["nodes"]:
+        for item in node.get("inputs", []):
+            item["link"] = None
+        for item in node.get("outputs", []):
+            item["links"] = []
+    for link_id, source_id, source_slot, target_id, target_slot, _link_type in workflow["links"]:
+        source_outputs = nodes[source_id].get("outputs", [])
+        target_inputs = nodes[target_id].get("inputs", [])
+        if source_slot >= len(source_outputs):
+            raise ValueError(f"link {link_id} has invalid source slot {source_id}:{source_slot}")
+        if target_slot >= len(target_inputs):
+            raise ValueError(f"link {link_id} has invalid target slot {target_id}:{target_slot}")
+        source_outputs[source_slot]["links"].append(link_id)
+        target_inputs[target_slot]["link"] = link_id
 
 
 def _loader_clone(source: dict[str, Any], target: dict[str, Any], node_id: int) -> dict[str, Any]:

@@ -122,12 +122,19 @@ def test_builds_local_ltx25_comfy_workflow(tmp_path):
     assert 4922 not in nodes
     assert nodes[5011]["type"] == "MIRAGELTXEditAnythingReference"
     assert nodes[5011]["inputs"][0]["link"] == 13217
-    assert not any(item["name"] == "reference_sheet" for item in nodes[5011]["inputs"])
+    assert next(item for item in nodes[5011]["inputs"] if item["name"] == "reference_sheet")["link"] == 16009
+    assert next(item for item in nodes[5011]["inputs"] if item["name"] == "has_reference")["link"] == 16010
     assert nodes[5012]["type"] == "MIRAGELTXOptionalReferenceGuide"
-    assert not any(item["name"] == "image" for item in nodes[5012]["inputs"])
+    assert next(item for item in nodes[5012]["inputs"] if item["name"] == "image")["link"] == 16011
     assert nodes[6101]["type"] == "MIRAGEPromptOrSurprise"
     assert nodes[6101]["widgets_values"][0] == ""
-    assert nodes[6102]["type"] == "ComfyBrainGemma"
+    assert nodes[6100]["type"] == "MIRAGEOptionalImageInput"
+    assert nodes[6102]["type"] == "MIRAGEGemmaDirector"
+    assert nodes[6103]["type"] == "MIRAGEClearStartFrame"
+    assert nodes[7044]["type"] == "KSampler"
+    assert nodes[7044]["widgets_values"][-1] == 0.30
+    assert nodes[7046]["widgets_values"][0] == "z_image_turbo_int8_convrot.safetensors"
+    assert nodes[7048]["widgets_values"][-1] == 1.0
     assert nodes[2483]["inputs"][-1]["name"] == "text"
     assert nodes[2612]["inputs"][-1]["name"] == "text"
     assert 2004 not in nodes
@@ -135,6 +142,9 @@ def test_builds_local_ltx25_comfy_workflow(tmp_path):
     assert any(link[:5] == [13217, 3940, 0, 5011, 0] for link in workflow["links"])
     assert any(link[:5] == [13402, 3059, 0, 5012, 3] for link in workflow["links"])
     assert any(link[:5] == [16002, 6102, 2, 2483, 1] for link in workflow["links"])
+    assert any(link[:5] == [16104, 6102, 1, 7045, 1] for link in workflow["links"])
+    assert any(link[:5] == [16117, 7043, 0, 6103, 3] for link in workflow["links"])
+    assert any(link[:5] == [16011, 6103, 0, 5012, 4] for link in workflow["links"])
     assert workflow["last_link_id"] == max(link[0] for link in workflow["links"])
     assert "reroutes" not in workflow["extra"]
     assert "linkExtensions" not in workflow["extra"]
