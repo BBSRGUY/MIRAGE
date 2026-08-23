@@ -122,7 +122,19 @@ def test_builds_local_ltx25_comfy_workflow(tmp_path):
     assert 4922 not in nodes
     assert nodes[5011]["type"] == "MIRAGELTXEditAnythingReference"
     assert nodes[5011]["inputs"][0]["link"] == 13217
+    assert not any(item["name"] == "reference_sheet" for item in nodes[5011]["inputs"])
+    assert nodes[5012]["type"] == "MIRAGELTXOptionalReferenceGuide"
+    assert not any(item["name"] == "image" for item in nodes[5012]["inputs"])
+    assert nodes[6101]["type"] == "MIRAGEPromptOrSurprise"
+    assert nodes[6101]["widgets_values"][0] == ""
+    assert nodes[6102]["type"] == "ComfyBrainGemma"
+    assert nodes[2483]["inputs"][-1]["name"] == "text"
+    assert nodes[2612]["inputs"][-1]["name"] == "text"
+    assert 2004 not in nodes
+    assert 3159 not in nodes
     assert any(link[:5] == [13217, 3940, 0, 5011, 0] for link in workflow["links"])
+    assert any(link[:5] == [13402, 3059, 0, 5012, 3] for link in workflow["links"])
+    assert any(link[:5] == [16002, 6102, 2, 2483, 1] for link in workflow["links"])
     assert workflow["last_link_id"] == max(link[0] for link in workflow["links"])
     assert "reroutes" not in workflow["extra"]
     assert "linkExtensions" not in workflow["extra"]

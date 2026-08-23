@@ -8,6 +8,7 @@ and existing local weights; it performs no downloads.
 from __future__ import annotations
 
 import logging
+import importlib
 import types
 from pathlib import Path
 
@@ -193,7 +194,6 @@ class MIRAGELTXEditAnythingReference:
             "required": {
                 "model": ("MODEL",),
                 "vae": ("VAE",),
-                "reference_sheet": ("IMAGE",),
                 "lora_name": (ordered,),
                 "module_path": ("STRING", {"default": DEFAULT_MODULE_PATH}),
                 "lora_strength": ("FLOAT", {"default": 1.0, "min": -4.0, "max": 4.0, "step": 0.05}),
@@ -202,7 +202,8 @@ class MIRAGELTXEditAnythingReference:
                 "adaln_scale": ("FLOAT", {"default": 2.0, "min": 0.0, "max": 8.0, "step": 0.1}),
                 "start_block": ("INT", {"default": 12, "min": 0, "max": 47}),
                 "end_block": ("INT", {"default": 35, "min": 0, "max": 47}),
-            }
+            },
+            "optional": {"reference_sheet": ("IMAGE",)},
         }
 
     RETURN_TYPES = ("MODEL", "LATENT")
@@ -214,7 +215,6 @@ class MIRAGELTXEditAnythingReference:
         self,
         model,
         vae,
-        reference_sheet,
         lora_name,
         module_path,
         lora_strength,
@@ -223,7 +223,12 @@ class MIRAGELTXEditAnythingReference:
         adaln_scale,
         start_block,
         end_block,
+        reference_sheet=None,
     ):
+        if reference_sheet is None:
+            logging.info("MIRAGE EditAnything bypassed: no reference image connected")
+            empty = torch.zeros((1, 128, 1, 1, 1), dtype=torch.float32)
+            return (model, {"samples": empty})
         if start_block > end_block:
             raise ValueError("start_block must not exceed end_block")
         sidecar = Path(module_path).expanduser()
@@ -256,7 +261,104 @@ class MIRAGELTXEditAnythingReference:
         return (model_ref, {"samples": ref_latent})
 
 
-NODE_CLASS_MAPPINGS = {"MIRAGELTXEditAnythingReference": MIRAGELTXEditAnythingReference}
+class MIRAGELTXOptionalReferenceGuide:
+    """Pass through T2V inputs, or apply the installed LTX IC-LoRA guide when connected."""
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "positive": ("CONDITIONING",),
+                "negative": ("CONDITIONING",),
+                "vae": ("VAE",),
+                "latent": ("LATENT",),
+                "frame_idx": ("INT", {"default": 0, "min": -9999, "max": 9999}),
+                "strength": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 1.0, "step": 0.01}),
+                "latent_downscale_factor": ("FLOAT", {"default": 1.0, "min": 1.0, "max": 10.0, "step": 1.0}),
+                "crop": (["disabled", "center"], {"default": "disabled"}),
+                "use_tiled_encode": ("BOOLEAN", {"default": False}),
+                "tile_size": ("INT", {"default": 256, "min": 64, "max": 512, "step": 32}),
+                "tile_overlap": ("INT", {"default": 64, "min": 16, "max": 256, "step": 16}),
+            },
+            "optional": {"image": ("IMAGE",)},
+        }
+
+    RETURN_TYPES = ("CONDITIONING", "CONDITIONING", "LATENT")
+    RETURN_NAMES = ("positive", "negative", "latent")
+    FUNCTION = "apply"
+    CATEGORY = "MIRAGE/LTX Reference"
+
+    def apply(
+        self,
+        positive,
+        negative,
+        vae,
+        latent,
+        frame_idx,
+        strength,
+        latent_downscale_factor,
+        crop,
+        use_tiled_encode,
+        tile_size,
+        tile_overlap,
+        image=None,
+    ):
+        if image is None:
+            logging.info("MIRAGE IC-LoRA guide bypassed: no reference image connected")
+            return (positive, negative, latent)
+        implementation = importlib.import_module("ComfyUI-LTXVideo.iclora")
+        result = implementation.LTXAddVideoICLoRAGuide.execute(
+            positive,
+            negative,
+            vae,
+            latent,
+            image,
+            int(frame_idx),
+            float(strength),
+            float(latent_downscale_factor),
+            crop,
+            bool(use_tiled_encode),
+            int(tile_size),
+            int(tile_overlap),
+        )
+        return result.result
+
+
+class MIRAGEPromptOrSurprise:
+    """Use the user's brief, or give Gemma4 an open creative brief when it is blank."""
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "prompt": ("STRING", {"multiline": True, "default": ""}),
+                "seed": ("INT", {"default": 0, "min": 0, "max": 4294967295}),
+            }
+        }
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("prompt_for_gemma4",)
+    FUNCTION = "resolve"
+    CATEGORY = "MIRAGE/LTX Reference"
+
+    def resolve(self, prompt, seed):
+        brief = (prompt or "").strip()
+        if brief:
+            return (brief,)
+        return (
+            "Surprise me with an original, coherent cinematic short video. Invent the subject, "
+            "setting, action, camera language, lighting, visual style, and synchronized sound. "
+            f"Avoid cliches and on-screen text. Creative variation seed: {int(seed)}.",
+        )
+
+
+NODE_CLASS_MAPPINGS = {
+    "MIRAGELTXEditAnythingReference": MIRAGELTXEditAnythingReference,
+    "MIRAGELTXOptionalReferenceGuide": MIRAGELTXOptionalReferenceGuide,
+    "MIRAGEPromptOrSurprise": MIRAGEPromptOrSurprise,
+}
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "MIRAGELTXEditAnythingReference": "MIRAGE LTX EditAnything Reference (Local)"
+    "MIRAGELTXEditAnythingReference": "MIRAGE LTX EditAnything Reference (Optional)",
+    "MIRAGELTXOptionalReferenceGuide": "MIRAGE LTX Reference Guide (Optional)",
+    "MIRAGEPromptOrSurprise": "MIRAGE Prompt (Blank = Gemma4 Surprise)",
 }

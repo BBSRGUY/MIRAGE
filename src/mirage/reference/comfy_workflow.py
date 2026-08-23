@@ -82,8 +82,8 @@ def build_comfy_workflow(
     workflow["nodes"].extend([model_node, clip_node, video_vae_node, audio_node])
     nodes = {node["id"]: node for node in workflow["nodes"]}
 
-    nodes[2004]["widgets_values"][0] = config.runtime.comfy_input_name
-    nodes[2483]["widgets_values"] = composed.prompt
+    nodes[2483]["widgets_values"] = [""]
+    nodes[2612]["widgets_values"] = [""]
     reference_lora = Path(config.runtime.reference_lora_path).expanduser().resolve()
     lora_roots = [models_root / "loras", reference_lora.parent]
     lora_name = next(
@@ -101,7 +101,6 @@ def build_comfy_workflow(
             "inputs": [
                 {"name": "model", "type": "MODEL", "link": 13217},
                 {"name": "vae", "type": "VAE", "link": 16000},
-                {"name": "reference_sheet", "type": "IMAGE", "link": 16001},
             ],
             "outputs": [
                 {"name": "model", "type": "MODEL", "links": [13401]},
@@ -124,9 +123,113 @@ def build_comfy_workflow(
         }
     )
     nodes[5072]["widgets_values"] = [config.num_frames, "fixed"]
-    nodes[5069]["widgets_values"] = ["scale shorter dimension", config.height, "lanczos"]
     nodes[5098]["widgets_values"] = config.frame_rate
     nodes[4832]["widgets_values"][0] = config.seed
+
+    # The default graph is genuinely text-only. A user may add one Load Image
+    # node and connect its IMAGE output to the optional image sockets on the
+    # Gemma director, EditAnything adapter, and reference guide.
+    removed_image_nodes = {2004, 3159, 5019, 5067, 5068, 5069, 5093, 5095, 5100}
+    workflow["nodes"] = [node for node in workflow["nodes"] if node["id"] not in removed_image_nodes]
+    nodes = {node["id"]: node for node in workflow["nodes"]}
+
+    nodes[3059]["inputs"][0]["link"] = None
+    nodes[3059]["inputs"][1]["link"] = None
+    nodes[3059]["widgets_values"] = [config.width, config.height, config.num_frames, 1]
+    nodes[5012].update(
+        {
+            "type": "MIRAGELTXOptionalReferenceGuide",
+            "size": [390, 270],
+            "inputs": [
+                {"name": "positive", "type": "CONDITIONING", "link": 13403},
+                {"name": "negative", "type": "CONDITIONING", "link": 13404},
+                {"name": "vae", "type": "VAE", "link": 13405},
+                {"name": "latent", "type": "LATENT", "link": 13402},
+            ],
+            "properties": {
+                "Node name for S&R": "MIRAGELTXOptionalReferenceGuide",
+                "mirage_mode": "optional-image-pass-through",
+            },
+            "widgets_values": [0, 1.0, 1.0, "disabled", False, 256, 64],
+            "title": "Optional reference image (unconnected = text-only)",
+        }
+    )
+
+    prompt_node = {
+        "id": 6101,
+        "type": "MIRAGEPromptOrSurprise",
+        "pos": [-4200, 2920],
+        "size": [560, 180],
+        "flags": {},
+        "order": 0,
+        "mode": 0,
+        "inputs": [],
+        "outputs": [
+            {"name": "prompt_for_gemma4", "type": "STRING", "links": [16001]}
+        ],
+        "properties": {"Node name for S&R": "MIRAGEPromptOrSurprise"},
+        "widgets_values": ["", config.seed],
+        "title": "Your prompt (leave blank for a Gemma4 surprise)",
+    }
+    gemma_node = {
+        "id": 6102,
+        "type": "ComfyBrainGemma",
+        "pos": [-3500, 2820],
+        "size": [620, 850],
+        "flags": {},
+        "order": 1,
+        "mode": 0,
+        "inputs": [
+            {"name": "prompt", "type": "STRING", "widget": {"name": "prompt"}, "link": 16001}
+        ],
+        "outputs": [
+            {"name": "DIRECTOR_MANIFEST_JSON", "type": "STRING", "links": []},
+            {"name": "FIRST_FRAME_PROMPT", "type": "STRING", "links": []},
+            {"name": "VIDEO_PROMPT", "type": "STRING", "links": [16002]},
+            {"name": "NEGATIVE_PROMPT", "type": "STRING", "links": [16003]},
+            {"name": "NEEDS_START_FRAME", "type": "BOOLEAN", "links": []},
+            {"name": "MODE", "type": "STRING", "links": []},
+            {"name": "DURATION_SECONDS", "type": "INT", "links": []},
+            {"name": "SUMMARY", "type": "STRING", "links": []},
+        ],
+        "properties": {"Node name for S&R": "ComfyBrainGemma"},
+        "widgets_values": [
+            "",
+            "http://192.168.1.107:7788/v1/chat/completions",
+            "unsloth/gemma-4-12B-it-GGUF:Q4_K_M",
+            "auto (let Gemma decide)",
+            "auto (let Gemma decide)",
+            "auto (let Gemma decide)",
+            "auto (let Gemma decide)",
+            "auto (let Gemma decide)",
+            "auto (let Gemma decide)",
+            "auto (let Gemma decide)",
+            "none - no dialogue",
+            "single continuous shot",
+            "never - pure text to video",
+            "16:9",
+            max(1, round(config.num_frames / config.frame_rate)),
+            config.frame_rate,
+            max(config.width, config.height),
+            "",
+            0.7,
+            8192,
+            600,
+            2,
+            1024,
+            "raise the error",
+            config.seed,
+        ],
+        "title": "Gemma4 director (optional image input)",
+    }
+    workflow["nodes"].extend([prompt_node, gemma_node])
+    nodes = {node["id"]: node for node in workflow["nodes"]}
+    nodes[2483]["inputs"].append(
+        {"name": "text", "type": "STRING", "widget": {"name": "text"}, "link": 16002}
+    )
+    nodes[2612]["inputs"].append(
+        {"name": "text", "type": "STRING", "widget": {"name": "text"}, "link": 16003}
+    )
 
     patched_links = []
     for link in workflow["links"]:
@@ -141,13 +244,15 @@ def build_comfy_workflow(
     workflow["links"].extend(
         [
             [16000, 6001, 0, 5011, 1, "VAE"],
-            [16001, 5093, 0, 5011, 2, "IMAGE"],
+            [16001, 6101, 0, 6102, 0, "STRING"],
+            [16002, 6102, 2, 2483, 1, "STRING"],
+            [16003, 6102, 3, 2612, 1, "STRING"],
         ]
     )
     nodes[6001]["outputs"][0]["links"].append(16000)
-    nodes[5093]["outputs"][0]["links"].append(16001)
-    guide_downscale = next(item for item in nodes[5012]["inputs"] if item["name"] == "latent_downscale_factor")
-    guide_downscale["link"] = None
+    # The text-only base latent now feeds the optional guide directly.
+    workflow["links"].append([13402, 3059, 0, 5012, 3, "LATENT"])
+    nodes[3059]["outputs"][0]["links"] = [13402]
     # Some published workflow templates retain UI-only links to nodes that are no
     # longer serialized. Remove those dangling links so API validation is strict.
     node_ids = {node["id"] for node in workflow["nodes"]}
@@ -164,7 +269,7 @@ def build_comfy_workflow(
     # frontend abort canvas restoration and display an empty graph.
     workflow.setdefault("extra", {}).pop("reroutes", None)
     workflow["extra"].pop("linkExtensions", None)
-    workflow["last_node_id"] = max(workflow.get("last_node_id", 0), 6001)
+    workflow["last_node_id"] = max(workflow.get("last_node_id", 0), 6102)
     workflow["last_link_id"] = max(link[0] for link in workflow["links"])
     workflow.setdefault("extra", {})["mirage_reference_manifest"] = str(
         composed.manifest_path.resolve()
