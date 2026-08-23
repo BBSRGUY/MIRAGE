@@ -402,6 +402,32 @@ class MIRAGEOptionalImageInput:
         return (image, True)
 
 
+class MIRAGELTXFrameCount:
+    """Convert the director duration and workflow FPS to an LTX-valid length."""
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "duration_seconds": ("INT", {"forceInput": True}),
+                "fps": ("INT", {"forceInput": True}),
+            }
+        }
+
+    RETURN_TYPES = ("INT",)
+    RETURN_NAMES = ("LTX_FRAME_COUNT",)
+    FUNCTION = "convert"
+    CATEGORY = "MIRAGE/LTX Reference"
+
+    def convert(self, duration_seconds, fps):
+        duration_seconds = max(1, int(duration_seconds))
+        fps = max(1, int(fps))
+        requested = duration_seconds * fps
+        # Match ComfyBrainGemma and LTX temporal packing: valid lengths are 8n+1.
+        packed_steps = max(1, int(round((requested - 1) / 8.0)))
+        return (packed_steps * 8 + 1,)
+
+
 class MIRAGEGemmaDirector:
     """Call the installed ComfyBrain Gemma node without treating a blank image as real."""
 
@@ -568,6 +594,7 @@ NODE_CLASS_MAPPINGS = {
     "MIRAGELTXOptionalReferenceGuide": MIRAGELTXOptionalReferenceGuide,
     "MIRAGEPromptOrSurprise": MIRAGEPromptOrSurprise,
     "MIRAGEOptionalImageInput": MIRAGEOptionalImageInput,
+    "MIRAGELTXFrameCount": MIRAGELTXFrameCount,
     "MIRAGEGemmaDirector": MIRAGEGemmaDirector,
     "MIRAGEClearStartFrame": MIRAGEClearStartFrame,
 }
@@ -576,6 +603,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "MIRAGELTXOptionalReferenceGuide": "MIRAGE LTX Reference Guide (Optional)",
     "MIRAGEPromptOrSurprise": "MIRAGE Prompt (Blank = Gemma4 Surprise)",
     "MIRAGEOptionalImageInput": "MIRAGE Optional Input Image",
+    "MIRAGELTXFrameCount": "MIRAGE Duration to LTX Frame Count",
     "MIRAGEGemmaDirector": "MIRAGE Gemma4 Director",
     "MIRAGEClearStartFrame": "MIRAGE Keep Clearest Faithful Start Frame",
 }

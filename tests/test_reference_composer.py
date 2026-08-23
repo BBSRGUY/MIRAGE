@@ -130,6 +130,7 @@ def test_builds_local_ltx25_comfy_workflow(tmp_path):
     assert nodes[6101]["widgets_values"][0] == ""
     assert nodes[6100]["type"] == "MIRAGEOptionalImageInput"
     assert nodes[6102]["type"] == "MIRAGEGemmaDirector"
+    assert nodes[6110]["type"] == "MIRAGELTXFrameCount"
     assert nodes[6103]["type"] == "MIRAGEClearStartFrame"
     assert nodes[7044]["type"] == "KSampler"
     assert nodes[7044]["widgets_values"][-1] == 0.30
@@ -145,6 +146,10 @@ def test_builds_local_ltx25_comfy_workflow(tmp_path):
     assert any(link[:5] == [16104, 6102, 1, 7045, 1] for link in workflow["links"])
     assert any(link[:5] == [16117, 7043, 0, 6103, 3] for link in workflow["links"])
     assert any(link[:5] == [16011, 6103, 0, 5012, 4] for link in workflow["links"])
+    assert any(link[:5] == [16200, 6102, 6, 6110, 0] for link in workflow["links"])
+    assert any(link[:5] == [16202, 6110, 0, 3059, 2] for link in workflow["links"])
+    assert any(link[:5] == [16203, 6110, 0, 3980, 1] for link in workflow["links"])
+    assert 5072 not in nodes
     assert workflow["last_link_id"] == max(link[0] for link in workflow["links"])
     assert "reroutes" not in workflow["extra"]
     assert "linkExtensions" not in workflow["extra"]

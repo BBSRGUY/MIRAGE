@@ -126,14 +126,13 @@ def build_comfy_workflow(
             ],
         }
     )
-    nodes[5072]["widgets_values"] = [config.num_frames, "fixed"]
     nodes[5098]["widgets_values"] = config.frame_rate
     nodes[4832]["widgets_values"][0] = config.seed
 
     # The default graph is genuinely text-only. A user may add one Load Image
     # node and connect its IMAGE output to the optional image sockets on the
     # Gemma director, EditAnything adapter, and reference guide.
-    removed_image_nodes = {2004, 3159, 5019, 5067, 5068, 5069, 5093, 5095, 5100}
+    removed_image_nodes = {2004, 3159, 5019, 5067, 5068, 5069, 5072, 5093, 5095, 5100}
     workflow["nodes"] = [node for node in workflow["nodes"] if node["id"] not in removed_image_nodes]
     nodes = {node["id"]: node for node in workflow["nodes"]}
 
@@ -204,6 +203,7 @@ def build_comfy_workflow(
             {"name": "prompt", "type": "STRING", "widget": {"name": "prompt"}, "link": 16001},
             {"name": "input_image", "type": "IMAGE", "link": 16004},
             {"name": "has_input_image", "type": "BOOLEAN", "link": 16005},
+            {"name": "fps", "type": "INT", "widget": {"name": "fps"}, "link": 16204},
         ],
         "outputs": [
             {"name": "DIRECTOR_MANIFEST_JSON", "type": "STRING", "links": []},
@@ -212,7 +212,7 @@ def build_comfy_workflow(
             {"name": "NEGATIVE_PROMPT", "type": "STRING", "links": [16003]},
             {"name": "NEEDS_START_FRAME", "type": "BOOLEAN", "links": []},
             {"name": "MODE", "type": "STRING", "links": []},
-            {"name": "DURATION_SECONDS", "type": "INT", "links": []},
+            {"name": "DURATION_SECONDS", "type": "INT", "links": [16200]},
             {"name": "SUMMARY", "type": "STRING", "links": []},
         ],
         "properties": {"Node name for S&R": "MIRAGEGemmaDirector"},
@@ -244,6 +244,25 @@ def build_comfy_workflow(
             config.seed,
         ],
         "title": "Gemma4 director (sees the real input image)",
+    }
+    timing_node = {
+        "id": 6110,
+        "type": "MIRAGELTXFrameCount",
+        "pos": [-2760, 3040],
+        "size": [390, 120],
+        "flags": {},
+        "order": 9,
+        "mode": 0,
+        "inputs": [
+            {"name": "duration_seconds", "type": "INT", "link": 16200},
+            {"name": "fps", "type": "INT", "link": 16201},
+        ],
+        "outputs": [
+            {"name": "LTX_FRAME_COUNT", "type": "INT", "links": [16202, 16203]},
+        ],
+        "properties": {"Node name for S&R": "MIRAGELTXFrameCount"},
+        "widgets_values": [],
+        "title": "Duration -> actual LTX video/audio length (8n+1)",
     }
     selector_node = {
         "id": 6103,
@@ -303,6 +322,7 @@ def build_comfy_workflow(
             input_image_node,
             prompt_node,
             gemma_node,
+            timing_node,
             selector_node,
             selected_preview_node,
             comparison_preview_node,
@@ -344,6 +364,11 @@ def build_comfy_workflow(
             [16012, 6103, 1, 5012, 5, "BOOLEAN"],
             [16013, 6103, 0, 6104, 0, "IMAGE"],
             [16014, 6103, 3, 6105, 0, "*"],
+            [16200, 6102, 6, 6110, 0, "INT"],
+            [16201, 5099, 0, 6110, 1, "INT"],
+            [16202, 6110, 0, 3059, 2, "INT"],
+            [16203, 6110, 0, 3980, 1, "INT"],
+            [16204, 5099, 0, 6102, 3, "INT"],
         ]
     )
     nodes = {node["id"]: node for node in workflow["nodes"]}
