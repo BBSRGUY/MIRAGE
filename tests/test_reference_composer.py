@@ -123,4 +123,7 @@ def test_builds_local_ltx25_comfy_workflow(tmp_path):
     assert nodes[5011]["type"] == "MIRAGELTXEditAnythingReference"
     assert nodes[5011]["inputs"][0]["link"] == 13217
     assert any(link[:5] == [13217, 3940, 0, 5011, 0] for link in workflow["links"])
+    assert workflow["last_link_id"] == max(link[0] for link in workflow["links"])
+    assert "reroutes" not in workflow["extra"]
+    assert "linkExtensions" not in workflow["extra"]
     assert workflow_path.is_file()

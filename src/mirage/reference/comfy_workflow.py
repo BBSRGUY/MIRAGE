@@ -159,7 +159,13 @@ def build_comfy_workflow(
         for output in node.get("outputs", []):
             if output.get("links") is not None:
                 output["links"] = [link for link in output["links"] if link in link_ids]
+    # Reroutes are optional canvas decoration. The upstream template contains
+    # reroutes for links replaced above; stale reroute parents can make the
+    # frontend abort canvas restoration and display an empty graph.
+    workflow.setdefault("extra", {}).pop("reroutes", None)
+    workflow["extra"].pop("linkExtensions", None)
     workflow["last_node_id"] = max(workflow.get("last_node_id", 0), 6001)
+    workflow["last_link_id"] = max(link[0] for link in workflow["links"])
     workflow.setdefault("extra", {})["mirage_reference_manifest"] = str(
         composed.manifest_path.resolve()
     )
