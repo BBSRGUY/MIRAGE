@@ -1,8 +1,16 @@
 # MIRAGE
 
+> Current direction: frozen-model, single-GPU inference research. New generative-model training is
+> paused; the active implementation is the LTX multi-reference compatibility pipeline documented
+> in [`docs/REFERENCE_PIPELINE.md`](docs/REFERENCE_PIPELINE.md).
+
 MIRAGE (Motion-Invariant Residual Adaptive Generative Engine) is a research harness for
 video generation designed around a hard constraint: the complete inference path must remain
 resident on one GPU with at most 24 GiB of VRAM and no CPU offload.
+
+The active reference path reuses the installed ComfyUI Python and the local Wan2GP
+EditAnything LoRA plus sidecar. The Comfy custom node lives in
+`comfy_nodes/mirage_ltx_reference`; it performs no model download and creates no environment.
 
 The repository now includes the active M3 trainable generator pipeline. The first checkpoint is
 a synthetic systems smoke result, not a perceptual-quality claim.

@@ -1,0 +1,35 @@
+{
+  "references": [
+    {
+      "path": "C:/Users/rashm/AppData/Local/Comfy-Desktop/ComfyUI-Installs/ComfyUI/ComfyUI/input/example.png",
+      "label": "starter-reference",
+      "kind": "other",
+      "description": "Placeholder reference used only to verify that the local Comfy workflow opens; replace this entry with the real reference images"
+    }
+  ],
+  "action_prompt": "The referenced subject moves naturally through a cinematic scene with stable appearance and coherent motion.",
+  "width": 768,
+  "height": 448,
+  "num_frames": 121,
+  "frame_rate": 24,
+  "seed": 0,
+  "output_video_path": "artifacts/reference/generated.mp4",
+  "runtime": {
+    "transformer_path": "C:/Users/rashm/AppData/Local/Comfy-Desktop/ComfyUI-Shared/models/diffusion_models/ltx-2.5-22b-distilled-transformer-nvfp4.safetensors",
+    "text_encoder_path": "C:/Users/rashm/AppData/Local/Comfy-Desktop/ComfyUI-Shared/models/text_encoders/gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors",
+    "video_vae_path": "C:/Users/rashm/AppData/Local/Comfy-Desktop/ComfyUI-Shared/models/vae/ltx-2.5-video-vae-bf16.safetensors",
+    "audio_vae_path": "C:/Users/rashm/AppData/Local/Comfy-Desktop/ComfyUI-Shared/models/vae/ltx-2.5-audio-vae-bf16.safetensors",
+    "duration_head_path": "C:/Users/rashm/AppData/Local/Comfy-Desktop/ComfyUI-Shared/models/model_patches/ltx-2.5-duration-head-bf16.safetensors",
+    "spatial_upsampler_path": "C:/Users/rashm/AppData/Local/Comfy-Desktop/ComfyUI-Shared/models/latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
+    "reference_lora_path": "C:/Users/rashm/OneDrive/Desktop/videogen/Wan2GP/loras/ltx2/edit_anything_reference_v0.1_r128_ref_adaln_proj-role_embedding-ref_attn-ref_visual_proj.standard.safetensors",
+    "reference_module_path": "C:/Users/rashm/OneDrive/Desktop/videogen/Wan2GP/ckpts/edit_anything_reference_v0.1_r128_ref_adaln_proj-role_embedding-ref_attn-ref_visual_proj.module.safetensors",
+    "comfy_root": "C:/Users/rashm/AppData/Local/Comfy-Desktop/ComfyUI-Installs/ComfyUI/ComfyUI",
+    "models_root": "C:/Users/rashm/AppData/Local/Comfy-Desktop/ComfyUI-Shared/models",
+    "input_root": "C:/Users/rashm/AppData/Local/Comfy-Desktop/ComfyUI-Shared/input",
+    "comfy_input_name": "MIRAGE/reference_sheet.png",
+    "lora_strength": 1.0,
+    "conditioning_strength": 1.0,
+    "quantization": "nvfp4-prequant",
+    "offload_mode": "none"
+  }
+}

@@ -89,6 +89,10 @@ def build_parser() -> argparse.ArgumentParser:
     for name in ("m3-data-select", "m3-data-normalize", "m3-data-shard", "m3-data-audit"):
         item = sub.add_parser(name)
         item.add_argument("--config", default="configs/m3_corpus_v0.json")
+    for name in ("ref-compose", "ref-doctor", "ref-comfy", "ref-deploy"):
+        item = sub.add_parser(name)
+        item.add_argument("--config", default="configs/ref_ltx25.example.json")
+        item.add_argument("--output", default="artifacts/reference")
     return parser
 
 
@@ -264,6 +268,34 @@ def run_m2(args: argparse.Namespace) -> int:
 
 def main() -> int:
     args = build_parser().parse_args()
+    if args.command.startswith("ref-"):
+        from .reference.composer import ReferenceComposer, ReferencePipelineConfig, runtime_report
+
+        config = ReferencePipelineConfig.from_json(args.config)
+        if args.command == "ref-doctor":
+            result = runtime_report(config)
+        else:
+            composed = ReferenceComposer(config).compose(args.output)
+            result = {
+                "sheet": str(composed.sheet_path.resolve()),
+                "static_video": str(composed.video_path.resolve()),
+                "manifest": str(composed.manifest_path.resolve()),
+                "prompt": composed.prompt,
+            }
+            if args.command in {"ref-comfy", "ref-deploy"}:
+                from .reference.comfy_workflow import build_comfy_workflow
+
+                workflow_path = Path(args.output) / "MIRAGE_LTX25_Ref2V.json"
+                build_comfy_workflow(config, composed, workflow_path)
+                result["workflow"] = str(workflow_path.resolve())
+                if args.command == "ref-deploy":
+                    from .reference.comfy_workflow import deploy_comfy_assets
+
+                    result["deployed"] = deploy_comfy_assets(
+                        config, composed, workflow_path
+                    )
+        print(json.dumps(result, indent=2, default=str))
+        return 0
     if args.command.startswith("m3-data-"):
         from .m3_data_config import M3CorpusConfig
 
