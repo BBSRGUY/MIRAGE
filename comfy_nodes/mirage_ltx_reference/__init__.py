@@ -86,6 +86,27 @@ def _project_reference(
     return tokens.to(torch.bfloat16), (adaln_out * float(adaln_scale)).to(torch.bfloat16)
 
 
+def _pad_for_ltx_vae(pixels: torch.Tensor, multiple: int = 32) -> torch.Tensor:
+    """Edge-pad BHWC pixels to dimensions accepted by the causal LTX VAE."""
+    if pixels.ndim != 4 or pixels.shape[-1] not in (1, 3, 4):
+        raise ValueError(f"expected reference image [B,H,W,C], got {tuple(pixels.shape)}")
+    height, width = pixels.shape[1:3]
+    target_height = max(multiple, ((height + multiple - 1) // multiple) * multiple)
+    target_width = max(multiple, ((width + multiple - 1) // multiple) * multiple)
+    if (target_height, target_width) == (height, width):
+        return pixels
+
+    pad_height = target_height - height
+    pad_width = target_width - width
+    left = pad_width // 2
+    right = pad_width - left
+    top = pad_height // 2
+    bottom = pad_height - top
+    nchw = pixels.permute(0, 3, 1, 2)
+    padded = F.pad(nchw, (left, right, top, bottom), mode="replicate")
+    return padded.permute(0, 2, 3, 1)
+
+
 class _ReferenceAttention:
     def __init__(self, base_attn: nn.Module, state: dict[str, torch.Tensor], prefix: str, context: torch.Tensor) -> None:
         self.base_attn = base_attn
@@ -266,6 +287,16 @@ class MIRAGELTXEditAnythingReference:
         model_lora, _ = comfy.sd.load_lora_for_models(model, None, lora, lora_strength, 0)
 
         pixels = reference_sheet[:1, :, :, :3]
+        original_size = tuple(pixels.shape[1:3])
+        pixels = _pad_for_ltx_vae(pixels)
+        if tuple(pixels.shape[1:3]) != original_size:
+            logging.info(
+                "MIRAGE padded reference for LTX VAE: %dx%d -> %dx%d",
+                original_size[1],
+                original_size[0],
+                pixels.shape[2],
+                pixels.shape[1],
+            )
         ref_latent = vae.encode(pixels)
         state = comfy.utils.load_torch_file(str(sidecar), safe_load=True)
         context, adaln = _project_reference(ref_latent, state, token_scale, adaln_scale)
