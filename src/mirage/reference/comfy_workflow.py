@@ -176,20 +176,29 @@ def build_comfy_workflow(
     }
     input_image_node = {
         "id": 6100,
-        "type": "MIRAGEOptionalImageInput",
+        "type": "MIRAGEMultiReferenceContactSheet",
         "pos": [-4200, 2630],
-        "size": [560, 100],
+        "size": [620, 360],
         "flags": {},
         "order": 0,
         "mode": 0,
-        "inputs": [],
-        "outputs": [
-            {"name": "image", "type": "IMAGE", "links": []},
-            {"name": "has_image", "type": "BOOLEAN", "links": []},
+        "inputs": [
+            {"name": "sheet_width", "type": "INT", "widget": {"name": "sheet_width"}, "link": None},
+            {"name": "sheet_height", "type": "INT", "widget": {"name": "sheet_height"}, "link": None},
+            {"name": "variation_count", "type": "INT", "widget": {"name": "variation_count"}, "link": None},
         ],
-        "properties": {"Node name for S&R": "MIRAGEOptionalImageInput"},
-        "widgets_values": [],
-        "title": "Connect Load Image here (optional)",
+        "outputs": [
+            {"name": "contact_sheet", "type": "IMAGE", "links": []},
+            {"name": "primary_image", "type": "IMAGE", "links": []},
+            {"name": "has_reference", "type": "BOOLEAN", "links": []},
+            {"name": "reference_manifest", "type": "STRING", "links": []},
+            {"name": "reference_count", "type": "INT", "links": []},
+            {"name": "zit_denoise", "type": "FLOAT", "links": []},
+            {"name": "variation_count", "type": "INT", "links": []},
+        ],
+        "properties": {"Node name for S&R": "MIRAGEMultiReferenceContactSheet"},
+        "widgets_values": [1024, 576, 3],
+        "title": "Optional references: characters / wardrobe / environment / details / style",
     }
     gemma_node = {
         "id": 6102,
@@ -203,6 +212,7 @@ def build_comfy_workflow(
             {"name": "prompt", "type": "STRING", "widget": {"name": "prompt"}, "link": 16001},
             {"name": "input_image", "type": "IMAGE", "link": 16004},
             {"name": "has_input_image", "type": "BOOLEAN", "link": 16005},
+            {"name": "reference_manifest", "type": "STRING", "link": 16015},
             {"name": "fps", "type": "INT", "widget": {"name": "fps"}, "link": 16204},
         ],
         "outputs": [
@@ -276,6 +286,7 @@ def build_comfy_workflow(
             {"name": "original_image", "type": "IMAGE", "link": 16007},
             {"name": "has_input_image", "type": "BOOLEAN", "link": 16008},
             {"name": "needs_start_frame", "type": "BOOLEAN", "link": 16006},
+            {"name": "reference_count", "type": "INT", "link": 16016},
             {"name": "edited_image", "type": "IMAGE", "link": 16117},
             {"name": "generated_image", "type": "IMAGE", "link": 16121},
         ],
@@ -354,21 +365,23 @@ def build_comfy_workflow(
             [16002, 6102, 2, 2483, 1, "STRING"],
             [16003, 6102, 3, 2612, 1, "STRING"],
             [16004, 6100, 0, 6102, 1, "IMAGE"],
-            [16005, 6100, 1, 6102, 2, "BOOLEAN"],
+            [16005, 6100, 2, 6102, 2, "BOOLEAN"],
             [16006, 6102, 4, 6103, 2, "BOOLEAN"],
-            [16007, 6100, 0, 6103, 0, "IMAGE"],
-            [16008, 6100, 1, 6103, 1, "BOOLEAN"],
+            [16007, 6100, 1, 6103, 0, "IMAGE"],
+            [16008, 6100, 2, 6103, 1, "BOOLEAN"],
             [16009, 6103, 0, 5011, 2, "IMAGE"],
             [16010, 6103, 1, 5011, 3, "BOOLEAN"],
             [16011, 6103, 0, 5012, 4, "IMAGE"],
             [16012, 6103, 1, 5012, 5, "BOOLEAN"],
             [16013, 6103, 0, 6104, 0, "IMAGE"],
             [16014, 6103, 3, 6105, 0, "*"],
+            [16015, 6100, 3, 6102, 3, "STRING"],
+            [16016, 6100, 4, 6103, 3, "INT"],
             [16200, 6102, 6, 6110, 0, "INT"],
             [16201, 5099, 0, 6110, 1, "INT"],
             [16202, 6110, 0, 3059, 2, "INT"],
             [16203, 6110, 0, 3980, 1, "INT"],
-            [16204, 5099, 0, 6102, 3, "INT"],
+            [16204, 5099, 0, 6102, 4, "INT"],
         ]
     )
     nodes = {node["id"]: node for node in workflow["nodes"]}
@@ -530,11 +543,13 @@ def _add_zit_frame_candidates(
             [16114, 7066, 0, 7044, 3, "LATENT"],
             [16115, 7044, 0, 7043, 0, "LATENT"],
             [16116, 7040, 0, 7043, 1, "VAE"],
-            [16117, 7043, 0, 6103, 3, "IMAGE"],
+            [16117, 7043, 0, 6103, 4, "IMAGE"],
             [16118, 7041, 0, 7048, 3, "LATENT"],
             [16119, 7048, 0, 7049, 0, "LATENT"],
             [16120, 7040, 0, 7049, 1, "VAE"],
-            [16121, 7049, 0, 6103, 4, "IMAGE"],
+            [16121, 7049, 0, 6103, 5, "IMAGE"],
+            [16122, 6100, 5, 7044, 9, "FLOAT"],
+            [16123, 6100, 6, 7066, 1, "INT"],
         ]
     )
     workflow.setdefault("groups", []).append(

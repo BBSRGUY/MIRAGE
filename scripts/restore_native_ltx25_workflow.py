@@ -81,13 +81,28 @@ def restore_native(
     edited_nodes = {node["id"]: node for node in edited["nodes"]}
 
     mirage_node_ids = set(MIRAGE_NODE_IDS)
-    image_input_slot = _input_slot(edited_nodes[6100], "image")
-    image_source = next(
-        (link[1] for link in edited["links"] if link[3] == 6100 and link[4] == image_input_slot),
-        None,
-    )
-    if image_source is not None:
-        mirage_node_ids.add(image_source)
+    # Preserve every user-added Load Image node connected to any optional
+    # contact-sheet role. Older workflows used a single input named ``image``.
+    image_input_names = {
+        "image",
+        "character_1",
+        "character_2",
+        "wardrobe",
+        "environment",
+        "object_detail",
+        "style_reference",
+    }
+    image_input_slots = {
+        index
+        for index, item in enumerate(edited_nodes[6100].get("inputs", []))
+        if item["name"] in image_input_names
+    }
+    image_sources = {
+        link[1]
+        for link in edited["links"]
+        if link[3] == 6100 and link[4] in image_input_slots
+    }
+    mirage_node_ids.update(image_sources)
 
     missing = sorted(mirage_node_ids - edited_nodes.keys())
     if missing:

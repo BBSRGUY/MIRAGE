@@ -128,7 +128,16 @@ def test_builds_local_ltx25_comfy_workflow(tmp_path):
     assert next(item for item in nodes[5012]["inputs"] if item["name"] == "image")["link"] == 16011
     assert nodes[6101]["type"] == "MIRAGEPromptOrSurprise"
     assert nodes[6101]["widgets_values"][0] == ""
-    assert nodes[6100]["type"] == "MIRAGEOptionalImageInput"
+    assert nodes[6100]["type"] == "MIRAGEMultiReferenceContactSheet"
+    assert [output["name"] for output in nodes[6100]["outputs"]] == [
+        "contact_sheet",
+        "primary_image",
+        "has_reference",
+        "reference_manifest",
+        "reference_count",
+        "zit_denoise",
+        "variation_count",
+    ]
     assert nodes[6102]["type"] == "MIRAGEGemmaDirector"
     assert nodes[6110]["type"] == "MIRAGELTXFrameCount"
     assert nodes[6103]["type"] == "MIRAGEClearStartFrame"
@@ -144,7 +153,9 @@ def test_builds_local_ltx25_comfy_workflow(tmp_path):
     assert any(link[:5] == [13402, 3059, 0, 5012, 3] for link in workflow["links"])
     assert any(link[:5] == [16002, 6102, 2, 2483, 1] for link in workflow["links"])
     assert any(link[:5] == [16104, 6102, 1, 7045, 1] for link in workflow["links"])
-    assert any(link[:5] == [16117, 7043, 0, 6103, 3] for link in workflow["links"])
+    assert any(link[:5] == [16117, 7043, 0, 6103, 4] for link in workflow["links"])
+    assert any(link[:5] == [16122, 6100, 5, 7044, 9] for link in workflow["links"])
+    assert any(link[:5] == [16123, 6100, 6, 7066, 1] for link in workflow["links"])
     assert any(link[:5] == [16011, 6103, 0, 5012, 4] for link in workflow["links"])
     assert any(link[:5] == [16200, 6102, 6, 6110, 0] for link in workflow["links"])
     assert any(link[:5] == [16202, 6110, 0, 3059, 2] for link in workflow["links"])

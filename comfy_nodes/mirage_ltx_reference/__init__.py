@@ -9,7 +9,9 @@ from __future__ import annotations
 
 import copy
 import importlib
+import json
 import logging
+import math
 import types
 from pathlib import Path
 
@@ -432,6 +434,125 @@ class MIRAGEOptionalImageInput:
         return (image, True)
 
 
+class MIRAGEMultiReferenceContactSheet:
+    """Compose optional role-specific images into one Gemma/ZiT reference sheet."""
+
+    ROLES = (
+        ("character_1", "character 1"),
+        ("character_2", "character 2"),
+        ("wardrobe", "clothing / wardrobe"),
+        ("environment", "environment / location"),
+        ("object_detail", "prop / object detail"),
+        ("style_reference", "visual style"),
+    )
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "sheet_width": ("INT", {"default": 1024, "min": 512, "max": 2048, "step": 64}),
+                "sheet_height": ("INT", {"default": 576, "min": 320, "max": 2048, "step": 64}),
+                "variation_count": ("INT", {"default": 3, "min": 1, "max": 8}),
+            },
+            "optional": {name: ("IMAGE",) for name, _label in cls.ROLES},
+        }
+
+    RETURN_TYPES = ("IMAGE", "IMAGE", "BOOLEAN", "STRING", "INT", "FLOAT", "INT")
+    RETURN_NAMES = (
+        "contact_sheet",
+        "primary_image",
+        "has_reference",
+        "reference_manifest",
+        "reference_count",
+        "zit_denoise",
+        "variation_count",
+    )
+    FUNCTION = "compose"
+    CATEGORY = "MIRAGE/LTX Reference"
+
+    @staticmethod
+    def _fit(image: torch.Tensor, height: int, width: int) -> torch.Tensor:
+        pixels = image[:1, :, :, :3].detach().float().cpu().clamp(0.0, 1.0)
+        source_height, source_width = pixels.shape[1:3]
+        scale = min(width / source_width, height / source_height)
+        target_height = max(1, round(source_height * scale))
+        target_width = max(1, round(source_width * scale))
+        return F.interpolate(
+            pixels.permute(0, 3, 1, 2),
+            size=(target_height, target_width),
+            mode="bilinear",
+            align_corners=False,
+        ).permute(0, 2, 3, 1)
+
+    def compose(self, sheet_width, sheet_height, variation_count, **images):
+        references = [
+            (label, images.get(name))
+            for name, label in self.ROLES
+            if images.get(name) is not None
+        ]
+        if not references:
+            blank = torch.zeros((1, 64, 64, 3), dtype=torch.float32)
+            return (blank, blank, False, "No visual references supplied.", 0, 1.0, 1)
+
+        primary = references[0][1][:1, :, :, :3]
+        if len(references) == 1:
+            manifest = json.dumps(
+                {"layout": "single image", "references": [{"role": references[0][0]}]},
+                separators=(",", ":"),
+            )
+            return (
+                primary,
+                primary,
+                True,
+                manifest,
+                1,
+                0.30,
+                max(1, int(variation_count)),
+            )
+
+        count = len(references)
+        columns = min(3, math.ceil(math.sqrt(count * 16 / 9)))
+        rows = math.ceil(count / columns)
+        width = max(512, int(sheet_width))
+        height = max(320, int(sheet_height))
+        gap = 8
+        cell_width = (width - gap * (columns + 1)) // columns
+        cell_height = (height - gap * (rows + 1)) // rows
+        sheet = torch.full((1, height, width, 3), 0.035, dtype=torch.float32)
+        manifest_items = []
+        for index, (label, image) in enumerate(references):
+            row, column = divmod(index, columns)
+            fitted = self._fit(image, cell_height, cell_width)
+            fitted_height, fitted_width = fitted.shape[1:3]
+            left = gap + column * (cell_width + gap) + (cell_width - fitted_width) // 2
+            top = gap + row * (cell_height + gap) + (cell_height - fitted_height) // 2
+            sheet[:, top : top + fitted_height, left : left + fitted_width] = fitted
+            manifest_items.append(
+                {
+                    "role": label,
+                    "panel": index + 1,
+                    "row": row + 1,
+                    "column": column + 1,
+                }
+            )
+        manifest = json.dumps(
+            {
+                "layout": f"{rows} rows x {columns} columns, left-to-right then top-to-bottom",
+                "references": manifest_items,
+            },
+            separators=(",", ":"),
+        )
+        return (
+            sheet,
+            primary,
+            True,
+            manifest,
+            count,
+            0.72,
+            max(1, int(variation_count)),
+        )
+
+
 class MIRAGELTXFrameCount:
     """Convert the director duration and workflow FPS to an LTX-valid length."""
 
@@ -471,6 +592,7 @@ class MIRAGEGemmaDirector:
             "prompt": prompt,
             "input_image": ("IMAGE",),
             "has_input_image": ("BOOLEAN", {"default": False, "forceInput": True}),
+            "reference_manifest": ("STRING", {"default": "", "forceInput": True}),
             **required,
         }
         # The main input image is explicit above. Keep only the separate style input.
@@ -493,13 +615,31 @@ class MIRAGEGemmaDirector:
     FUNCTION = "direct"
     CATEGORY = "MIRAGE/LTX Reference"
 
-    def direct(self, prompt, input_image, has_input_image, style_reference=None, **kwargs):
+    def direct(
+        self,
+        prompt,
+        input_image,
+        has_input_image,
+        reference_manifest,
+        style_reference=None,
+        **kwargs,
+    ):
         brief = (prompt or "").strip()
         if not brief:
             brief = (
                 "Surprise me with an original, coherent cinematic short video. Invent the subject, "
                 "setting, action, camera language, lighting, visual style, and synchronized sound. "
                 "Avoid cliches and on-screen text."
+            )
+        if bool(has_input_image) and reference_manifest:
+            brief += (
+                "\n\nMULTI-REFERENCE CONTACT SHEET:\n"
+                f"{reference_manifest}\n"
+                "Treat every listed panel as a distinct role. Create the first-frame prompt and "
+                "video prompt so the references are composed into one coherent cinematic scene. "
+                "Preserve character identity, wardrobe, environment, object details, and style "
+                "according to their roles. Never reproduce the contact-sheet grid, borders, panels, "
+                "or labels in the generated frame."
             )
         brain = importlib.import_module("comfybrain_gemma.nodes").ComfyBrainGemma()
         return brain.direct(
@@ -520,6 +660,7 @@ class MIRAGEClearStartFrame:
                 "original_image": ("IMAGE",),
                 "has_input_image": ("BOOLEAN", {"default": False, "forceInput": True}),
                 "needs_start_frame": ("BOOLEAN", {"default": False, "forceInput": True}),
+                "reference_count": ("INT", {"default": 0, "forceInput": True}),
                 "minimum_fidelity": ("FLOAT", {"default": 0.84, "min": 0.0, "max": 1.0, "step": 0.01}),
                 "minimum_clarity_gain": ("FLOAT", {"default": 0.05, "min": 0.0, "max": 1.0, "step": 0.01}),
             },
@@ -540,6 +681,7 @@ class MIRAGEClearStartFrame:
         original_image,
         has_input_image,
         needs_start_frame,
+        reference_count,
         minimum_fidelity,
         minimum_clarity_gain,
         edited_image=None,
@@ -575,6 +717,7 @@ class MIRAGEClearStartFrame:
         original_image,
         has_input_image,
         needs_start_frame,
+        reference_count,
         minimum_fidelity,
         minimum_clarity_gain,
         edited_image=None,
@@ -590,33 +733,57 @@ class MIRAGEClearStartFrame:
         if edited_image is None:
             return (original_image, True, "original", "ZiT edit unavailable; preserved original")
 
+        if int(reference_count) > 1:
+            scores = []
+            for index in range(edited_image.shape[0]):
+                clarity, contrast = self._clarity(edited_image[index : index + 1])
+                scores.append((clarity * max(contrast, 1e-8), index, clarity, contrast))
+            _score, best_index, clarity, contrast = max(scores)
+            selected = edited_image[best_index : best_index + 1]
+            report = (
+                f"selected=zit_contact_sheet_variant_{best_index + 1}; "
+                f"variants={edited_image.shape[0]}; clarity={clarity:.6f}; contrast={contrast:.6f}; "
+                f"references={int(reference_count)}"
+            )
+            logging.info("MIRAGE contact-sheet start-frame decision: %s", report)
+            return (selected, True, "zit_contact_sheet", report)
+
         original = original_image[:1, :, :, :3].float()
-        edited = edited_image[:1, :, :, :3].float()
-        if edited.shape[1:3] != original.shape[1:3]:
-            edited = F.interpolate(
-                edited.permute(0, 3, 1, 2),
+        candidates = edited_image[:, :, :, :3].float()
+        if candidates.shape[1:3] != original.shape[1:3]:
+            candidates = F.interpolate(
+                candidates.permute(0, 3, 1, 2),
                 size=original.shape[1:3],
                 mode="bilinear",
                 align_corners=False,
             ).permute(0, 2, 3, 1)
         original_clarity, original_contrast = self._clarity(original)
-        edited_clarity, edited_contrast = self._clarity(edited)
-        fidelity = max(0.0, 1.0 - float((original - edited).abs().mean().item()) * 2.0)
-        clarity_ratio = edited_clarity / max(original_clarity, 1e-8)
-        contrast_ratio = edited_contrast / max(original_contrast, 1e-8)
-        use_edit = (
-            fidelity >= float(minimum_fidelity)
-            and clarity_ratio >= 1.0 + float(minimum_clarity_gain)
-            and contrast_ratio >= 0.90
-        )
+        evaluated = []
+        for index in range(candidates.shape[0]):
+            candidate = candidates[index : index + 1]
+            edited_clarity, edited_contrast = self._clarity(candidate)
+            fidelity = max(0.0, 1.0 - float((original - candidate).abs().mean().item()) * 2.0)
+            clarity_ratio = edited_clarity / max(original_clarity, 1e-8)
+            contrast_ratio = edited_contrast / max(original_contrast, 1e-8)
+            eligible = (
+                fidelity >= float(minimum_fidelity)
+                and clarity_ratio >= 1.0 + float(minimum_clarity_gain)
+                and contrast_ratio >= 0.90
+            )
+            evaluated.append(
+                (eligible, fidelity * clarity_ratio * contrast_ratio, index, fidelity, clarity_ratio, contrast_ratio)
+            )
+        use_edit, _score, best_index, fidelity, clarity_ratio, contrast_ratio = max(evaluated)
         source = "zit_edited" if use_edit else "original"
         report = (
-            f"selected={source}; fidelity={fidelity:.4f}; clarity_ratio={clarity_ratio:.4f}; "
+            f"selected={source}; candidate={best_index + 1}/{len(evaluated)}; "
+            f"fidelity={fidelity:.4f}; clarity_ratio={clarity_ratio:.4f}; "
             f"contrast_ratio={contrast_ratio:.4f}; minimum_fidelity={float(minimum_fidelity):.4f}; "
             f"minimum_clarity_gain={float(minimum_clarity_gain):.4f}"
         )
         logging.info("MIRAGE start-frame comparison: %s", report)
-        return (edited if use_edit else original_image, True, source, report)
+        selected = edited_image[best_index : best_index + 1] if use_edit else original_image
+        return (selected, True, source, report)
 
 
 NODE_CLASS_MAPPINGS = {
@@ -624,6 +791,7 @@ NODE_CLASS_MAPPINGS = {
     "MIRAGELTXOptionalReferenceGuide": MIRAGELTXOptionalReferenceGuide,
     "MIRAGEPromptOrSurprise": MIRAGEPromptOrSurprise,
     "MIRAGEOptionalImageInput": MIRAGEOptionalImageInput,
+    "MIRAGEMultiReferenceContactSheet": MIRAGEMultiReferenceContactSheet,
     "MIRAGELTXFrameCount": MIRAGELTXFrameCount,
     "MIRAGEGemmaDirector": MIRAGEGemmaDirector,
     "MIRAGEClearStartFrame": MIRAGEClearStartFrame,
@@ -633,6 +801,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "MIRAGELTXOptionalReferenceGuide": "MIRAGE LTX Reference Guide (Optional)",
     "MIRAGEPromptOrSurprise": "MIRAGE Prompt (Blank = Gemma4 Surprise)",
     "MIRAGEOptionalImageInput": "MIRAGE Optional Input Image",
+    "MIRAGEMultiReferenceContactSheet": "MIRAGE Multi-Reference Contact Sheet",
     "MIRAGELTXFrameCount": "MIRAGE Duration to LTX Frame Count",
     "MIRAGEGemmaDirector": "MIRAGE Gemma4 Director",
     "MIRAGEClearStartFrame": "MIRAGE Keep Clearest Faithful Start Frame",
