@@ -10,6 +10,7 @@ from typing import Any
 MIRAGE_NODE_IDS = {
     5011,
     5012,
+    5013,
     6100,
     6101,
     6102,
@@ -31,6 +32,12 @@ MIRAGE_NODE_IDS = {
     7065,
     7066,
 }
+
+
+# These nodes are an unrelated RTX-upscale example branch bundled with the
+# official workflow. Keeping it makes ComfyUI validate a hard-coded video path
+# even though the branch has nothing to do with MIRAGE generation.
+UNRELATED_OFFICIAL_NODE_IDS = {457, 458, 459}
 
 
 def _input_slot(node: dict[str, Any], name: str) -> int:
@@ -61,6 +68,15 @@ def restore_native(
     official: dict[str, Any], edited: dict[str, Any], fps_override: int | None = None
 ) -> dict[str, Any]:
     workflow = copy.deepcopy(official)
+    workflow["nodes"] = [
+        node for node in workflow["nodes"] if node["id"] not in UNRELATED_OFFICIAL_NODE_IDS
+    ]
+    workflow["links"] = [
+        link
+        for link in workflow["links"]
+        if link[1] not in UNRELATED_OFFICIAL_NODE_IDS
+        and link[3] not in UNRELATED_OFFICIAL_NODE_IDS
+    ]
     official_nodes = {node["id"]: node for node in workflow["nodes"]}
     edited_nodes = {node["id"]: node for node in edited["nodes"]}
 
@@ -93,16 +109,19 @@ def restore_native(
     official_nodes[450]["widgets_values"] = [duration, "fixed"]
 
     # Keep every link wholly inside the user's prompt/image/ZiT selection branch.
+    explicitly_routed_nodes = {5011, 5012, 5013}
     internal_links = [
         copy.deepcopy(link)
         for link in edited["links"]
         if link[1] in mirage_node_ids and link[3] in mirage_node_ids
+        and link[1] not in explicitly_routed_nodes
+        and link[3] not in explicitly_routed_nodes
     ]
     for index, link in enumerate(internal_links):
         link[0] = 17000 + index
 
     # Remove only the native edges replaced by reference-aware routing.
-    replaced_native_links = {805, 806, 822, 823, 827, 853, 854}
+    replaced_native_links = {799, 805, 806, 822, 823, 827, 853, 854}
     workflow["links"] = [link for link in workflow["links"] if link[0] not in replaced_native_links]
     workflow["links"].extend(internal_links)
 
@@ -122,13 +141,21 @@ def restore_native(
         [18011, 6103, 1, 5012, _input_slot(nodes[5012], "has_reference"), "BOOLEAN"],
         [18012, 5012, 0, 427, _input_slot(nodes[427], "positive"), "CONDITIONING"],
         [18013, 5012, 1, 427, _input_slot(nodes[427], "negative"), "CONDITIONING"],
-        [18014, 5012, 0, 419, _input_slot(nodes[419], "positive"), "CONDITIONING"],
-        [18015, 5012, 1, 419, _input_slot(nodes[419], "negative"), "CONDITIONING"],
         [18016, 5012, 2, 431, _input_slot(nodes[431], "video_latent"), "LATENT"],
         [18017, 6102, 2, 432, _input_slot(nodes[432], "text"), "STRING"],
         [18018, 6102, 3, 433, _input_slot(nodes[433], "text"), "STRING"],
         [18019, 450, 0, 6102, _input_slot(gemma, "duration_seconds"), "INT"],
         [18020, 449, 0, 6102, _input_slot(gemma, "fps"), "INT"],
+        # The first-stage reference guide is encoded at the low-resolution
+        # latent's spatial token count. Remove those appended keyframes and
+        # their conditioning metadata before the native spatial upsampler;
+        # otherwise the second sampler rejects the stale token positions.
+        [18021, 5012, 0, 5013, _input_slot(nodes[5013], "positive"), "CONDITIONING"],
+        [18022, 5012, 1, 5013, _input_slot(nodes[5013], "negative"), "CONDITIONING"],
+        [18023, 422, 0, 5013, _input_slot(nodes[5013], "latent"), "LATENT"],
+        [18024, 5013, 0, 419, _input_slot(nodes[419], "positive"), "CONDITIONING"],
+        [18025, 5013, 1, 419, _input_slot(nodes[419], "negative"), "CONDITIONING"],
+        [18026, 5013, 2, 416, _input_slot(nodes[416], "samples"), "LATENT"],
     ]
     workflow["links"].extend(additions)
 
