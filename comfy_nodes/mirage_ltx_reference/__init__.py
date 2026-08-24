@@ -86,27 +86,35 @@ def _project_reference(
     return tokens.to(torch.bfloat16), (adaln_out * float(adaln_scale)).to(torch.bfloat16)
 
 
-class _ReferenceAttention(nn.Module):
+class _ReferenceAttention:
     def __init__(self, base_attn: nn.Module, state: dict[str, torch.Tensor], prefix: str, context: torch.Tensor) -> None:
-        super().__init__()
-        object.__setattr__(self, "base_attn", base_attn)
-        self.register_buffer("context", context, persistent=False)
+        self.base_attn = base_attn
+        self.weights: dict[str, torch.Tensor] = {"context": context}
+        self.device_cache: dict[tuple[str, torch.dtype, str], torch.Tensor] = {}
         for name in ("to_q", "to_k", "to_v", "to_out.0"):
             safe = name.replace(".", "_")
-            self.register_buffer(f"{safe}_a", state[f"{prefix}{name}.lora_A.weight"], persistent=False)
-            self.register_buffer(f"{safe}_b", state[f"{prefix}{name}.lora_B.weight"], persistent=False)
+            self.weights[f"{safe}_a"] = state[f"{prefix}{name}.lora_A.weight"]
+            self.weights[f"{safe}_b"] = state[f"{prefix}{name}.lora_B.weight"]
+
+    def _on(self, name: str, like: torch.Tensor) -> torch.Tensor:
+        key = (str(like.device), like.dtype, name)
+        value = self.device_cache.get(key)
+        if value is None:
+            value = self.weights[name].to(device=like.device, dtype=like.dtype)
+            self.device_cache[key] = value
+        return value
 
     def _projection(self, name: str, base: nn.Module, x: torch.Tensor) -> torch.Tensor:
         safe = name.replace(".", "_")
         out = base(x)
-        a = getattr(self, f"{safe}_a")
-        b = getattr(self, f"{safe}_b")
-        delta = F.linear(F.linear(x.to(a.dtype), a), b)
+        a = self._on(f"{safe}_a", x)
+        b = self._on(f"{safe}_b", x)
+        delta = F.linear(F.linear(x, a), b)
         return out + delta.to(device=out.device, dtype=out.dtype)
 
     def forward(self, x: torch.Tensor, transformer_options: dict) -> torch.Tensor:
         base = self.base_attn
-        context = self.context.to(device=x.device, dtype=x.dtype)
+        context = self._on("context", x)
         if context.shape[0] == 1 and x.shape[0] != 1:
             context = context.expand(x.shape[0], -1, -1)
         q = base.q_norm(self._projection("to_q", base.to_q, x))
@@ -121,12 +129,6 @@ class _ReferenceAttention(nn.Module):
             transformer_options=transformer_options,
         )
         return self._projection("to_out.0", base.to_out[0], out)
-
-
-class _ReferenceAdaLN(nn.Module):
-    def __init__(self, value: torch.Tensor) -> None:
-        super().__init__()
-        self.register_buffer("value", value, persistent=False)
 
 
 def _add_reference_adaln(timestep, value: torch.Tensor):
@@ -172,14 +174,12 @@ def _patch_model(
         raise ValueError(f"adapter requests block {end_block}, but model has only {len(blocks)} blocks")
 
     for index, block in enumerate(blocks):
-        adaln_holder = _ReferenceAdaLN(ref_adaln)
-        patched.add_object_patch(f"diffusion_model.transformer_blocks.{index}.mirage_ref_adaln", adaln_holder)
         original_forward = block.forward
 
-        def block_forward(this, *args, _original=original_forward, **kwargs):
+        def block_forward(this, *args, _original=original_forward, _adaln=ref_adaln, **kwargs):
             key = "v_timestep" if "v_timestep" in kwargs else "timestep"
             if key in kwargs and kwargs[key] is not None:
-                kwargs[key] = _add_reference_adaln(kwargs[key], this.mirage_ref_adaln.value)
+                kwargs[key] = _add_reference_adaln(kwargs[key], _adaln)
             return _original(*args, **kwargs)
 
         patched.add_object_patch(
@@ -193,13 +193,12 @@ def _patch_model(
         if f"{prefix}to_q.lora_A.weight" not in state:
             raise KeyError(f"sidecar has no reference attention for block {index}")
         ref_attn = _ReferenceAttention(block.attn2, state, prefix, ref_context)
-        patched.add_object_patch(f"diffusion_model.transformer_blocks.{index}.mirage_ref_attn", ref_attn)
         original_attn = block.attn2.forward
 
-        def attn_forward(this, x, *args, _original=original_attn, _block=block, **kwargs):
+        def attn_forward(this, x, *args, _original=original_attn, _ref=ref_attn, **kwargs):
             out = _original(x, *args, **kwargs)
             options = kwargs.get("transformer_options", {})
-            return out + _block.mirage_ref_attn(x, options) * float(context_scale)
+            return out + _ref.forward(x, options) * float(context_scale)
 
         patched.add_object_patch(
             f"diffusion_model.transformer_blocks.{index}.attn2.forward",
